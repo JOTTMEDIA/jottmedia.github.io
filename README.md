@@ -1,6 +1,6 @@
-# JOTT.MEDIA ScrollMagic Website
+# ScrollMagic Website
 
-Handcrafted SCrollMagic Website
+Handcrafted ScrollMagic Website
 
 ## Built With
 
@@ -8,13 +8,12 @@ Handcrafted SCrollMagic Website
 - [jQuery](https://github.com/jquery/jquery) - jQuery JavaScript Library
 - [normalize.css](https://github.com/necolas/normalize.css) - A collection of HTML element and attribute style-normalizations
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The iconic font and CSS toolkit
-- [fluidable](https://github.com/andri/fluidable) - Standalone CSS grid system
 - [Prepros](https://github.com/Subash/Prepros) - Compile almost any preprocessing language with live browser refresh.
 
 ## Authors
 
 - **Katharina Pätzold** - _Idea & Concept_
-- **Jan Jüneann** - _Design_
+- **Jan Jünemann** - _Design_
 - **Jonathan Schneider** - _Development_ - [JonathanSchndr](https://github.com/JonathanSchndr)
 
 ## MIT License
