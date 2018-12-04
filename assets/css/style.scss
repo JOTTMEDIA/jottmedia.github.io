@@ -139,8 +139,8 @@ section:nth-child(1) {
     font-size: 50vmin;
     color: $black;
     line-height: 1;
-
     transform: scaleX(-1) translateY(-50%);
+    z-index: 10;
   }
 
   div.text {
@@ -151,9 +151,10 @@ section:nth-child(1) {
     right: 20vmin;
     font-family: $fontHeadlineFamily;
     font-weight: $fontWeightRegular;
-    font-size: 6vmin;
+    font-size: 4vmin;
     color: $white;
     text-align: center;
+    text-transform: uppercase;
   }
 
   div.letter-two {
@@ -165,8 +166,20 @@ section:nth-child(1) {
     font-size: 50vmin;
     color: $black;
     line-height: 1;
-
     transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  svg {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    font-size: 8vmin;
+    transform: scale(0.1) translate(-50%, -50%);
+    opacity: 0;
+    z-index: 50;
+    color: $white;
   }
 
 }
@@ -180,7 +193,7 @@ section:nth-child(1) {
  */
 
 span.cursor {
-  border-right: .01em solid;
+  border-right: .03em solid;
   animation: caret 1s steps(1) infinite;
 }
 

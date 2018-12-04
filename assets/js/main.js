@@ -9,34 +9,37 @@ var loadScene;
       main: {
         reference: [],
         scene1: function () {
-          // var tween = new TimelineMax()
-          //   .to("div#main section#one div.fade div:nth-child(1)", 1, { opacity: 1 }).to("div#main section#one div.fade div:nth-child(1)", 1, { opacity: 0 })
-          //   .to("div#main section#one div.fade div:nth-child(2)", 1, { opacity: 1 }).to("div#main section#one div.fade div:nth-child(2)", 1, { opacity: 0 })
-          //   .to("div#main section#one div.fade div:nth-child(3)", 1, { opacity: 1 });
 
-          // var scene = new ScrollMagic.Scene({ triggerElement: "div#main section#one", triggerHook: 0, duration: "750px" })
-          //   .setTween(tween)
-          //   .setPin("div#main section#one")
-          //   // .addIndicators({name: "Section main 1"})
-          //   .addTo(controller);
+          var animationLength = $("section:nth-child(1) div.inner").width() / 2 - $("section:nth-child(1) div.letter-one").width() + 7;
+          var tween = new TimelineMax()
+            .to("section:nth-child(1) div.text", 0.5, { opacity: 0 }, 0)
+            .to("section:nth-child(1) div.letter-one", 1, { left: animationLength }, 0)
+            .to("section:nth-child(1) div.letter-two", 1, { right: animationLength }, 0)
+            .to("section:nth-child(1) svg", 1, { scale: 5, opacity: 1, rotation: 90 }, .6)
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "section:nth-child(1)", triggerHook: 0, duration: "100%" })
+            .setTween(tween)
+            .setPin("section:nth-child(1)")
+            .addIndicators({ name: "Section 1" })
+            .addTo(controller);
 
           var text = [
             "Wir gestalten, konzipieren, programmieren und visualisieren Medien.",
-            "Wir sind JOTT.MEDIA – Eine Digital- & Print-Agentur aus Schaumburg.",
+            "Wir sind JOTT.MEDIA - eine Digital- & Print-Agentur aus Schaumburg.",
             "Was? Noch am lesen? Bitte scrollen."
           ];
           startTextAnimation(0, text, "section:nth-child(1) div.text");
 
-          // loadScene.main.reference.push(scene1);
+          loadScene.main.reference.push(scene);
         },
         init: function () {
           loadScene.main.scene1();
         },
         destroy: function () {
-          // loadScene.main.reference.forEach(function (scene) {
-          //   scene.destroy(true);
-          // });
-          // loadScene.main.reference = [];
+          loadScene.main.reference.forEach(function (scene) {
+            scene.destroy(true);
+          });
+          loadScene.main.reference = [];
         }
       }
     };
