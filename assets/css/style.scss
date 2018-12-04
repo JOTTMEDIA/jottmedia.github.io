@@ -12,9 +12,9 @@ $fontSize: 24px;
 $mobileFontSize: 20px;
 $mobileSmallFontSize: 16px;
 
-$lineHeight: 1;
+$lineHeight: 1.5;
 
-$baseColor: #000;
+$baseColor: #1d1d1b;
 $black: #000;
 $white: #fff;
 
@@ -119,11 +119,73 @@ section {
   width: 100vw;
   height: 100vh;
 
-  &:nth-child(odd) {
-    background: #eee;
+  div.inner {
+    position: relative;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
   }
+}
+
+section:nth-child(1) {
+  background: $baseColor;
+
+  div.letter-one {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-family: $fontHeadlineFamily;
+    font-weight: $fontWeightBold;
+    font-size: 50vmin;
+    color: $black;
+    line-height: 1;
+
+    transform: scaleX(-1) translateY(-50%);
+  }
+
+  div.text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20vmin;
+    right: 20vmin;
+    font-family: $fontHeadlineFamily;
+    font-weight: $fontWeightRegular;
+    font-size: 6vmin;
+    color: $white;
+    text-align: center;
+  }
+
+  div.letter-two {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-family: $fontHeadlineFamily;
+    font-weight: $fontWeightBold;
+    font-size: 50vmin;
+    color: $black;
+    line-height: 1;
+
+    transform: translateY(-50%);
+  }
+
 }
 
 /**
  * Footer
  */
+
+/**
+ * Utilities
+ */
+
+span.cursor {
+  border-right: .01em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
