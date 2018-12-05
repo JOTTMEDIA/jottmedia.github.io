@@ -39,6 +39,7 @@ body {
   line-height: $lineHeight;
   overflow-x: hidden;
   color: $baseColor;
+  background: $baseColor;
 }
 
 h1,
@@ -115,6 +116,34 @@ video {
  * Main
  */
 
+div.light-wrapper {
+  position: fixed;
+  max-width: 1200px;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  div.light {
+    position: fixed;
+    background: #fdec4f;
+    width: 2%;
+    border-radius: 100%;
+    z-index: 500;
+    transform: translateY(-50%);
+    top: 0;
+    left: 54%;
+    opacity: 0;
+
+    &:before {
+      content: "";
+      display:block;
+      padding-top: 100%;
+    }
+  }
+}
+
 section {
   width: 100vw;
   height: 100vh;
@@ -127,7 +156,7 @@ section {
   }
 }
 
-section:nth-child(1) {
+section.section-1 {
   background: $baseColor;
 
   div.letter-one {
@@ -182,6 +211,28 @@ section:nth-child(1) {
     color: $white;
   }
 
+}
+
+
+section.section-2 {
+  background: $baseColor;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	  left: 0;
+  }
+
+  img {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 1%;
+    z-index: 600;
+  }
 }
 
 /**
