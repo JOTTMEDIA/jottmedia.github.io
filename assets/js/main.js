@@ -15,7 +15,7 @@ var loadScene;
             .to("section.section-1 div.text", 0.5, { opacity: 0 }, 0)
             .to("section.section-1 div.letter-one", 1, { left: animationLength }, 0)
             .to("section.section-1 div.letter-two", 1, { right: animationLength }, 0)
-            .to("section.section-1 svg", 1, { scale: 5, opacity: 1, rotation: 90 }, .6)
+            .to("div.light", 1, { opacity: 1, top: "20px" })
 
           var scene = new ScrollMagic.Scene({ triggerElement: "section.section-1", triggerHook: 0, duration: "100%" })
             .setTween(tween)
@@ -36,13 +36,13 @@ var loadScene;
 
           var animationLength = $("section.section-2 img").height() / 2 - $("section.section-1 div.letter-one").width() + 7;
           var tween = new TimelineMax()
+            .to("div.light", 1, { left: "54%" }, 0)
             .to("section.section-2 img", 1, { width: "50%", xPercent: -50, yPercent: -50 }, 0)
-            .to("div.light", 1, { opacity: 1 }, 1)
-            .to("div.light", 1, { top: "50%", ease: Bounce.easeOut }, 1)
-            .to("div.light", 1, { left: "50%", ease: Expo.easeIn }, 1)
-            .to("section.section-2 img", 0.5, { rotation: 180 }, 2)
-            .to("div.light", 1, { left: "44%", ease: Bounce.easeOut }, 2)
-            .to("div.light", 1, { top: "100%", ease: Power1.easeIn }, 2)
+            .to("div.light", 1, { top: "50%", ease: Bounce.easeOut }, 2)
+            .to("div.light", 1, { left: "50%", ease: Expo.easeIn }, 2)
+            .to("section.section-2 img", 0.5, { rotation: 180 }, 3)
+            .to("div.light", 1, { left: "44%", ease: Bounce.easeOut }, 3)
+            .to("div.light", 1, { top: "80%", ease: Power1.easeIn }, 3)
 
           var scene = new ScrollMagic.Scene({ triggerElement: "section.section-2", triggerHook: 0, duration: "200%" })
             .setTween(tween)
@@ -52,9 +52,24 @@ var loadScene;
 
           loadScene.main.reference.push(scene);
         },
+        scene3: function () {
+          var tween = new TimelineMax()
+            .to("div.light", 1, { top: "50%", xPercent: -50, ease: Bounce.easeOut }, 1)
+            .to("div.light", 1, { left: "50%", yPercent: -50, ease: Expo.easeIn }, 1)
+            .to("div.light", 1, { width: "50%", ease: Expo.easeIn }, 1)
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-3", triggerHook: 0, duration: "100%" })
+            .setTween(tween)
+            .setPin("section.section-3")
+            .addIndicators({ name: "Section 3" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
         init: function () {
           loadScene.main.scene1();
           loadScene.main.scene2();
+          loadScene.main.scene3();
         },
         destroy: function () {
           loadScene.main.reference.forEach(function (scene) {

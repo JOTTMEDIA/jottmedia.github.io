@@ -15,6 +15,8 @@ $mobileSmallFontSize: 16px;
 $lineHeight: 1.5;
 
 $baseColor: #1d1d1b;
+$grey: #d4d2d2;
+$yellow: #fdec4f;
 $black: #000;
 $white: #fff;
 
@@ -124,16 +126,16 @@ div.light-wrapper {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 999;
 
   div.light {
     position: fixed;
-    background: #fdec4f;
+    background: $yellow;
     width: 2%;
     border-radius: 100%;
-    z-index: 500;
     transform: translateY(-50%);
-    top: 0;
-    left: 54%;
+    top: 50%;
+    left: 50%;
     opacity: 0;
 
     &:before {
@@ -141,6 +143,7 @@ div.light-wrapper {
       display:block;
       padding-top: 100%;
     }
+
   }
 }
 
@@ -199,18 +202,6 @@ section.section-1 {
     z-index: 10;
   }
 
-  svg {
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    font-size: 8vmin;
-    transform: scale(0.1) translate(-50%, -50%);
-    opacity: 0;
-    z-index: 50;
-    color: $white;
-  }
-
 }
 
 
@@ -233,6 +224,11 @@ section.section-2 {
     width: 1%;
     z-index: 600;
   }
+}
+
+
+section.section-3 {
+  background: $grey;
 }
 
 /**
