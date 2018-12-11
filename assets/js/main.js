@@ -36,15 +36,15 @@ var loadScene;
 
           var animationLength = $("section.section-2 img").height() / 2 - $("section.section-1 div.letter-one").width() + 7;
           var tween = new TimelineMax()
-            .to("section.section-2 img", 0.5, { width: "50%", xPercent: -50, yPercent: -50 }, 0)
-            .to("div.light", 0.5, { opacity: 1 }, 1)
+            .to("section.section-2 img", 1, { width: "50%", xPercent: -50, yPercent: -50 }, 0)
+            .to("div.light", 1, { opacity: 1 }, 1)
             .to("div.light", 1, { top: "50%", ease: Bounce.easeOut }, 1)
             .to("div.light", 1, { left: "50%", ease: Expo.easeIn }, 1)
             .to("section.section-2 img", 0.5, { rotation: 180 }, 2)
             .to("div.light", 1, { left: "44%", ease: Bounce.easeOut }, 2)
             .to("div.light", 1, { top: "100%", ease: Power1.easeIn }, 2)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-2", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-2", triggerHook: 0, duration: "200%" })
             .setTween(tween)
             .setPin("section.section-2")
             .addIndicators({ name: "Section 2" })
@@ -68,9 +68,9 @@ var loadScene;
     loadScene.main.init();
 
 
-    // $(window).scroll(function () {
-    //   controller.refresh();
-    // });
+    $(window).resize(function () {
+      window.location.reload();
+    });
 
     /**
      * Helper
