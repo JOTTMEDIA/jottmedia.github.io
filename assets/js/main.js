@@ -3,6 +3,18 @@ var loadScene;
 
   $(function () {
 
+    /**
+     * Check old Browser
+     */
+
+    outdatedBrowser({
+      bgColor: "#fdec4f",
+      color: "#1d1d1b",
+      lowerThan: "transform",
+      languagePath: ""
+    })
+
+
     // init controller
     var controller = new ScrollMagic.Controller({ refreshInterval: 0 });
     loadScene = {
@@ -159,27 +171,24 @@ var loadScene;
     var fps = 30;
     var numStars = 500;
 
-    $('document').ready(function () {
+    screenH = $(window).height();
+    screenW = $(window).width();
 
-      screenH = $(window).height();
-      screenW = $(window).width();
+    canvas = $("#space");
+    canvas.attr("height", screenH);
+    canvas.attr("width", screenW);
+    context = canvas[0].getContext("2d");
 
-      canvas = $('#space');
-      canvas.attr('height', screenH);
-      canvas.attr('width', screenW);
-      context = canvas[0].getContext('2d');
+    for (var i = 0; i < numStars; i++) {
+      var x = Math.round(Math.random() * screenW);
+      var y = Math.round(Math.random() * screenH);
+      var length = 1 + Math.random() * 6;
+      var opacity = Math.random();
+      var star = new Star(x, y, length, opacity);
+      stars.push(star);
+    }
 
-      for (var i = 0; i < numStars; i++) {
-        var x = Math.round(Math.random() * screenW);
-        var y = Math.round(Math.random() * screenH);
-        var length = 1 + Math.random() * 6;
-        var opacity = Math.random();
-        var star = new Star(x, y, length, opacity);
-        stars.push(star);
-      }
-
-      setInterval(animate, 1000 / fps);
-    });
+    setInterval(animate, 1000 / fps);
 
     function animate() {
       context.clearRect(0, 0, screenW, screenH);
@@ -228,7 +237,7 @@ var loadScene;
       context.closePath();
       context.fillStyle = "rgba(255, 255, 255, " + this.opacity + ")";
       context.shadowBlur = 5;
-      context.shadowColor = '#ffffff';
+      context.shadowColor = "#ffffff";
       context.fill();
 
       context.restore();
