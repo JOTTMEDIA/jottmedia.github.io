@@ -50,6 +50,7 @@ var loadScene;
           var animationLength = $("section.section-2 img").height() / 2 - $("section.section-1 div.letter-one").width() + 7;
           var tween = new TimelineMax()
             .to("div.light-wrapper svg #circle", 1, { opacity: 1 }, 0)
+            .to("div.light-wrapper svg text", 1, { opacity: 0 }, 0)
             .to("div.light-wrapper svg", 1, { width: "2%", left: "55%", top: "20px" }, 0)
             .to("section.section-2 img", 1, { width: "50%", xPercent: -50, yPercent: -50 }, 0)
             .to("div.light-wrapper svg", 1, { top: "50%", ease: Bounce.easeOut }, 1)
