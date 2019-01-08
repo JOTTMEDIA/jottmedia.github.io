@@ -2,8 +2,8 @@
  * Setting
  */
 
- $fontLora: 'Lora', serif;
- $fontOswald: 'Oswald', serif;
+$fontLora: "Lora", serif;
+$fontOswald: "Oswald", serif;
 
 $fontSize: 24px;
 $mobileFontSize: 20px;
@@ -142,12 +142,12 @@ div.light-wrapper {
       }
     }
   }
-
 }
 
 section {
   width: 100vw;
   height: 100vh;
+  transform: translate3d(0,0,0);
 
   div.inner {
     position: relative;
@@ -199,9 +199,7 @@ section.section-1 {
     transform: translateY(-50%);
     z-index: 10;
   }
-
 }
-
 
 section.section-2 {
   background: $baseColor;
@@ -211,7 +209,7 @@ section.section-2 {
     top: 0;
     right: 0;
     bottom: 0;
-	  left: 0;
+    left: 0;
   }
 
   img {
@@ -224,11 +222,11 @@ section.section-2 {
   }
 }
 
-
 section.section-3 {
   background: $grey;
 
-  div.text-1, div.text-2 {
+  div.text-1,
+  div.text-2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -246,6 +244,41 @@ section.section-3 {
   }
 }
 
+section.section-4 {
+
+  div.text-1 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 2vmin;
+    color: $white;
+    padding: 5vh 0;
+  }
+
+  div.text-2 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    font-family: $fontOswald;
+    font-weight: 700;
+    letter-spacing: 2vmin;
+    font-size: 500%;
+    color: $white;
+  }
+
+  div.text-3 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 2vmin;
+    color: $white;
+    padding: 5vh 0;
+    bottom: 0;
+  }
+}
+
 /**
  * Footer
  */
@@ -255,7 +288,7 @@ section.section-3 {
  */
 
 span.cursor {
-  border-right: .03em solid;
+  border-right: 0.03em solid;
   animation: caret 1s steps(1) infinite;
 }
 
