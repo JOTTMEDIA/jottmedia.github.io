@@ -123,6 +123,7 @@ div.light-wrapper {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
   z-index: 999;
 
   svg {
@@ -253,6 +254,16 @@ section.section-4 {
     font-size: 2vmin;
     color: $white;
     padding: 5vh 0;
+
+    a {
+      display: inline-block;
+      font-weight: 700;
+      background: $yellow;
+      color: $baseColor;
+      padding: 10px;
+      margin: 10px;
+      text-decoration: underline;
+    }
   }
 
   div.text-2 {
@@ -264,18 +275,8 @@ section.section-4 {
     font-family: $fontOswald;
     font-weight: 700;
     letter-spacing: 2vmin;
-    font-size: 500%;
+    font-size: 10vmin;
     color: $white;
-  }
-
-  div.text-3 {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    font-size: 2vmin;
-    color: $white;
-    padding: 5vh 0;
-    bottom: 0;
   }
 }
 
