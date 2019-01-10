@@ -121,12 +121,11 @@ var loadScene;
           loadScene.main.reference.push(scene);
         },
         scene5: function () {
-
-          var rule2 = CSSRulePlugin.getRule("section.section-5 div.text-2 span:before");
-          var rule3 = CSSRulePlugin.getRule("section.section-5 div.text-3 span:before");
-          var rule4 = CSSRulePlugin.getRule("section.section-5 div.text-4 span:before");
-          var rule5 = CSSRulePlugin.getRule("section.section-5 div.text-5 span:before");
-          var rule6 = CSSRulePlugin.getRule("section.section-5 div.text-6 span:before");
+          var rule2 = CSSRulePlugin.getRule("section.section-5 div.text-2 span:before"),
+            rule3 = CSSRulePlugin.getRule("section.section-5 div.text-3 span:before"),
+            rule4 = CSSRulePlugin.getRule("section.section-5 div.text-4 span:before"),
+            rule5 = CSSRulePlugin.getRule("section.section-5 div.text-5 span:before"),
+            rule6 = CSSRulePlugin.getRule("section.section-5 div.text-6 span:before");
 
           var tween = new TimelineMax()
             .to("div.light-wrapper svg", 10, { top: "95%", ease: Bounce.easeOut }, 0)
@@ -144,6 +143,27 @@ var loadScene;
 
           loadScene.main.reference.push(scene);
         },
+        scene6: function () {
+
+          var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 1, { top: "50%", ease: Power1.easeOut }, 0)
+            .to("section.section-6 div.bild img.image-1", 1, { opacity: 0, ease: Power1.easeOut }, 1)
+            .to("section.section-6 div.text div.image-1", 1, { opacity: 0, ease: Power1.easeOut }, 1)
+            .to("section.section-6 div.bild img.image-2", 1, { opacity: 1, ease: Power1.easeOut }, 1)
+            .to("section.section-6 div.text div.image-2", 1, { opacity: 1, ease: Power1.easeOut }, 1)
+            .to("section.section-6 div.bild img.image-2", 1, { opacity: 0, ease: Power1.easeOut }, 2)
+            .to("section.section-6 div.text div.image-2", 1, { opacity: 0, ease: Power1.easeOut }, 2)
+            .to("section.section-6 div.bild img.image-3", 1, { opacity: 1, ease: Power1.easeOut }, 2)
+            .to("section.section-6 div.text div.image-3", 1, { opacity: 1, ease: Power1.easeOut }, 2);
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-6", triggerHook: 0, duration: "100%" })
+            .setTween(tween)
+            .setPin("section.section-6")
+            .addIndicators({ name: "Section 6" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
         init: function () {
           loadScene.main.scene1(); // J&J
           loadScene.main.scene2(); // Logo rotation
@@ -152,6 +172,7 @@ var loadScene;
           loadScene.main.scene4(); // PING PONG
           loadScene.main.ballreset2(); // Ball Reset
           loadScene.main.scene5(); // Leistungen
+          loadScene.main.scene6(); // Skills
         },
         destroy: function () {
           loadScene.main.reference.forEach(function (scene) {

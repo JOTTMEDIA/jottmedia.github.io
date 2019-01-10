@@ -21,6 +21,10 @@ $white: #fff;
  * Global Properties
  */
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-size: $fontSize;
@@ -250,7 +254,7 @@ section.section-4 {
   div.text-1 {
     text-align: center;
     width: 100%;
-    font-size: 2vmin;
+    font-size: 3vmin;
     color: $white;
     padding: 5vh 0;
   }
@@ -274,7 +278,7 @@ section.section-5 {
   div.text-1 {
     text-align: center;
     width: 100%;
-    font-size: 2vmin;
+    font-size: 3vmin;
     color: $white;
     padding: 5vh 0;
   }
@@ -335,6 +339,73 @@ section.section-5 {
     background-color: transparent;
     height: 0;
   }
+}
+
+section.section-6 {
+  background-image: linear-gradient(90deg, $grey 49.99%, $white 50%);
+
+  div.text-1 {
+    font-family: $fontOswald;
+    font-size: 10vmin;
+    letter-spacing: 1vmin;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+
+    span:first-child {
+      color: $black;
+    }
+
+    span:last-child {
+      color: $grey;
+    }
+  }
+
+  div.bild {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    img.image-2, img.image-3 {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+    }
+  }
+
+  div.text {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 2vmin;
+
+    b {
+      font-family: $fontOswald;
+    }
+
+    h3 {
+      font-family: $fontLora;
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    div.image-2, div.image-3 {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+    }
+  }
+
 }
 
 /**
