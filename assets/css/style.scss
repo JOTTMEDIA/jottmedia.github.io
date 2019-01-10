@@ -248,22 +248,11 @@ section.section-3 {
 section.section-4 {
 
   div.text-1 {
-    position: absolute;
     text-align: center;
     width: 100%;
     font-size: 2vmin;
     color: $white;
     padding: 5vh 0;
-
-    a {
-      display: inline-block;
-      font-weight: 700;
-      background: $yellow;
-      color: $baseColor;
-      padding: 10px;
-      margin: 10px;
-      text-decoration: underline;
-    }
   }
 
   div.text-2 {
@@ -277,6 +266,74 @@ section.section-4 {
     letter-spacing: 2vmin;
     font-size: 10vmin;
     color: $white;
+  }
+}
+
+section.section-5 {
+
+  div.text-1 {
+    text-align: center;
+    width: 100%;
+    font-size: 2vmin;
+    color: $white;
+    padding: 5vh 0;
+  }
+
+  div.leistungen {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  div.text-2,
+  div.text-3,
+  div.text-4,
+  div.text-5,
+  div.text-6 {
+    font-weight: 700;
+    font-size: 5vmin;
+    margin: 2vmin 0;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      position: relative;
+      padding: 0.5vw 1vw;
+      user-select: none;
+
+      &:before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: -1;
+        
+      }
+    }
+  }
+
+  div.text-3 span:before{
+    background-color: transparent;
+    height: 0;
+  }
+
+  div.text-4 span:before{
+    background-color: transparent;
+    height: 0;
+  }
+
+  div.text-5 span:before{
+    background-color: transparent;
+    height: 0;
+  }
+
+  div.text-6 span:before{
+    background-color: transparent;
+    height: 0;
   }
 }
 

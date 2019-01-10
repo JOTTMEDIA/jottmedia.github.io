@@ -28,7 +28,7 @@ var loadScene;
             .to("section.section-1 div.letter-one", 1, { left: animationLength }, 0)
             .to("section.section-1 div.letter-two", 1, { right: animationLength }, 0)
             .to("div.light-wrapper svg", 1, { opacity: 1 }, 0.5)
-            .to("div.light-wrapper svg", 1, { top: $("div.light-wrapper svg").height() / 2 }, 1)
+            .to("div.light-wrapper svg", 1, { top: $("div.light-wrapper svg").height() }, 1)
 
           var scene = new ScrollMagic.Scene({ triggerElement: "section.section-1", triggerHook: 0, duration: "100%" })
             .setTween(tween)
@@ -99,12 +99,47 @@ var loadScene;
             .to("div.light-wrapper svg", 1, { top: "60%", left: "100%", ease: Bounce.easeOut }, 1)
             .to("div.light-wrapper svg", 1, { top: "60%", left: "0%", ease: Bounce.easeOut }, 2)
             .to("div.light-wrapper svg", 1, { top: "40%", left: "100%", ease: Bounce.easeOut }, 3)
-            .to("div.light-wrapper svg", 1, { top: "50%", left: "47.5%", ease: Power1.easeOut }, 4);
+            .to("div.light-wrapper svg", 1, { top: "50%", left: "50%", ease: Power1.easeOut }, 4);
 
           var scene = new ScrollMagic.Scene({ triggerElement: "section.section-4", triggerHook: 0, duration: "200%" })
             .setTween(tween)
             .setPin("section.section-4")
             .addIndicators({ name: "Section 4" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
+        ballreset2: function () {
+          var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 1, { top: "20px", left: "50%" }, 0)
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "div.ball-reset-2", triggerHook: 1, duration: "100%" })
+            .setTween(tween)
+            .addIndicators({ name: "Ball Reset" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
+        scene5: function () {
+
+          var rule2 = CSSRulePlugin.getRule("section.section-5 div.text-2 span:before");
+          var rule3 = CSSRulePlugin.getRule("section.section-5 div.text-3 span:before");
+          var rule4 = CSSRulePlugin.getRule("section.section-5 div.text-4 span:before");
+          var rule5 = CSSRulePlugin.getRule("section.section-5 div.text-5 span:before");
+          var rule6 = CSSRulePlugin.getRule("section.section-5 div.text-6 span:before");
+
+          var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 10, { top: "95%", ease: Bounce.easeOut }, 0)
+            .to(rule2, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 0)
+            .to(rule3, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 1)
+            .to(rule4, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 2)
+            .to(rule5, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 3)
+            .to(rule6, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 4);
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-5", triggerHook: 0, duration: "100%" })
+            .setTween(tween)
+            .setPin("section.section-5")
+            .addIndicators({ name: "Section 5" })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -115,6 +150,8 @@ var loadScene;
           loadScene.main.ballreset1(); // Ball Reset
           loadScene.main.scene3(); // Text jumping
           loadScene.main.scene4(); // PING PONG
+          loadScene.main.ballreset2(); // Ball Reset
+          loadScene.main.scene5(); // Leistungen
         },
         destroy: function () {
           loadScene.main.reference.forEach(function (scene) {
