@@ -194,6 +194,13 @@ var loadScene;
     });
 
     /**
+     * Open Burger
+     */
+    $("button").on("click", function () {
+      $("body").toggleClass("open");
+    });
+
+    /**
      * Helper
      */
 

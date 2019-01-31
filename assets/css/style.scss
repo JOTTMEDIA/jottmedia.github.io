@@ -18,6 +18,16 @@ $black: #000;
 $white: #fff;
 
 /**
+ * Mixin
+ */
+
+@mixin position-center {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+}
+
+/**
  * Global Properties
  */
 
@@ -28,6 +38,7 @@ $white: #fff;
 html,
 body {
   font-size: $fontSize;
+  overscroll-behavior-y: none;
   @media only screen and (max-width: 767px) {
     font-size: $mobileFontSize;
   }
@@ -43,6 +54,10 @@ body {
   overflow-x: hidden;
   color: $baseColor;
   background: $baseColor;
+
+  &.open {
+    overflow: hidden;
+  }
 }
 
 h1,
@@ -53,8 +68,7 @@ h5,
 h6 {
   font-family: $fontLora;
   font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 1em;
+  margin: 0;
 }
 
 em,
@@ -115,6 +129,205 @@ video {
  * Header
  */
 
+header {
+  position: relative;
+  font-family: $fontOswald;
+  font-weight: 700;
+  z-index: 999;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      padding: 6px 20px;
+      font-size: 48px;
+    }
+  }
+
+  button {
+    opacity: 0.6;
+    background-color: transparent;
+    position: fixed;
+    z-index: 2;
+    top: 24px;
+    left: 24px;
+    border: none;
+    width: 36px;
+    height: 30px;
+    outline: none;
+    transition: opacity 0.2s ease-out;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      @include position-center;
+      right: auto;
+      width: 100%;
+      background: linear-gradient(
+        to bottom, 
+        $yellow, $yellow 20%, 
+        transparent 20%, transparent 40%, 
+        $yellow 40%, $yellow 60%, 
+        transparent 60%, transparent 80%, 
+        $yellow 80%, $yellow 100%
+      );
+      transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
+    }
+
+    &:after {
+      opacity: 0;
+      content: '×';
+      color: $white;
+      position: absolute;
+      top: 16px;
+      left: -4px;
+      font-family: Arial, sans-serif;
+      font-size: 76px;
+      line-height: 0;
+      transition: opacity 0.4s ease-out;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .open & {
+      opacity: 1;
+
+      &:before {
+        opacity: 0;
+        width: 0;
+      }
+
+      &:after {
+        opacity: 1;
+        transform: translate3d(0,0,0) rotate(360deg);
+        transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;
+      }
+    }
+  }
+
+  nav {
+    z-index: 1;
+    position: fixed;
+    top: -100%; left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      @include position-center;
+      background: rgba(darken($yellow, 10%), 0.98);
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      border-radius: 100%;
+      transform: scale(0.04), translateY(9999px);
+      overflow: hidden;
+    }
+
+    .open & {
+      top: 0;
+
+      &:before {
+        animation: menu-animation 0.8s ease-out forwards;
+      }
+    }
+  }
+
+  ul.menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    color: $baseColor;
+
+    li {
+      opacity: 0;
+      text-align: center;
+      transform: translate3d(0,36px,0);
+
+      &:before {
+        content: '';
+        @include position-center;
+        left: auto;
+        background-color: $baseColor;
+        height: 100%;
+        width: 0;
+        overflow: hidden;
+        transition: width 0.14s ease-out;
+      }
+
+      &:after {
+        opacity: 0;
+        content: attr(data-text);
+        @include position-center;
+        color: $yellow;
+        overflow: hidden;
+        transform: translate(-24px, 6px);
+        transition: transform 0.1s ease-out,
+        opacity 0.1s ease-out;
+      }
+
+      &:hover {
+        &:before {
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+
+        &:after {
+          opacity: 1;
+          padding: 0 20px;
+          transform: translate(0px, 6px);
+          transition: transform 0.2s 0.14s ease-out,
+          opacity 0.2s 0.14s ease-out;
+        }
+      }
+
+      .open & {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+        transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+        @for $i from 1 to 5 {
+          &:nth-child(#{$i}) { transition-delay: $i * 0.1s + 0.65s; }
+        }
+      }
+    }
+  }
+
+  div.social {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+    opacity: 0;
+
+    svg {
+      font-size: 40px;
+    }
+
+    .open & {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+      transition-delay: 0.75s;
+    }
+  }
+}
+
 /**
  * Main
  */
@@ -128,7 +341,7 @@ div.light-wrapper {
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
-  z-index: 999;
+  z-index: 900;
 
   svg {
     position: absolute;
@@ -408,9 +621,156 @@ section.section-6 {
 
 }
 
+section.section-7 {
+  background: $white;
+
+  h2 {
+    position: absolute;
+    width: 100%;
+    font-family: $fontOswald;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 5vw;
+    letter-spacing: 0.5vw;
+    background: $black;
+    text-align: center;
+    padding: 2vw 0;
+    margin: 0;
+  }
+
+  div.image-holder {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    width: 100%;
+
+    img {
+      float: left;
+      width: 16.6%;
+      display: block;
+    }
+  }
+
+  border-bottom: 20px solid $grey;
+
+  @media only screen and (max-width: 767px) {
+    div.image-holder img {
+      width: 33.3%;
+    }
+  }
+}
+
+section.section-8 {
+
+  h2 {
+    font-family: $fontOswald;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    width: 100%;
+    color: $white;
+    font-size: 5vw;
+    letter-spacing: 0.5vw;
+    z-index: 20;
+    margin: 0;
+  }
+
+  div.text {
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    background: rgba($black, .9)
+  }
+
+  div.jan {
+    background: url(https://placeimg.com/1000/1000/any?78922) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 50vw;
+    height: 100vh;
+    float: left;
+  }
+
+  div.jonathan {
+    background: url(https://placeimg.com/1000/1000/any?78912) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 50vw;
+    height: 100vh;
+    float: right;
+  }
+
+  @media (orientation: portrait) {
+    div.jan, div.jonathan {
+      width: 100vw;
+      height: 50vh;
+    }
+  }
+
+}
+
 /**
  * Footer
  */
+
+footer {
+  width: 100vw;
+  height: 100vh;
+  transform: translate3d(0,0,0);
+
+  div.inner {
+    position: relative;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+  }
+
+  h2 {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    width: 100%;
+    color: $white;
+    font-size: 2rem;
+    letter-spacing: 0.5vw;
+    z-index: 20;
+    margin: 0;
+
+    a {
+      letter-spacing: 0;
+    }
+  }
+
+  div.text {
+    position: absolute;
+    width: 100%;
+    bottom: -5px;
+    line-height: 1; 
+    font-family: $fontOswald;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: $grey;
+  }
+
+  nav {
+    font-family: $fontOswald;
+    background: $grey;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 20px;
+    color: $baseColor;
+
+    a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}
 
 /**
  * Utilities
@@ -424,5 +784,37 @@ span.cursor {
 @keyframes caret {
   50% {
     border-color: transparent;
+  }
+}
+
+@keyframes menu-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.04) translateY(300%);
+  }
+  40% {
+    transform: scale(0.04) translateY(0);
+    transition: ease-out;
+  }
+  40% {
+    transform: scale(0.04) translateY(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.02) translateY(0px);
+  }
+  61% {
+    transform: scale(0.04);
+  }
+  99.9% {
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 100%;
+  }
+  100% {
+    transform: scale(2);
+    height: 100%;
+    padding-bottom: 0;
+    border-radius: 0;
   }
 }
