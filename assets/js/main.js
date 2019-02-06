@@ -156,10 +156,52 @@ var loadScene;
             .to("section.section-6 div.bild img.image-3", 1, { opacity: 1, ease: Power1.easeOut }, 2)
             .to("section.section-6 div.text div.image-3", 1, { opacity: 1, ease: Power1.easeOut }, 2);
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-6", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-6", triggerHook: 0, duration: "150%" })
             .setTween(tween)
             .setPin("section.section-6")
             .addIndicators({ name: "Section 6" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
+        scene7: function () {
+
+          // var tween = new TimelineMax()
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-7", triggerHook: 0, duration: "100%" })
+            //.setTween(tween)
+            .setPin("section.section-7")
+            .addIndicators({ name: "Section 7" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
+        scene8: function () {
+
+          // var tween = new TimelineMax()
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-8", triggerHook: 0, duration: "100%" })
+            //.setTween(tween)
+            .setPin("section.section-8")
+            .addIndicators({ name: "Section 8" })
+            .addTo(controller);
+
+          loadScene.main.reference.push(scene);
+        },
+        scene9: function () {
+
+          console.log();
+
+
+          var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 1, { rotation: 360, ease: Power1.easeOut }, 0)
+            .to("div.light-wrapper svg", 1, { top: "auto", bottom: $("footer nav").height() - $("footer nav").height() / 2 + "px", ease: Bounce.easeOut }, 0)
+            .to("div.light-wrapper svg", 1, { backgroundColor: "#fdec4f", ease: Power1.easeOut }, 0)
+
+          var scene = new ScrollMagic.Scene({ triggerElement: "footer", triggerHook: 0, duration: "100%" })
+            .setTween(tween)
+            .setPin("footer")
+            .addIndicators({ name: "Footer" })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -173,6 +215,9 @@ var loadScene;
           loadScene.main.ballreset2(); // Ball Reset
           loadScene.main.scene5(); // Leistungen
           loadScene.main.scene6(); // Skills
+          loadScene.main.scene7(); // Corporation
+          loadScene.main.scene8(); // Wir
+          loadScene.main.scene9(); // Ende
         },
         destroy: function () {
           loadScene.main.reference.forEach(function (scene) {
