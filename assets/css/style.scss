@@ -719,7 +719,6 @@ section.section-8 {
 
 footer {
   width: 100vw;
-  height: 100vh;
   transform: translate3d(0,0,0);
 
   div.inner {
@@ -770,6 +769,33 @@ footer {
     a {
       display: inline-block;
       margin: 0 10px;
+    }
+  }
+}
+
+/**
+ * Legal
+ */
+
+div.legal {
+  background: $grey;
+
+  #agb, #impressum, #datenschutz {
+    display: none;
+  }
+
+  div.inner {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+
+    h2, h3 {
+      padding: 0.5rem 0 0.5rem;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 }

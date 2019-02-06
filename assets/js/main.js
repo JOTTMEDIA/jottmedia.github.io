@@ -196,8 +196,29 @@ var loadScene;
     /**
      * Open Burger
      */
+
     $("button").on("click", function () {
       $("body").toggleClass("open");
+    });
+
+    /**
+     * Open Legal
+     */
+
+    if ($("body").find("div" + window.location.hash).length && window.location.hash != "") {
+      $("div.legal div" + window.location.hash).fadeIn();
+      $("html, body").animate({
+        scrollTop: $("div.legal").offset().top
+      }, 2000);
+    }
+
+    $("footer nav a").on("click", function () {
+      $("html, body").animate({
+        scrollTop: $("div.legal").offset().top
+      }, 2000);
+
+      $("div.legal > div").fadeOut();
+      $("div.legal " + $(this).attr("href")).fadeIn();
     });
 
     /**
