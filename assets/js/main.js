@@ -16,7 +16,9 @@ var loadScene;
 
 
     // init controller
-    var controller = new ScrollMagic.Controller({ refreshInterval: 0 });
+    var controller = new ScrollMagic.Controller({
+      refreshInterval: 0
+    });
     loadScene = {
       main: {
         reference: [],
@@ -24,16 +26,32 @@ var loadScene;
 
           var animationLength = $("section.section-1 div.inner").width() / 2 - $("section.section-1 div.letter-one").width() + 7;
           var tween = new TimelineMax()
-            .to("section.section-1 div.text", 0.5, { opacity: 0 }, 0)
-            .to("section.section-1 div.letter-one", 1, { left: animationLength }, 0)
-            .to("section.section-1 div.letter-two", 1, { right: animationLength }, 0)
-            .to("div.light-wrapper svg", 1, { opacity: 1 }, 0.5)
-            .to("div.light-wrapper svg", 1, { top: $("div.light-wrapper svg").height() }, 1)
+            .to("section.section-1 div.text", 0.5, {
+              opacity: 0
+            }, 0)
+            .to("section.section-1 div.letter-one", 1, {
+              left: animationLength
+            }, 0)
+            .to("section.section-1 div.letter-two", 1, {
+              right: animationLength
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              opacity: 1
+            }, 0.5)
+            .to("div.light-wrapper svg", 1, {
+              top: $("div.light-wrapper svg").height()
+            }, 1)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-1", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-1",
+              triggerHook: 0,
+              duration: "100%"
+            })
             .setTween(tween)
             .setPin("section.section-1")
-            .addIndicators({ name: "Section 1" })
+            .addIndicators({
+              name: "Section 1"
+            })
             .addTo(controller);
 
           var text = [
@@ -49,73 +67,165 @@ var loadScene;
 
           var animationLength = $("section.section-2 img").height() / 2 - $("section.section-1 div.letter-one").width() + 7;
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg #circle", 1, { opacity: 1 }, 0)
-            .to("div.light-wrapper svg text", 1, { opacity: 0 }, 0)
-            .to("div.light-wrapper svg", 1, { width: "2%", left: "55%", top: "20px" }, 0)
-            .to("section.section-2 img", 1, { width: "50%", xPercent: -50, yPercent: -50 }, 0)
-            .to("div.light-wrapper svg", 1, { top: "50%", ease: Bounce.easeOut }, 1)
-            .to("div.light-wrapper svg", 1, { left: "50%", ease: Expo.easeIn }, 1)
-            .to("section.section-2 img", 0.5, { rotation: 180 }, 2)
-            .to("div.light-wrapper svg", 1, { left: "44%", ease: Bounce.easeOut }, 2)
-            .to("div.light-wrapper svg", 1, { top: "95%", ease: Power1.easeIn }, 2)
+            .to("div.light-wrapper svg #circle", 1, {
+              opacity: 1
+            }, 0)
+            .to("div.light-wrapper svg text", 1, {
+              opacity: 0
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              width: "2%",
+              left: "55%",
+              top: "20px"
+            }, 0)
+            .to("section.section-2 img", 1, {
+              width: "50%",
+              xPercent: -50,
+              yPercent: -50
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              top: "50%",
+              ease: Bounce.easeOut
+            }, 1)
+            .to("div.light-wrapper svg", 1, {
+              left: "50%",
+              ease: Expo.easeIn
+            }, 1)
+            .to("section.section-2 img", 0.5, {
+              rotation: 180
+            }, 2)
+            .to("div.light-wrapper svg", 1, {
+              left: "44%",
+              ease: Bounce.easeOut
+            }, 2)
+            .to("div.light-wrapper svg", 1, {
+              top: "95%",
+              ease: Power1.easeIn
+            }, 2)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-2", triggerHook: 0, duration: "200%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-2",
+              triggerHook: 0,
+              duration: "200%"
+            })
             .setTween(tween)
             .setPin("section.section-2")
-            .addIndicators({ name: "Section 2" })
+            .addIndicators({
+              name: "Section 2"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
         },
         ballreset1: function () {
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 1, { top: "20px", left: "20px" }, 0)
+            .to("div.light-wrapper svg", 1, {
+              top: "20px",
+              left: "20px"
+            }, 0)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "div.ball-reset-1", triggerHook: 1, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "div.ball-reset-1",
+              triggerHook: 1,
+              duration: "100%"
+            })
             .setTween(tween)
-            .addIndicators({ name: "Ball Reset" })
+            .addIndicators({
+              name: "Ball Reset"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
         },
         scene3: function () {
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 1, { top: "50%", ease: Bounce.easeOut }, 0)
-            .to("div.light-wrapper svg", 1, { left: $("section.section-3 div.text-2").position().left + $("section.section-3 div.text-2").width() + 10 + "px", ease: Power1.easeOut }, 0)
-            .to("section.section-3 div.text-1", 0.2, { opacity: 0 }, 0.35)
-            .to("section.section-3 div.text-2", 0.2, { opacity: 1 }, 0.35)
+            .to("div.light-wrapper svg", 1, {
+              top: "50%",
+              ease: Bounce.easeOut
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              left: $("section.section-3 div.text-2").position().left + $("section.section-3 div.text-2").width() + 10 + "px",
+              ease: Power1.easeOut
+            }, 0)
+            .to("section.section-3 div.text-1", 0.2, {
+              opacity: 0
+            }, 0.35)
+            .to("section.section-3 div.text-2", 0.2, {
+              opacity: 1
+            }, 0.35)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-3", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-3",
+              triggerHook: 0,
+              duration: "100%"
+            })
             .setTween(tween)
             .setPin("section.section-3")
-            .addIndicators({ name: "Section 3" })
+            .addIndicators({
+              name: "Section 3"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
         },
         scene4: function () {
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 1, { top: "40%", left: "0%", ease: Bounce.easeOut }, 0)
-            .to("div.light-wrapper svg", 1, { top: "60%", left: "100%", ease: Bounce.easeOut }, 1)
-            .to("div.light-wrapper svg", 1, { top: "60%", left: "0%", ease: Bounce.easeOut }, 2)
-            .to("div.light-wrapper svg", 1, { top: "40%", left: "100%", ease: Bounce.easeOut }, 3)
-            .to("div.light-wrapper svg", 1, { top: "50%", left: "50%", ease: Power1.easeOut }, 4);
+            .to("div.light-wrapper svg", 1, {
+              top: "40%",
+              left: "0%",
+              ease: Bounce.easeOut
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              top: "60%",
+              left: "100%",
+              ease: Bounce.easeOut
+            }, 1)
+            .to("div.light-wrapper svg", 1, {
+              top: "60%",
+              left: "0%",
+              ease: Bounce.easeOut
+            }, 2)
+            .to("div.light-wrapper svg", 1, {
+              top: "40%",
+              left: "100%",
+              ease: Bounce.easeOut
+            }, 3)
+            .to("div.light-wrapper svg", 1, {
+              top: "50%",
+              left: "50%",
+              ease: Power1.easeOut
+            }, 4);
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-4", triggerHook: 0, duration: "200%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-4",
+              triggerHook: 0,
+              duration: "200%"
+            })
             .setTween(tween)
             .setPin("section.section-4")
-            .addIndicators({ name: "Section 4" })
+            .addIndicators({
+              name: "Section 4"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
         },
         ballreset2: function () {
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 1, { top: "20px", left: "50%" }, 0)
+            .to("div.light-wrapper svg", 1, {
+              top: "20px",
+              left: "50%"
+            }, 0)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "div.ball-reset-2", triggerHook: 1, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "div.ball-reset-2",
+              triggerHook: 1,
+              duration: "100%"
+            })
             .setTween(tween)
-            .addIndicators({ name: "Ball Reset" })
+            .addIndicators({
+              name: "Ball Reset"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -128,17 +238,56 @@ var loadScene;
             rule6 = CSSRulePlugin.getRule("section.section-5 div.text-6 span:before");
 
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 10, { top: "95%", ease: Bounce.easeOut }, 0)
-            .to(rule2, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 0)
-            .to(rule3, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 1)
-            .to(rule4, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 2)
-            .to(rule5, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 3)
-            .to(rule6, 1, { cssRule: { backgroundColor: "#fdec4f", height: "100%", ease: Bounce.easeOut } }, 4);
+            .to("div.light-wrapper svg", 10, {
+              top: "95%",
+              ease: Bounce.easeOut
+            }, 0)
+            .to(rule2, 1, {
+              cssRule: {
+                backgroundColor: "#fdec4f",
+                height: "100%",
+                ease: Bounce.easeOut
+              }
+            }, 0)
+            .to(rule3, 1, {
+              cssRule: {
+                backgroundColor: "#fdec4f",
+                height: "100%",
+                ease: Bounce.easeOut
+              }
+            }, 1)
+            .to(rule4, 1, {
+              cssRule: {
+                backgroundColor: "#fdec4f",
+                height: "100%",
+                ease: Bounce.easeOut
+              }
+            }, 2)
+            .to(rule5, 1, {
+              cssRule: {
+                backgroundColor: "#fdec4f",
+                height: "100%",
+                ease: Bounce.easeOut
+              }
+            }, 3)
+            .to(rule6, 1, {
+              cssRule: {
+                backgroundColor: "#fdec4f",
+                height: "100%",
+                ease: Bounce.easeOut
+              }
+            }, 4);
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-5", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-5",
+              triggerHook: 0,
+              duration: "100%"
+            })
             .setTween(tween)
             .setPin("section.section-5")
-            .addIndicators({ name: "Section 5" })
+            .addIndicators({
+              name: "Section 5"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -146,20 +295,53 @@ var loadScene;
         scene6: function () {
 
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 1, { top: "50%", ease: Power1.easeOut }, 0)
-            .to("section.section-6 div.bild img.image-1", 1, { opacity: 0, ease: Power1.easeOut }, 1)
-            .to("section.section-6 div.text div.image-1", 1, { opacity: 0, ease: Power1.easeOut }, 1)
-            .to("section.section-6 div.bild img.image-2", 1, { opacity: 1, ease: Power1.easeOut }, 1)
-            .to("section.section-6 div.text div.image-2", 1, { opacity: 1, ease: Power1.easeOut }, 1)
-            .to("section.section-6 div.bild img.image-2", 1, { opacity: 0, ease: Power1.easeOut }, 2)
-            .to("section.section-6 div.text div.image-2", 1, { opacity: 0, ease: Power1.easeOut }, 2)
-            .to("section.section-6 div.bild img.image-3", 1, { opacity: 1, ease: Power1.easeOut }, 2)
-            .to("section.section-6 div.text div.image-3", 1, { opacity: 1, ease: Power1.easeOut }, 2);
+            .to("div.light-wrapper svg", 1, {
+              top: "50%",
+              ease: Power1.easeOut
+            }, 0)
+            .to("section.section-6 div.bild img.image-1", 1, {
+              opacity: 0,
+              ease: Power1.easeOut
+            }, 1)
+            .to("section.section-6 div.text div.image-1", 1, {
+              opacity: 0,
+              ease: Power1.easeOut
+            }, 1)
+            .to("section.section-6 div.bild img.image-2", 1, {
+              opacity: 1,
+              ease: Power1.easeOut
+            }, 1)
+            .to("section.section-6 div.text div.image-2", 1, {
+              opacity: 1,
+              ease: Power1.easeOut
+            }, 1)
+            .to("section.section-6 div.bild img.image-2", 1, {
+              opacity: 0,
+              ease: Power1.easeOut
+            }, 2)
+            .to("section.section-6 div.text div.image-2", 1, {
+              opacity: 0,
+              ease: Power1.easeOut
+            }, 2)
+            .to("section.section-6 div.bild img.image-3", 1, {
+              opacity: 1,
+              ease: Power1.easeOut
+            }, 2)
+            .to("section.section-6 div.text div.image-3", 1, {
+              opacity: 1,
+              ease: Power1.easeOut
+            }, 2);
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-6", triggerHook: 0, duration: "150%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-6",
+              triggerHook: 0,
+              duration: "150%"
+            })
             .setTween(tween)
             .setPin("section.section-6")
-            .addIndicators({ name: "Section 6" })
+            .addIndicators({
+              name: "Section 6"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -168,10 +350,16 @@ var loadScene;
 
           // var tween = new TimelineMax()
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-7", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-7",
+              triggerHook: 0,
+              duration: "100%"
+            })
             //.setTween(tween)
             .setPin("section.section-7")
-            .addIndicators({ name: "Section 7" })
+            .addIndicators({
+              name: "Section 7"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -180,10 +368,16 @@ var loadScene;
 
           // var tween = new TimelineMax()
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "section.section-8", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "section.section-8",
+              triggerHook: 0,
+              duration: "100%"
+            })
             //.setTween(tween)
             .setPin("section.section-8")
-            .addIndicators({ name: "Section 8" })
+            .addIndicators({
+              name: "Section 8"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -194,14 +388,30 @@ var loadScene;
 
 
           var tween = new TimelineMax()
-            .to("div.light-wrapper svg", 1, { rotation: 360, ease: Power1.easeOut }, 0)
-            .to("div.light-wrapper svg", 1, { top: "auto", bottom: $("footer nav").height() - $("footer nav").height() / 2 + "px", ease: Bounce.easeOut }, 0)
-            .to("div.light-wrapper svg", 1, { backgroundColor: "#fdec4f", ease: Power1.easeOut }, 0)
+            .to("div.light-wrapper svg", 1, {
+              rotation: 360,
+              ease: Power1.easeOut
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              top: "auto",
+              bottom: $("footer nav").height() - $("footer nav").height() / 2 + "px",
+              ease: Bounce.easeOut
+            }, 0)
+            .to("div.light-wrapper svg", 1, {
+              backgroundColor: "#fdec4f",
+              ease: Power1.easeOut
+            }, 0)
 
-          var scene = new ScrollMagic.Scene({ triggerElement: "footer", triggerHook: 0, duration: "100%" })
+          var scene = new ScrollMagic.Scene({
+              triggerElement: "footer",
+              triggerHook: 0,
+              duration: "100%"
+            })
             .setTween(tween)
             .setPin("footer")
-            .addIndicators({ name: "Footer" })
+            .addIndicators({
+              name: "Footer"
+            })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -277,8 +487,7 @@ var loadScene;
         setTimeout(function () {
           typeWriter(text, i + 1, selector, fnCallback)
         }, 100);
-      }
-      else if (typeof fnCallback == "function") {
+      } else if (typeof fnCallback == "function") {
         setTimeout(fnCallback, 700);
       }
     }
@@ -350,8 +559,7 @@ var loadScene;
 
       if (this.opacity > 1) {
         this.factor = -1;
-      }
-      else if (this.opacity <= 0) {
+      } else if (this.opacity <= 0) {
         this.factor = 1;
 
         this.x = Math.round(Math.random() * screenW);
@@ -361,15 +569,16 @@ var loadScene;
       this.opacity += this.increment * this.factor;
 
       context.beginPath()
-      for (var i = 5; i--;) {
-        context.lineTo(0, this.length);
-        context.translate(0, this.length);
-        context.rotate((Math.PI * 2 / 10));
-        context.lineTo(0, - this.length);
-        context.translate(0, - this.length);
-        context.rotate(-(Math.PI * 6 / 10));
-      }
-      context.lineTo(0, this.length);
+      context.arc(this.x, this.y, this.length, 0, 2 * Math.PI);
+      // for (var i = 5; i--;) {
+      //   context.lineTo(0, this.length);
+      //   context.translate(0, this.length);
+      //   context.rotate((Math.PI * 2 / 10));
+      //   context.lineTo(0, -this.length);
+      //   context.translate(0, -this.length);
+      //   context.rotate(-(Math.PI * 6 / 10));
+      // }
+      // context.lineTo(0, this.length);
       context.closePath();
       context.fillStyle = "rgba(255, 255, 255, " + this.opacity + ")";
       context.shadowBlur = 5;

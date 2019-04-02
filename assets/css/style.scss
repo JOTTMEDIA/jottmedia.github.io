@@ -2,8 +2,10 @@
  * Setting
  */
 
-$fontLora: "Lora", serif;
-$fontOswald: "Oswald", serif;
+$fontLora: "Lora",
+serif;
+$fontOswald: "Oswald",
+serif;
 
 $fontSize: 24px;
 $mobileFontSize: 18px;
@@ -26,7 +28,9 @@ $white: #fff;
  * Global Properties
  */
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -34,9 +38,11 @@ html,
 body {
   font-size: $fontSize;
   overscroll-behavior-y: none;
+
   @media only screen and (max-width: 767px) {
     font-size: $mobileFontSize;
   }
+
   @media only screen and (max-width: 479px) {
     font-size: $mobileSmallFontSize;
   }
@@ -159,18 +165,19 @@ header {
     &:before {
       content: "";
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       margin: auto;
       right: auto;
       width: 100%;
-      background: linear-gradient(
-        to bottom, 
-        $yellow, $yellow 20%, 
-        transparent 20%, transparent 40%, 
-        $yellow 40%, $yellow 60%, 
-        transparent 60%, transparent 80%, 
-        $yellow 80%, $yellow 100%
-      );
+      background: linear-gradient(to bottom,
+        $yellow, $yellow 20%,
+        transparent 20%, transparent 40%,
+        $yellow 40%, $yellow 60%,
+        transparent 60%, transparent 80%,
+        $yellow 80%, $yellow 100%);
       transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
     }
 
@@ -205,7 +212,7 @@ header {
 
       &:after {
         opacity: 1;
-        transform: translate3d(0,0,0) rotate(360deg);
+        transform: translate3d(0, 0, 0) rotate(360deg);
         transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;
       }
     }
@@ -214,17 +221,21 @@ header {
   nav {
     z-index: 1;
     position: fixed;
-    top: -100%; left: 0;
+    top: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     overflow: hidden;
 
     &:before {
       content: '';
       position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       margin: auto;
       background: rgba(darken($yellow, 10%), 0.98);
       width: 100%;
@@ -248,7 +259,7 @@ header {
     position: absolute;
     top: 30%;
     left: 50%;
-    transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%, -50%, 0);
     backface-visibility: hidden;
     perspective: 1000;
     color: $baseColor;
@@ -256,12 +267,15 @@ header {
     li {
       opacity: 0;
       text-align: center;
-      transform: translate3d(0,36px,0);
+      transform: translate3d(0, 36px, 0);
 
       &:before {
         content: '';
         position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         margin: auto;
         left: auto;
         background-color: $baseColor;
@@ -275,13 +289,16 @@ header {
         opacity: 0;
         content: attr(data-text);
         position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         margin: auto;
         color: $yellow;
         overflow: hidden;
         transform: translate(-24px, 6px);
         transition: transform 0.1s ease-out,
-        opacity 0.1s ease-out;
+          opacity 0.1s ease-out;
       }
 
       &:hover {
@@ -296,22 +313,25 @@ header {
           padding: 0 20px;
           transform: translate(0px, 6px);
           transition: transform 0.2s 0.14s ease-out,
-          opacity 0.2s 0.14s ease-out;
+            opacity 0.2s 0.14s ease-out;
         }
       }
 
       .open & {
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0, 0, 0);
         transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+
         @for $i from 1 to 5 {
-          &:nth-child(#{$i}) { transition-delay: $i * 0.1s + 0.65s; }
+          &:nth-child(#{$i}) {
+            transition-delay: $i * 0.1s + 0.65s;
+          }
         }
       }
     }
 
     @media only screen and (max-height: 499px) {
-      display: none;
+      // display: none;
     }
   }
 
@@ -328,7 +348,7 @@ header {
 
     .open & {
       opacity: 1;
-      transform: translate3d(0,0,0);
+      transform: translate3d(0, 0, 0);
       transition: transform 0.2s ease-out, opacity 0.2s ease-out;
       transition-delay: 0.75s;
     }
@@ -363,7 +383,7 @@ div.light-wrapper {
       fill: $yellow;
 
       &#circle {
-        opacity: 0;
+        opacity: 1;
       }
     }
   }
@@ -372,7 +392,7 @@ div.light-wrapper {
 section {
   width: 100vw;
   height: 100vh;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 
   div.inner {
     position: relative;
@@ -535,27 +555,27 @@ section.section-5 {
         right: 0;
         width: 100%;
         z-index: -1;
-        
+
       }
     }
   }
 
-  div.text-3 span:before{
+  div.text-3 span:before {
     background-color: transparent;
     height: 0;
   }
 
-  div.text-4 span:before{
+  div.text-4 span:before {
     background-color: transparent;
     height: 0;
   }
 
-  div.text-5 span:before{
+  div.text-5 span:before {
     background-color: transparent;
     height: 0;
   }
 
-  div.text-6 span:before{
+  div.text-6 span:before {
     background-color: transparent;
     height: 0;
   }
@@ -593,7 +613,8 @@ section.section-6 {
       width: 100%;
     }
 
-    img.image-2, img.image-3 {
+    img.image-2,
+    img.image-3 {
       position: absolute;
       top: 0;
       opacity: 0;
@@ -619,7 +640,8 @@ section.section-6 {
       margin: 0;
     }
 
-    div.image-2, div.image-3 {
+    div.image-2,
+    div.image-3 {
       position: absolute;
       top: 2vmin;
       opacity: 0;
@@ -683,7 +705,10 @@ section.section-8 {
 
   div.text {
     position: absolute;
-    top: 0; right: 0; left: 0; bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background: rgba($baseColor, .9)
   }
 
@@ -706,7 +731,9 @@ section.section-8 {
   }
 
   @media (orientation: portrait) {
-    div.jan, div.jonathan {
+
+    div.jan,
+    div.jonathan {
       width: 100vw;
       height: 50vh;
     }
@@ -721,7 +748,7 @@ section.section-8 {
 footer {
   width: 100vw;
   height: 100vh;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
   position: relative;
 
   h2 {
@@ -765,7 +792,7 @@ footer {
       top: 0;
       transform: translate(-50%, -95%);
       content: "\00a0\00a0\00a0JOTT\00a0MEDIA";
-      line-height: 1; 
+      line-height: 1;
       font-family: $fontOswald;
       font-size: 4rem;
       font-weight: 700;
@@ -783,7 +810,9 @@ div.legal {
   background: $grey;
   z-index: 9999;
 
-  #agb, #impressum, #datenschutz {
+  #agb,
+  #impressum,
+  #datenschutz {
     display: none;
   }
 
@@ -793,7 +822,8 @@ div.legal {
     margin: 0 auto;
     padding: 0 2rem 2rem;
 
-    h2, h3 {
+    h2,
+    h3 {
       padding: 0.5rem 0 0.5rem;
     }
 
@@ -833,25 +863,31 @@ span.cursor {
     opacity: 0;
     transform: scale(0.04) translateY(300%);
   }
+
   40% {
     transform: scale(0.04) translateY(0);
     transition: ease-out;
   }
+
   40% {
     transform: scale(0.04) translateY(0);
   }
+
   60% {
     opacity: 1;
     transform: scale(0.02) translateY(0px);
   }
+
   61% {
     transform: scale(0.04);
   }
+
   99.9% {
     height: 0;
     padding-bottom: 100%;
     border-radius: 100%;
   }
+
   100% {
     transform: scale(2);
     height: 100%;
