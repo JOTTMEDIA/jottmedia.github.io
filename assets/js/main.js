@@ -371,7 +371,7 @@ var loadScene;
               top: "50%",
               ease: Power1.easeOut
             }, 0)
-            .to("div.light-wrapper svg", 3, {
+            .to("div.light-wrapper svg", 2, {
               scale: 100,
               opacity: 0,
               ease: Power1.easeOut
@@ -396,7 +396,7 @@ var loadScene;
           var scene = new ScrollMagic.Scene({
               triggerElement: "section.section-8",
               triggerHook: 0,
-              duration: "100%"
+              duration: "200%"
             })
             .setTween(tween)
             .setPin("section.section-8")
