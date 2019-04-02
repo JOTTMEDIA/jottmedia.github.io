@@ -366,14 +366,39 @@ var loadScene;
         },
         scene8: function () {
 
-          // var tween = new TimelineMax()
+          var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 1, {
+              top: "50%",
+              ease: Power1.easeOut
+            }, 0)
+            .to("div.light-wrapper svg", 3, {
+              scale: 100,
+              opacity: 0,
+              ease: Power1.easeOut
+            }, 1)
+            .to("section.section-8 h2", 1, {
+              opacity: 0,
+              ease: Power1.easeOut
+            }, 2)
+            .to("section.section-8 div.jan div.overlay", 1, {
+              left: "100%",
+              ease: Power1.easeOut
+            }, 3)
+            .to("section.section-8 div.jonathan div.overlay", 1, {
+              right: "100%",
+              ease: Power1.easeOut
+            }, 3)
+            .to("section.section-8 b", 1, {
+              opacity: 1,
+              ease: Power1.easeOut
+            }, 4)
 
           var scene = new ScrollMagic.Scene({
               triggerElement: "section.section-8",
               triggerHook: 0,
               duration: "100%"
             })
-            //.setTween(tween)
+            .setTween(tween)
             .setPin("section.section-8")
             .addIndicators({
               name: "Section 8"
@@ -384,23 +409,24 @@ var loadScene;
         },
         scene9: function () {
 
-          console.log();
-
-
           var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 1, {
+              scale: 1,
+              opacity: 1
+            }, 0)
             .to("div.light-wrapper svg", 1, {
               rotation: 360,
               ease: Power1.easeOut
-            }, 0)
+            }, 1)
             .to("div.light-wrapper svg", 1, {
               top: "auto",
               bottom: $("footer nav").height() - $("footer nav").height() / 2 + "px",
               ease: Bounce.easeOut
-            }, 0)
+            }, 1)
             .to("div.light-wrapper svg", 1, {
               backgroundColor: "#fdec4f",
               ease: Power1.easeOut
-            }, 0)
+            }, 1)
 
           var scene = new ScrollMagic.Scene({
               triggerElement: "footer",

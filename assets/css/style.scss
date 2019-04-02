@@ -703,31 +703,50 @@ section.section-8 {
     margin: 0;
   }
 
-  div.text {
+  b {
+    position: absolute;
+    color: $baseColor;
+    background: $yellow;
+    bottom: 0;
+    padding: 0.5rem 1rem;
+    opacity: 0;
+  }
+
+  div.overlay {
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba($baseColor, .9)
+    background: rgba($baseColor, .95);
   }
 
   div.jan {
-    background: url(https://placeimg.com/1000/1000/any?78922) no-repeat;
+    position: relative;
+    background: url(../images/team-jan.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
     width: 50vw;
     height: 100vh;
     float: left;
+
+    b {
+      left: 0;
+    }
   }
 
   div.jonathan {
-    background: url(https://placeimg.com/1000/1000/any?78912) no-repeat;
+    position: relative;
+    background: url(../images/team-jonathan.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
     width: 50vw;
     height: 100vh;
     float: right;
+
+    b {
+      right: 0;
+    }
   }
 
   @media (orientation: portrait) {
