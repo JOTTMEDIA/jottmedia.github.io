@@ -50,9 +50,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-1")
-            .addIndicators({
-              name: "Section 1"
-            })
+            // .addIndicators({
+            //   name: "Section 1"
+            // })
             .addTo(controller);
 
           var text = [
@@ -111,9 +111,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-2")
-            .addIndicators({
-              name: "Section 2"
-            })
+            // .addIndicators({
+            //   name: "Section 2"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -124,7 +124,7 @@ var loadScene;
               scale: 2,
               top: "20px",
               left: "20px"
-            }, 0)
+            }, 1)
 
           var scene = new ScrollMagic.Scene({
               triggerElement: "div.ball-reset-1",
@@ -132,9 +132,9 @@ var loadScene;
               duration: "100%"
             })
             .setTween(tween)
-            .addIndicators({
-              name: "Ball Reset"
-            })
+            // .addIndicators({
+            //   name: "Ball Reset"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -163,9 +163,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-3")
-            .addIndicators({
-              name: "Section 3"
-            })
+            // .addIndicators({
+            //   name: "Section 3"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -205,9 +205,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-4")
-            .addIndicators({
-              name: "Section 4"
-            })
+            // .addIndicators({
+            //   name: "Section 4"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -225,9 +225,9 @@ var loadScene;
               duration: "100%"
             })
             .setTween(tween)
-            .addIndicators({
-              name: "Ball Reset"
-            })
+            // .addIndicators({
+            //   name: "Ball Reset"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -287,9 +287,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-5")
-            .addIndicators({
-              name: "Section 5"
-            })
+            // .addIndicators({
+            //   name: "Section 5"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -341,9 +341,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-6")
-            .addIndicators({
-              name: "Section 6"
-            })
+            // .addIndicators({
+            //   name: "Section 6"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -393,9 +393,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-7")
-            .addIndicators({
-              name: "Section 7"
-            })
+            // .addIndicators({
+            //   name: "Section 7"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -437,9 +437,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("section.section-8")
-            .addIndicators({
-              name: "Section 8"
-            })
+            // .addIndicators({
+            //   name: "Section 8"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
@@ -471,9 +471,9 @@ var loadScene;
             })
             .setTween(tween)
             .setPin("footer")
-            .addIndicators({
-              name: "Footer"
-            })
+            // .addIndicators({
+            //   name: "Footer"
+            // })
             .addTo(controller);
 
           loadScene.main.reference.push(scene);
