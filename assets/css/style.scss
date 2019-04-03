@@ -23,6 +23,13 @@ $white: #fff;
  * Mixin
  */
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 
 /**
  * Global Properties
@@ -153,8 +160,8 @@ header {
     background-color: transparent;
     position: fixed;
     z-index: 2;
-    top: 10px;
-    left: 10px;
+    top: 25px;
+    left: 25px;
     border: none;
     width: 36px;
     height: 30px;
@@ -173,17 +180,22 @@ header {
       right: auto;
       width: 100%;
       background: linear-gradient(to bottom,
-        $yellow, $yellow 20%,
-        transparent 20%, transparent 40%,
-        $yellow 40%, $yellow 60%,
-        transparent 60%, transparent 80%,
-        $yellow 80%, $yellow 100%);
+        $yellow,
+        $yellow 20%,
+        transparent 20%,
+        transparent 40%,
+        $yellow 40%,
+        $yellow 60%,
+        transparent 60%,
+        transparent 80%,
+        $yellow 80%,
+        $yellow 100%);
       transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
     }
 
     &:after {
       opacity: 0;
-      content: '×';
+      content: "×";
       color: $white;
       position: absolute;
       top: 16px;
@@ -216,6 +228,11 @@ header {
         transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;
       }
     }
+
+    @media only screen and (max-width: 479px) {
+      top: 10px;
+      left: 10px;
+    }
   }
 
   nav {
@@ -230,7 +247,7 @@ header {
     overflow: hidden;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       right: 0;
@@ -270,7 +287,7 @@ header {
       transform: translate3d(0, 36px, 0);
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
@@ -297,8 +314,7 @@ header {
         color: $yellow;
         overflow: hidden;
         transform: translate(-24px, 6px);
-        transition: transform 0.1s ease-out,
-          opacity 0.1s ease-out;
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
       }
 
       &:hover {
@@ -312,8 +328,7 @@ header {
           opacity: 1;
           padding: 0 20px;
           transform: translate(0px, 6px);
-          transition: transform 0.2s 0.14s ease-out,
-            opacity 0.2s 0.14s ease-out;
+          transition: transform 0.2s 0.14s ease-out, opacity 0.2s 0.14s ease-out;
         }
       }
 
@@ -328,10 +343,6 @@ header {
           }
         }
       }
-    }
-
-    @media only screen and (max-height: 499px) {
-      // display: none;
     }
   }
 
@@ -404,6 +415,10 @@ div.light-wrapper {
 
       &#circle {
         opacity: 1;
+      }
+
+      &#heart {
+        opacity: 0;
       }
     }
   }
@@ -495,7 +510,7 @@ section.section-3 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: fit-content;
+    width: 100%;
     transform: translateX(-50%);
     font-family: $fontOswald;
     font-weight: 300;
@@ -503,6 +518,10 @@ section.section-3 {
     text-transform: uppercase;
     font-size: 1.8rem;
     padding: 0 20px;
+
+    @media only screen and (max-width: 479px) {
+      font-size: 1.2rem;
+    }
   }
 
   div.text-2 {
@@ -511,13 +530,17 @@ section.section-3 {
 }
 
 section.section-4 {
-
   div.text-1 {
     text-align: center;
     width: 100%;
     font-size: 2rem;
     color: $white;
-    padding: 5vh 0;
+    padding: 20px 0;
+
+    @media only screen and (max-width: 479px) {
+      font-size: 1.5rem;
+      padding: 20px 60px;
+    }
   }
 
   div.text-2 {
@@ -535,13 +558,17 @@ section.section-4 {
 }
 
 section.section-5 {
-
   div.text-1 {
     text-align: center;
     width: 100%;
     font-size: 2rem;
     color: $white;
-    padding: 5vh 0;
+    padding: 20px 0;
+
+    @media only screen and (max-width: 479px) {
+      font-size: 1.5rem;
+      padding: 20px 60px;
+    }
   }
 
   div.leistungen {
@@ -576,7 +603,6 @@ section.section-5 {
         right: 0;
         width: 100%;
         z-index: -1;
-
       }
     }
   }
@@ -668,7 +694,6 @@ section.section-6 {
       opacity: 0;
     }
   }
-
 }
 
 section.section-7 {
@@ -683,14 +708,26 @@ section.section-7 {
     letter-spacing: 0.2rem;
     background: $baseColor;
     text-align: center;
-    padding: 2vw 0;
+    padding: 20px 0;
     margin: 0;
+
+    @media only screen and (max-width: 479px) {
+      font-size: 1.5rem;
+      padding: 10px 60px;
+    }
   }
 
   div.image-holder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     text-align: center;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    transform: translate(-50%, -50%);
+
+    @include clearfix();
 
     img {
       float: left;
@@ -700,15 +737,18 @@ section.section-7 {
     }
   }
 
-  @media only screen and (max-width: 767px) {
-    div.image-holder img {
-      width: 33.3%;
+  @media (orientation: portrait) {
+    div.image-holder {
+      width: 50%;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }
 
 section.section-8 {
-
   h2 {
     font-family: $fontOswald;
     text-transform: uppercase;
@@ -735,11 +775,11 @@ section.section-8 {
 
   div.overlay {
     position: absolute;
-    top: -0.5px;
-    right: -0.5px;
-    left: -0.5px;
-    bottom: -0.5px;
-    background: rgba($baseColor, .95);
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    bottom: -1px;
+    background: rgba($baseColor, 0.95);
   }
 
   div.jan {
@@ -750,6 +790,7 @@ section.section-8 {
     width: 50vw;
     height: 100vh;
     float: left;
+    overflow: hidden;
 
     b {
       left: 0;
@@ -764,6 +805,7 @@ section.section-8 {
     width: 50vw;
     height: 100vh;
     float: right;
+    overflow: hidden;
 
     b {
       right: 0;
@@ -778,7 +820,6 @@ section.section-8 {
       height: 50vh;
     }
   }
-
 }
 
 /**

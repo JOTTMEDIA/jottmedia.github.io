@@ -350,14 +350,48 @@ var loadScene;
         },
         scene7: function () {
 
-          // var tween = new TimelineMax()
+          var tween = new TimelineMax()
+            .to("div.light-wrapper svg", 1, {
+              scale: 2,
+              top: "90%"
+            }, 0)
+            .to("div.light-wrapper svg #circle", 1, {
+              opacity: 0
+            }, 1)
+            .to("div.light-wrapper svg #heart", 1, {
+              opacity: 1
+            }, 1)
+            .to("div.light-wrapper svg", 1, {
+              scale: 8,
+              ease: Bounce.easeIn,
+              force3D: false
+            }, 2)
+            .to("div.light-wrapper svg", 1, {
+              scale: 2,
+              ease: Bounce.easeIn
+            }, 3)
+            .to("div.light-wrapper svg", 1, {
+              scale: 8,
+              ease: Bounce.easeIn,
+              force3D: false
+            }, 4)
+            .to("div.light-wrapper svg", 1, {
+              scale: 2,
+              ease: Bounce.easeIn
+            }, 5)
+            .to("div.light-wrapper svg #circle", 1, {
+              opacity: 1
+            }, 6)
+            .to("div.light-wrapper svg #heart", 1, {
+              opacity: 0
+            }, 6)
 
           var scene = new ScrollMagic.Scene({
               triggerElement: "section.section-7",
               triggerHook: 0,
               duration: "100%"
             })
-            //.setTween(tween)
+            .setTween(tween)
             .setPin("section.section-7")
             .addIndicators({
               name: "Section 7"
