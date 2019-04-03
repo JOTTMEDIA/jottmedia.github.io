@@ -17,7 +17,8 @@ var loadScene;
 
     // init controller
     var controller = new ScrollMagic.Controller({
-      refreshInterval: 0
+      refreshInterval: 0,
+      force3D: false
     });
     loadScene = {
       main: {
@@ -120,6 +121,7 @@ var loadScene;
         ballreset1: function () {
           var tween = new TimelineMax()
             .to("div.light-wrapper svg", 1, {
+              scale: 2,
               top: "20px",
               left: "20px"
             }, 0)
@@ -374,7 +376,8 @@ var loadScene;
             .to("div.light-wrapper svg", 2, {
               scale: 100,
               opacity: 0,
-              ease: Power1.easeOut
+              ease: Power1.easeOut,
+              force3D: false
             }, 1)
             .to("section.section-8 h2", 1, {
               opacity: 0,
@@ -411,7 +414,7 @@ var loadScene;
 
           var tween = new TimelineMax()
             .to("div.light-wrapper svg", 1, {
-              scale: 1,
+              scale: 1.2,
               opacity: 1
             }, 0)
             .to("div.light-wrapper svg", 1, {
@@ -419,8 +422,7 @@ var loadScene;
               ease: Power1.easeOut
             }, 1)
             .to("div.light-wrapper svg", 1, {
-              top: "auto",
-              bottom: $("footer nav").height() - $("footer nav").height() / 2 + "px",
+              top: 100 - (($("footer nav").height() + 20) / $(window).height() * 100) + "%",
               ease: Bounce.easeOut
             }, 1)
             .to("div.light-wrapper svg", 1, {
@@ -470,8 +472,15 @@ var loadScene;
      * Window Resize
      */
 
+    var reloadTimeout;
     $(window).resize(function () {
-      window.location.reload();
+      reloadTimeout = setTimeout(function () {
+        window.location.reload();
+      }, 1000);
+    });
+
+    $(window).scroll(function () {
+      clearTimeout(reloadTimeout);
     });
 
     /**
