@@ -58,7 +58,7 @@ var loadScene;
           var text = [
             "Wir gestalten, konzipieren, programmieren und visualisieren Medien.",
             "Wir sind JOTT.MEDIA - eine Digital- & Print-Agentur aus Schaumburg.",
-            "Was? Noch am lesen? Bitte scrollen."
+            "Was? Noch beim Lesen? Bitte scrollen."
           ];
           startTextAnimation(0, text, "section.section-1 div.text");
 
