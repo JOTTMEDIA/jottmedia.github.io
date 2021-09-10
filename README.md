@@ -10,12 +10,6 @@ Handcrafted ScrollMagic Website
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) - The iconic font and CSS toolkit
 - [Prepros](https://github.com/Subash/Prepros) - Compile almost any preprocessing language with live browser refresh.
 
-## Authors
-
-- **Katharina Pätzold** - _Idea & Concept_
-- **Jan Jünemann** - _Design_
-- **Jonathan Schneider** - _Development_ - [JonathanSchndr](https://github.com/JonathanSchndr)
-
 ## MIT License
 
 Copyright (c) 2018 JOTT.MEDIA
