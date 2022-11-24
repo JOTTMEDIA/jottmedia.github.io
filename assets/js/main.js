@@ -3,17 +3,6 @@ var loadScene;
 
   $(function () {
 
-    /**
-     * Check old Browser
-     */
-
-    outdatedBrowser({
-      bgColor: "#fdec4f",
-      color: "#1d1d1b",
-      lowerThan: "transform",
-      languagePath: ""
-    })
-
 
     // init controller
     var controller = new ScrollMagic.Controller({
