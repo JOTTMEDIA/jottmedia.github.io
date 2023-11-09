@@ -1,9 +1,10 @@
 <template>
   <div class="bg-jm-secondary-grey-lighter">
-    <UContainer class="py-8" :ui="{'constrained': 'max-w-xl'}">
-
+    <UContainer class="py-8" :ui="{'constrained': 'max-w-4xl'}">
       <Instagram />
+    </UContainer>
 
+    <UContainer class="py-12" :ui="{'constrained': 'max-w-3xl'}">
       <div class="flex justify-between items-end leading-7">
         <div>
           <address class="not-italic">
@@ -21,8 +22,9 @@
         </div>
       </div>
     </UContainer>
-    <div class="bg-jm-primary-green text-sm p-4">
-      <UContainer :ui="{'constrained': 'max-w-xl'}">
+
+    <div class="bg-jm-primary-green text-sm py-4">
+      <UContainer :ui="{'constrained': 'max-w-3xl'}">
         <p>© {{ new Date().getFullYear() }} JOTT.MEDIA – Alle Rechte vorbehalten</p>
       </UContainer>
     </div>

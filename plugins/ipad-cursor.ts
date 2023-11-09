@@ -3,9 +3,9 @@ import { ipadCursorPlugin } from "ipad-cursor/vue"
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(ipadCursorPlugin, {
         enableLighting: true,
-        blockPadding: 8,
+        blockPadding: 6,
         enableAutoTextCursor: true,
         className: 'jm-cursor',
-        adsorptionStrength: 10,
+        adsorptionStrength: 0,
     });
 })
