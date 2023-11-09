@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "JOTT.MEDIA Corporate Website",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,5 +13,8 @@
     "@nuxt/devtools": "latest",
     "@nuxt/ui": "^2.9.0",
     "nuxt": "^3.7.4"
+  },
+  "dependencies": {
+    "@nuxt/ui-pro": "^0.4.2"
   }
 }
