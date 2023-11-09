@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   extends: ['@nuxt/ui-pro'],
   modules: [
     '@nuxt/content',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@vueuse/nuxt'
   ],
   pages: true
 })
