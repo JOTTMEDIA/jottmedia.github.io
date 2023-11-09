@@ -4,18 +4,13 @@ import type { NavItem } from '@nuxt/content/dist/runtime/types'
 const navigation = inject<Ref<NavItem[]>>('navigation')
 
 const links = [{
-  label: 'Documentation',
+  label: 'Home',
   icon: 'i-heroicons-book-open',
-  to: '/getting-started'
+  to: '/'
 }, {
-  label: 'Pro',
-  icon: 'i-heroicons-square-3-stack-3d',
-  to: '/pro'
-}, {
-  label: 'Releases',
-  icon: 'i-heroicons-rocket-launch',
-  to: 'https://github.com/nuxt/ui/releases',
-  target: '_blank'
+  label: 'Blog',
+  icon: 'i-heroicons-book-open',
+  to: '/blog'
 }]
 </script>
 
@@ -26,10 +21,8 @@ const links = [{
     </template>
 
     <template #right>
-      <UDocsSearchButton :label="null" />
-
+      <UDocsSearchButton :label="null"  />
       <UColorModeButton />
-
       <UButton to="https://github.com/nuxt/ui" target="_blank" icon="i-simple-icons-github" color="gray" variant="ghost" />
     </template>
 
