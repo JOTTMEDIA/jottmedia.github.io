@@ -1,16 +1,3 @@
-<script setup>
-const links = [{
-  label: 'IMpres',
-  to: 'https://ui.nuxt.com/'
-}, {
-  label: 'Nuxt Docs',
-  to: 'https://nuxt.com'
-}, {
-  label: 'Nuxt Studio',
-  to: 'https://nuxt.studio',
-}]
-</script>
-
 <template>
   <UFooter :links="links">
     <template #left>
@@ -18,3 +5,13 @@ const links = [{
     </template>
   </UFooter>
 </template>
+
+<script setup>
+const links = [{
+  label: 'Impressum',
+  to: '/imprint'
+}, {
+  label: 'Datenschutz',
+  to: '/priacy'
+}]
+</script>
