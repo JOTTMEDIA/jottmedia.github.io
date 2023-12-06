@@ -1,6 +1,6 @@
 export default defineAppConfig({
   ui: {
-    primary: 'lime',
-    gray: 'neutral',
+    primary: 'jm-primary-green',
+    gray: 'jm-secondary-grey',
   }
 })
