@@ -1,6 +1,9 @@
 <template>
   <div class="bg-jm-secondary-grey-lighter">
-    <UContainer class="mb-16" :ui="{'constrained': 'max-w-xl'}">
+    <UContainer class="py-8" :ui="{'constrained': 'max-w-xl'}">
+
+      <Instagram />
+
       <div class="flex justify-between items-end leading-7">
         <div>
           <address class="not-italic">
@@ -27,5 +30,6 @@
 </template>
 
 <script setup lang="ts">
+
 
 </script>
