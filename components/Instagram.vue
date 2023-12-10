@@ -22,7 +22,6 @@ interface InstagramPosts {
   link?: string
 }
 
-// load posts from /api/instagram/feed
-const { data } = useFetch<InstagramPosts[]>(`/api/instagram/feed?handle=${props.handle}`)
+// const { data } = useFetch<InstagramPosts[]>(`/api/instagram/user`)
 const posts = ref<InstagramPosts[]>([])
 </script>
