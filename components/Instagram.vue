@@ -1,11 +1,11 @@
 <template>
   <div class="text-center mb-8">
-    <a href="https://www.instagram.com/jott.media/" target="_blank" v-cursor-block class="inline-block"><UIcon class="text-jm-primary-green text-[70px]" name="i-mdi-instagram" /></a>
+    <a href="https://www.instagram.com/jott.media/" target="_blank" class="inline-block"><UIcon class="text-jm-primary-green text-[70px]" name="i-mdi-instagram" /></a>
   </div>
 
   <div class="flex justify-center space-x-5">
     <div v-for="post in posts" :key="post.id">
-      <a :href="post.link" target="_blank" v-cursor-block><img :src="post.media_url"  :alt="post.alt"/></a>
+      <a :href="post.link" target="_blank"><img :src="post.media_url"  :alt="post.alt"/></a>
     </div>
   </div>
 </template>

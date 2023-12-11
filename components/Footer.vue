@@ -12,13 +12,13 @@
             Bahnhofstraße 33<br>
             31675 Bückeburg<br>
             <br>
-            <a href="tel:+4957229979070"><span v-cursor-block>+49 5722 99790 70</span></a><br>
-            <a href="mailto:hallo@jott.media"><span v-cursor-block>hallo@jott.media</span></a>
+            <a href="tel:+4957229979070">+49 5722 99790 70</a><br>
+            <a href="mailto:hallo@jott.media">hallo@jott.media</a>
           </address>
         </div>
         <div class="text-right">
-          <nuxt-link to="/imprint" class="block font-[700] text-jm-primary-green uppercase"><span v-cursor-block>.Impressum</span></nuxt-link>
-          <nuxt-link to="/privacy" class="block font-[700] text-jm-primary-green uppercase"><span v-cursor-block>.Datenschutz</span></nuxt-link>
+          <nuxt-link to="/imprint" class="block font-[700] text-jm-primary-green uppercase">.Impressum</nuxt-link>
+          <nuxt-link to="/privacy" class="block font-[700] text-jm-primary-green uppercase">.Datenschutz</nuxt-link>
         </div>
       </div>
     </UContainer>

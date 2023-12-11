@@ -12,9 +12,6 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt'
   ],
-  plugins: [
-    '~/plugins/ipad-cursor',
-  ],
   pages: true,
   colorMode: {
     preference: 'light'
