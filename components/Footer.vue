@@ -17,8 +17,8 @@
           </address>
         </div>
         <div class="text-right">
-          <nuxt-link to="/imprint" class="block font-[700] text-jm-primary-green uppercase">.Impressum</nuxt-link>
-          <nuxt-link to="/privacy" class="block font-[700] text-jm-primary-green uppercase">.Datenschutz</nuxt-link>
+          <nuxt-link to="/imprint" class="block font-[800] text-jm-primary-green uppercase">.Impressum</nuxt-link>
+          <nuxt-link to="/privacy" class="block font-[800] text-jm-primary-green uppercase">.Datenschutz</nuxt-link>
         </div>
       </div>
     </UContainer>
