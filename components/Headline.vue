@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
+const { width, height } = useWindowSize()
 
 const props = defineProps({
   type: {
@@ -19,11 +20,11 @@ const props = defineProps({
 })
 
 const typeToClass = {
-  h1: 'text-4xl',
-  h2: 'text-3xl',
-  h3: 'text-2xl uppercase',
-  h4: 'text-xl uppercase',
-  h5: 'text-lg uppercase',
-  h6: 'text-sm mb-8',
+  h1: width.value > 768 ? 'text-4xl' : 'text-3xl',
+  h2: width.value > 768 ? 'text-3xl' : 'text-2xl',
+  h3: width.value > 768 ? 'text-2xl uppercase' : 'text-xl uppercase',
+  h4: width.value > 768 ? 'text-xl uppercase' : 'text-lg uppercase',
+  h5: width.value > 768 ? 'text-lg uppercase' : 'text-base uppercase',
+  h6: width.value > 768 ? 'text-sm mb-8' : 'text-sm mb-6',
 }
 </script>

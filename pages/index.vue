@@ -1,7 +1,7 @@
 <template>
   <UPage>
     <UPageBody>
-      <UContainer class="py-10 flex h-screen flex-col justify-between" :ui="{'constrained': 'max-w-3xl'}">
+      <UContainer class="py-10 flex h-screen flex-col justify-between space-y-5" :ui="{'constrained': 'max-w-3xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0"><Image src="logo.svg" class="w-[400px]" /></NuxtLink>
         </Center>
