@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
 
 export default <Partial<Config>>{
     theme: {
@@ -23,37 +22,37 @@ export default <Partial<Config>>{
         extend: {
             colors: {
                 'jm-primary-brown': {
-                    DEFAULT: '#878568',
-                    light: '#c4c2b4',
-                    lighter: '#dbdad2',
+                    DEFAULT: '#9B9371',
+                    light: '#C3C2B4',
+                    lighter: '#DBDAD2',
                 },
                 'jm-primary-grey': {
-                    DEFAULT: '#696e6b',
-                    light: '#b5b7b5',
-                    lighter: '#d2d4d3',
+                    DEFAULT: '#7C7B7B',
+                    light: '#B5B7B5',
+                    lighter: '#D2D4D3',
                 },
                 'jm-primary-green': {
-                    DEFAULT: '#5c7459',
-                    light: '#aeb9ac',
-                    lighter: '#cfd5cc',
+                    DEFAULT: '#687E5E',
+                    light: '#AEB9AC',
+                    lighter: '#CFD5CD',
                 },
                 'jm-secondary-grey': {
-                    DEFAULT: '#babcb8',
-                    light: '#dddedc',
-                    lighter: '#eaebea',
+                    DEFAULT: '#C9CAC9',
+                    light: '#DDDEDC',
+                    lighter: '#EAEBEA',
                 },
                 'jm-secondary-white': {
-                    DEFAULT: '#fffffe',
+                    DEFAULT: '#FFFFFF',
                 },
                 'jm-contrast-blue': {
-                    DEFAULT: '#35504f',
-                    light: '#9ba6a7',
-                    lighter: '#c3caca',
+                    DEFAULT: '#3B5B5D',
+                    light: '#9BA7A7',
+                    lighter: '#C3CACA',
                 },
                 'jm-contrast-black': {
-                    DEFAULT: '#000105',
+                    DEFAULT: '#000000',
                     light: '#808082',
-                    lighter: '#b3b3b4',
+                    lighter: '#B3B3B4',
                 },
             },
         },
