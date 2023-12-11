@@ -3,7 +3,7 @@
     <UPageBody>
       <UContainer class="py-10 flex h-screen flex-col justify-between" :ui="{'constrained': 'max-w-3xl'}">
         <Center>
-          <Image src="logo.svg" class="w-96"/>
+          <NuxtLink to="/" class="inline-block no-underline border-0"><Image src="logo.svg" class="w-96"/></NuxtLink>
         </Center>
 
         <Center>
@@ -39,7 +39,7 @@
         <Headline type="h5" class="text-jm-primary-brown font-[800]">Konzeption, Prototyping, Programmierung & Design</Headline>
         <Paragraph>Von komplexen, automatisierten und <b>individuell</b> zugeschnittenen <b>Websites & Apps</b> mit einem hohen Anspruch an <b>Funktionalität, Userfreundlichkeit</b> und <b>Ästhetik.</b> Weiterer Text mit dem Aufgreifen von z. B. UI und UX Design und genaureres zu Prototyping von Apps und Web-Applikationen. Mehr Details zu euren Leistungen und Arbeitsvorgängen.</Paragraph>
         <Center>
-          <NuxtLink :to="{ path: '/', hash: '#' }">
+          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Lass uns gemeinsam loslegen</Button>
           </NuxtLink>
         </Center>
@@ -51,7 +51,7 @@
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Center>
-          <NuxtLink :to="{ path: '/', hash: '#' }">
+          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Lerne uns kennen</Button>
           </NuxtLink>
         </Center>
@@ -75,7 +75,7 @@
         <Headline type="h4" class="text-jm-primary-brown font-[800]">Ehrlich. zuverlässig. partnerschaftlich.</Headline>
         <Paragraph>Text zu eurer Arbeitsweise in Verbindung mit euren Werten (Texte zu den Werten aufgreifen, für euch passende Inhalte einbinden. Was macht euch aus, was ist euere Unternehmenskultur: Kultur des Miteinanders, des rerspektvolle, zuverlässigem und vertrauensvollem Miteinander. Zugewandt und offen, in einer Partnerschaft, in der Ehrlichkeit auf beiden Seite die Zusammenarbeit stärkt.</Paragraph>
         <Center>
-          <NuxtLink :to="{ path: '/', hash: '#' }">
+          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Starte mit uns durch</Button>
           </NuxtLink>
         </Center>
