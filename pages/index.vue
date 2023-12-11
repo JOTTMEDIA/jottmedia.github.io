@@ -39,7 +39,7 @@
       <UContainer class="py-12" :ui="{'constrained': 'max-w-3xl'}">
         <h4>Unsere <b class="uppercase">Arbeitsweise</b></h4>
         <h3>Ehrlich. zuverlässig. partnerschaftlich.</h3>
-        <p>Text zu eurer Arbeitsweise in Verbindung mit euren Werten (Texte zu den Werten aufgreifen, für euch passende Inhalte einbinden. Was macht euch aus, was ist euere Unternehmenskultur: Kultur des Miteinanders, des rerspektvolle, zuverlässigem und vertrauensvollem Miteinander. Zugewandt und offen, in einer Partnerschaft, in der Ehrlichkeit auf beiden Seite die Zusammenarbeit stärkt.</p>
+        <Paragraph>Text zu eurer Arbeitsweise in Verbindung mit euren Werten (Texte zu den Werten aufgreifen, für euch passende Inhalte einbinden. Was macht euch aus, was ist euere Unternehmenskultur: Kultur des Miteinanders, des rerspektvolle, zuverlässigem und vertrauensvollem Miteinander. Zugewandt und offen, in einer Partnerschaft, in der Ehrlichkeit auf beiden Seite die Zusammenarbeit stärkt.</Paragraph>
         <div class="text-center"><Button href="#" label="Starte mit uns durch" /></div>
       </UContainer>
     </UPageBody>
