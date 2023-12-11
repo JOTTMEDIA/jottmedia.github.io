@@ -1,6 +1,6 @@
 <template>
   <UPage>
-    <UPageBody prose>
+    <UPageBody>
       <h1>Impressum</h1>
       <p>Lorem Ipsum</p>
     </UPageBody>

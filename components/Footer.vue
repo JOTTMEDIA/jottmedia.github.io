@@ -4,7 +4,7 @@
       <Instagram />
     </UContainer>
 
-    <UContainer class="py-12" :ui="{'constrained': 'max-w-3xl'}">
+    <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
       <div class="flex justify-between items-end leading-7">
         <div>
           <address class="not-italic">
@@ -23,8 +23,8 @@
       </div>
     </UContainer>
 
-    <div class="bg-jm-primary-green text-sm py-4">
-      <UContainer :ui="{'constrained': 'max-w-3xl'}">
+    <div class="bg-jm-primary-green text-sm py-5">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <p>© {{ new Date().getFullYear() }} JOTT.MEDIA – Alle Rechte vorbehalten</p>
       </UContainer>
     </div>
