@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" class="block w-full" />
+  <NuxtImg :src="src" :alt="alt" class="inline-block w-full" />
 </template>
 
 <script setup lang="ts">

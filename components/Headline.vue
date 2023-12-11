@@ -20,10 +20,10 @@ const props = defineProps({
 
 const typeToClass = {
   h1: 'text-4xl',
-  h2: 'text-3xl leading-10',
+  h2: 'text-3xl',
   h3: 'text-2xl uppercase',
   h4: 'text-xl uppercase',
   h5: 'text-lg uppercase',
-  h6: 'text-sm mb-11',
+  h6: 'text-sm mb-8',
 }
 </script>

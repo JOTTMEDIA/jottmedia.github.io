@@ -1,19 +1,19 @@
 <template>
   <div class="bg-jm-secondary-grey-lighter">
-    <UContainer class="py-8" :ui="{'constrained': 'max-w-4xl'}">
+    <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
       <Instagram />
     </UContainer>
 
     <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-      <div class="flex justify-between items-end leading-7">
+      <div class="flex justify-between items-end">
         <div>
           <address class="not-italic">
             JOTT.MEDIA GmbH<br>
             Bahnhofstraße 33<br>
             31675 Bückeburg<br>
             <br>
-            <a href="tel:+4957229979070">+49 5722 99790 70</a><br>
-            <a href="mailto:hallo@jott.media">hallo@jott.media</a>
+            <nuxt-link href="tel:+4957229979070">+49 5722 99790 70</nuxt-link><br>
+            <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link>
           </address>
         </div>
         <div class="text-right">
