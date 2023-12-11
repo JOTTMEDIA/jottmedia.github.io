@@ -24,6 +24,6 @@ const typeToClass = {
   h3: 'text-2xl uppercase',
   h4: 'text-xl uppercase',
   h5: 'text-lg uppercase',
-  h6: 'text-sm mb-6',
+  h6: 'text-sm mb-11',
 }
 </script>
