@@ -1,7 +1,7 @@
 <template>
   <UPage>
     <UPageBody>
-      <UContainer class="py-10 flex h-screen flex-col justify-between space-y-5" :ui="{'constrained': 'max-w-3xl'}">
+      <UContainer class="py-10 flex h-screen flex-col justify-between gap-y-5" :ui="{'constrained': 'max-w-3xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0"><Image src="logo.svg" class="w-[400px]" /></NuxtLink>
         </Center>
@@ -63,7 +63,7 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
-        [Carousel]
+        <Carousel :items="carouselItems" />
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -84,4 +84,21 @@
   </UPage>
 </template>
 <script setup lang="ts">
+const carouselItems = ref([
+  {
+    id: '1',
+    media_url: 'https://picsum.photos/800/800',
+    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+  },
+  {
+    id: '2',
+    media_url: 'https://picsum.photos/800/800',
+    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+  },
+  {
+    id: '3',
+    media_url: 'https://picsum.photos/800/800',
+    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+  },
+])
 </script>

@@ -3,15 +3,14 @@
     <NuxtLink href="https://www.instNuxtLinkgram.com/jott.media/" target="_blank" class="inline-block"><UIcon class="text-jm-primary-green text-[70px]" name="i-mdi-instagram" /></NuxtLink>
   </div>
 
-  <div class="flex justify-center space-x-5">
-    <div v-for="post in posts" :key="post.id">
+  <div class="flex justify-center gap-x-5 overflow-hidden">
+    <div v-for="post in posts" :key="post.id" class="min-w-[50%] md:min-w-[33%]">
       <NuxtLink :href="post.link" target="_blank"><Image :src="post.media_url" :alt="post.alt"/></NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 interface InstagramPosts {
   id: string
   media_url: string
