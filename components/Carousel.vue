@@ -31,7 +31,6 @@ const { x, y } = useScroll(carousel, { behavior: 'smooth' })
 usePointerSwipe(carousel, {
   disableTextSelect: true,
   onSwipeEnd(e: PointerEvent, direction) {
-    console.log(direction)
     if(direction === 'left') {
       x.value += (carousel.value?.children[0].clientWidth ?? 0) + 20
     } else if(direction === 'right') {
