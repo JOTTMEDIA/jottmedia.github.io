@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       enabled: true
     }
   },
+  routeRules: {
+    '/': { prerender: true },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
