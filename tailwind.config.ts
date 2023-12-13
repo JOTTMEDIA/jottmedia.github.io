@@ -10,9 +10,9 @@ export default <Partial<Config>>{
             'sm': ['.8rem', '1.6'],    // 16px - h6 - smalltext
             'tiny': ['.9rem', '1.6'],  // 18px - small - button
             'base': ['1rem', '1.6'],   // 20px - -- - text
-            'lg': ['1.2rem', '1.6'],   // 24px - h5 - leadtext
-            'xl': ['1.5rem', '1.6'],   // 30px - h4
-            '2xl': ['1.8rem', '1.6'],  // 36px - h3
+            'lg': ['1.2rem', '1.4'],   // 24px - h5 - leadtext
+            'xl': ['1.5rem', '1.4'],   // 30px - h4
+            '2xl': ['1.8rem', '1.4'],  // 36px - h3
             '3xl': ['2.1rem', '1.2'],  // 42px - h2
             '4xl': ['3.2rem', '1.2'],  // 64px - h1
             '5xl': ['3.2rem', '1.2'],  // FALLBACK 4xl

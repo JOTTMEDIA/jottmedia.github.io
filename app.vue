@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-cursor" :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}" :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
+  <div class="custom-cursor overflow-x-hidden" :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}" :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
     <NuxtLayout>
       <NuxtPage/>
     </NuxtLayout>
@@ -48,49 +48,52 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss">
-* { cursor: none !important; }
 
-.custom-cursor {
-  --mouse-x: 0;
-  --mouse-y: 0;
-  position: relative;
-}
+@media (hover: hover) {
+  * { cursor: none !important; }
 
-.custom-cursor {
-  &.cursor-down::before {
-    width: 40px;
-    height: 40px;
+  .custom-cursor {
+    --mouse-x: 0;
+    --mouse-y: 0;
+    position: relative;
   }
 
-  &.cursor-show::before {
-    opacity: 1;
+  .custom-cursor {
+    &.cursor-down::before {
+      width: 40px;
+      height: 40px;
+    }
+
+    &.cursor-show::before {
+      opacity: 1;
+    }
+
+    &::before {
+      transition: width 0.1s ease-out, height 0.1s ease-out, opacity 0.1s ease-out;
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      mix-blend-mode: difference;
+      pointer-events: none;
+      left: var(--mouse-x);
+      top: var(--mouse-y);
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+      opacity: 0;
+    }
   }
 
-  &::before {
-    transition: width 0.1s ease-out, height 0.1s ease-out, opacity 0.1s ease-out;
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    left: var(--mouse-x);
-    top: var(--mouse-y);
-    transform: translate(-50%, -50%);
-    z-index: 99999;
+  .page-enter-active,
+  .page-leave-active {
+    transition: all 0.4s;
+  }
+  .page-enter-from,
+  .page-leave-to {
     opacity: 0;
+    filter: blur(1rem);
   }
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s;
-}
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
 }
 </style>

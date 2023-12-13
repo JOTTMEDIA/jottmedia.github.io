@@ -4,7 +4,9 @@
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <NuxtLink to="/"><UIcon name="i-mdi-arrow-left-circle" /></NuxtLink>
         <Center>
-          <NuxtLink to="/" class="inline-block no-underline border-0"><Image src="logo.svg" class="w-96"/></NuxtLink>
+          <NuxtLink to="/" class="inline-block no-underline border-0">
+            <NuxtImg src="logo.svg" alt="JOTT.MEDIA" class="w-[400px]" />
+          </NuxtLink>
         </Center>
       </UContainer>
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -130,5 +132,9 @@
     </UPageBody>
   </UPage>
 </template>
+
 <script setup lang="ts">
+useHead({
+  title: 'Impressum - JOTT.MEDIA'
+})
 </script>

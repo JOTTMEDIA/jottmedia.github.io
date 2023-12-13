@@ -5,7 +5,9 @@
 
   <div class="flex justify-center gap-x-5 overflow-hidden">
     <div v-for="post in posts" :key="post.id" class="min-w-[50%] md:min-w-[33%]">
-      <NuxtLink :href="post.link" target="_blank"><Image :src="post.media_url" :alt="post.alt"/></NuxtLink>
+      <NuxtLink :href="post.link" target="_blank">
+        <NuxtImg :src="post.media_url" :alt="post.alt" />
+      </NuxtLink>
     </div>
   </div>
 </template>

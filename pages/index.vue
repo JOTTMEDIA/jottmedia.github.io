@@ -3,7 +3,9 @@
     <UPageBody>
       <UContainer class="py-10 flex h-screen flex-col justify-between gap-y-5" :ui="{'constrained': 'max-w-3xl'}">
         <Center>
-          <NuxtLink to="/" class="inline-block no-underline border-0"><Image src="logo.svg" class="w-[400px]" /></NuxtLink>
+          <NuxtLink to="/" class="inline-block no-underline border-0">
+            <NuxtImg src="logo.svg" alt="JOTT.MEDIA" class="w-[400px]" />
+          </NuxtLink>
         </Center>
 
         <Center>
@@ -27,7 +29,7 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
-        <Image src="https://picsum.photos/1024/768" alt="" />
+        <NuxtImg src="https://picsum.photos/1024/768" alt="" />
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -45,8 +47,12 @@
         </Center>
       </UContainer>
 
-      <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
-        [Mitarbeiter]
+      <UContainer class="py-10 md:mb-40" :ui="{'constrained': 'max-w-4xl'}">
+        <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jonathan, CTO" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu verändern.</b>“</ImageFigure>
+        <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jan, CCO" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
+        <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Arian, Developer" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu verändern.</b>“</ImageFigure>
+        <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Annika, Graphic Designer" align="right">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu verändern.</b>“</ImageFigure>
+        <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Inke, CFO" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu verändern.</b>“</ImageFigure>
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
