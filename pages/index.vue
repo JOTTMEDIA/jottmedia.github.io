@@ -29,7 +29,7 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
-        <NuxtImg src="https://picsum.photos/1024/768" alt="" />
+        <NuxtImg src="https://picsum.photos/1024/768" alt="" class="w-full block" />
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
