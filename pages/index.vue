@@ -36,8 +36,8 @@
         <Background height="636px" src="header-green-bottom.svg" position="bottom" />
       </div>
 
-      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}">
-        <NuxtImg src="https://picsum.photos/1024/768" alt="" class="w-full block" />
+      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}" style="perspective: 3000px">
+        <NuxtImg ref="image" :style="imageStyle" src="https://picsum.photos/1024/768" alt="" class="w-full block" />
       </UContainer>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -107,6 +107,17 @@
   </UPage>
 </template>
 <script setup lang="ts">
+import { useParallax } from '@vueuse/core'
+
+const image = ref(null)
+const parallax = reactive(useParallax(image))
+const imageStyle = computed(() => ({
+  transition: '.3s ease-out all',
+  transform: `rotateX(${parallax.roll * 20}deg) rotateY(${
+      parallax.tilt * 20
+  }deg)`,
+}))
+
 const carouselItems = ref([
   {
     id: '1',

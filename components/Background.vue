@@ -1,8 +1,10 @@
 <template>
-  <div :style="{backgroundImage: `url('${getImageAbsolutePath(src)}')`, height, width}" :class="[out ? positionToClassOut[position] : positionToClassIn[position]]" />
+  <div ref="image" :style="{backgroundImage: `url('${getImageAbsolutePath(src)}')`, height, width}" :class="[out ? positionToClassOut[position] : positionToClassIn[position]]" />
 </template>
 
 <script setup lang="ts">
+import {useParallax} from "@vueuse/core";
+
 const props = defineProps({
   height: {
     type: String,
@@ -25,6 +27,19 @@ const props = defineProps({
     default: true,
   },
 })
+
+// const image = ref(null)
+// const parallax = reactive(useParallax(image))
+// const imageStyle = computed(() => ({
+//   transition: '.3s ease-out all',
+//   transform: `translateX(${parallax.tilt * getNumberByString(props.src as string)}px)`,
+// }))
+//
+// // get a number by string between 1 and 20
+// const getNumberByString = (str: string): number => {
+//   const number = str.split('').reduce((acc, curr) => acc + curr.charCodeAt(0), 0)
+//   return number % 200 + 1
+// }
 
 const positionToClassOut = {
   top: 'absolute top-0 -translate-y-full repeat-x bg-center w-full',
