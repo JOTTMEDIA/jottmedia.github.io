@@ -1,9 +1,9 @@
 <template>
-  <div class="relative bg-jm-secondary-grey-lighter">
-    <Background height="178px" src="footer-top.svg" position="top" :out="false" />
+  <div class="relative bg-jm-secondary-grey-lighter mt-40">
+    <Background height="178px" src="footer-top.svg" position="top" />
 
     <div class="relative z-10">
-      <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-4xl'}">
+      <UContainer class="relative pb-10 z-10" :ui="{'constrained': 'max-w-4xl'}">
         <Instagram />
       </UContainer>
 
@@ -26,7 +26,7 @@
         </div>
       </UContainer>
 
-      <Background width="800px" height="500px" src="box.png" position="bottomRight" :out="false" />
+      <Background width="800px" height="500px" src="footer-box.png" position="bottomRight" :out="false" />
     </div>
 
     <div class="bg-jm-primary-green text-sm py-5">

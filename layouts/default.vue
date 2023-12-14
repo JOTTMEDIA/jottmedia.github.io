@@ -1,9 +1,6 @@
 <template>
-  <!--<Header />-->
-  <UContainer>
-    <UMain>
-      <slot />
-    </UMain>
-  </UContainer>
+  <UMain>
+    <slot />
+  </UMain>
   <Footer />
 </template>
