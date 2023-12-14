@@ -1,11 +1,12 @@
 <template>
-  <component :is="type" :class="typeToClass[format ?? type]" class="my-0 mb-4">
+  <component ref="target" :is="type" :class="[typeToClass[format ?? type], {'animation-bigger': targetIsVisible || targetIsAlreadyVisible}]" class="my-0 mb-4">
     <slot />
   </component>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import { useWindowSize, useIntersectionObserver } from '@vueuse/core'
 const { width, height } = useWindowSize()
 
 const props = defineProps({
@@ -27,4 +28,38 @@ const typeToClass = {
   h5: width.value > 768 ? 'text-lg uppercase' : 'text-base uppercase',
   h6: width.value > 768 ? 'text-sm mb-8' : 'text-sm mb-6',
 }
+
+const target = ref(null)
+const targetIsVisible = ref(false)
+const targetIsAlreadyVisible = ref(false)
+const { stop } = useIntersectionObserver(
+    target,
+    ([{ isIntersecting }], observerElement) => {
+      targetIsVisible.value = isIntersecting
+      if (isIntersecting) targetIsAlreadyVisible.value = true
+    },
+)
 </script>
+
+<style>
+@keyframes bigger {
+  0% {
+    font-variation-settings: "wght" 400;
+    letter-spacing: 0.05em;
+  }
+  40% {
+    font-variation-settings: "wght" 600;
+    letter-spacing: 0.03em;
+  }
+  100% {
+    font-variation-settings: "wght" 800;
+    letter-spacing: 0;
+  }
+}
+
+.animation-bigger b {
+  animation: bigger;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+</style>

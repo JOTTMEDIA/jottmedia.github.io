@@ -46,7 +46,7 @@
 
       <UContainer id="leistungen" class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">Unsere <b class="uppercase">Leistungen</b></Headline>
-        <Headline type="h5" class="text-jm-primary-brown font-[800]">Konzeption, Prototyping, Programmierung & Design</Headline>
+        <Headline type="h5" class="text-jm-primary-brown"><b>Konzeption, Prototyping, Programmierung & Design</b></Headline>
         <Paragraph>Von komplexen, automatisierten und <b>individuell</b> zugeschnittenen <b>Websites & Apps</b> mit einem hohen Anspruch an <b>Funktionalität, Userfreundlichkeit</b> und <b>Ästhetik.</b> Weiterer Text mit dem Aufgreifen von z. B. UI und UX Design und genaureres zu Prototyping von Apps und Web-Applikationen. Mehr Details zu euren Leistungen und Arbeitsvorgängen.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
@@ -90,12 +90,12 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Headline type="h3" class="font-[400]">Wir sind anders als andere, denn wir sind ehrlich mit dir und möchten <span class="text-jm-primary-brown font-[800]">deine unternehmerischen Prozesse</span> <span class="font-[800]">bis ins Detail</span> <span class="text-jm-primary-brown font-[800]">kennenlernen.</span></Headline>
+        <Headline type="h3" class="font-[400]">Wir sind anders als andere, denn wir sind ehrlich mit dir und möchten <b class="text-jm-primary-brown">deine unternehmerischen Prozesse</b> <b>bis ins Detail</b> <b class="text-jm-primary-brown">kennenlernen.</b></Headline>
       </UContainer>
 
       <UContainer id="arbeitsweise" class="py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">Unsere <b class="uppercase">Arbeitsweise</b></Headline>
-        <Headline type="h4" class="text-jm-primary-brown font-[800]">Ehrlich. zuverlässig. partnerschaftlich.</Headline>
+        <Headline type="h4" class="text-jm-primary-brown"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
         <Paragraph>Text zu eurer Arbeitsweise in Verbindung mit euren Werten (Texte zu den Werten aufgreifen, für euch passende Inhalte einbinden. Was macht euch aus, was ist euere Unternehmenskultur: Kultur des Miteinanders, des rerspektvolle, zuverlässigem und vertrauensvollem Miteinander. Zugewandt und offen, in einer Partnerschaft, in der Ehrlichkeit auf beiden Seite die Zusammenarbeit stärkt.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
