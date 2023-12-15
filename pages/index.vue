@@ -57,8 +57,7 @@
       </UContainer>
 
       <div class="relative">
-        <Background height="757px" src="grey.svg" position="top" :out="false" />
-        <Background height="1397px" src="sand-grey.svg" position="top" :out="false" />
+        <Background height="757px" src="grey-top.svg" position="top" :out="false" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
@@ -66,7 +65,7 @@
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
-        <Background height="854px" src="sand.svg" position="bottom" :out="false" />
+        <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" />
       </div>
 
       <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -78,7 +77,7 @@
       </UContainer>
 
       <div class="relative bg-jm-primary-green mt-64">
-        <Background height="703px" src="green-top.svg" position="top" />
+        <Background height="702px" src="green-top.svg" position="top" />
         <UContainer id="argument" class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
           <Headline type="h6">Unser <b class="uppercase">Argument</b></Headline>
           <Headline type="h2" class="font-[400]">„<b class="uppercase">Wir sind</b> anders als Andere, denn wir sind <b class="uppercase">ehrlich</b> mit dir.“</Headline>
@@ -96,7 +95,7 @@
 
       <UContainer id="services" class="py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
-        <Paragraph><b class="text-jm-primary-brown">Konzeption, Prototyping, programmierung & Design</b> von digitalen Lösungen, mit denen du deine Herausforderungen optimal meisterst. Anders gesagt: wir machen kompliziertes einfach – und räumen Wachstumsbremsen aus dem Weg. Ganz gleich, ob Webseite, Web-Applikation oder App: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und bestechende Ästhetik aus. Hand drauf.</Paragraph>
+        <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von digitalen Lösungen, mit denen du deine Herausforderungen optimal meisterst. Anders gesagt: wir machen kompliziertes einfach – und räumen Wachstumsbremsen aus dem Weg. Ganz gleich, ob Webseite, Web-Applikation oder App: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und bestechende Ästhetik aus. Hand drauf.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Los geht`s</Button>
