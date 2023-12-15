@@ -11,7 +11,7 @@
 
           <Center>
             <Headline type="h1" class="pb-5">Machen wir es<br><span class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.</Headline>
-            <NuxtLink :to="{ path: '/', hash: '#mission' }">
+            <NuxtLink :to="{ path: '/', hash: '#machen' }">
               <Button>Einfach machen</Button>
             </NuxtLink>
           </Center>
@@ -29,7 +29,7 @@
 
       <div class="relative bg-jm-primary-green">
         <Background height="644px" src="header-green-top.svg" position="top" />
-        <UContainer id="mission" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
+        <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
           <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
           <Headline type="h4"><b>Mehr Zeit</b>, sodass du deiner Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
         </UContainer>
@@ -40,12 +40,12 @@
         <NuxtImg ref="image" :style="imageStyle" src="https://picsum.photos/1024/768" alt="" class="w-full block" />
       </UContainer>
 
-      <UContainer id="question" class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">Die wichtigste <b class="uppercase">Frage</b></Headline>
         <Headline type="h2" class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein Unternehmen wirklich?</b>“</Headline>
       </UContainer>
 
-      <UContainer id="leistungen" class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">So arbeiten wir <b class="uppercase">für Dich</b></Headline>
         <Headline type="h5" class="text-jm-primary-brown"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
         <Paragraph>Die Lösung muss immer zum Problem passen. Darum steht bei uns <b>an erster Stelle</b> die Analyse deiner Herausforderung. Erst, wenn diese glasklar ist, widmen wir uns der <b>Konzeption und Umsetzung</b> des tatsächlichen Produkts, wie auch immer das in deinem konkreten Fall aussehen mag. Damit das funktioniert, ist eine ehrliche, zuverlässige und partnerschaftliche Zusammenarbeit – <b>auf Augenhöhe</b> und auf beiden Seiten – unabdingbar.</Paragraph>
@@ -78,7 +78,7 @@
 
       <div class="relative bg-jm-primary-green mt-64">
         <Background height="702px" src="green-top.svg" position="top" />
-        <UContainer id="argument" class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+        <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
           <Headline type="h6">Unser <b class="uppercase">Argument</b></Headline>
           <Headline type="h2" class="font-[400]">„<b class="uppercase">Wir sind</b> anders als Andere, denn wir sind <b class="uppercase">ehrlich</b> mit dir.“</Headline>
         </UContainer>
@@ -93,7 +93,7 @@
         <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>indivuduell für dein Unternehmen.</b></Headline>
       </UContainer>
 
-      <UContainer id="services" class="py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
         <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir machen kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite, Web-Applikation oder App</b>: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.</Paragraph>
         <Center>
