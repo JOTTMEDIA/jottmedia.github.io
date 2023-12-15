@@ -1,6 +1,6 @@
 <template>
   <div class="relative bg-jm-secondary-grey-lighter mt-40">
-    <Background height="178px" src="footer-top.svg" position="top" />
+    <Background height="127px" src="footer-top.svg" position="top" />
 
     <div class="relative z-10">
       <UContainer class="relative pb-10 z-10" :ui="{'constrained': 'max-w-4xl'}">
