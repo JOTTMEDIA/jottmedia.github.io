@@ -90,12 +90,12 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Headline type="h3" class="font-[400]">Wir entwickeln und designen  <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>indivuduell für dein Unternehmen.</b></Headline>
+        <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>indivuduell für dein Unternehmen.</b></Headline>
       </UContainer>
 
       <UContainer id="services" class="py-10" :ui="{'constrained': 'max-w-2xl'}">
         <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
-        <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von digitalen Lösungen, mit denen du deine Herausforderungen optimal meisterst. Anders gesagt: wir machen kompliziertes einfach – und räumen Wachstumsbremsen aus dem Weg. Ganz gleich, ob Webseite, Web-Applikation oder App: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und bestechende Ästhetik aus. Hand drauf.</Paragraph>
+        <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir machen kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite, Web-Applikation oder App</b>: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Los geht`s</Button>
