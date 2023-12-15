@@ -1,5 +1,5 @@
 <template>
-  <component ref="target" :is="type" :class="[typeToClass[format ?? type], {'animation-bigger': targetIsVisible || targetIsAlreadyVisible}]" class="my-0 mb-4">
+  <component ref="target" :is="type" :class="[typeToClass[format ?? type], {'h-animation-bigger': targetIsVisible || targetIsAlreadyVisible}]" class="my-0 mb-4">
     <slot />
   </component>
 </template>
@@ -42,14 +42,14 @@ const { stop } = useIntersectionObserver(
 </script>
 
 <style>
-@keyframes bigger {
+@keyframes h-bigger {
   0% {
     font-variation-settings: "wght" 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
   }
   40% {
     font-variation-settings: "wght" 600;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
   100% {
     font-variation-settings: "wght" 800;
@@ -57,8 +57,8 @@ const { stop } = useIntersectionObserver(
   }
 }
 
-.animation-bigger b {
-  animation: bigger;
+.h-animation-bigger b {
+  animation: h-bigger;
   animation-duration: 1s;
   animation-timing-function: linear;
 }

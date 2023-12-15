@@ -69,7 +69,7 @@
         <Background height="854px" src="sand.svg" position="bottom" :out="false" />
       </div>
 
-      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Lerne uns kennen</Button>
