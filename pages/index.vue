@@ -28,7 +28,7 @@
       </div>
 
       <div class="relative bg-jm-primary-green">
-        <Background height="645px" src="header-green-top.svg" position="top" />
+        <Background height="644px" src="header-green-top.svg" position="top" />
         <UContainer id="mission" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
           <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
           <Headline type="h4"><b>Mehr Zeit</b>, sodass du deiner Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
@@ -57,7 +57,7 @@
       </UContainer>
 
       <div class="relative">
-        <Background height="815px" src="grey.svg" position="top" :out="false" />
+        <Background height="757px" src="grey.svg" position="top" :out="false" />
         <Background height="1397px" src="sand-grey.svg" position="top" :out="false" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
@@ -83,7 +83,7 @@
           <Headline type="h6">Unser <b class="uppercase">Argument</b></Headline>
           <Headline type="h2" class="font-[400]">„<b class="uppercase">Wir sind</b> anders als Andere, denn wir sind <b class="uppercase">ehrlich</b> mit dir.“</Headline>
         </UContainer>
-        <Background height="518px" src="green-bottom.svg" position="bottom" />
+        <Background height="517px" src="green-bottom.svg" position="bottom" />
       </div>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
