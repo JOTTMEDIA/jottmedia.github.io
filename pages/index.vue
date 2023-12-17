@@ -5,7 +5,7 @@
         <UContainer class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10" :ui="{'constrained': 'max-w-3xl'}">
           <Center>
             <NuxtLink to="/" class="inline-block no-underline border-0">
-              <NuxtImg src="logo.svg" alt="JOTT.MEDIA" class="w-[400px]" />
+              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[350px]" :shine="false" :parallax="false" />
             </NuxtLink>
           </Center>
 
@@ -36,8 +36,8 @@
         <Background height="875px" src="header-green-bottom.svg" position="bottom" parallax="to-left" />
       </div>
 
-      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}" style="perspective: 3000px">
-        <NuxtImg ref="image" :style="imageStyle" src="https://picsum.photos/1024/768" alt="" class="w-full block" />
+      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}">
+        <Image src="https://picsum.photos/1024/768" alt="" />
       </UContainer>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -59,11 +59,11 @@
       <div class="relative">
         <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
-          <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
-          <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
-          <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
-          <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
-          <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
+          <ImageFigure src="https://picsum.photos/1800/1800" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
+          <ImageFigure src="https://picsum.photos/1800/1800" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
+          <ImageFigure src="https://picsum.photos/1800/1800" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
+          <ImageFigure src="https://picsum.photos/1800/1800" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
+          <ImageFigure src="https://picsum.photos/1800/1800" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
         <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left" />
       </div>
@@ -106,31 +106,20 @@
   </UPage>
 </template>
 <script setup lang="ts">
-import { useParallax } from '@vueuse/core'
-
-const image = ref(null)
-const parallax = reactive(useParallax(image))
-const imageStyle = computed(() => ({
-  transition: '.3s ease-out all',
-  transform: `rotateX(${parallax.roll * 20}deg) rotateY(${
-      parallax.tilt * 20
-  }deg)`,
-}))
-
 const carouselItems = ref([
   {
     id: '1',
-    media_url: 'https://picsum.photos/800/800',
+    src: 'https://picsum.photos/800/800',
     alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
   {
     id: '2',
-    media_url: 'https://picsum.photos/800/800',
+    src: 'https://picsum.photos/800/800',
     alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
   {
     id: '3',
-    media_url: 'https://picsum.photos/800/800',
+    src: 'https://picsum.photos/800/800',
     alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
   },
 ])

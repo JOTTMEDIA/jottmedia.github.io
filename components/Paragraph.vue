@@ -19,7 +19,7 @@ const { stop } = useIntersectionObserver(
 )
 </script>
 
-<style>
+<style lang="scss">
 @keyframes p-bigger {
   0% {
     font-variation-settings: "wght" 400;

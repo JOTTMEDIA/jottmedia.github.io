@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import { useWindowSize, useIntersectionObserver } from '@vueuse/core'
 const { width, height } = useWindowSize()
 
@@ -41,7 +40,7 @@ const { stop } = useIntersectionObserver(
 )
 </script>
 
-<style>
+<style lang="scss">
 @keyframes h-bigger {
   0% {
     font-variation-settings: "wght" 400;
