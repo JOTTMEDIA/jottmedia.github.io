@@ -5,7 +5,7 @@
         <UContainer class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10" :ui="{'constrained': 'max-w-3xl'}">
           <Center>
             <NuxtLink to="/" class="inline-block no-underline border-0">
-              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[350px]" :shine="false" :parallax="false" />
+              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
             </NuxtLink>
           </Center>
 
