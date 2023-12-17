@@ -24,16 +24,16 @@
           </Center>
         </UContainer>
         <Background width="1000px" height="1100px" src="header-box.png" position="bottomLeft" :out="false" />
-        <Background height="701px" src="header-grey.svg" position="bottom" :out="false" />
+        <Background height="701px" src="header-grey.svg" position="bottom" :out="false" parallax="to-right" />
       </div>
 
       <div class="relative bg-jm-primary-green">
-        <Background height="644px" src="header-green-top.svg" position="top" />
+        <Background height="644px" src="header-green-top.svg" position="top" parallax="to-left" />
         <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
           <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
           <Headline type="h4"><b>Mehr Zeit</b>, sodass du deiner Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
         </UContainer>
-        <Background height="875px" src="header-green-bottom.svg" position="bottom" />
+        <Background height="875px" src="header-green-bottom.svg" position="bottom" parallax="to-left" />
       </div>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}" style="perspective: 3000px">
@@ -57,7 +57,7 @@
       </UContainer>
 
       <div class="relative">
-        <Background height="757px" src="grey-top.svg" position="top" :out="false" />
+        <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
@@ -65,7 +65,7 @@
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
           <ImageFigure media-url="https://picsum.photos/1800/1800" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
-        <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" />
+        <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left" />
       </div>
 
       <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -77,12 +77,12 @@
       </UContainer>
 
       <div class="relative bg-jm-primary-green mt-64">
-        <Background height="702px" src="green-top.svg" position="top" />
+        <Background height="702px" src="green-top.svg" position="top" parallax="to-right" />
         <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
           <Headline type="h6">Unser <b class="uppercase">Argument</b></Headline>
           <Headline type="h2" class="font-[400]">„<b class="uppercase">Wir sind</b> anders als Andere, denn wir sind <b class="uppercase">ehrlich</b> mit dir.“</Headline>
         </UContainer>
-        <Background height="517px" src="green-bottom.svg" position="bottom" />
+        <Background height="517px" src="green-bottom.svg" position="bottom" parallax="to-right" />
       </div>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">

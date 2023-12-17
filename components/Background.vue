@@ -1,9 +1,9 @@
 <template>
-  <div ref="image" :style="{backgroundImage: `url('${getImageAbsolutePath(src)}')`, height, width}" :class="[out ? positionToClassOut[position] : positionToClassIn[position]]" />
+  <div ref="target" :style="{backgroundImage: `url('${getImageAbsolutePath(src)}')`, height, width, ...targetStyle}" :class="[out ? positionToClassOut[position] : positionToClassIn[position]]" />
 </template>
 
 <script setup lang="ts">
-import {useParallax} from "@vueuse/core";
+import { useElementBounding } from "@vueuse/core";
 
 const props = defineProps({
   height: {
@@ -26,41 +26,44 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  parallax: {
+    type: String,
+    default: null,
+  },
 })
 
-// const image = ref(null)
-// const parallax = reactive(useParallax(image))
-// const imageStyle = computed(() => ({
-//   transition: '.3s ease-out all',
-//   transform: `translateX(${parallax.tilt * getNumberByString(props.src as string)}px)`,
-// }))
-//
-// // get a number by string between 1 and 20
-// const getNumberByString = (str: string): number => {
-//   const number = str.split('').reduce((acc, curr) => acc + curr.charCodeAt(0), 0)
-//   return number % 200 + 1
-// }
+const target = ref(null)
+const targetBounding = reactive(useElementBounding(target))
+const targetStyle = computed(() => {
+  if(props.parallax == 'to-right')
+    return { backgroundPosition: `${(targetBounding.y * 0.01) + 50}%` }
+
+  if(props.parallax == 'to-left')
+    return  { backgroundPosition: `${(targetBounding.y * -0.01) + 50}%` }
+
+  return {}
+})
 
 const positionToClassOut = {
-  top: 'absolute top-0 -translate-y-full repeat-x bg-center w-full',
+  top: 'absolute top-0 -translate-y-full repeat-x bg-center w-screen',
   topLeft: 'absolute top-0 left-0 -translate-y-full bg-no-repeat bg-contain bg-left-top',
   topRight: 'absolute top-0 right-0 -translate-y-full bg-no-repeat bg-contain bg-right-top',
-  center: 'absolute top-1/2 -translate-y-1/2 repeat-x bg-center w-full',
+  center: 'absolute top-1/2 -translate-y-1/2 repeat-x bg-center w-screen',
   centerLeft: 'absolute top-1/2 left-0 -translate-y-1/2 bg-no-repeat bg-contain bg-left-center',
   centerRight: 'absolute top-1/2 right-0 -translate-y-1/2 bg-no-repeat bg-contain bg-right-center',
-  bottom: 'absolute bottom-0 translate-y-full repeat-x bg-center w-full',
+  bottom: 'absolute bottom-0 translate-y-full repeat-x bg-center w-screen',
   bottomLeft: 'absolute bottom-0 left-0 translate-y-full bg-no-repeat bg-contain bg-left-bottom',
   bottomRight: 'absolute bottom-0 right-0 translate-y-full bg-no-repeat bg-contain bg-right-bottom',
 }
 
 const positionToClassIn = {
-  top: 'absolute top-0 repeat-x bg-center w-full',
+  top: 'absolute top-0 repeat-x bg-center w-screen',
   topLeft: 'absolute top-0 left-0 bg-no-repeat bg-contain bg-left-top',
   topRight: 'absolute top-0 right-0 bg-no-repeat bg-contain bg-right-top',
-  center: 'absolute top-1/2 -translate-y-1/2 repeat-x bg-center w-full',
+  center: 'absolute top-1/2 -translate-y-1/2 repeat-x bg-center w-screen',
   centerLeft: 'absolute top-1/2 left-0 -translate-y-1/2 bg-no-repeat bg-contain bg-left-center',
   centerRight: 'absolute top-1/2 right-0 -translate-y-1/2 bg-no-repeat bg-contain bg-right-center',
-  bottom: 'absolute bottom-0 repeat-x bg-center w-full',
+  bottom: 'absolute bottom-0 repeat-x bg-center w-screen',
   bottomLeft: 'absolute bottom-0 left-0 bg-no-repeat bg-contain bg-left-bottom',
   bottomRight: 'absolute bottom-0 right-0 bg-no-repeat bg-contain bg-right-bottom'
 }
