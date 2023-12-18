@@ -18,7 +18,7 @@
 
           <Center>
             <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
-            <NuxtLink :to="{ path: '/', hash: '#mission' }">
+            <NuxtLink :to="{ path: '/', hash: '#machen' }">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down" />
             </NuxtLink>
           </Center>
