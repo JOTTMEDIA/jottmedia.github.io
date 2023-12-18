@@ -51,6 +51,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     '@nuxt/image',
+    '@nuxthq/studio'
   ],
   pages: true,
   colorMode: {
