@@ -23,7 +23,7 @@
             </NuxtLink>
           </Center>
         </UContainer>
-        <Background width="1000px" height="1100px" src="header-box.png" position="bottomLeft" :out="false" />
+        <Background width="1100px" height="1100px" src="header-box.png" position="bottomLeft" :out="false" />
         <Background height="701px" src="header-grey.svg" position="bottom" :out="false" parallax="to-right" />
       </div>
 

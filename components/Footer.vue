@@ -26,7 +26,7 @@
         </div>
       </UContainer>
 
-      <Background width="800px" height="500px" src="footer-box.png" position="bottomRight" :out="false" />
+      <Background width="500px" height="500px" src="footer-box.png" position="bottomRight" :out="false" />
     </div>
 
     <div class="bg-jm-primary-green text-sm py-5">
