@@ -1,5 +1,3 @@
 # JOTT.MEDIA Website
 
-## Todo
-- [ ] Favicon 1024x1024 PNG
-- [ ] Align Tailwind Colors
+We are super happy to release our new website in 2023. We have stored our old one in our archive tag.
