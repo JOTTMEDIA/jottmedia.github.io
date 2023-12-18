@@ -31,7 +31,7 @@
         <Background height="644px" src="header-green-top.svg" position="top" parallax="to-left" />
         <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
           <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
-          <Headline type="h4"><b>Mehr Zeit</b>, sodass du deiner Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
+          <Headline type="h4"><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
         </UContainer>
         <Background height="875px" src="header-green-bottom.svg" position="bottom" parallax="to-left" />
       </div>
@@ -80,7 +80,7 @@
         <Background height="702px" src="green-top.svg" position="top" parallax="to-right" />
         <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
           <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
-          <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>indivuduell für dein Unternehmen.</b></Headline>
+          <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></Headline>
         </UContainer>
         <Background height="517px" src="green-bottom.svg" position="bottom" parallax="to-right" />
       </div>
@@ -90,10 +90,10 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir machen kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite, Web-Applikation oder App</b>: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.</Paragraph>
+        <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir machen Kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite, Web-Applikation oder App</b>: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Los geht`s</Button>
+            <Button>Los geht's</Button>
           </NuxtLink>
         </Center>
       </UContainer>
