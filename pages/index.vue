@@ -37,7 +37,7 @@
       </div>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}">
-        <Image src="https://picsum.photos/1024/768" alt="" />
+        <Image src="team.jpg" alt="Arian und Jan im Termin" />
       </UContainer>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
@@ -59,11 +59,11 @@
       <div class="relative">
         <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
-          <ImageFigure src="https://picsum.photos/1800/1800" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
-          <ImageFigure src="https://picsum.photos/1800/1800" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
-          <ImageFigure src="https://picsum.photos/1800/1800" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
-          <ImageFigure src="https://picsum.photos/1800/1800" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
-          <ImageFigure src="https://picsum.photos/1800/1800" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
+          <ImageFigure src="annika.jpg" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
+          <ImageFigure src="jan.jpg" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
+          <ImageFigure src="arian.jpg" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
+          <ImageFigure src="jonathan.jpg" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
+          <ImageFigure src="inke.jpg" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
         <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left" />
       </div>
@@ -109,18 +109,28 @@
 const carouselItems = ref([
   {
     id: '1',
-    src: 'https://picsum.photos/800/800',
-    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    src: '1-team-arian-annika.jpg',
+    alt: 'Arian und Annika spielen Klask',
   },
   {
     id: '2',
-    src: 'https://picsum.photos/800/800',
-    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    src: '2-team-jonathan-jan.jpg',
+    alt: 'Jan und Jonathan sind im Termin',
   },
   {
     id: '3',
-    src: 'https://picsum.photos/800/800',
-    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    src: '3-iphone-cd.jpg',
+    alt: 'Wir erstellen ein Bild von unserem iPhone'
+  },
+  {
+    id: '4',
+    src: '4-klask.jpg',
+    alt: 'Ein Klask-Match',
+  },
+  {
+    id: '5',
+    src: '5-work.jpg',
+    alt: 'Wir sind bei der Arbeit',
   },
 ])
 </script>

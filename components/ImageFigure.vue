@@ -1,7 +1,7 @@
 <template>
   <div class="flex" :class="typeToClass[align]">
     <div class="md:w-2/5 space-y-10 relative">
-      <Image :src="src" :alt="alt" />
+      <Image :src="src" :alt="hint ?? ''" />
       <div class="md:absolute">
         <Headline type="h5"><slot /></Headline>
         <Paragraph v-if="hint != null" class="italic text-sm mb-10">{{ hint }}</Paragraph>
@@ -20,10 +20,6 @@ const props = defineProps({
   src: {
     type: String,
     required: true
-  },
-  alt: {
-    type: String,
-    default: ''
   },
   hint: {
     type: String,
