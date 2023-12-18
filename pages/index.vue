@@ -59,10 +59,10 @@
       <div class="relative">
         <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
-          <ImageFigure src="annika.jpg" hint="Annika // Gestaltung" align="right">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
+          <ImageFigure src="annika.jpg" hint="Annika // Gestaltung" align="left">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
           <ImageFigure src="jan.jpg" hint="Jan // Gestaltung" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
           <ImageFigure src="arian.jpg" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
-          <ImageFigure src="jonathan.jpg" hint="Jonathan // Entwicklung" align="left">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
+          <ImageFigure src="jonathan.jpg" hint="Jonathan // Entwicklung" align="right">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
           <ImageFigure src="inke.jpg" hint="Inke // Buchhaltung" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
         <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left" />
@@ -79,8 +79,8 @@
       <div class="relative bg-jm-primary-green mt-64">
         <Background height="702px" src="green-top.svg" position="top" parallax="to-right" />
         <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
-          <Headline type="h6">Unser <b class="uppercase">Argument</b></Headline>
-          <Headline type="h2" class="font-[400]">„<b class="uppercase">Wir sind</b> anders als Andere, denn wir sind <b class="uppercase">ehrlich</b> mit dir.“</Headline>
+          <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
+          <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>indivuduell für dein Unternehmen.</b></Headline>
         </UContainer>
         <Background height="517px" src="green-bottom.svg" position="bottom" parallax="to-right" />
       </div>
@@ -90,11 +90,6 @@
       </UContainer>
 
       <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>indivuduell für dein Unternehmen.</b></Headline>
-      </UContainer>
-
-      <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
         <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir machen kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite, Web-Applikation oder App</b>: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität, begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">

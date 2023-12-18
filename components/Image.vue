@@ -1,6 +1,6 @@
 <template>
   <div class="image-wrapper" :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}">
-    <NuxtImg ref="image" :style="imageStyle" :src="src" :alt="alt" class="w-full block" />
+    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full block" />
   </div>
 </template>
 
@@ -35,6 +35,11 @@ const props = defineProps({
     default: true,
   },
 })
+
+const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
+const getImageAbsolutePath = (imageName: string): string | undefined => {
+  return glob[`/assets/images/${imageName}`]['default'];
+};
 </script>
 
 <style lang="scss">
