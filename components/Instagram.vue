@@ -24,21 +24,21 @@ interface InstagramPosts {
 const posts = ref<InstagramPosts[]>([
   {
     id: '1',
-    src: 'https://picsum.photos/800/800',
+    src: '1-instagram.jpg',
     link: 'https://www.instgram.com/jott.media/',
-    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    alt: 'Unser neues Corporate Design ist da! Wir freuen uns sehr, euch unser neues Logo präsentieren zu dürfen.',
   },
   {
     id: '2',
-    src: 'https://picsum.photos/800/800',
+    src: '2-instagram.jpg',
     link: 'https://www.instgram.com/jott.media/',
-    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    alt: 'Unser neues Corporate Design ist da! Wir freuen uns sehr, euch unser neues Logo präsentieren zu dürfen',
   },
   {
     id: '3',
-    src: 'https://picsum.photos/800/800',
+    src: '3-instagram.jpg',
     link: 'https://www.instgram.com/jott.media/',
-    alt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+    alt: 'Unser neues Corporate Design ist da! Wir freuen uns sehr, euch unser neues Logo präsentieren zu dürfen',
   },
 ])
 </script>

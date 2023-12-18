@@ -4,7 +4,7 @@
 
     <div class="relative z-10">
       <UContainer class="relative pb-10 z-10" :ui="{'constrained': 'max-w-4xl'}">
-<!--        <Instagram />-->
+        <Instagram />
       </UContainer>
 
       <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-2xl'}">
