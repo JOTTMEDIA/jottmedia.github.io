@@ -1,6 +1,6 @@
 export default defineAppConfig({
   ui: {
-    primary: 'jm-primary-green',
-    gray: 'jm-secondary-grey'
+    primary: 'nuxt-ui-primary',
+    gray: 'nuxt-ui-grey'
   }
 })

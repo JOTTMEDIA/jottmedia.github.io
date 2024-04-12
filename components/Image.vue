@@ -1,6 +1,9 @@
 <template>
   <div class="image-wrapper" :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}">
-    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full block" />
+    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full block m-0" />
+    <UContainer :ui="{'constrained': 'max-w-2xl'}">
+      <Paragraph v-if="hint != null" class="text-jm-primary-gre italic text-sm !mb-0">{{ hint }}</Paragraph>
+    </UContainer>
   </div>
 </template>
 
@@ -23,6 +26,10 @@ const props = defineProps({
     required: true,
   },
   alt: {
+    type: String,
+    default: null,
+  },
+  hint: {
     type: String,
     default: null,
   },
