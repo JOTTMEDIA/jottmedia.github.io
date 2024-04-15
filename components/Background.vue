@@ -1,5 +1,5 @@
 <template>
-  <div ref="target" :style="{backgroundImage: `url('${getImageAbsolutePath(src)}')`, height, width, ...targetStyle}" :class="[out ? positionToClassOut[position] : positionToClassIn[position]]" />
+  <div ref="target" :style="{backgroundImage: `url(${getImageAbsolutePath(src)})`, height, width, ...targetStyle}" :class="[out ? positionToClassOut[position] : positionToClassIn[position]]" />
 </template>
 
 <script setup lang="ts">
@@ -70,6 +70,6 @@ const positionToClassIn = {
 
 const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
 const getImageAbsolutePath = (imageName: string): string | undefined => {
-  return glob[`/assets/images/${imageName}`]['default'];
+  return '\"' + glob[`/assets/images/${imageName}`]['default'] + '\"';
 };
 </script>
