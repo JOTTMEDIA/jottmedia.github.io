@@ -41,7 +41,7 @@ useSeoMeta({
   ogTitle: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
   description: page.value?.description,
   ogDescription: page.value?.description,
-  ogImage: getImageAbsolutePath(page.value?.image),
+  ogImage: "https://jott.media" + getImageAbsolutePath(page.value?.image),
   twitterCard: 'summary_large_image',
 })
 </script>
