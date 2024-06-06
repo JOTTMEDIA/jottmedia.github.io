@@ -31,12 +31,17 @@
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 
+const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
+const getImageAbsolutePath = (imageName: string): string | undefined => {
+  return glob[`/assets/images/${imageName}`]['default'];
+};
+
 useSeoMeta({
   title: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
   ogTitle: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
   description: page.value?.description,
   ogDescription: page.value?.description,
-  ogImage: '/' + page.value?.image,
+  ogImage: getImageAbsolutePath(page.value?.image),
   twitterCard: 'summary_large_image',
 })
 </script>
