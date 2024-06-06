@@ -1,6 +1,6 @@
 <template>
   <UPage>
-    <UPageBody prose>
+    <UPageBody prose class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base">
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0">
@@ -9,8 +9,8 @@
         </Center>
       </UContainer>
       <UContainer class="pt-10" :ui="{'constrained': 'max-w-2xl'}">
-        <h1>{{ page?.title }}</h1>
-        <small>{{ page?.date }} von {{ page?.author }}</small>
+        <h1 v-html="page?.title" class="text-4xl" />
+        <small>{{ page?.date }} von <b class="text-jm-primary-green">{{ page?.author }}</b></small>
         <p class="lead">{{ page?.description }}</p>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-4xl'}">
@@ -24,10 +24,16 @@
 </template>
 
 <script setup lang="ts">
+
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 
-useHead({
-  title: page.value?.title + ' - Blog - JOTT.MEDIA'
+useSeoMeta({
+  title: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
+  ogTitle: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
+  description: page.value?.description,
+  ogDescription: page.value?.description,
+  ogImage: page.value?.image,
+  twitterCard: 'summary_large_image',
 })
 </script>

@@ -17,6 +17,10 @@
         <Button>Entwicklung</Button>
         <Button>Neuigkeiten</Button>
 
+        <UBlogList>
+          <UBlogPost v-for="(article, index) in articles" :key="index" v-bind="article" />
+        </UBlogList>
+
         <UPagination v-model="page" :page-count="pageMaxArticles" :total="articles?.length ?? 0" :ui="{ rounded: 'first-of-type:rounded-s-md last-of-type:rounded-e-md' }">
           <template #prev="{ onClick }">
             <UTooltip text="Previous page">
@@ -37,6 +41,8 @@
 </template>
 
 <script setup lang="ts">
+navigateTo("/");
+
 const route = useRoute()
 const page = ref(1)
 const pageMaxArticles = 10
