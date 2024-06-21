@@ -25,6 +25,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  publicSrc: {
+    type: Boolean,
+    default: false,
+  },
   alt: {
     type: String,
     default: null,
@@ -45,7 +49,11 @@ const props = defineProps({
 
 const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
 const getImageAbsolutePath = (imageName: string): string | undefined => {
-  return glob[`/assets/images/${imageName}`]['default'];
+  if(!props.publicSrc) {
+    return glob[`/assets/images/${imageName}`]['default'];
+  }
+
+  return imageName;
 };
 </script>
 

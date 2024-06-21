@@ -17,7 +17,7 @@
         <p class="lead">{{ page?.description }}</p>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-4xl'}">
-        <Image :src="page?.image" :alt="page?.imageAlt" :hint="page?.imageAlt" />
+        <Image :src="page?.image" :public-src="true" :alt="page?.imageAlt" :hint="page?.imageAlt" />
       </UContainer>
       <UContainer class="pb-10" :ui="{'constrained': 'max-w-2xl'}">
         <ContentRenderer v-if="page?.body" :value="page" />
@@ -31,17 +31,12 @@
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 
-const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
-const getImageAbsolutePath = (imageName: string): string | undefined => {
-  return glob[`/assets/images/${imageName}`]['default'];
-};
-
 useSeoMeta({
   title: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
   ogTitle: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
   description: page.value?.description,
   ogDescription: page.value?.description,
-  ogImage: "https://jott.media" + getImageAbsolutePath(page.value?.image),
+  ogImage: "https://jott.media" + page.value?.image,
   twitterCard: 'summary_large_image',
 })
 </script>
