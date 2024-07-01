@@ -51,6 +51,6 @@ Es gibt ein paar weitere Dinge, auf die du achten solltest, um Hashtags korrekt 
 - Minimiere deine Hashtags und decke sie mit einem Sticker ab. Animierte Sticker lassen deine Story aus der Masse hervorstechen und verdecken das Hashtag-Wirrwarr.
 - Mache deine Hashtags mit der Pipette unsichtbar, indem du den Hashtag-Text farblich an einen einfarbigen Hintergrund anpasst.
 
-**Last but not least: Erstelle dir eine Hashtag-Sammlung**
+## **Last but not least: Erstelle dir eine Hashtag-Sammlung**
 
 Um nicht jedes Mal deine relevanten Hashtags neu eingeben zu müssen, solltest du dir deine Kern-Hashtags abspeichern, sodass du sie nur kopieren und unter deinen Beitrag einfügen musst.
