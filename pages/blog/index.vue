@@ -15,7 +15,7 @@
         <Paragraph class="text-base">Hier möchten wir gerne unser Wissen, über die digitale Zukunft, Technologien, Design <br> und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind es auch.</Paragraph>
 
 
-        <UContainer :ui="{'constrained': 'max-w-4xl space-x-4 lg:px-0'}">
+        <UContainer :ui="{'constrained': 'max-w-4xl space-x-4 ml-0 lg:px-0'}">
         <Button class="text-jm-secondary-white border-transparent  bg-nuxt-ui-primary-50">Alle anzeigen</Button>
         <Button>Design</Button>
         <Button class="text-jm-primary-green border-jm-primary-green">Entwicklung</Button>
