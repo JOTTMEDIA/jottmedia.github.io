@@ -1,25 +1,31 @@
 <template>
   <UPage>
+
     <UPageBody>
-      <UContainer :ui="{'constrained': 'max-w-2xl'}">
-        <Center>
+      <UContainer :ui="{'constrained': 'max-w-7xl','base': 'text-right'}">
+
           <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
+            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[336px]" :shine="false" :parallax="false" />
           </NuxtLink>
-        </Center>
       </UContainer>
-      <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <h1>Neues aus der digitalen Welt</h1>
-        <p class="lead">Hier möchten wir gerne unser Wissen, über die digitale Zukunft, Technologien, Design und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind es auch.</p>
+      <UContainer class="py-10" :ui="{'constrained': 'max-w-7xl'}">
+        <Headline type="h2" class="pb-12 leading-[57px] lowercase"><b class="text-jm-primary-brown uppercase">Neues</b> aus der <b class="text-jm-primary-brown uppercase"> digitalen Welt </b></Headline>
 
-        <Button>Alle anzeigen</Button>
+
+        <Paragraph class="text-base">Hier möchten wir gerne unser Wissen, über die digitale Zukunft, Technologien, Design <br> und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind es auch.</Paragraph>
+
+
+        <UContainer :ui="{'constrained': 'max-w-4xl space-x-4 lg:px-0'}">
+        <Button class="text-jm-secondary-white border-transparent  bg-nuxt-ui-primary-50">Alle anzeigen</Button>
         <Button>Design</Button>
-        <Button>Entwicklung</Button>
-        <Button>Neuigkeiten</Button>
-
-        <UBlogList>
+        <Button class="text-jm-primary-green border-jm-primary-green">Entwicklung</Button>
+        <Button class="text-jm-contrast-blue border-jm-contrast-blue">Social Media</Button>
+        <Button class="text-jm-primary-grey border-jm-primary-grey">Finanzen</Button>
+        <Button class="text-jm-contrast-black border-jm-contrast-black">Unternehmen</Button>
+        </UContainer>
+<!--        <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" v-bind="article" />
-        </UBlogList>
+        </UBlogList>-->
 
         <UPagination v-model="page" :page-count="pageMaxArticles" :total="articles?.length ?? 0" :ui="{ rounded: 'first-of-type:rounded-s-md last-of-type:rounded-e-md' }">
           <template #prev="{ onClick }">
@@ -41,7 +47,6 @@
 </template>
 
 <script setup lang="ts">
-navigateTo("/");
 
 const route = useRoute()
 const page = ref(1)
