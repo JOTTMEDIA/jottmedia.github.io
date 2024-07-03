@@ -18,14 +18,17 @@
           <Button
               v-for="(category, index) in categories"
               :key="index"
+              @click="selectedCategory = category"
           class="text-jm-primary-brown border-jm-primary-brown"
           >{{category}}</Button>
         </UContainer>
 
         <UBlogList orientation="horizontal" class="mt-12">
-          <UBlogPost v-for="(article, index) in articles" :key="index"
-                     class="bg-jm-secondary-grey-lighter ">
 
+          <UBlogPost
+              v-for="(article, index) in filteredArticles" :key="index"
+                     class="bg-jm-secondary-grey-lighter ">
+            <NuxtLink :to="`/blog/${article.slug}`">
             <NuxtImg :src="article.image" format="webp"/>
             <section class="px-7 pb-5">
             <Paragraph class="mt-4 mb-2 text-[14px] font-light">{{article.date}} von <b class="text-jm-primary-green uppercase"> {{article.author}} </b></Paragraph>
@@ -39,7 +42,9 @@
                 variant="solid"
                 size="sm">{{category}}</UBadge>
             </section>
+            </NuxtLink>
           </UBlogPost>
+
         </UBlogList>
 
 
@@ -64,6 +69,12 @@ const page = ref(1)
 const pageMaxArticles = 10
 const { data: articles } = await useAsyncData(route.path, () => queryContent(route.path).limit(pageMaxArticles).skip(pageMaxArticles * (page.value - 1)).find())
 const categories = articles.value?.map(item => item.categories).flat().filter((item, index, self) => self.indexOf(item) === index)
+
+const selectedCategory = ref(null); // Step 1: State for selected category
+const filteredArticles = computed(() => {
+  if (!selectedCategory.value) return articles.value;
+  return articles.value?.filter(article => article.categories.includes(selectedCategory.value));
+});
 
 useHead({
   title: 'Blog - JOTT.MEDIA'
