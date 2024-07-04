@@ -1,12 +1,12 @@
 <template>
   <UPage>
-
     <UPageBody>
-      <UContainer :ui="{'constrained': 'max-w-7xl','base': 'text-right'}">
-
+      <UContainer :ui="{'constrained': 'max-w-2xl'}">
+        <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[336px]" :shine="false" :parallax="false" />
+            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
           </NuxtLink>
+        </Center>
       </UContainer>
       <UContainer class="pt-16" :ui="{'constrained': 'max-w-7xl'}">
         <Headline type="h2" class="pb-8 leading-[57px] text-[48px] lowercase">
@@ -24,7 +24,6 @@
         </UContainer>
 
         <UBlogList orientation="horizontal" class="mt-12">
-
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
                      class="bg-jm-secondary-grey-lighter ">
@@ -58,7 +57,7 @@ const pageMaxArticles = 10
 const { data: articles } = await useAsyncData(route.path, () => queryContent(route.path).limit(pageMaxArticles).skip(pageMaxArticles * (page.value - 1)).find())
 const categories = articles.value?.map(item => item.categories).flat().filter((item, index, self) => self.indexOf(item) === index)
 
-const selectedCategory = ref(null); // Step 1: State for selected category
+const selectedCategory = ref(null);
 const filteredArticles = computed(() => {
   if (!selectedCategory.value) return articles.value;
   return articles.value?.filter(article => article.categories.includes(selectedCategory.value));

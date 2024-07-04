@@ -5,7 +5,7 @@ description: Das Internet of Things (IoT) bezeichnet ein Netzwerk physischer Obj
 date: 21.06.2024
 author: Jonathan
 categories:
-  - Alle Anzeigen
+  - Allgemein
   - Entwicklung
 image: /images/Internet-of-Things-(IoT).jpeg
 imageAlt: Das Internet of Things (IoT)

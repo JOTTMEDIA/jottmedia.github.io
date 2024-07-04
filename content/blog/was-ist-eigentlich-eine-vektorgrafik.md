@@ -6,7 +6,7 @@ description: |
 date: 28.06.2024
 author: Jan
 categories:
-  - Alle Anzeigen
+  - Allgemein
   - Design
 image: /images/Was-ist-eigentlich-eine-Vektorgrafik.jpeg
 imageAlt: Mysterium Vektorgrafik
