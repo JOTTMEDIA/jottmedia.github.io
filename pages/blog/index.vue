@@ -64,7 +64,7 @@ const filteredArticles = computed(() => {
   return articles.value?.filter(article => article.categories.includes(selectedCategory.value));
 });
 
-function truncateText(text, maxLength) {
+function truncateText(text: string, maxLength:number) {
   if (text.length > maxLength) {
     return text.substring(0, maxLength) + '...';
   }
