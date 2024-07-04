@@ -33,7 +33,7 @@
             <section class="px-7 pb-5">
             <Paragraph class="mt-4 mb-2 text-[14px] font-light">{{article.date}} von <b class="text-jm-primary-green uppercase"> {{article.author}} </b></Paragraph>
             <Headline class="font-extrabold text-lg" type="h5" v-html="article.title"/>
-            <Paragraph class="text-sm mb-4 font-light">{{article.description}} </Paragraph>
+            <Paragraph class="text-sm mb-4 font-light">{{ truncateText(article.description, 250) }}  </Paragraph>
             <UBadge
                 v-for="(category, index) in article.categories.slice(1)"
                 :key="index"
@@ -63,6 +63,13 @@ const filteredArticles = computed(() => {
   if (!selectedCategory.value) return articles.value;
   return articles.value?.filter(article => article.categories.includes(selectedCategory.value));
 });
+
+function truncateText(text, maxLength) {
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength) + '...';
+  }
+  return text;
+}
 
 useHead({
   title: 'Blog - JOTT.MEDIA'
