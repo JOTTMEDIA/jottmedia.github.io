@@ -8,7 +8,6 @@ categories:
   - Alle Anzeigen
   - Entwicklung
 image: /images/Internet-of-Things-(IoT).jpeg
-slug: test
 imageAlt: Das Internet of Things (IoT)
 ---
 
