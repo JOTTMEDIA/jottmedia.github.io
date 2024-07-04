@@ -28,7 +28,7 @@
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
                      class="bg-jm-secondary-grey-lighter ">
-            <NuxtLink :to="`/blog/${article.slug}`">
+            <NuxtLink :to="article._path">
             <NuxtImg :src="article.image" format="webp"/>
             <section class="px-7 pb-5">
             <Paragraph class="mt-4 mb-2 text-[14px] font-light">{{article.date}} von <b class="text-jm-primary-green uppercase"> {{article.author}} </b></Paragraph>
@@ -44,19 +44,7 @@
             </section>
             </NuxtLink>
           </UBlogPost>
-
         </UBlogList>
-
-
-<!--                <UBlogPost v-for="(article, index) in articles"
-                         :description="article.description"
-                           :image="article.image"
-                           :authors="[article.author]"
-                           :date="formatDate(article.date)"
-                           :key="index"
-                           v-bind:article="article"
-                >
-                </UBlogPost>-->
       </UContainer>
     </UPageBody>
   </UPage>
