@@ -27,7 +27,7 @@
               :key="index"
               @click="selectedCategory = category"
               class="text-jm-primary-brown border-jm-primary-brown "
-              :class="index === 0 ? 'bg-jm-primary-brown text-jm-secondary-white' : 'defaultClass'"
+              :class="category === selectedCategory ? 'bg-jm-primary-brown text-jm-secondary-white' : 'text-jm-primary-brown border-jm-primary-brown'"
           >{{ category }}
           </Button>
         </UContainer>
@@ -59,8 +59,13 @@
 
         <Button
             @click="loadMorePosts"
+            :disabled="articles?.length < pageMaxArticles"
             class="mt-8 mx-auto flex text-jm-primary-brown border-jm-primary-brown"
-        >Mehr Anzeigen
+            :class="{
+    'text-jm-primary-brown border-jm-primary-brown': articles?.length > pageMaxArticles,
+    'text-jm-primary-brown': articles?.length < pageMaxArticles
+  }"
+        >{{ loadMoreButtonLabel }}
         </Button>
       </UContainer>
     </UPageBody>
@@ -92,7 +97,11 @@ const filteredArticles = computed(() => {
   return articles.value?.filter(article => article.categories.includes(selectedCategory.value));
 });
 
+const loadMoreButtonLabel = computed(() => {
+  return articles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
+});
 async function loadMorePosts() {
+
   pageMaxArticles.value += 6
   await useAsyncData(route.path, () =>
       queryContent(route.path)
