@@ -63,7 +63,7 @@
 
 const route = useRoute()
 const page = ref(1)
-const categories = ref([])
+const categories: Ref<string[] | undefined> = ref([])
 
 const pageMaxArticles = ref(6)
 const { data: articles } = await useAsyncData(route.path, () =>
@@ -75,6 +75,7 @@ const { data: articles } = await useAsyncData(route.path, () =>
 
 
 function fetchCategories() {
+
   categories.value = articles.value?.map(item => item.categories)
       .flat()
       .filter((item, index, self) => self.indexOf(item) === index)
