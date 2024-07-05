@@ -80,7 +80,7 @@ function fetchCategories() {
       .flat()
       .filter((item, index, self) => self.indexOf(item) === index)
 }
-const selectedCategory = ref(null)
+const selectedCategory = ref('')
 const filteredArticles = computed(() => {
   if (!selectedCategory.value) return articles.value;
   return articles.value?.filter(article => article.categories.includes(selectedCategory.value));
