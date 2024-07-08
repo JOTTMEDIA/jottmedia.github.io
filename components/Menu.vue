@@ -11,10 +11,10 @@
           </div>
         </button>
       </nav>
-      <div class="top-0 left-0 overflow-y-scroll w-screen h-screen transition-all duration-500  z-50  bg-jm-primary-brown  fixed"
+      <div class="top-0 left-0  w-screen h-screen transition-all duration-500  z-50  bg-jm-primary-brown  fixed"
            :class="{ 'scale-100': open, 'scale-0': !open }"
       >
-        <UContainer class="mb-4 mt-8 sm:my-16" :ui="{'constrained': 'max-w-6xl '}">
+        <UContainer class="mb-4 mt-8  sm:my-10  lg:my-12 xl:my-16" :ui="{'constrained': 'max-w-6xl '}">
           <Center>
             <NuxtLink to="/" @click="open = false"  class="inline-block no-underline border-0">
               <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-full" :shine="false" :parallax="false" />
@@ -41,9 +41,19 @@
             <br>
             <nuxt-link class="font-extrabold" href="tel:+4957229979070">+49 5722 99790 70</nuxt-link><br>
             <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link><br>
-            <br><p>Besuch uns auf Instagram.</p>
+            <br><div class="text-left sm:text-right flex sm:justify-end items-center  space-x-1 ">
+            <p>Folge Uns:</p>
+            <a href="https://www.instagram.com/jott.media/"  target="_blank" class="inline-block no-underline border-0">
+              <NuxtImg src="instagram.png" alt="JOTT.MEDIA instagram" class="w-6" :shine="false" :parallax="false" />
+            </a>
+            <a href="https://de.linkedin.com/company/jottmedia" target="_blank" class="inline-block no-underline border-0">
+              <NuxtImg src="linkedin.png" alt="JOTT.MEDIA linkedin" class="w-6" :shine="false" :parallax="false" />
+            </a>
+
+          </div>
           </address>
-</div></UContainer>
+          </div>
+        </UContainer>
       </div>
 
     </div>
