@@ -11,7 +11,7 @@
           </div>
         </button>
       </nav>
-      <div class="full-screen-menu  bg-jm-primary-brown  fixed"
+      <div class="full-screen-menu top-0 left-0 w-screen h-screen transition-all duration-500  z-50  bg-jm-primary-brown  fixed"
            :class="{ 'scale-100': open, 'scale-0': !open }"
       >
         <UContainer class="my-16" :ui="{'constrained': 'max-w-6xl '}">
@@ -58,33 +58,6 @@ const open = ref(false)
 </script>
 
 <style scoped>
-.full-screen-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  transition: transform 0.5s ease;
-  transform-origin: top;
-  z-index: 60; /* Ensure it's above other content */
-}
-
-.full-screen-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.full-screen-menu ul li a {
-
-  font-size: 1.5rem;
-  text-decoration: none;
-}
-
-.menu-btn, .close-btn {
-  cursor: pointer;
-}
-
 .hidden {
-  display: none;
 }
 </style>
