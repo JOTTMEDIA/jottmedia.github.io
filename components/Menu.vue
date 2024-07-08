@@ -1,5 +1,5 @@
 <template>
-  <div class=" flex flex-col justify-center fixed top-0 right-12 z-50 ">
+  <div class=" flex flex-col justify-center fixed -top-2 sm:top-0 right-2 sm:right-4 xl:right-12 z-50 ">
     <div class="relative py-3 sm:max-w-xl mx-auto ">
       <nav x-data="{ open: false }">
         <button class="text-black  w-10 h-10 relative focus:outline-none bg-transparent z-[100]" @click="open = !open">
@@ -11,30 +11,30 @@
           </div>
         </button>
       </nav>
-      <div class="full-screen-menu top-0 left-0 w-screen h-screen transition-all duration-500  z-50  bg-jm-primary-brown  fixed"
+      <div class="top-0 left-0 overflow-y-scroll w-screen h-screen transition-all duration-500  z-50  bg-jm-primary-brown  fixed"
            :class="{ 'scale-100': open, 'scale-0': !open }"
       >
-        <UContainer class="my-16" :ui="{'constrained': 'max-w-6xl '}">
+        <UContainer class="mb-4 mt-8 sm:my-16" :ui="{'constrained': 'max-w-6xl '}">
           <Center>
-            <NuxtLink to="/" class="inline-block no-underline border-0">
-              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
+            <NuxtLink to="/" @click="open = false"  class="inline-block no-underline border-0">
+              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-full" :shine="false" :parallax="false" />
             </NuxtLink>
           </Center>
         </UContainer>
 
-        <UContainer class="flex justify-around " :ui="{'constrained': 'max-w-3xl'}">
-        <ul class="uppercase font-extrabold text-3xl space-y-7 text-jm-contrast-black">
+        <UContainer class="flex flex-col  sm:flex-row justify-around " :ui="{'constrained': 'max-w-3xl'}">
+        <ul class="uppercase font-extrabold text-xl xl:text-3xl space-y-2 sm:space-y-7 text-jm-contrast-black">
           <li><NuxtLink @click="open = false" to="/blog">.blog</NuxtLink></li>
 <!--          <li><NuxtLink @click="open = false" to="/leistungen">.leistungen</NuxtLink></li>
           <li><NuxtLink @click="open = false" to="/about">.über uns</NuxtLink></li>
           <li><NuxtLink @click="open = false" to="/contact">.arbeitsweise</NuxtLink></li>-->
         </ul>
-        <div class="text-right">
+        <div class="text-left sm:text-right mt-4 sm:mt-0">
         <ul>
-          <nuxt-link to="/privacy" class="block font-extrabold text-lg">Datenschutz</nuxt-link>
-          <nuxt-link to="/imprint" class="block font-extrabold text-lg">Impressum</nuxt-link>
+          <nuxt-link to="/privacy" @click="open = false"  class="block font-extrabold text-sm sm:text-lg">Datenschutz</nuxt-link>
+          <nuxt-link to="/imprint" @click="open = false"  class="block font-extrabold text-sm sm:text-lg">Impressum</nuxt-link>
         </ul>
-          <address class="not-italic text-sm mt-6">
+          <address class="not-italic text-sm  mt-2 sm:mt-6">
             JOTT.MEDIA GmbH<br>
             Bahnhofstraße 33<br>
             31675 Bückeburg<br>
@@ -43,8 +43,7 @@
             <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link><br>
             <br><p>Besuch uns auf Instagram.</p>
           </address>
-</div>
-        </UContainer>
+</div></UContainer>
       </div>
 
     </div>
