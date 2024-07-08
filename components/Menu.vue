@@ -1,0 +1,90 @@
+<template>
+  <div class=" flex flex-col justify-center fixed top-0 right-12 z-50 ">
+    <div class="relative py-3 sm:max-w-xl mx-auto ">
+      <nav x-data="{ open: false }">
+        <button class="text-black  w-10 h-10 relative focus:outline-none bg-transparent z-[100]" @click="open = !open">
+          <span class="sr-only">Open main menu</span>
+          <div class="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2 z-50">
+            <span aria-hidden="true" class="block absolute h-1 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+            <span aria-hidden="true" class="block absolute  h-1 w-5 bg-current transform transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+            <span aria-hidden="true" class="block absolute  h-1 w-5 bg-current transform  transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+          </div>
+        </button>
+      </nav>
+      <div class="full-screen-menu  bg-jm-primary-brown  fixed"
+           :class="{ 'scale-100': open, 'scale-0': !open }"
+      >
+        <UContainer class="my-16" :ui="{'constrained': 'max-w-6xl '}">
+          <Center>
+            <NuxtLink to="/" class="inline-block no-underline border-0">
+              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
+            </NuxtLink>
+          </Center>
+        </UContainer>
+
+        <UContainer class="flex justify-around " :ui="{'constrained': 'max-w-3xl'}">
+        <ul class="uppercase font-extrabold text-3xl space-y-7 text-jm-contrast-black">
+          <li><NuxtLink @click="open = false" to="/blog">.blog</NuxtLink></li>
+<!--          <li><NuxtLink @click="open = false" to="/leistungen">.leistungen</NuxtLink></li>
+          <li><NuxtLink @click="open = false" to="/about">.über uns</NuxtLink></li>
+          <li><NuxtLink @click="open = false" to="/contact">.arbeitsweise</NuxtLink></li>-->
+        </ul>
+        <div class="text-right">
+        <ul>
+          <nuxt-link to="/privacy" class="block font-extrabold text-lg">Datenschutz</nuxt-link>
+          <nuxt-link to="/imprint" class="block font-extrabold text-lg">Impressum</nuxt-link>
+        </ul>
+          <address class="not-italic text-sm mt-6">
+            JOTT.MEDIA GmbH<br>
+            Bahnhofstraße 33<br>
+            31675 Bückeburg<br>
+            <br>
+            <nuxt-link class="font-extrabold" href="tel:+4957229979070">+49 5722 99790 70</nuxt-link><br>
+            <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link><br>
+            <br><p>Besuch uns auf Instagram.</p>
+          </address>
+</div>
+        </UContainer>
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<script setup>
+
+const open = ref(false)
+
+</script>
+
+<style scoped>
+.full-screen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: transform 0.5s ease;
+  transform-origin: top;
+  z-index: 60; /* Ensure it's above other content */
+}
+
+.full-screen-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.full-screen-menu ul li a {
+
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.menu-btn, .close-btn {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+</style>
