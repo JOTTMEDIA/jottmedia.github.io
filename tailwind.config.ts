@@ -6,7 +6,7 @@ export default <Partial<Config>>{
             sans: ['Open Sans', 'sans-serif']
         },
         fontSize: {                    // HTML-Base 20px
-            'xs': ['.8rem', '1.6'],    // FALLBACK tiny
+            'xs': ['.65rem', '1.6'],    // FALLBACK tiny
             'sm': ['.8rem', '1.6'],    // 16px - h6 - smalltext
             'tiny': ['.9rem', '1.6'],  // 18px - small - button
             'base': ['1rem', '1.6'],   // 20px - -- - text
