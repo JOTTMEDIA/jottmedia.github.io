@@ -10,7 +10,7 @@
           </Center>
 
           <Center>
-            <Headline type="h1" class="pb-5">Machen wir TEST es<br><span class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.</Headline>
+            <Headline type="h1" class="pb-5">Machen wir es<br><span class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.</Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }">
               <Button>Einfach machen</Button>
             </NuxtLink>
@@ -55,15 +55,14 @@
           </NuxtLink>
         </Center>
       </UContainer>
-
       <div class="relative">
         <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right" />
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
-          <ImageFigure src="annika.jpg" hint="Annika // Design" align="left">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
-          <ImageFigure src="jan.jpg" hint="Jan // Design" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
-          <ImageFigure src="arian.jpg" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
-          <ImageFigure src="jonathan.jpg" hint="Jonathan // Entwicklung" align="right">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
-          <ImageFigure src="inke.jpg" hint="Inke // Finanzen" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
+          <ImageFigure to="/team/annika"  src="annika.jpg" hint="Annika // Design" align="left">„<b class="text-jm-primary-brown">Schon als Kind</b> war ich immer <b>fasziniert</b> von farben, formen und mustern und habe es geliebt, <b>neue Dinge zu erschaffen.</b>“</ImageFigure>
+            <ImageFigure to="/team/jan"  src="jan.jpg" hint="Jan // Design" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
+           <ImageFigure to="/team/arian" src="arian.jpg" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
+          <ImageFigure  to="/team/jonathan" src="jonathan.jpg" hint="Jonathan // Entwicklung" align="right">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
+                  <ImageFigure  to="/team/Inke"  src="inke.jpg" hint="Inke // Finanzen" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
         <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left" />
       </div>
