@@ -2,6 +2,7 @@
   <UPage>
     <UPageBody class="m-0 p-0">
       <div class="relative bg-jm-secondary-grey-lighter">
+
         <UContainer class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10" :ui="{'constrained': 'max-w-3xl'}">
           <Center>
             <NuxtLink to="/" class="inline-block no-underline border-0">
@@ -15,7 +16,6 @@
               <Button>Einfach machen</Button>
             </NuxtLink>
           </Center>
-
           <Center>
             <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }">
@@ -26,7 +26,6 @@
         <Background width="1100px" height="1100px" src="header-box.png" position="bottomLeft" :out="false" />
         <Background height="701px" src="header-grey.svg" position="bottom" :out="false" parallax="to-right" />
       </div>
-
       <div class="relative bg-jm-primary-green">
         <Background height="644px" src="header-green-top.svg" position="top" parallax="to-left" />
         <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
@@ -35,7 +34,6 @@
         </UContainer>
         <Background height="875px" src="header-green-bottom.svg" position="bottom" parallax="to-left" />
       </div>
-
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}">
         <Image src="team.jpg" alt="Arian und Jan im Termin" />
       </UContainer>
@@ -62,7 +60,7 @@
             <ImageFigure to="/team/jan"  src="jan.jpg" hint="Jan // Design" align="right">„<b class="text-jm-primary-brown">Mein Mut zur Veränderung</b> und somit unsere Kompetenzen ergänzend nutzen zu können, <b>war die beste Entscheidung</b> meines Lebens.“</ImageFigure>
            <ImageFigure to="/team/arian" src="arian.jpg" hint="Arian // Entwicklung" align="left">„<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“</ImageFigure>
           <ImageFigure  to="/team/jonathan" src="jonathan.jpg" hint="Jonathan // Entwicklung" align="right">„<b class="text-jm-primary-brown">Mich begeistert</b> die unendliche Kreativität, mit meinen Händen und meinem MacBook <b>die Welt zu bereichern.</b>“</ImageFigure>
-                  <ImageFigure  to="/team/Inke"  src="inke.jpg" hint="Inke // Finanzen" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
+                  <ImageFigure  to="/team/inke"  src="inke.jpg" hint="Inke // Finanzen" align="left">„<b class="text-jm-primary-brown">Obwohl</b> in meiner Schulzeit zuerst die <b>Mengenlehre</b> unterrichtet wurde, <b>sind</b> die <b>Zahlen mein</b> ständiger <b>Begleiter</b> geworden.“</ImageFigure>
         </UContainer>
         <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left" />
       </div>
