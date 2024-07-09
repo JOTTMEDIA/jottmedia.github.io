@@ -1,11 +1,14 @@
 <template>
   <div class="flex" :class="typeToClass[align]">
     <div class="md:w-2/5 space-y-10 relative">
+
+      <NuxtLink :to="to" >
       <Image :src="src" :alt="hint ?? ''" />
       <div class="md:absolute">
         <Headline type="h5"><slot /></Headline>
         <Paragraph v-if="hint != null" class="italic text-sm mb-10">{{ hint }}</Paragraph>
       </div>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -22,6 +25,10 @@ const props = defineProps({
     required: true
   },
   hint: {
+    type: String,
+    default: null
+  },
+  to: {
     type: String,
     default: null
   }
