@@ -79,16 +79,17 @@ const categories: Ref<string[] | undefined> = ref([])
 
 const pageMaxArticles = ref(6)
 const {data: articles} = await useAsyncData(route.path, () =>
-  queryContent(route.path)
-    .limit(pageMaxArticles.value)
-    .skip(pageMaxArticles.value * (page.value - 1))
-    .find())
+    queryContent(route.path)
+        .sort({date: -1})
+        .limit(pageMaxArticles.value)
+        .skip(pageMaxArticles.value * (page.value - 1))
+        .find())
 
 
 function fetchCategories() {
   categories.value = articles.value?.map(item => item.categories)
-    .flat()
-    .filter((item, index, self) => self.indexOf(item) === index)
+      .flat()
+      .filter((item, index, self) => self.indexOf(item) === index)
 }
 
 const selectedCategory = ref('')
@@ -100,6 +101,7 @@ const filteredArticles = computed(() => {
 const loadMoreButtonLabel = computed(() => {
   return articles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
 });
+
 async function loadMorePosts() {
 
   pageMaxArticles.value += 6
