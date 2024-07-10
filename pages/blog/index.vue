@@ -1,11 +1,10 @@
 <template>
   <UPage>
-
     <UPageBody>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false"/>
+            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" :shine="false" :parallax="false"/>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -79,16 +78,16 @@ const categories: Ref<string[] | undefined> = ref([])
 
 const pageMaxArticles = ref(6)
 const {data: articles} = await useAsyncData(route.path, () =>
-  queryContent(route.path)
-    .limit(pageMaxArticles.value)
-    .skip(pageMaxArticles.value * (page.value - 1))
-    .find())
+    queryContent(route.path)
+        .limit(pageMaxArticles.value)
+        .skip(pageMaxArticles.value * (page.value - 1))
+        .find())
 
 
 function fetchCategories() {
   categories.value = articles.value?.map(item => item.categories)
-    .flat()
-    .filter((item, index, self) => self.indexOf(item) === index)
+      .flat()
+      .filter((item, index, self) => self.indexOf(item) === index)
 }
 
 const selectedCategory = ref('')
@@ -100,6 +99,7 @@ const filteredArticles = computed(() => {
 const loadMoreButtonLabel = computed(() => {
   return articles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
 });
+
 async function loadMorePosts() {
 
   pageMaxArticles.value += 6

@@ -4,7 +4,7 @@
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
+            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" :shine="false" :parallax="false" />
           </NuxtLink>
         </Center>
       </UContainer>
