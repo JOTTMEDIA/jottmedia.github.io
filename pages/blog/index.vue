@@ -17,10 +17,7 @@
           Technologien, Design <br> und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind
           es auch.
         </Paragraph>
-        <UContainer :ui="{
-          constrained: 'max-w-4xl space-x-4 space-y-4 ml-0 ',
-          padding: 'px-0 sm:px-0 lg:px-0'
-        }">
+        <UContainer :ui="{constrained: 'max-w-4xl space-x-4 space-y-4 ml-0', padding: 'px-0 sm:px-0 lg:px-0'}">
           <Button
               v-for="(category, index) in categories"
               :key="index"
@@ -32,7 +29,6 @@
         </UContainer>
 
         <UBlogList orientation="horizontal" class="mt-10 gap-y-8 lg:grid-cols-2 xl:grid-cols-3">
-
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
