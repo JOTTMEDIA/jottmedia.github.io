@@ -59,8 +59,5 @@ export default defineNuxtConfig({
   },
   ui: {
     icons: ['mdi']
-  },
-  image: {
-    dir: 'assets/images'
   }
 })
