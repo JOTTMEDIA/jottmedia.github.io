@@ -43,6 +43,4 @@ const {data: team} = await useAsyncData(route.path, () =>
     queryContent(route.path)
         .limit(pageMaxPersons)
         .find())
-
-console.log(team)
 </script>
