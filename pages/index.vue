@@ -12,9 +12,7 @@
           </Center>
 
           <Center>
-            <Headline type="h1" class="pb-5">Machen wir es<br><span
-                class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
-            </Headline>
+            <Headline type="h1" class="pb-5">Machen wir es<br><span class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.</Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }">
               <Button>Einfach machen</Button>
             </NuxtLink>
@@ -116,6 +114,44 @@
           </NuxtLink>
         </Center>
       </UContainer>
+
+      <UContainer class="pt-20" :ui="{'constrained': 'max-w-5xl'}">
+        <Center>
+          <Headline type="h2" class="pb-8 leading-8 lg:leading-5 text-3xl lowercase">
+            <b class="text-jm-primary-brown uppercase">Neues</b> aus der
+            <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
+          </Headline>
+        </Center>
+          <UBlogList>
+            <UBlogPost v-for="(article, index) in articles" :key="index"
+                       class="bg-jm-secondary-grey-lighter"
+            >
+              <NuxtLink :to="article._path">
+                <NuxtImg class="w-full" :src="article.image" format="webp"/>
+                <section class="px-3  pb-3">
+                  <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
+                      class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
+                  <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
+                  <UBadge
+                      v-for="(category, index) in article.categories.slice(1)"
+                      :key="index"
+                      color="white"
+                      class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
+                      variant="solid"
+                      size="sm">{{ category }}
+                  </UBadge>
+                </section>
+              </NuxtLink>
+
+            </UBlogPost>
+
+          </UBlogList>
+        <Center>
+          <NuxtLink to="blog">
+            <Button class="mt-8">Zum Blog</Button>
+          </NuxtLink>
+        </Center>
+      </UContainer>
     </UPageBody>
   </UPage>
 </template>
@@ -127,7 +163,12 @@ const route = useRoute()
 
 const {data: team} = await useAsyncData(route.path, () =>
     queryContent("team").find())
-
+    
+const {data: articles} = await useAsyncData(route.path, () =>
+    queryContent(route.path)
+        .sort({ date: -1 })
+        .limit(3)
+        .find())
 
 const carouselItems = ref([
   {
