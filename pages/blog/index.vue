@@ -75,7 +75,7 @@ const categories: Ref<string[] | undefined> = ref([])
 const pageMaxArticles = ref(6)
 const {data: articles} = await useAsyncData(route.path, () =>
     queryContent(route.path)
-        .sort({date: -1})
+        .sort({id: -1})
         .limit(pageMaxArticles.value)
         .skip(pageMaxArticles.value * (page.value - 1))
         .find())
@@ -98,10 +98,10 @@ const loadMoreButtonLabel = computed(() => {
 });
 
 async function loadMorePosts() {
-
   pageMaxArticles.value += 6
   await useAsyncData(route.path, () =>
       queryContent(route.path)
+          .sort({id: -1})
           .limit(pageMaxArticles.value)
           .find()
   )
