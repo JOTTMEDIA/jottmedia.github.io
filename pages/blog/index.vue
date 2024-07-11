@@ -1,11 +1,10 @@
 <template>
   <UPage>
-
     <UPageBody>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false"/>
+            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" :shine="false" :parallax="false"/>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -18,10 +17,7 @@
           Technologien, Design <br> und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind
           es auch.
         </Paragraph>
-        <UContainer :ui="{
-          constrained: 'max-w-4xl space-x-4 space-y-4 ml-0 ',
-          padding: 'px-0 sm:px-0 lg:px-0'
-        }">
+        <UContainer :ui="{constrained: 'max-w-4xl space-x-4 space-y-4 ml-0', padding: 'px-0 sm:px-0 lg:px-0'}">
           <Button
               v-for="(category, index) in categories"
               :key="index"
@@ -33,7 +29,6 @@
         </UContainer>
 
         <UBlogList orientation="horizontal" class="mt-10 gap-y-8 lg:grid-cols-2 xl:grid-cols-3">
-
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
