@@ -9,8 +9,7 @@
         </button>
       </NuxtLink>
       <div class="md:absolute">
-        <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="quote">
-        </h5>
+        <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="quote"/>
         <Paragraph v-if="hint != null" class="italic text-sm mb-10">{{ hint }}</Paragraph>
       </div>
     </div>
