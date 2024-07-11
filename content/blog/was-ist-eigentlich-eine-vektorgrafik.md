@@ -1,4 +1,5 @@
 ---
+id: 2
 title: <b class="text-jm-primary-brown uppercase">“Mysterium Vektorgrafik“</b> oder “Warum wird mein Logo pixelig?”
 seoTitle: “Mysterium Vektorgrafik“ oder “Warum wird mein Logo pixelig?”
 description: |

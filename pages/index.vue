@@ -145,7 +145,7 @@ useHead({
 const route = useRoute()
 const {data: articles} = await useAsyncData(route.path, () =>
     queryContent(route.path)
-        .sort({ date: -1 })
+        .sort({ id: -1 })
         .limit(3)
         .find())
 
