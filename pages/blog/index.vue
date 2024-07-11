@@ -75,6 +75,7 @@ const categories: Ref<string[] | undefined> = ref([])
 const pageMaxArticles = ref(6)
 const {data: articles} = await useAsyncData(route.path, () =>
     queryContent(route.path)
+        .sort({date: -1})
         .limit(pageMaxArticles.value)
         .skip(pageMaxArticles.value * (page.value - 1))
         .find())
