@@ -8,8 +8,8 @@
         <div class="sm:w-1/2">
           <Image class="w-full h-full" :src="person.src"/>
         </div>
-        <div class="sm:w-1/2 flex flex-col justify-between px-4 lg:py-8 xl:py-4 xl:px-8 2xl:py-16 2xl:px-20" :class="person.bg">
-          <button class="text-black w-12 h-12 relative focus:outline-none bg-transparent z-[100] self-end"
+        <div class="sm:w-1/2 flex flex-col justify-between px-4 sm:px-2 lg:px-6 lg:py-8 xl:py-4 xl:px-8 2xl:py-16 2xl:px-20" :class="person.bg">
+          <button class="mt-2 w-12 h-12 relative text-black focus:outline-none bg-transparent z-[100] self-end"
                   @click="navigateBack">
             <UIcon name="i-mdi-close-thick" class="text-2xl"/>
           </button>
