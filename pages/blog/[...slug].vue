@@ -13,7 +13,9 @@
         <div class="flex gap-2 mb-2">
           <UBadge :ui="{ rounded: 'rounded-lg', font: 'font-extrabold', size: { xs: 'text-xs px-3 py-0.5' } }" v-for="category in page?.categories" :key="category" :label="category" size="xs" />
         </div>
-        <small>{{ page?.date }} von <b class="text-jm-primary-green">{{ page?.author }}</b></small>
+        <NuxtLink  :to="`../team/${page?.author.toLowerCase()}`">
+          <small>{{ page?.date }} von <b class="text-jm-primary-green">{{ page?.author }}
+          </b></small></NuxtLink>
         <p class="lead">{{ page?.description }}</p>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-4xl'}">
