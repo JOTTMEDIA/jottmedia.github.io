@@ -1,7 +1,6 @@
 <template>
   <div class="custom-cursor overflow-x-hidden scroll-smooth" :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}" :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
     <NuxtLayout>
-      <Menu/>
       <NuxtPage/>
     </NuxtLayout>
   </div>

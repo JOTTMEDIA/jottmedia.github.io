@@ -1,4 +1,5 @@
 <template>
+  <Menu/>
   <UMain>
     <slot />
   </UMain>
