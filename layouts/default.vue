@@ -1,7 +1,9 @@
 <template>
-  <Menu/>
-  <UMain>
-    <slot />
-  </UMain>
-  <Footer />
+  <main>
+    <Menu/>
+    <UMain>
+      <slot/>
+    </UMain>
+    <Footer/>
+  </main>
 </template>
