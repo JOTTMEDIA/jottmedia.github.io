@@ -69,8 +69,6 @@
       <div class="relative">
         <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right"/>
         <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
-
-
           <ImageFigure
               v-for="person in team"
               :src="person.src"
@@ -126,12 +124,10 @@
           </Headline>
         </Center>
         <UBlogList>
-          <UBlogPost v-for="(article, index) in articles" :key="index"
-                     class="bg-jm-secondary-grey-lighter"
-          >
+          <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
             <NuxtLink :to="article._path">
-              <NuxtImg class="w-full" :src="article.image" format="webp"/>
-              <section class="px-3  pb-3">
+              <Image :src="article.image" :alt="article.imageAlt" class="w-full" :shine="false" :parallax="false" :publicSrc="true" />
+              <section class="px-3 pb-3">
                 <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
                     class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
@@ -145,36 +141,35 @@
                 </UBadge>
               </section>
             </NuxtLink>
-
           </UBlogPost>
-
         </UBlogList>
         <Center>
           <NuxtLink to="blog">
             <Button class="mt-8">Zum Blog</Button>
           </NuxtLink>
         </Center>
+
       </UContainer>
     </UPageBody>
   </UPage>
 </template>
+
 <script setup lang="ts">
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
-const route = useRoute()
 
-const {data: team} = await useAsyncData(`${route.path}-team`, () =>
-    queryContent('team')
+const {data: team} = await useAsyncData('team', () =>
+    queryContent('/team')
         .find())
 
-
-const {data: articles} = await useAsyncData(`${route.path}-articles`, () =>
-    queryContent(route.path)
+const {data: articles} = await useAsyncData('articles', () =>
+    queryContent('/blog')
         .sort({id: -1})
         .limit(3)
         .find())
 
+console.log(articles, team)
 
 const carouselItems = ref([
   {

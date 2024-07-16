@@ -3,8 +3,7 @@
     <div class="md:w-2/5 space-y-10 relative">
       <Image :src="src" :alt="hint ?? ''"/>
       <NuxtLink :to="link">
-        <button
-            class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute sm:-right-6 top-0 sm:top-auto sm:-bottom-5  transition-all z-10">
+        <button class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute sm:-right-6 top-0 sm:top-auto sm:-bottom-5  transition-all z-10">
           <UIcon name="i-mdi-plus" class="text-2xl h-9 w-9 text-jm-primary-brown"/>
         </button>
       </NuxtLink>

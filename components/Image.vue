@@ -47,9 +47,10 @@ const props = defineProps({
   },
 })
 
-const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
+const glob = import.meta.glob<Record<string, string>>('@/assets/images/**/*', { eager: true })
 const getImageAbsolutePath = (imageName: string): string | undefined => {
   if(!props.publicSrc) {
+    console.log(glob)
     return glob[`/assets/images/${imageName}`]['default'];
   }
 

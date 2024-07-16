@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'team'
+  layout: 'minimal'
 });
 const route = useRoute()
 const router = useRouter()
@@ -42,7 +42,7 @@ function navigateBack() {
 }
 
 const {data: team} = await useAsyncData(route.path, () =>
-    queryContent(route.path)
-        .limit(pageMaxPersons)
-        .find())
+  queryContent(route.path)
+    .limit(pageMaxPersons)
+    .find())
 </script>
