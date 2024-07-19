@@ -32,8 +32,8 @@
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article._path">
-              <NuxtImg class="w-full" :src="article.image" format="webp"/>
+            <NuxtLink class="grid items-end h-full" :to="article._path">
+              <NuxtImg class="w-full h-full" :src="article.image" format="webp"/>
               <section class="px-3 lg:px-7 pb-5">
                 <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.date }} von <b
                     class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
