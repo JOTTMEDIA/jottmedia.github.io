@@ -1,6 +1,6 @@
 <template>
   <div class="image-wrapper" :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}">
-    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full block m-0" />
+    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full h-full block m-0 cover bg-center" />
     <UContainer :ui="{'constrained': 'max-w-2xl'}">
       <Paragraph v-if="hint != null" class="text-jm-primary-gre italic text-sm !mb-0">{{ hint }}</Paragraph>
     </UContainer>
