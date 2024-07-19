@@ -25,7 +25,7 @@
             <UContainer class="my-8" :ui="{'constrained': 'max-w-6xl'}">
               <Center>
                 <NuxtLink to="/" @click="open = false" class="inline-block no-underline border-0">
-                  <Image src="logo-menu.png" alt="JOTT.MEDIA GmbH" class="xl:-mr-1 2xl:mr-2 lg:w-[360px]" :shine="false" :parallax="false"/>
+                  <Image src="logo-overlay.svg" alt="JOTT.MEDIA GmbH" class="mt-2 w-[325px]" :shine="false" :parallax="false"/>
                 </NuxtLink>
               </Center>
             </UContainer>
