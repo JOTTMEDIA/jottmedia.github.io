@@ -1,37 +1,28 @@
 <template>
-  <div class="flex flex-col justify-center fixed -top-2 sm:top-2 right-4 sm:right-8 xl:right-16 z-50">
-    <div class="relative py-3 mx-auto">
-      <nav>
-        <button class="text-black w-12 h-12 relative focus:outline-none bg-transparent z-[100]" @click="open = !open">
-          <div class="block w-5 absolute left-1/2 top-1/2  transform  -translate-x-1/2 -translate-y-1/2 z-50">
-            <span aria-hidden="true"
-                  class="block absolute h-1 w-6 bg-current transform transition duration-500 ease-in-out"
-                  :class="{'rotate-45': open,' -translate-y-2': !open }"></span>
-            <span aria-hidden="true"
-                  class="block absolute h-1 w-6 bg-current transform transition duration-500 ease-in-out"
-                  :class="{'opacity-0': open }"></span>
-            <span aria-hidden="true"
-                  class="block absolute h-1 w-6 bg-current transform transition duration-500 ease-in-out"
-                  :class="{'-rotate-45': open, 'translate-y-2': !open}"></span>
-          </div>
-        </button>
-      </nav>
+  <div class="fixed flex flex-col justify-center -bottom-2 sm:bottom-0 right-4 sm:right-8 z-50">
+    <button @click="open = !open"
+            class="h-10 w-10 sm:h-12 sm:w-12 flex justify-center items-center bg-jm-contrast-black transition-all duration-700 bg-opacity-70 hover:bg-opacity-100  rounded-full z-50">
+      <UIcon v-if="!open" class="text-lg sm:text-2xl text-jm-primary-brown transition-all z-50" name="i-mdi-menu"/>
+      <UIcon v-else class="text-lg sm:text-2xl text-jm-primary-brown transition-all z-50" name="i-mdi-close-thick"/>
+    </button>
+    <div class="relative py-3 mx-auto ">
       <Center>
         <transition name="page" mode="in-out">
           <div
               v-if="open"
-              class="top-0 left-0 w-screen h-screen z-50 bg-jm-primary-brown fixed"
-          >
-            <UContainer class="my-8" :ui="{'constrained': 'max-w-6xl'}">
+              class="top-0 left-0 w-screen h-screen flex flex-col justify-start  z-30 bg-jm-primary-brown fixed">
+            <UContainer class="my-8" :ui="{'constrained': 'sm:max-w-6xl'}">
               <Center>
-                <NuxtLink to="/" @click="open = false" class="inline-block no-underline border-0">
-                  <Image src="logo-overlay.svg" alt="JOTT.MEDIA GmbH" class="mt-2 w-[325px]" :shine="false" :parallax="false"/>
+                <NuxtLink to="/" @click="open = false" class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0">
+                  <Image src="logo-overlay.svg" alt="JOTT.MEDIA GmbH" class="w-full" :shine="false"
+                         :parallax="false"/>
                 </NuxtLink>
               </Center>
             </UContainer>
 
-            <UContainer class="flex flex-col sm:flex-row justify-around" :ui="{'constrained': 'max-w-3xl', padding: 'sm:space-x-14'}">
-              <ul class="uppercase font-extrabold text-left text-xl xl:text-3xl space-y-2 text-jm-contrast-black">
+            <UContainer class="sm:mt-12 flex flex-col sm:flex-row justify-around"
+                        :ui="{'constrained': 'w-full', padding: 'space-x-2 sm:space-x-4'}">
+              <ul class="uppercase font-extrabold text-left text-xl xl:text-3xl space-y-4 sm:space-y-8 text-jm-contrast-black">
                 <li>
                   <NuxtLink @click="open = false" to="/">.Startseite</NuxtLink>
                 </li>
@@ -39,16 +30,14 @@
                   <NuxtLink @click="open = false" to="/blog">.Blog</NuxtLink>
                 </li>
               </ul>
-              <div class="text-left sm:text-right mt-4 sm:mt-0">
-                <ul>
-                  <nuxt-link to="/privacy" @click="open = false" class="block font-extrabold text-sm sm:text-sm">
+              <div class="text-left sm:text-right mt-8 sm:mt-0">
+                  <nuxt-link to="/privacy" @click="open = false" class="block font-extrabold text-sm sm:text-base">
                     Datenschutz
                   </nuxt-link>
-                  <nuxt-link to="/imprint" @click="open = false" class="block font-extrabold text-sm sm:text-sm">
+                  <nuxt-link to="/imprint" @click="open = false" class="block font-extrabold text-sm sm:text-base">
                     Impressum
                   </nuxt-link>
-                </ul>
-                <address class="not-italic text-sm  mt-2 sm:mt-6">
+                <address class="not-italic text-sm  mt-6 sm:mt-16">
                   JOTT.MEDIA GmbH<br>
                   Bahnhofstraße 33<br>
                   31675 Bückeburg<br>
@@ -78,9 +67,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 const open = ref(false)
 </script>
-
-
