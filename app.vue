@@ -1,36 +1,31 @@
 <template>
-  <div class="custom-cursor overflow-x-hidden scroll-smooth" :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}" :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
+  <div class="custom-cursor overflow-x-hidden scroll-smooth"
+       :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}"
+       :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
     <NuxtLayout>
-      <Menu/>
       <NuxtPage/>
     </NuxtLayout>
   </div>
 </template>
-
 <script setup lang="ts">
 const cursorX = ref(0);
 const cursorY = ref(0);
 const isMouseDown = ref(false);
 const isMouseShow = ref(true);
-
 const updateCursorPosition = (e: MouseEvent) => {
   isMouseShow.value = true;
-  cursorX.value = e.clientX  + document.body.scrollLeft + document.documentElement.scrollLeft;
+  cursorX.value = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
   cursorY.value = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 };
-
 const updateCursorDown = (e: MouseEvent) => {
   isMouseDown.value = true;
 };
-
 const updateCursorUp = (e: MouseEvent) => {
   isMouseDown.value = false;
 };
-
 const updateCursorScroll = (e: Event) => {
   isMouseShow.value = false;
 }
-
 onMounted(() => {
   window.addEventListener('mousedown', updateCursorDown);
   window.addEventListener('mouseup', updateCursorUp);
@@ -49,7 +44,9 @@ onUnmounted(() => {
 <style lang="scss">
 
 @media (hover: hover) {
-  * { cursor: none !important; }
+  * {
+    cursor: none !important;
+  }
 
   .custom-cursor {
     --mouse-x: 0;

@@ -1,9 +1,7 @@
 <template>
   <main>
-    <Menu/>
     <UMain>
       <slot/>
     </UMain>
-    <Footer/>
   </main>
 </template>
