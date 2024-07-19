@@ -8,7 +8,7 @@
         <div class="sm:w-1/2 h-1/2 sm:h-full">
           <Image class="w-full h-full " :shine="false" :parallax="false" :src="person.src"/>
         </div>
-        <div class="sm:w-1/2 h-1/2 sm:h-full flex flex-col justify-center px-4 lg:px-6 lg:space-y-4 xl:space-y-8 xl:px-8 2xl:space-y-12 2xl:px-20"
+        <div class="sm:w-1/2 h-1/2 sm:h-full flex flex-col justify-center px-4 space-y-4 lg:px-6 lg:space-y-6 xl:space-y-8 xl:px-8 2xl:space-y-12 2xl:px-20"
             :class="person.bg">
           <button class="fixed bottom-3 sm:bottom-6 right-4 sm:right-10 h-10 w-10 sm:h-12 sm:w-12 flex justify-center items-center bg-jm-contrast-black transition-all duration-700 bg-opacity-70 hover:bg-opacity-100  rounded-full z-50"
                   @click="navigateBack">
