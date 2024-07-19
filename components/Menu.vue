@@ -13,7 +13,7 @@
               class="top-0 left-0 w-screen h-screen flex flex-col justify-start  z-30 bg-jm-primary-brown fixed">
             <UContainer class="my-8" :ui="{'constrained': 'sm:max-w-6xl'}">
               <Center>
-                <NuxtLink to="/" @click="open = false" class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0">
+                <NuxtLink to="/" @click="open = false" class="inline-block no-underline w-full mt-2 mr-3 sm:w-[325px] border-0">
                   <Image src="logo-overlay.svg" alt="JOTT.MEDIA GmbH" class="w-full" :shine="false"
                          :parallax="false"/>
                 </NuxtLink>
