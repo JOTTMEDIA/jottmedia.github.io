@@ -1,16 +1,14 @@
 <template>
   <UPage>
     <UPageBody class="m-0 p-0">
-
       <div class="relative bg-jm-secondary-grey-lighter">
         <UContainer class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10"
                     :ui="{'constrained': 'max-w-3xl'}">
           <Center>
             <NuxtLink to="/" class="inline-block no-underline border-0">
-              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false"/>
+              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" :shine="false" :parallax="false"/>
             </NuxtLink>
           </Center>
-
           <Center>
             <Headline type="h1" class="pb-5">Machen wir es<br><span
                 class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
@@ -126,7 +124,8 @@
         <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
             <NuxtLink :to="article._path">
-              <Image :src="article.image" :alt="article.imageAlt" class="w-full" :shine="false" :parallax="false" :publicSrc="true" />
+              <Image :src="article.image" :alt="article.imageAlt" class="w-full" :shine="false" :parallax="false"
+                     :publicSrc="true"/>
               <section class="px-3 pb-3">
                 <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
                     class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>

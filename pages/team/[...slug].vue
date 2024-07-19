@@ -10,9 +10,9 @@
         </div>
         <div class="sm:w-1/2 h-1/2 sm:h-full flex flex-col justify-between px-4 lg:px-6 lg:py-8 xl:py-4 xl:px-8 2xl:py-16 2xl:px-20"
             :class="person.bg">
-          <button class="mt-2 w-12 h-12 relative text-black focus:outline-none bg-transparent z-[100] self-end"
+          <button class="fixed -bottom-2 sm:bottom-6 lg:bottom-8 right-4 sm:right-8 xl:right-14 h-10 w-10 sm:h-16 sm:w-16 flex justify-center items-center bg-jm-contrast-black transition-all duration-700 bg-opacity-70 hover:bg-opacity-100  rounded-full z-50"
                   @click="navigateBack">
-            <UIcon name="i-mdi-close-thick" class="text-2xl"/>
+            <UIcon class="text-lg sm:text-3xl text-jm-primary-brown transition-all z-50" name="i-mdi-close-thick"/>
           </button>
           <h1 v-html="person?.name" class=" sm:leading-5 xl:leading-10 xl:text-xl uppercase font-extrabold "/>
           <p v-html="person?.description" class="text-xs xl:text-tiny font-light"></p>
