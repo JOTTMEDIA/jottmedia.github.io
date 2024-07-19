@@ -7,6 +7,6 @@ description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam n
 src: team/jonathan.jpg
 imageAlt: Jonathan
 bg: bg-jm-primary-green
-button: border-jm-primary-green text-jm-primary-green
+button: border-jm-primary-brown text-jm-primary-brown
 align: left
 ---
