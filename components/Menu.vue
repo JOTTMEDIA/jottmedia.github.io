@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-center fixed -top-2 sm:top-2 right-4 sm:right-8 xl:right-16 z-50">
     <div class="relative py-3 mx-auto">
       <nav>
-        <button class="text-black w-12 h-12 relative focus:outline-none bg-transparent z-[100]" @click="open = !open">
+        <button class="text-black w-12 h-12 relative focus:outline-none bg-transparent z-[100]"  aria-label="Menu Open" @click="open = !open">
           <div class="block w-5 absolute left-1/2 top-1/2  transform  -translate-x-1/2 -translate-y-1/2 z-50">
             <span aria-hidden="true"
                   class="block absolute h-1 w-6 bg-current transform transition duration-500 ease-in-out"

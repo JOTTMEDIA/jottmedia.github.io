@@ -13,6 +13,9 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA',
+      htmlAttrs: {
+        lang: 'de',
+      },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -69,7 +72,7 @@ export default defineNuxtConfig({
   },
   webVitals: {
     provider: 'log',
-    debug: true, // debug enable metrics reporting on dev environments
+    debug: true,
     disabled: false
   }
 })
