@@ -1,6 +1,6 @@
 <template>
   <div class="image-wrapper" :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}">
-    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full block m-0" />
+    <NuxtImg ref="image" format="webp" :style="imageStyle" :src="src" :alt="alt" class="w-full block m-0" />
     <UContainer :ui="{'constrained': 'max-w-2xl'}">
       <Paragraph v-if="hint != null" class="text-jm-primary-gre italic text-sm !mb-0">{{ hint }}</Paragraph>
     </UContainer>
@@ -54,7 +54,8 @@ const getImageAbsolutePath = (imageName: string): string | undefined => {
   }
 
   return imageName;
-};
+};     // TODO: Fix this src function to return the correct image path because it is not working with NuxtImg Component and it cant convert the image path to the correct paths
+
 </script>
 
 <style lang="scss">
