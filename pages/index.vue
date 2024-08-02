@@ -108,9 +108,10 @@
           <UBlogList>
             <UBlogPost v-for="(article, index) in articles" :key="index"
                        class="bg-jm-secondary-grey-lighter"
-            >
-              <NuxtLink :to="article._path">
-                <NuxtImg class="w-full" :src="article.image" format="webp"/>
+            ><NuxtLink :to="article._path">
+                <img class="w-full"
+                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                     :src="article.image" :alt="article.imageAlt"/>
                 <section class="px-3  pb-3">
                   <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
                       class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
