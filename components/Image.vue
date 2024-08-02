@@ -54,7 +54,7 @@ const getImageAbsolutePath = (imageName: string): string | undefined => {
   }
 
   return imageName;
-};     // TODO: Fix this src function to return the correct image path because it is not working with NuxtImg Component and it cant convert the image path to the correct paths
+};     // TODO: Fix this src function to return the correct image path because it is not working with NuxtImg Component and it cant convert to webp
 
 </script>
 
