@@ -61,6 +61,11 @@ export default defineNuxtConfig({
   ui: {
     icons: ['mdi']
   },
+  image: {
+    quality: 80,
+    format: ['webp'],
+    dir: 'assets/images'
+  },
   webVitals: {
     provider: 'log',
     debug: true, // debug enable metrics reporting on dev environments
