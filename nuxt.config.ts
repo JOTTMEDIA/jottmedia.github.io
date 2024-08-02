@@ -51,7 +51,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     '@nuxt/image',
-    '@nuxthq/studio'
+    '@nuxthq/studio',
+    '@nuxtjs/web-vitals'
   ],
   pages: true,
   colorMode: {
@@ -59,5 +60,10 @@ export default defineNuxtConfig({
   },
   ui: {
     icons: ['mdi']
+  },
+  webVitals: {
+    provider: 'log',
+    debug: true, // debug enable metrics reporting on dev environments
+    disabled: false
   }
 })
