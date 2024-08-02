@@ -17,8 +17,8 @@
           </Center>
 
           <Center>
-            <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }">
+            <Headline type="h2">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
+            <NuxtLink :to="{ path: '/', hash: '#machen' }" aria-label="scroll bottom">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down" />
             </NuxtLink>
           </Center>
@@ -30,7 +30,7 @@
       <div class="relative bg-jm-primary-green">
         <Background height="644px" src="header-green-top.svg" position="top" parallax="to-left" />
         <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
-          <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
+          <Headline type="h3">Das bekommst du <b class="uppercase">von uns</b></Headline>
           <Headline type="h4"><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
         </UContainer>
         <Background height="875px" src="header-green-bottom.svg" position="bottom" parallax="to-left" />
@@ -41,13 +41,13 @@
       </UContainer>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Headline type="h6">Die wichtigste <b class="uppercase">Frage</b></Headline>
-        <Headline type="h2" class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein Unternehmen wirklich?</b>“</Headline>
+        <Headline type="h3">Die wichtigste <b class="uppercase">Frage</b></Headline>
+        <Headline type="h4" class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein Unternehmen wirklich?</b>“</Headline>
       </UContainer>
 
       <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
-        <Headline type="h6">So arbeiten wir <b class="uppercase">für Dich</b></Headline>
-        <Headline type="h5" class="text-jm-primary-brown"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
+        <Headline type="h3">So arbeiten wir <b class="uppercase">für Dich</b></Headline>
+        <Headline type="h4" class="text-jm-primary-brown"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
         <Paragraph>Die Lösung muss immer zum Problem passen. Darum steht bei uns <b>an erster Stelle</b> die Analyse deiner Herausforderung. Erst, wenn diese glasklar ist, widmen wir uns der <b>Konzeption und Umsetzung</b> des tatsächlichen Produkts, wie auch immer das in deinem konkreten Fall aussehen mag. Damit das funktioniert, ist eine ehrliche, zuverlässige und partnerschaftliche Zusammenarbeit – <b>auf Augenhöhe</b> und auf beiden Seiten – unabdingbar.</Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
@@ -79,8 +79,8 @@
       <div class="relative bg-jm-primary-green mt-64">
         <Background height="702px" src="green-top.svg" position="top" parallax="to-right" />
         <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
-          <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
-          <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></Headline>
+          <Headline type="h3">Das leisten wir <b class="uppercase">für dich</b></Headline>
+          <Headline type="h4" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></Headline>
         </UContainer>
         <Background height="517px" src="green-bottom.svg" position="bottom" parallax="to-right" />
       </div>
@@ -115,7 +115,7 @@
                 <section class="px-3  pb-3">
                   <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
                       class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
-                  <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
+                  <Headline class="font-extrabold text-lg leading-5" type="h3" v-html="article.title"/>
                   <UBadge
                       v-for="(category, index) in article.categories.slice(1)"
                       :key="index"
