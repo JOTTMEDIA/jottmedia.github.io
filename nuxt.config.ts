@@ -52,7 +52,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image',
     '@nuxthq/studio',
-    '@nuxtjs/web-vitals'
+    '@nuxtjs/web-vitals',
+    "@nuxtjs/fontaine"
   ],
   pages: true,
   colorMode: {
