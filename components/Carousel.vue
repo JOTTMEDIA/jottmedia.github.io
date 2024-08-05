@@ -1,12 +1,12 @@
 <template>
   <div class="relative">
-    <button @click="x -= carousel?.children[0].clientWidth + 20" class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all z-10"><UIcon name="i-mdi-chevron-left" class="text-3xl text-jm-primary-brown" /></button>
+    <button @click="x -= carousel?.children[0].clientWidth + 20" class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all z-10" aria-label="Carousel left click"><UIcon name="i-mdi-chevron-left" class="text-3xl text-jm-primary-brown" /></button>
     <div ref="carousel" class="flex flex-row overflow-x-auto no-scrollbar w-full gap-x-[20px] snap-mandatory snap-x">
       <div v-for="item in items" :key="item.id" class="snap-start snap-always min-w-[100%] md:min-w-[calc(50%-10px)] pointer-events-none">
         <Image :src="item.src" :alt="item.alt" :shine="false" :parallax="false" />
       </div>
     </div>
-    <button @click="x += carousel?.children[0].clientWidth + 20" class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 transition-all z-10"><UIcon name="i-mdi-chevron-right" class="text-3xl text-jm-primary-brown" /></button>
+    <button @click="x += carousel?.children[0].clientWidth + 20" class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 transition-all z-10" aria-label="Carousel right click">><UIcon name="i-mdi-chevron-right" class="text-3xl text-jm-primary-brown" /></button>
   </div>
 </template>
 

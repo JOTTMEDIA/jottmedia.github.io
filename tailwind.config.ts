@@ -1,6 +1,15 @@
 import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
+    mode: 'jit',
+    content: [
+        './components/**/*.{js,ts,vue}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './app.vue',
+        './nuxt.config.{js,ts}',
+    ],
     theme: {
         fontFamily: {
             sans: ['Open Sans', 'sans-serif']

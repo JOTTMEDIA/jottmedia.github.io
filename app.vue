@@ -1,7 +1,7 @@
 <template>
   <div class="custom-cursor overflow-x-hidden scroll-smooth" :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}" :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
     <NuxtLayout>
-      <Menu/>
+      <LazyMenu/>
       <NuxtPage/>
     </NuxtLayout>
   </div>
@@ -44,6 +44,9 @@ onUnmounted(() => {
   window.removeEventListener('mousemove', updateCursorPosition);
   window.removeEventListener('scroll', updateCursorScroll);
 });
+
+const LazyMenu = defineAsyncComponent(() => import('@/components/Menu.vue'));
+
 </script>
 
 <style lang="scss">
