@@ -6,9 +6,11 @@ export default defineNuxtConfig({
       enabled: true
     }
   },
+
   routeRules: {
     '/': { prerender: true },
   },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -48,7 +50,9 @@ export default defineNuxtConfig({
       ]
     },
   },
+
   extends: ['@nuxt/ui-pro'],
+
   modules: [
     '@nuxt/content',
     '@nuxt/ui',
@@ -58,21 +62,28 @@ export default defineNuxtConfig({
     '@nuxtjs/web-vitals',
     "@nuxtjs/fontaine"
   ],
+
   pages: true,
+
   colorMode: {
     preference: 'light'
   },
+
   ui: {
     icons: ['mdi']
   },
+
   image: {
     quality: 80,
     format: ['webp'],
     dir: 'assets/images'
   },
+
   webVitals: {
     provider: 'log',
     debug: true,
     disabled: false
-  }
+  },
+
+  compatibilityDate: '2024-08-05'
 })
