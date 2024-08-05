@@ -2,7 +2,7 @@
   <UPage>
     <UPageBody class="m-0 p-0">
       <div class="relative bg-jm-secondary-grey-lighter">
-        <UContainer class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10" :ui="{'constrained': 'max-w-3xl'}">
+        <UContainer class="relative py-10 flex h-screen flex-col justify-between items-center gap-y-5 z-10" :ui="{'constrained': 'max-w-3xl'}">
           <Center>
             <NuxtLink to="/" class="inline-block no-underline border-0">
               <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px]" :shine="false" :parallax="false" />
@@ -10,25 +10,24 @@
           </Center>
 
           <Center>
-            <Headline type="h1" class="pb-5">Machen wir es<br><span class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.</Headline>
+            <Headline type="h2" class="pb-5">Machen wir es<br><span class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.</Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }">
               <Button>Einfach machen</Button>
             </NuxtLink>
           </Center>
 
           <Center>
-            <Headline type="h2">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
+            <Headline type="h4">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }" aria-label="scroll bottom">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down" />
             </NuxtLink>
           </Center>
         </UContainer>
-        <Background width="1100px" height="1100px" src="header-box.png" position="bottomLeft" :out="false" />
-        <Background height="701px" src="header-grey.svg" position="bottom" :out="false" parallax="to-right" />
+        <Background class="h-[200px] 2xl:h-[1100px]" src="header-box.png" position="bottomLeft" :out="true" />
+        <Background class="h-[200px] lg:h-[450px] 2xl:h-[600px]" src="header-grey.svg" position="bottom" :out="false" parallax="to-right" />
       </div>
-
       <div class="relative bg-jm-primary-green">
-        <Background height="644px" src="header-green-top.svg" position="top" parallax="to-left" />
+        <Background class="h-[200px] lg:h-[450px] 2xl:h-[600px]" src="header-green-top.svg" position="top" parallax="to-left" />
         <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
           <Headline type="h3">Das bekommst du <b class="uppercase">von uns</b></Headline>
           <Headline type="h4"><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.</Headline>
@@ -109,7 +108,7 @@
             <UBlogPost v-for="(article, index) in articles" :key="index"
                        class="bg-jm-secondary-grey-lighter"
             ><NuxtLink :to="article._path">
-                <img class="w-full"
+                <img loading="lazy" class="w-full"
                      sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                      :src="article.image" :alt="article.imageAlt"/>
                 <section class="px-3  pb-3">
