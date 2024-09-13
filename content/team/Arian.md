@@ -1,8 +1,8 @@
 ---
-name: Arian <b class="text-jm-primary-brown">Entwickler</b>
+name: Arian
 hint: Arian // Entwicklung
 quote: „<b class="text-jm-primary-brown">Es gibt</b> keine bessere Schönheit als <b>den Intellekt.</b>“
-description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+description: Mein Name ist Arian und seit meiner Jugend bin ich fasziniert von der Welt der Technologie. Ich habe in Hannover meine Ausbildung zum Fachinformatiker abgeschlossen und mich seither intensiv mit der Entwicklung und Programmierung von Anwendungen, IoT-Systemen und Raspberry Pi beschäftigt. Das Entwickeln intelligenter Lösungen und das Programmieren innovativer Anwendungen sind meine Leidenschaft. Mein Antrieb ist das tiefe Verständnis und die Schönheit des Intellekts, denn ich glaube fest daran, dass „es keine bessere Schönheit als den Intellekt“ gibt. Bei JOTT.MEDIA setze ich mein Wissen ein, um zukunftsweisende Projekte voranzutreiben und technische Herausforderungen zu meistern.
 src: team/arian.jpg
 imageAlt: Arian
 bg: bg-jm-primary-green

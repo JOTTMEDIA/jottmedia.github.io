@@ -12,13 +12,21 @@ import { useParallax } from '@vueuse/core'
 
 const image = ref(null)
 const parallax = reactive(useParallax(image))
-const imageStyle = computed(() => (
-  props.parallax ? {
-    transition: '.3s ease-out all',
-    transform: `rotateX(${parallax.roll * 10}deg) rotateY(${parallax.tilt * 10}deg)`,
+const imageStyle = computed(() => {
+  const style = {};
+
+  if (props.cover) {
+    style.objectFit = 'cover';
+    style.objectPosition = 'center';
   }
-  : {}
-))
+
+  if (props.parallax) {
+    style.transition = '.3s ease-out all';
+    style.transform = `rotateX(${parallax.roll * 10}deg) rotateY(${parallax.tilt * 10}deg)`;
+  }
+
+  return style;
+});
 
 const props = defineProps({
   src: {
@@ -45,12 +53,15 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  cover: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const glob = import.meta.glob<Record<string, string>>('@/assets/images/**/*', { eager: true })
 const getImageAbsolutePath = (imageName: string): string | undefined => {
   if(!props.publicSrc) {
-    console.log(glob)
     return glob[`/assets/images/${imageName}`]['default'];
   }
 

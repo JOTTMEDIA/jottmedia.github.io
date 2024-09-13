@@ -6,7 +6,7 @@
           class="flex flex-col sm:flex-row h-screen "
           :ui="{'constrained': 'max-w-full gap-0 px-0 sm:px-0 lg:px-0 '}">
         <div class="sm:w-1/2 h-1/2 sm:h-full">
-          <Image class="w-full h-full " :shine="false" :parallax="false" :src="person.src"/>
+          <Image class="w-full h-full" :shine="false" :parallax="false" :cover="true" :src="person.src"/>
         </div>
         <div class="sm:w-1/2 h-1/2 sm:h-full flex flex-col justify-center px-4 space-y-4 lg:px-6 lg:space-y-6 xl:space-y-8 xl:px-8 2xl:space-y-12 2xl:px-20"
             :class="person.bg">
@@ -14,8 +14,8 @@
                   @click="navigateBack">
             <UIcon class="text-lg sm:text-3xl text-jm-primary-brown transition-all z-50" name="i-mdi-close-thick"/>
           </button>
-          <h1 v-html="person?.name" class="py-2 sm:leading-5 xl:leading-10 xl:text-xl uppercase font-extrabold "/>
-          <p v-html="person?.description" class="text-xs xl:text-tiny font-light"></p>
+          <h1 v-html="person?.name" class="text-lg xl:text-xl uppercase font-extrabold"/>
+          <p v-html="person?.description" class="font-light"></p>
           <UContainer class="relative pt-0 z-10">
             <Center>
               <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">

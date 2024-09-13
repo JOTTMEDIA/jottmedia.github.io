@@ -168,8 +168,6 @@ const {data: articles} = await useAsyncData('articles', () =>
         .limit(3)
         .find())
 
-console.log(articles, team)
-
 const carouselItems = ref([
   {
     id: '1',
