@@ -1,6 +1,6 @@
 <template>
   <div class="image-wrapper" :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}">
-    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full block m-0" />
+    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full h-full block m-0 cover bg-center" />
     <UContainer :ui="{'constrained': 'max-w-2xl'}">
       <Paragraph v-if="hint != null" class="text-jm-primary-gre italic text-sm !mb-0">{{ hint }}</Paragraph>
     </UContainer>
@@ -12,13 +12,21 @@ import { useParallax } from '@vueuse/core'
 
 const image = ref(null)
 const parallax = reactive(useParallax(image))
-const imageStyle = computed(() => (
-  props.parallax ? {
-    transition: '.3s ease-out all',
-    transform: `rotateX(${parallax.roll * 10}deg) rotateY(${parallax.tilt * 10}deg)`,
+const imageStyle = computed(() => {
+  const style = {};
+
+  if (props.cover) {
+    style.objectFit = 'cover';
+    style.objectPosition = 'center';
   }
-  : {}
-))
+
+  if (props.parallax) {
+    style.transition = '.3s ease-out all';
+    style.transform = `rotateX(${parallax.roll * 10}deg) rotateY(${parallax.tilt * 10}deg)`;
+  }
+
+  return style;
+});
 
 const props = defineProps({
   src: {
@@ -45,9 +53,13 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  cover: {
+    type: Boolean,
+    default: false,
+  },
 })
 
-const glob = import.meta.glob<Record<string, string>>('@/assets/images/*', { eager: true })
+const glob = import.meta.glob<Record<string, string>>('@/assets/images/**/*', { eager: true })
 const getImageAbsolutePath = (imageName: string): string | undefined => {
   if(!props.publicSrc) {
     return glob[`/assets/images/${imageName}`]['default'];

@@ -27,7 +27,6 @@ router.get('/user', defineEventHandler( async (event) => {
 
   // page.on('console', msg => {
   //   for (let i = 0; i < msg.args().length; ++i)
-  //     console.log(`${i}: ${msg.args()[i]}`);
   // });
 
   // let sharedData = await page.evaluate(() => {
@@ -43,8 +42,6 @@ router.get('/user', defineEventHandler( async (event) => {
   });
 
   if(isUsernameNotFound) {
-    console.log('Account not exists!');
-
     await browser.close();
     return;
   }
