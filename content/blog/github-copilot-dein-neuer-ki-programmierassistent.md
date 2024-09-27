@@ -11,8 +11,6 @@ categories:
 image: /images/GitHub-Copilot-Dein-neuer-KI-Programmierassistent.jpeg
 ---
 
-# GitHub Copilot: Dein neuer KI-Programmierassistent
-
 ## Einführung in GitHub Copilot
 
 GitHub Copilot wurde von OpenAI in Zusammenarbeit mit GitHub entwickelt und ist eine bahnbrechende Technologie, die auf maschinellem Lernen basiert. Das Herzstück dieser Innovation ist ein KI-Modell namens GPT, das Milliarden von Codezeilen aus öffentlichen Repositorys auf GitHub durchforstet hat. Dadurch hat es ein tiefes Verständnis für verschiedene Programmiersprachen und -muster entwickelt. Eigentlich ist es schon fast beängstigend, wie viel Wissen dieses Modell angesammelt hat! Sobald Copilot in einem Code-Editor wie Visual Studio Code integriert ist, kann es Vorschläge in Echtzeit machen, um den Code zu vervollständigen oder zu verbessern.
