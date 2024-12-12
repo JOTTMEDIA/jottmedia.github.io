@@ -3,7 +3,7 @@
     <UPageBody class="mt-0 pb-0 h-screen">
       <UContainer
           v-for="person in team"
-          class="flex flex-col sm:flex-row h-screen "
+          class="flex flex-col sm:flex-row sm:h-screen"
           :ui="{'constrained': 'max-w-full gap-0 px-0 sm:px-0 lg:px-0 '}">
         <div class="sm:w-1/2 h-1/2 sm:h-full">
           <Image class="w-full h-full" :shine="false" :parallax="false" :cover="true" :src="person.src"/>
