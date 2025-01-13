@@ -7,5 +7,5 @@ src: team/paul.jpg
 imageAlt: Paul
 bg: bg-jm-secondary-grey
 button: border-jm-primary-green text-jm-primary-green
-align: right
+align: left
 ---
