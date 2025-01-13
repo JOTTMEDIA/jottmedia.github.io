@@ -70,15 +70,17 @@ const getImageAbsolutePath = (imageName: string): string | undefined => {
 </script>
 
 <style lang="scss">
+@use 'sass:color';
+$color: #fff;
 .shine {
   position: relative;
   overflow: hidden;
 
   &::before {
     background: linear-gradient(
-      to right,
-      fade_out(#fff, 1) 0%,
-      fade_out(#fff, 0.7) 100%
+            to right,
+            fade_out($color, 1) 0%,
+            fade_out($color, 0.7) 100%
     );
     content: "";
     display: block;
