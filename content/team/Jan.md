@@ -7,5 +7,5 @@ src: team/jan.jpg
 imageAlt: Jan
 bg: bg-jm-primary-brown
 button: border-jm-primary-green text-jm-primary-green
-align: right
+align: left
 ---

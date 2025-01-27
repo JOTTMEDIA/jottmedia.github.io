@@ -13,13 +13,13 @@
             <Headline type="h1" class="pb-5">Machen wir es<br><span
                 class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
             </Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }">
+            <NuxtLink @click="scrollTo" :to="{ path: '/', hash: '#machen' }">
               <Button>Einfach machen</Button>
             </NuxtLink>
           </Center>
           <Center>
             <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }">
+            <NuxtLink @click="scrollTo" :to="{ path: '/', hash: '#machen' }">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down"/>
             </NuxtLink>
           </Center>
@@ -167,6 +167,13 @@ const {data: articles} = await useAsyncData('articles', () =>
         .sort({id: -1})
         .limit(3)
         .find())
+
+const scrollTo = () => {
+  const element = document.getElementById('machen');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const carouselItems = ref([
   {

@@ -7,5 +7,5 @@ src: team/jonathan.jpg
 imageAlt: Jonathan
 bg: bg-jm-primary-green
 button: border-jm-primary-brown text-jm-primary-brown
-align: left
+align: right
 ---
