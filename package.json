@@ -27,5 +27,8 @@
     "@vueuse/nuxt": "^12.5.0",
     "puppeteer": "^24.2.0"
   },
-  "packageManager": "pnpm@10.2.0"
+  "packageManager": "pnpm@10.2.0",
+  "engines": {
+    "node": "^22"
+  }
 }
