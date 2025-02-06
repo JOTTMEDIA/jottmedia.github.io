@@ -10,12 +10,10 @@ export default defineNuxtConfig({
   routeRules: {
       '/': {prerender: true},
   },
-
   app: {
       pageTransition: {name: 'page', mode: 'out-in'},
       layoutTransition: { name: 'page', mode: 'out-in' },
       head: {
-          title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA',
           meta: [
               {charset: 'utf-8'},
               {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -51,16 +49,35 @@ export default defineNuxtConfig({
           ]
       },
   },
-
   extends: ['@nuxt/ui-pro'],
-
   modules: [
       '@nuxt/content',
+      '@nuxtjs/i18n',
       '@nuxt/ui',
       '@vueuse/nuxt',
       '@nuxt/image',
       '@nuxthq/studio'
   ],
+    i18n: {
+        lazy: false,
+        langDir: 'locales',
+        strategy: 'prefix_except_default',
+        locales: [
+            {
+                code: 'de',
+                language: 'de-DE',
+                name: 'Deutsch',
+                file: 'de-DE.json',
+                isCatchallLocale: true,
+            },
+            {
+                code: 'en',
+                language: 'en-GB',
+                name: 'English',
+                file: 'en-GB.json',
+            },
+        ],
+    },
   pages: true,
   colorMode: {
       preference: 'light'
