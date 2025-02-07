@@ -32,15 +32,15 @@
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article._path" class="grid items-end h-full">
-              <NuxtImg :src="article.image" class="w-full h-full" format="webp"/>
+            <NuxtLink :to="article.path" class="grid items-end h-full">
+              <NuxtImg :src="article.meta.image as string | undefined" class="w-full h-full" format="webp"/>
               <section class="px-3 lg:px-7 pb-5">
-                <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.date }} von <b
-                    class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
+                <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.meta.date }} von <b
+                    class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg" type="h5" v-html="article.title"/>
                 <Paragraph class="text-sm mb-4 font-light">{{ truncateText(article.description, 250) }}</Paragraph>
                 <UBadge
-                    v-for="(category, index) in article.categories.slice(1)"
+                    v-for="(category, index) in article.meta?.categories.slice(1)"
                     :key="index"
                     class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
                     color="white"
@@ -54,9 +54,9 @@
 
         <Button
             :class="{
-    'text-jm-primary-brown border-jm-primary-brown': articles?.length > pageMaxArticles,
-    'text-jm-primary-brown': articles?.length < pageMaxArticles
-  }"
+            'text-jm-primary-brown border-jm-primary-brown': articles?.length > pageMaxArticles,
+            'text-jm-primary-brown': articles?.length < pageMaxArticles
+          }"
             :disabled="articles?.length < pageMaxArticles"
             class="mt-8 mx-auto flex text-jm-primary-brown border-jm-primary-brown"
             @click="loadMorePosts"
@@ -72,25 +72,25 @@ const route = useRoute()
 const page = ref(1)
 const categories: Ref<string[] | undefined> = ref([])
 
-const pageMaxArticles = ref(6)
+const pageMaxArticles = ref(6);
 const {data: articles} = await useAsyncData(route.path, () =>
-    queryCollection('content')
-        .sort({id: -1})
+    queryCollection('blog')
         .limit(pageMaxArticles.value)
         .skip(pageMaxArticles.value * (page.value - 1))
-        .find())
+        .order('id', 'DESC')
+        .all())
 
 
 function fetchCategories() {
-  categories.value = articles.value?.map(item => item.categories)
+  categories.value = articles.value?.map(item => item.meta.categories)
       .flat()
-      .filter((item, index, self) => self.indexOf(item) === index)
+      .filter((item, index, self) => self.indexOf(item) === index) || []
 }
 
 const selectedCategory = ref('')
 const filteredArticles = computed(() => {
   if (!selectedCategory.value) return articles.value;
-  return articles.value?.filter(article => article.categories.includes(selectedCategory.value));
+  return articles.value?.filter(article => (article.meta.categories as string[]).includes(selectedCategory.value));
 });
 
 const loadMoreButtonLabel = computed(() => {
@@ -100,10 +100,10 @@ const loadMoreButtonLabel = computed(() => {
 async function loadMorePosts() {
   pageMaxArticles.value += 6
   await useAsyncData(route.path, () =>
-      queryCollection('content')
-          .sort({id: -1})
+      queryCollection('blog')
+          .order('id', 'DESC')
           .limit(pageMaxArticles.value)
-          .find()
+          .all()
   )
   fetchCategories()
 }
