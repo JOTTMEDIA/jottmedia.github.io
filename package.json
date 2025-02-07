@@ -37,7 +37,8 @@
       "esbuild",
       "@parcel/watcher",
       "vue-demi",
-      "puppeteer"
+      "puppeteer",
+      "better-sqlite3"
     ]
   }
 }
