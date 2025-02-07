@@ -102,7 +102,7 @@
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="py-10">
         <Paragraph><b class="text-jm-primary-brown uppercase">{{ t('challenges.conception') }}</b> {{
             t('challenges.of')
-          }} <b>{{ t('challenges.digital') }}</b> {{ t('challenges.challenge') }} <b>{{ t('challenges.master') }}</b>
+          }} <b>{{ t('challenges.digital') }}</b>{{ t('challenges.challenge') }}<b>{{ t('challenges.master') }}</b>
           {{ t('challenges.other') }} <b>{{ t('challenges.complicated') }}</b> {{ t('challenges.obstacles') }}
           <b>{{ t('challenges.website') }}</b> {{ t('challenges.solutions') }} <b>{{ t('challenges.aesthetics') }}</b>
           {{ t('challenges.start') }}
