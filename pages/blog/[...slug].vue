@@ -1,7 +1,8 @@
 <template>
   <UPage>
-    <UPageBody class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
-               prose>
+    <UPageBody
+        class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
+        prose>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink class="inline-block no-underline border-0" to="/">
@@ -12,17 +13,23 @@
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pt-10">
         <h1 class="text-4xl" v-html="page?.title"/>
         <div class="flex gap-2 mb-2">
-          <UBadge v-for="category in page?.categories"
-                  :key="category" :label="category" :ui="{ rounded: 'rounded-lg', font: 'font-extrabold', size: { xs: 'text-xs px-3 py-0.5' } }" size="xs"/>
+          <UBadge v-for="category in page?.meta.categories"
+                  :key="category" :label="category"
+                  :ui="{ rounded: 'rounded-lg', font: 'font-extrabold', size: { xs: 'text-xs px-3 py-0.5' } }"
+                  size="xs"/>
         </div>
-        <small>{{ page?.date }} von
-          <NuxtLink :to="`../team/${page?.author.toLowerCase()}`"><b class="text-jm-primary-green">{{ page?.author }}
+        <small>{{ page?.meta.date }} von
+          <NuxtLink :to="`../team/${(page?.meta.author as string).toLowerCase()}`"><b
+              class="text-jm-primary-green">{{ page?.meta.author }}
           </b></NuxtLink>
         </small>
         <p class="lead">{{ page?.description }}</p>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-4xl'}">
-        <Image :alt="page?.imageAlt" :hint="page?.imageAlt" :public-src="true" :src="page?.image"/>
+        <Image :alt="page?.meta.imageAlt as string | undefined"
+               :hint="page?.meta.imageAlt as string | undefined"
+               :public-src="true"
+               :src="page?.meta.image as string"/>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pb-10">
         <ContentRenderer v-if="page?.body" :value="page"/>
@@ -34,14 +41,20 @@
 <script lang="ts" setup>
 
 const route = useRoute()
-const {data: page} = await useAsyncData(route.path, () => queryCollection('content').first())
+const {data: page} = await useAsyncData(() => {
+  return queryCollection('blog')
+      .path(route.path)
+      .first()
+})
 
+console.log(page.value)
+console.log(page)
 useSeoMeta({
-  title: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
-  ogTitle: page.value?.seoTitle + ' - Blog - JOTT.MEDIA',
+  title: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
+  ogTitle: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
   description: page.value?.description,
   ogDescription: page.value?.description,
-  ogImage: "https://jott.media" + page.value?.image,
+  ogImage: "https://jott.media" + page.value?.meta.image,
   twitterCard: 'summary_large_image',
 })
 </script>
