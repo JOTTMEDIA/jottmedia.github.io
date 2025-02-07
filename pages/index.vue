@@ -69,11 +69,11 @@
         <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10 md:mb-40 z-10">
           <ImageFigure
               v-for="person in team"
-              :align="person.align"
-              :hint="person.hint"
-              :link="person._path"
-              :quote="person.quote"
-              :src="person.src">
+              :align="person.meta.align as string | undefined"
+              :hint="person.meta.hint as string | undefined"
+              :link="person.path as string | undefined"
+              :quote="person.meta.quote as string | undefined"
+              :src="person.meta.src as string | undefined">
           </ImageFigure>
         </UContainer>
         <Background :out="false" height="854px" parallax="to-left" position="bottom" src="grey-bottom.svg"/>
@@ -123,15 +123,17 @@
         </Center>
         <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article._path">
-              <Image :alt="article.imageAlt" :parallax="false" :publicSrc="true" :shine="false" :src="article.image"
+            <NuxtLink :to="article.path">
+              <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
+                     :shine="false"
+                     :src="article.meta.image as string"
                      class="w-full"/>
               <section class="px-3 pb-3">
-                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
-                    class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
+                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} von <b
+                    class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
                 <UBadge
-                    v-for="(category, index) in article.categories.slice(1)"
+                    v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
                     :key="index"
                     class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
                     color="white"
@@ -154,15 +156,19 @@
 </template>
 
 <script lang="ts" setup>
+
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
+const {data: articles} = await useAsyncData(() => {
+  return queryCollection('blog').all()
+})
 
-const {data: team} = await useAsyncData('team', () =>
-    queryCollection('content').first())
+const {data: team} = await useAsyncData(() => {
+  return queryCollection('team').all()
+})
 
-const {data: articles} = await useAsyncData('articles', () =>
-    queryCollection('content').first())
+
 const scrollTo = () => {
   const element = document.getElementById('machen');
   if (element) {
