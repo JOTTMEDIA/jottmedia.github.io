@@ -2,56 +2,56 @@
   <UPage>
     <UPageBody class="m-0 p-0">
       <div class="relative bg-jm-secondary-grey-lighter">
-        <UContainer class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10"
-                    :ui="{'constrained': 'max-w-3xl'}">
+        <UContainer :ui="{'constrained': 'max-w-3xl'}"
+                    class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
           <Center>
-            <NuxtLink to="/" class="inline-block no-underline border-0">
-              <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" :shine="false" :parallax="false"/>
+            <NuxtLink class="inline-block no-underline border-0" to="/">
+              <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
             </NuxtLink>
           </Center>
           <Center>
-            <Headline type="h1" class="pb-5">Machen wir es<br><span
+            <Headline class="pb-5" type="h1">Machen wir es<br><span
                 class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
             </Headline>
-            <NuxtLink @click="scrollTo" :to="{ path: '/', hash: '#machen' }">
+            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
               <Button>Einfach machen</Button>
             </NuxtLink>
           </Center>
           <Center>
             <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
-            <NuxtLink @click="scrollTo" :to="{ path: '/', hash: '#machen' }">
+            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down"/>
             </NuxtLink>
           </Center>
         </UContainer>
-        <Background width="1100px" height="1100px" src="header-box.png" position="bottomLeft" :out="false"/>
-        <Background height="701px" src="header-grey.svg" position="bottom" :out="false" parallax="to-right"/>
+        <Background :out="false" height="1100px" position="bottomLeft" src="header-box.png" width="1100px"/>
+        <Background :out="false" height="701px" parallax="to-right" position="bottom" src="header-grey.svg"/>
       </div>
       <div class="relative bg-jm-primary-green">
-        <Background height="644px" src="header-green-top.svg" position="top" parallax="to-left"/>
-        <UContainer id="machen" class="relative py-10" :ui="{'constrained': 'max-w-3xl'}">
+        <Background height="644px" parallax="to-left" position="top" src="header-green-top.svg"/>
+        <UContainer id="machen" :ui="{'constrained': 'max-w-3xl'}" class="relative py-10">
           <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
           <Headline type="h4"><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines
             Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für
             <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.
           </Headline>
         </UContainer>
-        <Background height="875px" src="header-green-bottom.svg" position="bottom" parallax="to-left"/>
+        <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
       </div>
-      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-4xl'}">
-        <Image src="team.jpg" alt="Arian und Jan im Termin"/>
+      <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10">
+        <Image alt="Arian und Jan im Termin" src="team.jpg"/>
       </UContainer>
 
-      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
         <Headline type="h6">Die wichtigste <b class="uppercase">Frage</b></Headline>
-        <Headline type="h2" class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
+        <Headline class="font-[400]" type="h2">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
           Unternehmen wirklich?</b>“
         </Headline>
       </UContainer>
 
-      <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
         <Headline type="h6">So arbeiten wir <b class="uppercase">für Dich</b></Headline>
-        <Headline type="h5" class="text-jm-primary-brown"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
+        <Headline class="text-jm-primary-brown" type="h5"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
         <Paragraph>Die Lösung muss immer zum Problem passen. Darum steht bei uns <b>an erster Stelle</b> die Analyse
           deiner Herausforderung. Erst, wenn diese glasklar ist, widmen wir uns der <b>Konzeption und Umsetzung</b> des
           tatsächlichen Produkts, wie auch immer das in deinem konkreten Fall aussehen mag. Damit das funktioniert, ist
@@ -65,20 +65,20 @@
         </Center>
       </UContainer>
       <div class="relative">
-        <Background height="757px" src="grey-top.svg" position="top" :out="false" parallax="to-right"/>
-        <UContainer class="relative py-10 md:mb-40 z-10" :ui="{'constrained': 'max-w-4xl'}">
+        <Background :out="false" height="757px" parallax="to-right" position="top" src="grey-top.svg"/>
+        <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10 md:mb-40 z-10">
           <ImageFigure
               v-for="person in team"
-              :src="person.src"
-              :quote="person.quote"
-              :hint="person.hint"
-              :link="person._path"
-              :align="person.align">
+              :align="person.meta.align as string | undefined"
+              :hint="person.meta.hint as string | undefined"
+              :link="person.path as string | undefined"
+              :quote="person.meta.quote as string | undefined"
+              :src="person.meta.src as string | undefined">
           </ImageFigure>
         </UContainer>
-        <Background height="854px" src="grey-bottom.svg" position="bottom" :out="false" parallax="to-left"/>
+        <Background :out="false" height="854px" parallax="to-left" position="bottom" src="grey-bottom.svg"/>
       </div>
-      <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10 z-10">
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
             <Button>Lerne uns kennen</Button>
@@ -87,20 +87,20 @@
       </UContainer>
 
       <div class="relative bg-jm-primary-green mt-64">
-        <Background height="702px" src="green-top.svg" position="top" parallax="to-right"/>
-        <UContainer class="relative py-10" :ui="{'constrained': 'max-w-2xl'}">
+        <Background height="702px" parallax="to-right" position="top" src="green-top.svg"/>
+        <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
           <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
-          <Headline type="h3" class="font-[400]">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale
+          <Headline class="font-[400]" type="h3">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale
             Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></Headline>
         </UContainer>
-        <Background height="517px" src="green-bottom.svg" position="bottom" parallax="to-right"/>
+        <Background height="517px" parallax="to-right" position="bottom" src="green-bottom.svg"/>
       </div>
 
-      <UContainer class="py-10" :ui="{'constrained': 'max-w-4xl'}">
+      <UContainer :ui="{'constrained': 'max-w-4xl'}" class="py-10">
         <Carousel :items="carouselItems"/>
       </UContainer>
 
-      <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="py-10">
         <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von
           <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir
             machen Kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite,
@@ -114,29 +114,31 @@
         </Center>
       </UContainer>
 
-      <UContainer class="pt-20" :ui="{'constrained': 'max-w-5xl'}">
+      <UContainer :ui="{'constrained': 'max-w-5xl'}" class="pt-20">
         <Center>
-          <Headline type="h2" class="pb-8 leading-8 lg:leading-5 text-3xl lowercase">
+          <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
             <b class="text-jm-primary-brown uppercase">Neues</b> aus der
             <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
           </Headline>
         </Center>
         <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article._path">
-              <Image :src="article.image" :alt="article.imageAlt" class="w-full" :shine="false" :parallax="false"
-                     :publicSrc="true"/>
+            <NuxtLink :to="article.path">
+              <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
+                     :shine="false"
+                     :src="article.meta.image as string"
+                     class="w-full"/>
               <section class="px-3 pb-3">
-                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} von <b
-                    class="text-jm-primary-green uppercase"> {{ article.author }} </b></Paragraph>
+                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} von <b
+                    class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
                 <UBadge
-                    v-for="(category, index) in article.categories.slice(1)"
+                    v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
                     :key="index"
-                    color="white"
                     class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
-                    variant="solid"
-                    size="sm">{{ category }}
+                    color="white"
+                    size="sm"
+                    variant="solid">{{ category }}
                 </UBadge>
               </section>
             </NuxtLink>
@@ -153,25 +155,24 @@
   </UPage>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
+
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
+const {data: articles} = await useAsyncData(() => {
+  return queryCollection('blog').all()
+})
 
-const {data: team} = await useAsyncData('team', () =>
-    queryContent('/team')
-        .find())
+const {data: team} = await useAsyncData(() => {
+  return queryCollection('team').all()
+})
 
-const {data: articles} = await useAsyncData('articles', () =>
-    queryContent('/blog')
-        .sort({id: -1})
-        .limit(3)
-        .find())
 
 const scrollTo = () => {
   const element = document.getElementById('machen');
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({behavior: 'smooth'});
   }
 };
 
