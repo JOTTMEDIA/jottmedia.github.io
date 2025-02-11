@@ -222,19 +222,25 @@
 </template>
 
 <script lang="ts" setup>
-const {t} = useI18n()
+const {t, locale} = useI18n()
+import type {Collections} from '@nuxt/content'
 
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
-const {data: articles} = await useAsyncData(() => {
-  return queryCollection('blog').all()
+const {data: articles} = await useAsyncData(async () => {
+  const collection = ('articles_' + locale.value) as keyof Collections
+  return await queryCollection(collection).all() as Collections['articles_en'][] | Collections['articles_de'][]
 })
 
-const {data: team} = await useAsyncData(() => {
-  return queryCollection('team').all()
+const {data: team} = await useAsyncData(async () => {
+  const collection = ('team_' + locale.value) as keyof Collections
+  return await queryCollection(collection).all() as Collections['team_en'][] | Collections['team_de'][]
 })
 
+watch(() => articles, async () => {
+  console.log(articles)
+})
 
 const scrollTo = () => {
   const element = document.getElementById('machen');
