@@ -1,10 +1,11 @@
 ---
 id: 3
-title: <b class="text-jm-primary-brown uppercase">Hashtags auf Instagram:</b> Eine Anleitung zur effektiven Nutzung
+title: <b class="text-jm-primary-brown uppercase">Hashtags auf Instagram:</b> A guide to effective use
 seoTitle: 'Hashtags auf Instagram: Eine Anleitung zur effektiven Nutzung'
-description: Hashtags sind ein wichtiges Werkzeug, um deine Instagram-Beiträge einem größeren Publikum zugänglich zu machen. In diesem Beitrag erfährst du, wie du Hashtags effektiv nutzen kannst, um die Sichtbarkeit deiner Beiträge zu maximieren und deine Instagram-Präsenz zu stärken.
+description: Hashtags are an important tool for making your Instagram posts accessible to a wider audience. In this article, you will learn how to use hashtags effectively to maximise the visibility of your posts and boost your Instagram presence.
 date: 01.07.2024
 author: Annika
+slug: en/blog/hashtags-auf-instagram
 categories:
   - Allgemein
   - Social Media
@@ -12,46 +13,67 @@ image: /images/Hashtags-auf-Instagram.jpeg
 imageAlt: Hashtags auf Instagram
 ---
 
-## **Was bringen Hashtags?**
+## **What do hashtags do?**
 
-Zuallererst bringen Hashtags Reichweite. Sie funktionieren auf Instagram wie ein Wegweiser für deine Zielgruppe. Sie helfen anderen dabei, dein Instagram-Profil zu entdecken und einen Eindruck davon zu bekommen, wer du bist und was deine Marke ausmacht. Indem du die richtigen Hashtags für deine Beiträge auf Instagram verwendest, erscheinst du häufiger in den Feeds potenzieller Kunden und Nutzer, die an ähnlichen Inhalten interessiert sind. 
+First and foremost, hashtags bring reach. On Instagram, they function like a signpost for your target group. They
+help others discover your Instagram profile and get an impression of who you are and what your brand is all about.
+brand is all about. By using the right hashtags for your posts on Instagram, you will appear more frequently in
+the feeds of potential customers and users who are interested in similar content.
 
-Wenn du dich für ein bestimmtes Thema interessierst, kannst du einem Hashtag folgen – zum Beispiel #jottmedia. 
+If you are interested in a specific topic, you can follow a hashtag - for example #jottmedia.
 
-## **Was ist ein Instagram-Hashtag genau?**
+## **What exactly is an Instagram hashtag?**
 
-Ein Hashtag wird durch ein Hashtag-Symbol (#) unmittelbar vor einem einzelnen Schlagwort oder einer Formulierung gekennzeichnet. Es ist auch als Nummernzeichen oder Raute bekannt. Dieses Symbol signalisiert Instagram, den folgenden Text zu verlinken. Dieser Link sorgt dafür, dass du auf Instagram gefunden werden kannst. Grundsätzlich kann jedes Wort ein Hashtag sein.
+A hashtag is characterised by a hashtag symbol (#) immediately before a single keyword or phrase.
+characterised. It is also known as a number sign or hash. This symbol signals Instagram to link the following
+to link the following text. This link ensures that you can be found on Instagram. Basically, any word
+can be a hashtag.
 
-## **Wo werden Hashtags angezeigt?**
+## **Where are hashtags displayed?**
 
-Zuerst natürlich in Instagram-Beiträgen. Hier kannst du deine Hashtags unten in die Captions einfügen, gleiches gilt für Instagram-Reels. Klickst du auf den Hashtag, landest du in beiden Fällen auf einer Übersichtsseite. Du kannst Hashtags aber auch in deine Story setzen. 
+Firstly, of course, in Instagram posts. Here you can insert your hashtags at the bottom of the captions, the same
+applies to
+Instagram reels. If you click on the hashtag, you will land on an overview page in both cases. You can also add hashtags
+in your story as well.
 
-## **Wie viele Hashtags sollte ich verwenden?**
+## **How many hashtags should I use?**
 
-Weniger ist mehr. Bei Instagram ist die Anzahl für einen Beitrag zwar auf 30 Stück begrenzt, aber wer will schon eine unschöne “Hashtag-Wand” am Ende der Caption?
+Less is more. Instagram limits the number of hashtags per post to 30, but who wants an
+unsightly ‘hashtag wall’ at the end of the caption?
 
-Instagram selbst empfiehlt, zwischen 3 und 5 Hashtags pro Posting zu verwenden. Aktuell wird wohl ein neues Feature getestet, das Hashtags auf 5 Stück limitiert. Vielleicht ist das gar nicht so schlecht, denn damit ist man gezwungen, sich auf die richtigen Hashtags zu fokussieren. Hier zählt also Qualität vor Quantität.
+Instagram itself recommends using between 3 and 5 hashtags per post. A new feature is currently being tested
+is currently being tested that limits hashtags to 5. Maybe that's not such a bad thing, because it forces you to
+to focus on the right hashtags. So it's quality over quantity that counts here.
 
-Es gibt ein paar weitere Dinge, auf die du achten solltest, um Hashtags korrekt zu verwenden:
+There are a few other things you should pay attention to in order to use hashtags correctly:
 
-1. zwischen Hashtag und dem Text darf kein Leerzeichen sein, genauso wie zwischen einzelnen Wörtern (falsch:  # jott media oder # jottmedia, **richtig: #jottmedia**)
-2. keine Sonderzeichen verwenden (falsch: #jott.media oder #jottmedia!)
-3. Zahlen sind erlaubt
+1. there should be no space between the hashtag and the text, just like between individual words (wrong:# jott media
+   or # jottmedia, **correct: #jottmedia**)
+2. do not use any special characters (wrong: #jott.media or #jottmedia!)
+3. numbers are allowed
 
-## **Noch ein paar Tipps für die Verwendung:**
+## **A few more tips for use:**
 
-- der Content ist immer wichtiger als die Hashtags
-- verwende nur Hashtags, die zu deinem Content passen (keine wilde Auswahl, nur weil sie zu deinem Account passen, sondern konkret überlegen, welche Hashtags zu deinem Inhalt passen)
-- Firmennamen oder Markennamen als Hashtags: stell dir zuerst folgende Fragen: Ist deine Marke/Firma bereits bekannt? Ist es ein Mehrwert für den User, diesen Hashtag zu nutzen? Dann lohnt es sich in jedem Fall diesen Hashtag zu setzen.
-- Du hast theoretisch die Möglichkeit, Hashtags mitten in den Text einzufügen, #dadurch wird der #Text allerdings #schwer lesbar. Setze sie besser gebündelt an das Ende deines Postings.
-- Schreibe Hashtags in den ersten Kommentar unter deinem Beitrag.
+- the content is always more important than the hashtags
+- only use hashtags that fit your content (no wild selection just because they fit your account,
+  but think specifically about which hashtags fit your content)
+- Company names or brand names as hashtags: first ask yourself the following questions: Is your brand/company already
+  known?
+  Is it an added value for the user to use this hashtag? Then it is definitely worth using this hashtag.
+- You theoretically have the option of inserting hashtags in the middle of the text, but #this makes the #text
+  #difficult to read. It's better to bundle them at the end of your post.
+- Write hashtags in the first comment under your post.
 
-## **Hashtags in Instagram Stories einbinden**
+## **Include hashtags in Instagram Stories**
 
-- Minimiere deine Hashtags nach dem Schreiben und ziehe sie an den unteren Bildschirmrand. Sie werden dann unter dem Rahmen versteckt. Achte nur darauf, dass du sie nicht versehentlich in den Mülleimer wirfst!
-- Minimiere deine Hashtags und decke sie mit einem Sticker ab. Animierte Sticker lassen deine Story aus der Masse hervorstechen und verdecken das Hashtag-Wirrwarr.
-- Mache deine Hashtags mit der Pipette unsichtbar, indem du den Hashtag-Text farblich an einen einfarbigen Hintergrund anpasst.
+- Minimise your hashtags after writing and drag them to the bottom of the screen. They will then be hidden under the
+  hidden under the frame. Just make sure you don't accidentally throw them in the bin!
+- Minimise your hashtags and cover them with a sticker. Animated stickers make your story stand out from the crowd
+  and cover up the hashtag clutter.
+- Make your hashtags invisible with the pipette by colour-matching the hashtag text to a plain background.
+  to a solid colour background.
 
-## **Last but not least: Erstelle dir eine Hashtag-Sammlung**
+## **Last but not least: Create a hashtag collection**
 
-Um nicht jedes Mal deine relevanten Hashtags neu eingeben zu müssen, solltest du dir deine Kern-Hashtags abspeichern, sodass du sie nur kopieren und unter deinen Beitrag einfügen musst.
+To avoid having to re-enter your relevant hashtags every time, you should save your core hashtags,
+so that you only have to copy and paste them under your post.

@@ -1,69 +1,104 @@
 ---
 id: 4
-title: Wie können <b class="text-jm-primary-brown uppercase">Blockchains</b> Unternehmen bereichern?
-seoTitle: Wie können Blockchains Unternehmen bereichern?
-description: Zehn Millionen Euro ans andere Ende der Welt für einen Bruchteil eines Cents senden - und das mehrere tausendmal binnen weniger Sekunden? Blockchain-Technologien revolutionieren im Marschtempo sämtliche Wirtschaftssektoren. Doch was sind Blockchains? Wie genau verändert dies die Art und Weise zu wirtschaften und wie profitieren Unternehmen davon?
+title: How can <b class="text-jm-primary-brown uppercase">Blockchains</b> Enrich your company?
+seoTitle: How can blockchains enrich companies?
+description: Sending ten million euros to the other side of the world for a fraction of a cent - several thousand times within a few seconds? Blockchain technologies are revolutionising all sectors of the economy at breakneck speed. But what are blockchains? How exactly is this changing the way we do business and how do companies benefit from it?
 date: 10.07.2024
 author: Arian
+slug: en/blog/wie-koennen-blockchains-unternehmen-bereichern
 categories:
   - Allgemein
   - Entwicklung
 image: /images/Blockchains-fuer-Unternehmen.jpeg
-imageAlt: Blockchains für Unternehmen
+imageAlt: Blockchains for companies
 ---
 
-## **Block…was?**
+## **Block...what?**
 
-Eine Blockchain ist eine Art dezentrale Datenbank, welche Daten und Informationen durch kryptografische Verfahren sicher, integer und schnell verarbeiten und validieren kann. Sie legt ein besonderes Augenmerk auf die Datenintegrität, die Schnelligkeit von Transaktionen und die Dezentralisierung. Denn Blockchains kann jeder betreiben, sie sind also nicht durch Institutionen zentralisiert. 
+A blockchain is a type of decentralized database that can process and validate data and information securely, with
+integrity and quickly using cryptographic methods. It pays particular attention to data integrity, the speed of
+transactions and decentralization. Anyone can operate blockchains, so they are not centralized by institutions.
 
-## **EIN BEISPIEL: XRP & RippleNET**
+## **AN EXAMPLE: XRP & RippleNET**
 
-Das von RippleLabs (kurz Ripple) entwickelte RippleNET ist eine Blockchain, die den gemeinsamen Zahlungsverkehr zwischen Banken und Finanzinstituten weltweit vereinfacht. Die Grundlage des RippleNet bildet der Open-Source-XRP-Token. Dieser spielt eine zentrale Rolle im Zahlungsverkehr des Netzwerks, denn er dient als Brückenwährung, die Transaktionen zwischen verschiedenen Fiat-Währungen (Euro, Dollar, etc.) schnell und kostengünstig weltweit ermöglicht. 
+RippleNET, developed by RippleLabs (Ripple for short), is a blockchain that simplifies joint payment transactions
+between banks and financial institutions worldwide. The basis of RippleNet is the open source XRP token. This plays a
+central role in the network's payment transactions, as it serves as a bridge currency that enables transactions between
+different fiat currencies (euro, dollar, etc.) quickly and inexpensively worldwide.
 
-Ein entscheidender Vorteil dieses Netzwerkes ist, dass es nicht zentralisiert ist. Anstatt auf eine zentrale Autorität (Regierung, Bank, Unternehmen) zu vertrauen, basiert das Netzwerk auf einem Konsensmechanismus, bei dem sogenannte Validatoren über die Transaktionen im Netzwerk mitbestimmen. 
+A key advantage of this network is that it is not centralized. Instead of relying on a central authority (government,
+bank, company), the network is based on a consensus mechanism in which so-called validators have a say in the
+transactions in the network. ::prose-blockquote **Validators and consensus** - Blockchain technologies use different
+consensus mechanisms. The validators, which consist of a large number of institutions, companies and individuals, ensure
+the integrity and security of the network. They provide the technical infrastructure for operating the chain and
+contribute to both the stability and further development of the network. This right of participation creates a
+democratic and more secure structure that strengthens trust in the system. :: Another important aspect of XRP is its
+deflationary nature. Unlike its counterpart, these can be printed by governments without limit. Therefore, when the
+network was created, the total amount of XRP was set at 100 billion tokens. In addition, small amounts of XRP are
+destroyed with each transaction, which further reduces the total amount over time. This deflationary property can lead
+to an increase in the value of the token
+as scarcity reduces supply, but also ensures stability as a bridge currency.
+
+## **Why are banks and financial institutions now using Ripple?**
+
+In addition to the aforementioned benefits offered by the network, traditional cross-border payments are often slow,
+expensive and inefficient. RippleNet, on the other hand, enables almost instant transactions at a fraction of the cost.
+
+This allows banks and financial institutions to reduce their operating costs and offer their customers faster and
+cheaper
+services.
+
+By combining speed, cost-effectiveness and security, it offers a superior alternative to
+traditional payment systems. In addition, as mentioned, the decentralized structure of the network promotes
+trust among users as no central authority has control over the system.
+
+With the increasing acceptance and implementation of RippleNet, cross-border payments could become as easy and fast as
+an email in the near future, which would significantly impact global trade and the economy, so it has the potential to
+revolutionize payment transactions.
+
+## **How ​​do companies benefit from blockchains?**
+
+Of particular interest to companies is the automation of manual processes. This includes, for example,
+automatic and digital contract and financial processing (so-called "smart contracts"), the complete monitoring and
+tracking of value chains or the storage and provision of company and customer data. This is stored in the blockchain in
+an unchangeable historical manner and enables increased transparency of these business processes.
 
 ::prose-blockquote
-**Validatoren und Konsens** - Blockchaintechnologien nutzen unterschiedliche Konsensmechanismen. Die Validatoren, die aus einer Vielzahl von Institutionen, Unternehmen und Einzelpersonen bestehen, gewährleisten die Integrität und Sicherheit des Netzwerks. Sie stellen die technische Infrastruktur für das Betreiben der Chain bereit und tragen sowohl zur Stabilität, als auch zur Weiterentwicklung des Netzwerkes bei. Durch dieses Mitbestimmungsrecht wird eine demokratische und sicherere Struktur geschaffen, die das Vertrauen in das System stärkt.
-::
+**Industry 4.0** - digitization, automation, Internet and IoT: They are revolutionizing many areas of our
+lives and changing them sustainably. Companies benefit from these technologies by integrating them into their
+processes and sustainably improving productivity. ::
 
-Ein weiterer wichtiger Aspekt von XRP ist seine deflationäre Natur. Denn im Gegensatz zu seinem Pendant, können diese durch Regierungen unbegrenzt gedruckt werden. Daher wurde bei der Erstellung des Netzwerks die Gesamtmenge an XRP auf 100 Milliarden Token festgesetzt. Zusätzlich werden bei jeder Transaktion kleine Mengen XRP vernichtet, was die Gesamtmenge im Laufe der Zeit weiter reduziert. Diese deflationäre Eigenschaft kann zu einer Wertsteigerung des Tokens führen, da die Verknappung das Angebot verringert, aber auch die Stabilität als Brückenwährung gewährleisten.
+## **AN EXAMPLE: Tokenization of assets**
 
-## **Warum nutzen Banken und Finanzinstitute nun Ripple?** 
-
-Neben den genannten Vorteilen, die das Netzwerk bietet, sind traditionelle grenzüberschreitende Zahlungen oft langsam, teuer und ineffizient. RippleNet hingegen ermöglicht nahezu sofortige Transaktionen zu einem Bruchteil der Kosten. Banken und Finanzinstitute können dadurch ihre Betriebskosten senken und ihren Kunden schnellere und günstigere Dienstleistungen anbieten.
-
-Durch die Kombination von Geschwindigkeit, Kosteneffizienz und Sicherheit bietet es eine überlegene Alternative zu traditionellen Zahlungssystemen. Darüber hinaus fördert, wie erwähnt, die dezentrale Struktur des Netzwerks das Vertrauen der Nutzer, da keine zentrale Autorität die Kontrolle über das System hat. 
-
-Mit der zunehmenden Akzeptanz und Implementierung von RippleNet könnten grenzüberschreitende Zahlungen in naher Zukunft so einfach und schnell wie eine E-Mail werden, was den globalen Handel und die Wirtschaft erheblich beeinflussen würde, deshalb hat es das Potenzial, den Zahlungsverkehr zu revolutionieren.
-
-## **Wie profitieren Unternehmen von Blockchains?**
-
-Von besonderem Interesse für Unternehmen sind die Automatisierung manueller Prozesse. Dazu zählen beispielsweise automatische und digitale Vertrags- und Finanzabwicklungen (sog. „Smart Contracts“), die vollständige Überwachung und Verfolgung von Wertschöpfungsketten oder das Speichern und Bereitstellen von Firmen- und Kundendaten. Diese werden in der Blockchain unveränderlich historisch hinterlegt und ermöglichen eine erhöhte Transparenz dieser Geschäftsprozesse.
+Here, assets, for example in the form of real estate, bonds, securities, but also intellectual property, such as
+designs, brands, innovations and copyright, are documented digitally. The authorship is visible to the participants
+within the network at all times and is stored immutably by the validators.
 
 ::prose-blockquote
-**Industrie 4.0** - Digitalisierung, Automatisierung, Internet und IoT: Sie revolutionieren viele Bereiche unseres Lebens und verändern sie nachhaltig. Unternehmen profitieren hierbei von diesen Technologien, indem sie diese in ihre Prozesse einbinden und die Produktivität nachhaltig verbessern.
-::
+**Electricity consumption** - Blockchains are maintained by providing computing capacity. Operating them consumes more
+or less electricity. In order to make this ecologically sustainable, the validator can
+use renewable energies and have a positive impact on the ecological balance.::
 
-## **EIN BEISPIEL: Tokenisierung von Vermögenswerten**
+## **Cost savings and transparency**
 
-Hierbei werden Assets, beispielsweise in Form von Immobilien, Anleihen, Wertpapieren, aber auch geistigem Eigentum, wie Designs, Marken, Innovationen und Urheberrecht digitalisiert dokumentiert. Die Urheberschaft ist für die Teilnehmer innerhalb des Netzwerks zu jedem Zeitpunkt ersichtlich und wird durch die Validatoren unveränderlich gespeichert.
+By processing transactions via the blockchain and saving on manual processing, the costs incurred for fees and
+commissions are reduced. In concrete terms, this means that cost efficiency can be increased by reducing transaction
+costs and lowering operating costs.
 
-::prose-blockquote
-**Stromverbrauch** - Durch das Bereitstellen von Rechenkapazitäten werden Blockchains aufrechterhalten. Diese zu betreiben, verbraucht mehr oder weniger Strom. Um dieses ökologisch nachhaltig zu gestalten, kann der Validator erneuerbare Energien nutzen und die Ökobilanz positiv beeinflussen. 
-::
+Furthermore, the decentralized nature of the blockchain enables the company to exchange data and transactions directly
+with the parties involved in real time without delay. This leads to a significant reduction in processing times and more
+efficient processing of business transactions. The transparency and traceability of all transactions and data are
+significantly improved. As mentioned, every transaction is stored immutably and is visible to all participants in the
+network. In addition, they cannot be manipulated and the distributed storage minimizes the risk of data loss and
+increases reliability.
 
-## **BEREICHERUNG DURCH BLOCKCHAINS?**
+This creates trust and, above all, prevents fraud, as every transaction is verifiable. The transparency gained in this
+way helps to facilitate compliance with regulations and the conduct of audits.
 
-Die Verwendung kann sich über alle Geschäftsprozesse erstrecken und die zusätzliche Einsparung von Intermediären verringert Abhängigkeiten. Durch diesen autarken Effekt ist das Unternehmen weniger anfällig für externe Einflüsse und Fehlverhalten Dritter.
+## **Conclusion**
 
-## **Kosteneinsparung und Transparenz**
+Bundling the above-mentioned advantages ensures and improves the company's independence and integrity.
 
-Durch die Abwicklung von Transaktionen über die Blockchain und Einsparung manueller Bearbeitung senken sich die Kosten, die für Gebühren und Provisionen anfallen. Das bedeutet konkret, dass die Kosteneffizienz gesteigert werden kann, indem Transaktionskosten reduziert und Betriebskosten gesenkt werden.
-
-Des Weiteren ist es durch die dezentralisierte Natur der Blockchain dem Unternehmen möglich, Daten und Transaktionen ohne Verzögerung in Echtzeit direkt mit den beteiligten Parteien auszutauschen. Dies führt zu einer erheblichen Verkürzung der Durchlaufzeiten und einer effizienteren Abwicklung von Geschäftsvorgängen. Die gewonnene Transparenz und Nachvollziehbarkeit aller Transaktionen und Daten werden erheblich verbessert. Wie erwähnt, wird jede Transaktion unveränderlich gespeichert und ist für alle Teilnehmer des Netzwerks einsehbar. Außerdem sind diese nicht manipulierbar und durch die verteilte Speicherung wird das Risiko eines Datenverlustes minimiert und die Ausfallsicherheit erhöht.
-
-Dies schafft Vertrauen und verhindert vor allem Betrug, da jede Transaktion überprüfbar ist. Die dadurch gewonnene Transparenz hilft, die Einhaltung von Vorschriften und die Durchführung von Audits zu erleichtern.
-
-## **Fazit**
-
-Die Bündelung oben genannter Vorteile gewährleistet und verbessert die Eigenständigkeit und Integrität des Unternehmens. Zwar greift die Implementierung einer solchen Technologie anfangs tief in die Geschäftspraktiken und -entscheidungen des Unternehmens ein - das Unternehmen ist damit aber in der Lage, sich an verändernde Marktbedingungen anzupassen, wettbewerbsfähig zu bleiben und Wettbewerbsvorteile zu erzielen.
+Although the implementation of such technology initially has a profound impact on the company's business practices and
+decisions, the company is thus able to adapt to changing market conditions,
+remain competitive and achieve competitive advantages.

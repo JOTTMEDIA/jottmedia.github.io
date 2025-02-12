@@ -1,11 +1,12 @@
 ---
 id: 2
-title: <b class="text-jm-primary-brown uppercase">“Mysterium Vektorgrafik“</b> oder “Warum wird mein Logo pixelig?”
-seoTitle: “Mysterium Vektorgrafik“ oder “Warum wird mein Logo pixelig?”
+title: <b class="text-jm-primary-brown uppercase">“Mystery vector graphics“</b> or “Why is my logo pixelated?”
+seoTitle: “Vector graphics mystery“ or “Why is my logo pixelated?“
 description: |
-  “Wir benötigen eine Vektorgrafik von dem Logo!” Diesen Satz haben sicherlich viele schon einmal gehört, wenn sie mit einem Dienstleister zusammenarbeiten möchten. Aber was ist das eigentlich, eine Vektorgrafik? In diesem Blogartikel geht es darum, was eine Vektorgrafik ist und wofür diese benötigt wird. Eins gleich vorne weg: Es reicht nicht, seine Datei Logo.png in Logo.svg oder Logo.eps umzubenennen - schade, aber nun der Reihe nach.
+  “We need a vector graphic of the logo!“ Many people have certainly heard this sentence before when they want to work with a service provider. But what exactly is a vector graphic? This blog article is about what a vector graphic is and what it is needed for. First things first: it's not enough to rename your Logo.png file to Logo.svg or Logo.eps - too bad, but first things first.
 date: 28.06.2024
 author: Jan
+slug: en/blog/mysterium-vektorgrafik-oder-warum-wird-mein-logo-pixelig
 categories:
   - Allgemein
   - Design
@@ -13,56 +14,82 @@ image: /images/Was-ist-eigentlich-eine-Vektorgrafik.jpeg
 imageAlt: Mysterium Vektorgrafik
 ---
 
-## **Was ist eigentlich eine Vektorgrafik?**
+## **What actually is a vector graphic?**
 
-Vektorgrafiken sind “Bilder”, die sich über mathematische Berechnungen definieren und nicht aus einzelnen Bildpunkten (Pixeln) aufgebaut sind, wie Rastergrafiken. Alle im Bild befindlichen Objekte werden über Koordinaten, Größen und Stärken beschrieben. 
+Vector graphics are ‘images’ that are defined by mathematical calculations and are not made up of individual pixels (
+pixels), like raster graphics. All objects in the image are described using coordinates, sizes and
+thicknesses.
 
-Dadurch bleiben Vektorgrafiken sehr flexibel und können auch im Nachhinein ohne Qualitätsverlust skaliert werden, egal in welcher Größe sie benötigt werden.
+This means that vector graphics remain very flexible and can also be scaled afterwards without loss of quality,
+regardless of the size in which they are required.
+in whichever size they are required.
 
-## **Vektorgrafik vs. Pixelbild**
+## **Vector graphic vs. pixel image**
 
-Pixelbilder kennt jeder, jedes Foto mit dem Smartphone erstellt, ist ein Pixelbild.Und hier zeigt sich auch direkt der stärkste Vorteil. Pixelbilder sind unschlagbar, wenn es um detailreiche Grafiken und Texturen geht, fotorealistische Darstellung eben. Außerdem super einfach in der Handhabung und Erstellung. Vergrößert man so ein Bild allerdings zu stark, wird es grobkörnig und unscharf. Viele sagen dann: pixelig.
+Everyone is familiar with pixel images, every photo taken with a smartphone is a pixel image, and this is where the
+strongest advantage. Pixel images are unbeatable when it comes to detailed graphics and textures, photorealistic
+representation.
+realistic representation. They are also super easy to handle and create. However, if you enlarge such an image too
+too much, it becomes grainy and blurred. Many people then say: pixelated.
 
-![Vektorgrafik vs. Pixelbild](/images/Vektorgrafik%20vs.%20Pixelbild.jpeg)
+![Vector graphic vs. pixel image](/images/Vector graphic%20vs.%20Pixel image.jpeg)
 
-Um verpixelte Darstellungen zu vermeiden, ist vektorbasiertes Arbeiten perfekt. Aufgrund der besonderen Erstellung dieser Bilder lassen sich diese dann über den gesamten Gestaltungsprozess skalieren und das ganze sogar ohne Qualitätseinbußen.
+To avoid pixelated images, vector-based work is perfect. Due to the special creation
+of these images, they can then be scaled throughout the entire design process without any loss of quality.
+loss of quality.
 
-Für welchen Typ ich mich entscheide, hängt aber stark davon ab, was ich darstellen möchte und für welches Einsatzgebiet ich die Datei erstelle.
+Which type I choose, however, depends very much on what I want to depict and for which area of application
+I create the file.
 
-## **Wann nutze ich vektorbasierte Grafiken?**
+## **When do I use vector-based graphics?
 
-Die jeweilige Nutzung der Datei gibt letztendlich vor, welche Art wir auswählen.
+The respective use of the file ultimately determines which type we choose.
 
-Entwerfe ich ein Firmenlogo, ist das vektorbasierte Arbeiten selbstverständlich die beste Wahl. So lässt sich das Logo über den gesamten Gestaltungsprozess jederzeit verlustfrei skalieren und in gewünschter Größe auf verschiedenen Medien darstellen, egal ob im Web oder auf einer LKW-Plane.
+If I am designing a company logo, vector-based work is naturally the best choice. This means that the logo can be
+can be scaled without loss at any time during the entire design process and displayed in the desired size on various
+media
+whether on the web or on a lorry tarpaulin.
 
-Möchtest du allerdings sehr detailreiche Darstellungen erzeugen, die einen fotorealistischen Charakter haben, dann ist die Rastergrafik die bessere Methode.
+However, if you want to create very detailed images that have a photorealistic character, then raster graphics are the
+better choice. raster graphics are the better method.
 
-Hier sind einmal die gängigsten Pixel-Dateiformate aufgeführt:
+Here is a list of the most common pixel file formats:
 
 - JPG
 - TIFF
 - PNG
 - WebP
 
-## **Welche Dateiformate können überhaupt Vektorgrafiken enthalten?**
+## **Which file formats can contain vector graphics at all?**
 
-Hier aufgelistet, einmal die Klassiker, ohne Anspruch auf Vollständigkeit.
+Here is a list of the classics, without any claim to completeness.
 
 - AI
 - EPS
 - PDF
 - SVG
 
-Liegt eine dieser Dateien vor, ist es allerdings nur ein Indiz dafür, dass es sich um eine Vektorgrafik handeln könnte. Denn all diese Dateiformate können sowohl Pixel- als auch Vektordaten enthalten und das auch in Kombination.
+If one of these files is present, however, it is only an indication that it could be a vector graphic.
+This is because all of these file formats can contain both pixel and vector data, even in combination.
 
-Erhalte ich aber ein reines Logo als AI oder EPS geliefert, ist die Wahrscheinlichkeit hoch, dass es sich um eine vektorbasierte Datei handelt.
+However, if I receive a pure logo as AI or EPS, there is a high probability that it is a vector-based file.
+vector-based file.
 
-Testen kann man das ganze, indem man die Datei stark vergrößert und sich einmal die Kantenglättung anschaut. Entstehen an Rundungen oder Linien kleine “Treppeneffekte” und die Abbildung wird unscharf, dann liegt definitiv eine Pixeldatei vor.
+You can test this by enlarging the file considerably and taking a look at the edge smoothing. If
+If small ‘staircase effects’ appear on curves or lines and the image becomes blurred, then it is definitely a pixel
+file.
 
-Bleiben alle Linien und Rundungen allerdings “randscharf” und die Qualität leidet nicht unter der starken Vergrößerung, ist es eine Vektordatei.
+However, if all lines and curves remain ‘sharp’ and the quality does not suffer from the high magnification,
+it is a vector file.
 
-![Dateiformate](/images/Dateiformate.jpeg)
+![File formats](/images/Fileformats.jpeg)
 
-Zusammenfassend lässt sich also festhalten, dass beide Arten von Dateitypen ihre Vor- und Nachteile aufweisen. Welche Art die richtige ist, entscheidet der Verwendungszweck und was ich abbilden möchte.
+To summarise, both file types have their advantages and disadvantages. Which
+type is the right one depends on the intended use and what I want to depict.
 
-Ein Pixelbild kann im Grunde jeder erstellen, bei einer Vektorgrafik wird es schon schwieriger und ich benötige geeignete Software, die sich eher im professionellen Bereich finden lässt, aber auch einige freie Tools ermöglichen die Erstellung mittlerweile.
+Basically anyone can create a pixel image, but with vector graphics it is more difficult and I need suitable software
+that is more suited to professional use.
+I need suitable software, which is more likely to be found in the professional sector, but some free tools also enable
+the
+creation in the meantime.
+

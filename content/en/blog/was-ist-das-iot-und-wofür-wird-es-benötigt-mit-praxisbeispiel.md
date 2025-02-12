@@ -1,10 +1,11 @@
 ---
 id: 1
-title: <b class="text-jm-primary-brown uppercase">Was ist das IoT</b> und wofür wird es <b class="text-jm-primary-brown uppercase">benötigt</b> – mit Praxisbeispiel
-seoTitle: Was ist das IoT und wofür wird es benötigt – mit Praxisbeispiel
-description: Das Internet of Things (IoT) bezeichnet ein Netzwerk physischer Objekte („Things“), die mit Sensoren, Software und anderer Technologie ausgestattet sind. Diese Objekte können sich über das Internet mit anderen Geräten und Systemen vernetzen und Daten austauschen.
+title: <b class="text-jm-primary-brown uppercase">What is this IoT</b> and what it is used for <b class="text-jm-primary-brown uppercase">needed</b> – with practical example
+seoTitle: What is the IoT and what is it needed for - with practical example
+description: The Internet of Things (IoT) refers to a network of physical objects (‘things’) that are equipped with sensors, software and other technology. These objects can network with other devices and systems via the internet and exchange data.
 date: 21.06.2024
 author: Jonathan
+slug: en/blog/was-ist-das-iot-und-wofür-wird-es-benötigt-mit-praxisbeispiel
 categories:
   - Allgemein
   - Entwicklung
@@ -12,47 +13,90 @@ image: /images/Internet-of-Things-(IoT).jpeg
 imageAlt: Das Internet of Things (IoT)
 ---
 
-## Hello World: Kickstart in die IoT-Welt
+## Hello World: Kickstart into the IoT world
 
-Viele Geräte des alltäglichen Lebens sind bereits vernetzt, egal ob die Kaffeemaschine, die Waschmaschine oder unser Auto. Wir sind es gewohnt, dass moderne Produkte Informationen digital auf unserem Handy bereitstellen oder intelligent diese weiterarbeiten können. Obwohl wir jeden Tag in dieser Welt unterwegs sind, ist der Begriff IoT noch relativ unbekannt.
+Many everyday devices are already networked, whether it's the coffee machine, the washing machine or our car.
+car. We are used to modern products providing information digitally on our mobile phones or being able to intelligently
+can continue to work on them. Although we are out and about in this world every day, the term IoT is still relatively
+unknown.
+still relatively unknown.
 
-Kurz gesagt: IoT ist der Oberbegriff für die Art und Weise der Kommunikation zwischen mehreren Geräten, die gegenseitig Daten konsumieren oder Befehle absetzen beziehungsweise Inhalte bereitstellen. Dies kann in der Praxis eine App sein, die der Kaffeemaschine die Anweisung gibt, einen Kaffee zu brühen oder ein intelligentes Thermometer, welches automatisch der Heizung mitteilt, dass sie eingeschaltet oder abgeschaltet werden soll: Stichwort Automatisierung.
+In short: IoT is the generic term for the way in which multiple devices communicate with each other, consume data or
+send commands.
+consume data or send commands or provide content. In practice, this can be an app,
+that instructs the coffee machine to brew a coffee or a smart thermometer that automatically tells the heating
+automatically informs the heating that it should be switched on or off: Keyword automation.
 
-## Wieso, weshalb: Die Technik hinter IoT
+## Why, why: the technology behind IoT
 
-Welche Technik genutzt wird, kann pauschal nicht gesagt werden, da IoT erstmal nur der Obergriff ist. Grundsätzlich gibt es aber immer ein Netzwerk, z.B. das Narrowband welches auf der 4G Technologie basiert und ein anderes Frequenzband nutzt, als unser Smartphone. Dieses Frequenzband ist optimiert für eine bessere Reichweite (Durchdringung), hingegen es aber in der Geschwindigkeit langsamer ist. Bedingt dadurch, dass IoT-Geräte keine großen Daten verschicken, sondern eher kleine Signale, wie z.B. "Kaffeemaschine starten", ist dieser Kompromiss optimal. Wichtiger ist, dass jedes IoT-Gerät einen perfekten Empfang besitzt, um die stabile Kommunikation zu gewährleisten. Kein Kaffee am Morgen ist auch keine Lösung.
+It is not possible to generalise about which technology is used, as IoT is only the generic term. In principle, however
+network, e.g. the narrowband, which is based on 4G technology and uses a different frequency band than our smartphone.
+than our smartphone. This frequency band is optimised for a better range (penetration), but is slower in speed.
+however, it is slower in terms of speed. Due to the fact that IoT devices do not send large data, but rather small
+signals, such as
+small signals, such as ‘start coffee machine’, this compromise is optimal. It is more important that every IoT device
+has perfect reception to ensure stable communication. No coffee in the morning is not a
+solution either.
 
-Natürlich gibt es für IoT-Geräte entwickelte Protokolle, die noch effizienter Daten übertragen können, wie z.B. MQTT. Mikrocontroller und Hardware werden speziell für IoT-Anwendungsgebiete entwickelt. Alles mit dem Ziel, Daten möglichst schnell, effizient und vor allem beständig übertragen zu können.
+Of course, there are protocols developed for IoT devices that can transmit data even more efficiently, such as MQTT.
+Microcontrollers and hardware are being developed specifically for IoT applications. All with the aim of transferring
+data as
+as quickly, efficiently and, above all, consistently as possible.
 
-Grundsätzlich kann man sagen, alle Geräte, die autark miteinander kommunizieren können, gehören in diesen Bereich. Die vermeintliche Intelligenz, die wir als Menschen wahrnehmen, wenn der Staubsauger sich morgens automatisch erst einen Kaffee brüht, beruht auf die Vernetzung dieser Geräte und die damit verbundene Automatisierung.
+Basically, you can say that all devices that can communicate with each other autonomously belong in this area. The
+intelligence that we as humans perceive when the hoover automatically brews a coffee in the morning is based on the
+coffee in the morning is based on the networking of these devices and the associated automation.
 
-## Beispiel Fallenmelder: Schluss mit der abstrakten Theorie
+## Example of trap detectors: No more abstract theory
 
-Gelernt haben wir, wofür IoT steht und wie es theoretisch arbeitet beziehungsweise was im Kern der Mehrwert ist. Allgemein ist es aber vielleicht immer noch recht schwer zu greifen, da alles etwas abstrakt wirkt. Daher gibt es jetzt hier ein Beispiel.
+We have learnt what IoT stands for and how it works in theory and what the core added value is.
+In general, however, it is perhaps still quite difficult to grasp, as everything seems somewhat abstract. That's why
+there is now
+here is an example.
 
-Nehmen wir an, wir möchten einen Fallenmelder bauen, der automatisch über einen Magnetschalter unserem Server ein Signal schickt, sobald dieser ausgelöst wurde. Sprich, wird die Falle ausgelöst, wird über ein Seil ein Magnet von unserem IoT-Gerät abgerissen.
+Let's assume we want to build a trap detector that automatically sends a signal to our server via a magnetic switch as
+soon as it is triggered.
+as soon as it is triggered. In other words, if the trap is triggered, a magnet is pulled off our
+IoT device via a rope.
 
-### Was brauchen wir dafür?
+### What do we need for this?
 
-- Wasserdichtes Gehäuse
-- Akku für die Stromversorgung
-- Mikrocontroller mit IoT-NB Support
-- IoT-NB Simkarte
-- Magnetschalter
+- Waterproof housing
+- Battery for the power supply
+- Microcontroller with IoT-NB support
+- IoT-NB sim card
+- Magnetic switch
 - Server
 
-Wir brauchen natürlich ein Gehäuse, welches platzsparend sein sollte, aber auch genug Raum bietet, für unsere Hardware – daher ist auch zu empfehlen, erst die Hardware kompakt aufzubauen, um dann anschließend das perfekte Gehäuse zu finden oder dies selber im 3D-Drucker herzustellen.
+Of course, we need an enclosure that should be space-saving, but also offer enough room for our hardware.
+It is therefore also advisable to first build the hardware compactly and then find the perfect housing
+or produce it yourself using a 3D printer.
 
-Da unser Fallenmelder natürlich autark laufen soll, brauchen wir einen Akku, der den Mikrocontroller mit Strom versorgt. Oftmals wird min. 3,7 V - 5 V benötigt – daher wären normale Batterien möglich, hier ist aber darauf zu achten, dass genügend mAh zur Verfügung stehen, damit nicht jeder zweite Tag die Batterien getauscht werden müssen. Wer sich mit dem Thema Stromversorgung beschäftigt, wird schnell feststellen, dass dies oft das Nadelöhr ist.
+As our trap alarm should of course run independently, we need a battery to supply the microcontroller with power.
+Often at least 3.7 V - 5 V is required - so normal batteries would be possible, but here you have to make sure that
+sufficient mAh are available so that the batteries do not have to be replaced every second day. Anyone who deals with
+the
+power supply will quickly realise that this is often the bottleneck.
 
-Das Herzstück ist natürlich der richtige Mikrocontroller. Für Einsteiger ist die Arduino Plattform zu empfehlen. Diese bietet eine eigene IDE, mit dem wir den Programmiercode direkt auf den Mikrocontroller übertragen und debuggen kann. Arduino bietet sehr viele Anleitungen und diverse Boards für verschiedene Anwendungszwecke.
+The centrepiece is, of course, the right microcontroller. The Arduino platform is recommended for beginners. This
+offers its own IDE with which we can transfer the programming code directly to the microcontroller and debug it.
+Arduino offers many instructions and various boards for different applications.
 
-In unserem Fall muss das Board eine IoT-NB Simkartenslot besitzen, da wir den Fallenmelder natürlich an einem diversen Ort einsetzen wollen, an dem es kein WLAN gibt. Theoretisch kann auch ein IoT-NB Shield auf dem Mikrocontroller zusätzlich installiert werden – einfacher ist es aber, wenn der Mikrocontroller dies bereits besitzt.
+In our case, the board must have an IoT-NB SIM card slot, as we naturally want to use the trap detector in a diverse
+place where there is no WLAN. Theoretically, an IoT-NB shield can also be installed on the microcontroller
+can also be installed - but it is easier if the microcontroller already has this.
 
-Folgend müssen wir nur noch den Magnetschalter an einem digitalen Signal PIN auf unserem Mikrocontroller legen und mit Strom versorgen. Ist ein Magnet nun in der Nähe und schließt damit den Stromkreis, erhält der PIN den Status "1" – ist der Magnet abgezogen durch das Auslösen unserer Falle, erhalten wir an dem PIN eine "0". Dies können wir über unseren Programmiercode auslesen.
+Next, we just need to connect the magnetic switch to a digital signal PIN on our microcontroller and supply it with
+power supply. If a magnet is now in the vicinity and thus closes the circuit, the PIN receives the status ‘1’ - if the
+magnet is
+If the magnet is removed by triggering our latch, we receive a ‘0’ at the PIN. We can read this via our
+programming code.
 
-Folgend können wir das Signal jetzt über ein HTTP Request an unseren Server schicken und dort weiter verarbeiten. Hier bietet sich ein Headless CMS mit einer RESTful-API an, z.B. Directus. Das Signal wird vom Server verarbeitet und weitere Aktionen eingeleitet. Zum Beispiel ein Push an euer Handy geschickt oder die genaue Zeit und der Ort notiert.
+We can then send the signal to our server via an HTTP request and process it there. Here
+a headless CMS with a RESTful API, e.g. Directus. The signal is processed by the server and further
+actions are initiated. For example, a push is sent to your mobile phone or the exact time and location is noted.
 
-## Overall: IoT ist zugänglich
+## Overall: IoT is accessible
 
-An dem Beispiel des Fallenmelders hat man gesehen, das IoT nicht nur ein Industriethema ist, sondern jeder mitwirken kann und für seine eigenen Bedürfnisse, mit wenig Geld und ein bisschen technischen Verständnis, umsetzen kann. ✌️
+The example of the trap detector shows that IoT is not just an industry topic, but that everyone can get involved
+and can implement it for their own needs with little money and a little technical understanding. ✌️
