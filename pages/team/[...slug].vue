@@ -1,6 +1,6 @@
 <template>
   <UPage>
-    <UPageBody class="mt-0 pb-0 h-screen">
+    <UPageBody class="mt-0 pb-0 h-screen fixed">
       <UContainer
           :ui="{'constrained': 'max-w-full gap-0 px-0 sm:px-0 lg:px-0 '}"
           class="flex flex-col sm:flex-row sm:h-screen">
@@ -32,20 +32,23 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  layout: 'minimal'
-});
-const route = useRoute()
+import {useRouter} from 'vue-router'
+import type {Collections} from "@nuxt/content";
+
+const {locale} = useI18n()
 const router = useRouter()
 
+const {data: person} = await useAsyncData(async () => {
+  const collection = ('team_' + locale.value) as keyof Collections
+  return await queryCollection(collection).first()
+}, {
+  watch: [locale],
+})
+
 function navigateBack() {
-  router.back();
+  router.back()
 }
 
-const {data: person} = await useAsyncData(() => {
-  return queryCollection('team')
-      .path(route.path)
-      .first()
-})
+console.log(person + 'person')
 
 </script>
