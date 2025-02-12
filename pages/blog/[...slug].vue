@@ -40,10 +40,13 @@
 
 <script lang="ts" setup>
 
+import type {Collections} from "@nuxt/content";
+
+const {locale} = useI18n()
 const route = useRoute()
-const {data: page} = await useAsyncData(() => {
-  return queryCollection('blog')
-      .path(route.path)
+const {data: page} = await useAsyncData(async () => {
+  const collection = ('articles_' + locale.value) as keyof Collections
+  return await queryCollection(collection)
       .first()
 })
 
