@@ -114,7 +114,7 @@
               v-for="person in team"
               :align="person.meta.align as string | undefined"
               :hint="person.meta.hint as string | undefined"
-              :link="person.path as string | undefined"
+              :link="person.meta.slug"
               :quote="person.meta.quote as string | undefined"
               :src="person.meta.src as string | undefined">
           </ImageFigure>
@@ -222,24 +222,25 @@
 </template>
 
 <script lang="ts" setup>
-const {t, locale} = useI18n()
 import type {Collections} from '@nuxt/content'
 
+const {t, locale} = useI18n()
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
 const {data: articles} = await useAsyncData(async () => {
   const collection = ('articles_' + locale.value) as keyof Collections
   return await queryCollection(collection).all() as Collections['articles_en'][] | Collections['articles_de'][]
+}, {
+  watch: [locale],
 })
+
 
 const {data: team} = await useAsyncData(async () => {
   const collection = ('team_' + locale.value) as keyof Collections
   return await queryCollection(collection).all() as Collections['team_en'][] | Collections['team_de'][]
-})
-
-watch(() => articles, async () => {
-  console.log(articles)
+}, {
+  watch: [locale],
 })
 
 const scrollTo = () => {
