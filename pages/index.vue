@@ -112,9 +112,10 @@
         <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10 md:mb-40 z-10">
           <ImageFigure
               v-for="person in team"
+              :key="person.path"
               :align="person.meta.align as string | undefined"
               :hint="person.meta.hint as string | undefined"
-              :link="person.meta.slug"
+              :link="localePath({name: 'team-slug', params: {slug: person.slug}})"
               :quote="person.meta.quote as string | undefined"
               :src="person.meta.src as string | undefined">
           </ImageFigure>
@@ -224,6 +225,8 @@
 <script lang="ts" setup>
 import type {Collections} from '@nuxt/content'
 
+const localePath = useLocalePath()
+
 const {t, locale} = useI18n()
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
@@ -238,11 +241,13 @@ const {data: articles} = await useAsyncData(async () => {
 
 const {data: team} = await useAsyncData(async () => {
   const collection = ('team_' + locale.value) as keyof Collections
-  return await queryCollection(collection).all() as Collections['team_en'][] | Collections['team_de'][]
+  return await queryCollection(collection)
+      .all() as Collections['team_en'][] | Collections['team_de'][]
 }, {
   watch: [locale],
 })
 
+console.log(team.value + 'team')
 const scrollTo = () => {
   const element = document.getElementById('machen');
   if (element) {
