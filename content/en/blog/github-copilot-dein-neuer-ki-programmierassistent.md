@@ -5,7 +5,7 @@ seoTitle: 'GitHub Copilot: Dein neuer KI-Programmierassistent '
 description: Have you heard of GitHub Copilot? This intelligent programming assistant could become your new best friend if you're involved in programming and software development. Let's dive into the world of GitHub Copilot and see how this AI-powered helper works, where it can support us and what advantages and disadvantages come with it.
 date: 27.09.2024
 author: Jonathan
-slug: en/blog/github-copilot-dein-neuer-ki-programmierassistent
+slug: github-copilot-dein-neuer-ki-programmierassistent
 categories:
   - Allgemein
   - Entwicklung
