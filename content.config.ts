@@ -1,41 +1,40 @@
-import {defineCollection, defineContentConfig, z} from '@nuxt/content'
+import {defineCollection, defineContentConfig, z} from '@nuxt/content';
 
-const commonSchema = z.object({})
+const locales = ['de', 'en'];
 
 export default defineContentConfig({
-    collections: {
-        team_en: defineCollection({
-            type: 'page',
-            source: {
-                include: 'en/team/**',
-                prefix: '',
-            },
-            schema: commonSchema,
-        }),
-        team_de: defineCollection({
-            type: 'page',
-            source: {
-                include: 'de/team/**',
-                prefix: '',
-            },
-            schema: commonSchema,
-        }),
-        articles_en: defineCollection({
-            type: 'page',
-            source: {
-                include: 'en/blog/**',
-                prefix: '',
-            },
-            schema: commonSchema,
-        }),
-        articles_de: defineCollection({
-            type: 'page',
-            source: {
-                include: 'de/blog/**',
-                prefix: '',
-            },
-            schema: commonSchema,
-        }),
-
-    },
-})
+    collections: Object.fromEntries(
+        locales.flatMap((locale) => [
+            [
+                `team_${locale}`,
+                defineCollection({
+                    source: `${locale}/team/*.md`,
+                    type: 'page',
+                    schema: z.object({
+                        title: z.string(),
+                        description: z.string(),
+                        slug: z.string(),
+                        tags: z.array(z.string()),
+                        readingTime: z.number(), // in minutes
+                        published: z.boolean(),
+                        publishedAt: z.date(),
+                        updatedAt: z.date(),
+                    }),
+                }),
+            ],
+            [
+                `articles_${locale}`,
+                defineCollection({
+                    source: `${locale}/blog/*.md`,
+                    type: 'page',
+                    schema: z.object({
+                        name: z.string(),
+                        description: z.string(),
+                        url: z.string().url(),
+                        thumbnail: z.string(),
+                    }),
+                }),
+            ]
+        ]),
+    ),
+});
