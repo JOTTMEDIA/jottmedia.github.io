@@ -1,4 +1,5 @@
 <template>
+
   <UPage>
     <UPageBody class="mt-0 pb-0 h-screen fixed">
       <UContainer
@@ -32,15 +33,31 @@
 </template>
 
 <script lang="ts" setup>
-import {useRouter} from 'vue-router'
-import type {Collections} from "@nuxt/content";
+import type {Collections} from '@nuxt/content'
 
 const {locale} = useI18n()
 const router = useRouter()
+const route = useRoute()
+const {slug} = route.params;
+
+
+const collection = computed(() => `team_${locale.value}` as keyof Collections)
 
 const {data: person} = await useAsyncData(async () => {
-  const collection = ('team_' + locale.value) as keyof Collections
-  return await queryCollection(collection).first()
+  console.log('Fetching from collection:', collection)
+  console.log('Using route path:', route.path)
+  const result = await queryCollection(`team_${locale.value}`)
+      .where("slug", "=", slug)
+      .select(
+          "title",
+          "slug",
+          "description",
+          "body",
+          "meta"
+      )
+      .first()
+  console.log('Fetched result:', result)
+  return result
 }, {
   watch: [locale],
 })
@@ -49,6 +66,6 @@ function navigateBack() {
   router.back()
 }
 
-console.log(person + 'person')
-
+console.log(route.path + ' route path')
+console.log(collection.value + ' collection')
 </script>
