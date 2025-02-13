@@ -39,16 +39,37 @@
 </template>
 
 <script lang="ts" setup>
-
 import type {Collections} from "@nuxt/content";
 
-const {locale} = useI18n()
+const collection = computed(() => `articles_${locale.value}` as keyof Collections)
 const route = useRoute()
+const {slug} = route.params;
+const {locale} = useI18n()
+
 const {data: page} = await useAsyncData(async () => {
   const collection = ('articles_' + locale.value) as keyof Collections
   return await queryCollection(collection)
       .first()
 })
+
+/*const {data: page} = await useAsyncData(async () => {
+  console.log('Fetching from collection:', collection)
+  console.log('Using route path:', route.path)
+  const result = await queryCollection(`team_${locale.value}`)
+      .where("slug", "=", slug)
+      .select(
+          "title",
+          "slug",
+          "description",
+          "body",
+          "meta"
+      )
+      .first()
+  console.log('Fetched result:', result)
+  return result
+}, {
+  watch: [locale],
+})*/
 
 useSeoMeta({
   title: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
