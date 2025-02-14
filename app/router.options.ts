@@ -3,7 +3,7 @@ import type {RouterConfig} from '@nuxt/schema'
 function findHashPosition(hash: string): { el: any, behavior: ScrollBehavior, top: number } | undefined {
     const el = document.querySelector(hash)
     if (el) {
-        const top = 80
+        const top = 60
 
         return {
             el: hash,
