@@ -196,7 +196,7 @@
                      :src="article.meta.image as string"
                      class="w-full"/>
               <section class="px-3 pb-3">
-                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} {{ t('challenges.of') }} <b
+                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} {{ t('challenges.of') }} <b
                     class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
                 <UBadge
@@ -230,14 +230,21 @@ const {t, locale} = useI18n()
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
+
 const {data: articles} = await useAsyncData(async () => {
-  const collection = ('articles_' + locale.value) as keyof Collections
-  return await queryCollection(collection).limit(3)
+
+  const articles = await queryCollection(`articles_${locale.value}`)
+      .limit(3)
+      .order('date', 'DESC')
       .all() as Collections['articles_en'][] | Collections['articles_de'][]
+
+  return articles.map(article => ({
+    ...article,
+    date: new Date(article.date).toISOString().slice(0, 10).replace(/-/g, '.') // Format date to yyyy.mm.dd
+  }))
 }, {
   watch: [locale],
 })
-
 
 const {data: team} = await useAsyncData(async () => {
   const collection = ('team_' + locale.value) as keyof Collections
