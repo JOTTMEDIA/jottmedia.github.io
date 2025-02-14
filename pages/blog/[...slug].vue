@@ -1,6 +1,6 @@
 <template>
-  <Uarticles>
-    <UarticlesBody
+  <UPage>
+    <UPageBody
         class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
         prose>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
@@ -19,7 +19,7 @@
                   size="xs"/>
         </div>
         <small>{{ articles?.meta.date }} von
-          <NuxtLink :to="`../team/${(articles?.meta.author as string).toLowerCase()}`"><b
+          <NuxtLink :to="`../team/${(articles?.meta.author as string)}`"><b
               class="text-jm-primary-green">{{ articles?.meta.author }}
           </b></NuxtLink>
         </small>
@@ -34,19 +34,31 @@
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pb-10">
         <ContentRenderer v-if="articles?.body" :value="articles"/>
       </UContainer>
-    </UarticlesBody>
-  </Uarticles>
+    </UPageBody>
+  </UPage>
 </template>
 
 <script lang="ts" setup>
-import type {Collections} from "@nuxt/content";
 
+const route = useRoute()
 const {locale} = useI18n()
+const {slug} = route.params;
 
 const {data: articles} = await useAsyncData(async () => {
-  const collection = ('articles_' + locale.value) as keyof Collections
-  return await queryCollection(collection)
+
+  return await queryCollection(`articles_${locale.value}`)
+      .where("slug", "=", slug)
+      .select(
+          "title",
+          "slug",
+          "description",
+          "body",
+          "meta"
+      )
       .first()
+
+}, {
+  watch: [locale],
 })
 
 useSeoMeta({
