@@ -15,7 +15,7 @@
               {{ t('make.simple') }}</span>
               <b class="uppercase">digital</b>.
             </Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
+            <NuxtLink :to="{ hash: '#machen' }" @click="scrollTo">
               <Button>{{ t('makeSimpleButton') }}</Button>
             </NuxtLink>
           </Center>
@@ -28,7 +28,7 @@
               <b>{{ t('office.development') }}
               </b>
             </Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
+            <NuxtLink :to="{ hash: '#machen' }" @click="scrollTo">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down"/>
             </NuxtLink>
           </Center>
