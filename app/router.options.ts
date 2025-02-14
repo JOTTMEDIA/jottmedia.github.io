@@ -1,14 +1,59 @@
-import type {RouterConfig} from "@nuxt/schema";
+import type {RouterConfig} from '@nuxt/schema'
 
+function findHashPosition(hash: string): { el: any, behavior: ScrollBehavior, top: number } | undefined {
+    const el = document.querySelector(hash)
+    if (el) {
+        const top = 80
+
+        return {
+            el: hash,
+            behavior: 'smooth',
+            top,
+        }
+    }
+}
+
+// https://router.vuejs.org/api/#routeroptions
 export default <RouterConfig>{
-    async scrollBehavior(to, from, savedPosition) {
+    scrollBehavior(to, from, savedPosition) {
+        const nuxtApp = useNuxtApp()
+
+        if (history.state && history.state.stop)
+            return
+
+        if (history.state && history.state.smooth) {
+            return {
+                el: history.state.smooth,
+                behavior: 'smooth',
+            }
+        }
+
+
         if (savedPosition) {
-            return savedPosition;
+
+            return new Promise((resolve) => {
+                nuxtApp.hooks.hookOnce('page:finish', () => {
+                    setTimeout(() => resolve(savedPosition), 250)
+                })
+            })
         }
-        if (to.path.startsWith('/blog/')) {
-            return {top: 0};
-        } else if (to.path.startsWith('/blog')) {
-            return {top: 0};
+
+        if (to.hash) {
+            return new Promise((resolve) => {
+                if (to.path === from.path) {
+                    setTimeout(() => resolve(findHashPosition(to.hash)), 50)
+                } else {
+                    nuxtApp.hooks.hookOnce('page:finish', () => {
+                        setTimeout(() => resolve(findHashPosition(to.hash)), 50)
+                    })
+                }
+            })
         }
+
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({top: 0})
+            }, 250)
+        })
     },
-};
+}
