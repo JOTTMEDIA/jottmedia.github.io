@@ -190,7 +190,7 @@
         </Center>
         <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article.path">
+            <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.meta.slug as string}})">
               <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
                      :shine="false"
                      :src="article.meta.image as string"
