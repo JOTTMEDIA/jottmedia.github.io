@@ -14,11 +14,6 @@ export default defineContentConfig({
                         title: z.string(),
                         description: z.string(),
                         slug: z.string(),
-                        tags: z.array(z.string()),
-                        readingTime: z.number(), // in minutes
-                        published: z.boolean(),
-                        publishedAt: z.date(),
-                        updatedAt: z.date(),
                     }),
                 }),
             ],
@@ -28,10 +23,10 @@ export default defineContentConfig({
                     source: `${locale}/blog/*.md`,
                     type: 'page',
                     schema: z.object({
-                        name: z.string(),
+                        title: z.string(),
+                        slug: z.string(),
                         description: z.string(),
                         url: z.string().url(),
-                        thumbnail: z.string(),
                     }),
                 }),
             ]
