@@ -20,13 +20,14 @@ export default defineContentConfig({
             [
                 `articles_${locale}`,
                 defineCollection({
-                    source: `${locale}/blog/*.md`,
+                    source: `${locale}/blog/**/*.md`,
                     type: 'page',
                     schema: z.object({
                         title: z.string(),
                         slug: z.string(),
                         description: z.string(),
                         url: z.string().url(),
+                        date: z.date(),
                     }),
                 }),
             ]
