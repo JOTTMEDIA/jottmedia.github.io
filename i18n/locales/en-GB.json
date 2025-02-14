@@ -72,6 +72,11 @@
     "digital": "digital world"
   },
   "blogButton": "To the blog",
+  "blog": {
+    "agency": "Here we would like to share our knowledge about the digital future,\n technologies, design and life in a digital agency with you, stay tuned,\n we are too.",
+    "no-posts": "No further posts",
+    "show": "Show more"
+  },
   "imprint": ".Imprint",
   "privacy": ".Privacy",
   "rights": "All rights reserved",
