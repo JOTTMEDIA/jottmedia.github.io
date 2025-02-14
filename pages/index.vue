@@ -190,7 +190,7 @@
         </Center>
         <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.meta.slug as string}})">
+            <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})">
               <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
                      :shine="false"
                      :src="article.meta.image as string"
@@ -212,11 +212,10 @@
           </UBlogPost>
         </UBlogList>
         <Center>
-          <NuxtLink to="blog">
+          <NuxtLink :to="localePath({name: 'blog'})">
             <Button class="mt-4">{{ t('blogButton') }}</Button>
           </NuxtLink>
         </Center>
-
       </UContainer>
     </UPageBody>
   </UPage>
@@ -233,7 +232,8 @@ useHead({
 })
 const {data: articles} = await useAsyncData(async () => {
   const collection = ('articles_' + locale.value) as keyof Collections
-  return await queryCollection(collection).all() as Collections['articles_en'][] | Collections['articles_de'][]
+  return await queryCollection(collection).limit(3)
+      .all() as Collections['articles_en'][] | Collections['articles_de'][]
 }, {
   watch: [locale],
 })
@@ -247,7 +247,6 @@ const {data: team} = await useAsyncData(async () => {
   watch: [locale],
 })
 
-console.log(team.value + 'team')
 const scrollTo = () => {
   const element = document.getElementById('machen');
   if (element) {
