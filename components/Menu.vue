@@ -32,10 +32,10 @@
                         class="sm:mt-12 flex flex-col sm:flex-row justify-around">
               <ul class="uppercase font-extrabold text-left text-xl xl:text-3xl space-y-4 sm:space-y-8 text-jm-contrast-black">
                 <li>
-                  <NuxtLink to="/" @click="open = false">{{ t('menu.home') }}</NuxtLink>
+                  <NuxtLink :to="localePath({ name: 'index' })" @click="open = false">{{ t('menu.home') }}</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/blog" @click="open = false">{{ t('menu.blog') }}</NuxtLink>
+                  <NuxtLink :to="localePath({name: 'blog'})" @click="open = false">{{ t('menu.blog') }}</NuxtLink>
                 </li>
               </ul>
               <div class="text-left sm:text-right mt-8 sm:mt-0">
@@ -78,7 +78,7 @@
 </template>
 <script lang="ts" setup>
 const {t, locale, setLocale} = useI18n()
-
+const localePath = useLocalePath()
 const open = ref(false)
 const currentLocale = computed(() => locale.value)
 
