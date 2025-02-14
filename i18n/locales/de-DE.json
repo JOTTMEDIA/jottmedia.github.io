@@ -72,6 +72,11 @@
     "digital": "digitalen Welt"
   },
   "blogButton": "Zum Blog",
+  "blog": {
+    "agency": "Hier möchten wir gerne unser Wissen, über die digitale Zukunft, Technologien, Design \n und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind es auch.",
+    "no-posts": "Keine weiteren Beiträge",
+    "show": "Mehr Anzeigen"
+  },
   "imprint": ".Impressum",
   "privacy": ".Datenschutz",
   "menu": {
@@ -79,7 +84,5 @@
     "blog": ".Blog",
     "follow": "Folge uns:"
   },
-  "footer": {
-    "rights": "Alle Rechte vorbehalten"
-  }
+  "rights": "Alle Rechte vorbehalten"
 }
