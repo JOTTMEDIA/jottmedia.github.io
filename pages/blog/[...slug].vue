@@ -19,7 +19,7 @@
                   size="xs"/>
         </div>
         <small>{{ articles?.meta.date }} von
-          <NuxtLink :to="`../team/${(articles?.meta.author.toLowerCase() as string)}`"><b
+          <NuxtLink :to="`../team/${(articles?.meta.author as string)?.toLowerCase()}`"><b
               class="text-jm-primary-green">{{ articles?.meta.author }}
           </b></NuxtLink>
         </small>
