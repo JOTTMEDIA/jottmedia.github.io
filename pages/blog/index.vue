@@ -32,7 +32,7 @@
             <NuxtLink :to="article.path" class="grid items-end h-full">
               <NuxtImg :src="article.meta.image as string | undefined" class="w-full h-full" format="webp"/>
               <section class="px-3 lg:px-7 pb-5">
-                <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.meta.date }} von <b
+                <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.date }} von <b
                     class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg" type="h5" v-html="article.title"/>
                 <Paragraph class="text-sm mb-4 font-light">{{ truncateText(article.description, 250) }}</Paragraph>
@@ -65,6 +65,8 @@
 </template>
 
 <script lang="ts" setup>
+import type {Collections} from "@nuxt/content";
+
 const {locale, t} = useI18n()
 const route = useRoute()
 const page = ref(1)
@@ -72,25 +74,22 @@ const categories: Ref<string[] | undefined> = ref([])
 
 const pageMaxArticles = ref(6);
 
-interface Article {
-  path: string;
-  title: string;
-  description: string;
-  meta: {
-    image?: string;
-    date: string;
-    author: string;
-    categories: string[];
-  };
-}
 
-const {data: articles} = await useAsyncData<Article[]>(route.path, () =>
-    queryCollection<Article>(`articles_${locale.value}`)
-        .limit(pageMaxArticles.value)
-        .skip(pageMaxArticles.value * (page.value - 1))
-        .order('id', 'DESC')
-        .all())
+const {data: articles} = await useAsyncData(async () => {
 
+  const articles = await queryCollection(`articles_${locale.value}`)
+      .limit(pageMaxArticles.value)
+      .skip(pageMaxArticles.value * (page.value - 1))
+      .order('date', 'DESC')
+      .all() as Collections['articles_en'][] | Collections['articles_de'][]
+
+  return articles.map(article => ({
+    ...article,
+    date: new Date(article.date).toISOString().slice(0, 10).replace(/-/g, '.') // Format date to yyyy.mm.dd
+  }))
+}, {
+  watch: [locale],
+})
 
 function fetchCategories() {
   categories.value = articles.value?.map(item => item.meta.categories)
