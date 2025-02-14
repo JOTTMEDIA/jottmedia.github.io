@@ -10,13 +10,10 @@
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-7xl'}" class="pt-16">
         <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
-          <b class="text-jm-primary-brown uppercase">Neues</b> aus der
-          <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
+          <b class="text-jm-primary-brown uppercase">{{ t('world.new') }}</b> {{ t('world.from') }}
+          <b class="text-jm-primary-brown uppercase">{{ t('world.digital') }}</b>
         </Headline>
-        <Paragraph class="text-sm lg:text-tiny mb-8">Hier möchten wir gerne unser Wissen, über die digitale Zukunft,
-          Technologien, Design <br> und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind
-          es auch.
-        </Paragraph>
+        <Paragraph class="text-sm lg:text-tiny mb-8 w-5/12">{{ t('blog.agency') }}</Paragraph>
         <UContainer :ui="{constrained: 'max-w-4xl space-x-4 space-y-4 ml-0', padding: 'px-0 sm:px-0 lg:px-0'}">
           <Button
               v-for="(category, index) in categories"
@@ -68,13 +65,27 @@
 </template>
 
 <script lang="ts" setup>
+const {locale, t} = useI18n()
 const route = useRoute()
 const page = ref(1)
 const categories: Ref<string[] | undefined> = ref([])
 
 const pageMaxArticles = ref(6);
-const {data: articles} = await useAsyncData(route.path, () =>
-    queryCollection('blog')
+
+interface Article {
+  path: string;
+  title: string;
+  description: string;
+  meta: {
+    image?: string;
+    date: string;
+    author: string;
+    categories: string[];
+  };
+}
+
+const {data: articles} = await useAsyncData<Article[]>(route.path, () =>
+    queryCollection<Article>(`articles_${locale.value}`)
         .limit(pageMaxArticles.value)
         .skip(pageMaxArticles.value * (page.value - 1))
         .order('id', 'DESC')
@@ -94,13 +105,13 @@ const filteredArticles = computed(() => {
 });
 
 const loadMoreButtonLabel = computed(() => {
-  return articles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
+  return articles.value?.length < pageMaxArticles.value ? t('blog.no-posts') : t('blog.show');
 });
 
 async function loadMorePosts() {
   pageMaxArticles.value += 6
   await useAsyncData(route.path, () =>
-      queryCollection('blog')
+      queryCollection(`articles_${locale.value}`)
           .order('id', 'DESC')
           .limit(pageMaxArticles.value)
           .all()
