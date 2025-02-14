@@ -4,7 +4,7 @@ title: <b class="text-jm-primary-brown uppercase">“Mysterium Vektorgrafik“</
 seoTitle: “Mysterium Vektorgrafik“ oder “Warum wird mein Logo pixelig?”
 description: |
   “Wir benötigen eine Vektorgrafik von dem Logo!” Diesen Satz haben sicherlich viele schon einmal gehört, wenn sie mit einem Dienstleister zusammenarbeiten möchten. Aber was ist das eigentlich, eine Vektorgrafik? In diesem Blogartikel geht es darum, was eine Vektorgrafik ist und wofür diese benötigt wird. Eins gleich vorne weg: Es reicht nicht, seine Datei Logo.png in Logo.svg oder Logo.eps umzubenennen - schade, aber nun der Reihe nach.
-date: 28.06.2024
+date: 2024-06-28
 author: Jan
 slug: mysterium-vector-graphics-or-why-is-my-logo-pixelated
 categories:
