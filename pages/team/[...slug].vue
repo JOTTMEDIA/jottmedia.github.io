@@ -22,7 +22,7 @@
           <UContainer class="relative pt-0 z-10">
             <Center>
               <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-                <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">Lerne uns kennen</Button>
+                <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">{{ t('knowButton') }}</Button>
               </NuxtLink>
             </Center>
           </UContainer>
@@ -37,7 +37,7 @@ definePageMeta({
   layout: 'minimal'
 });
 
-const {locale} = useI18n()
+const {locale, t} = useI18n()
 const router = useRouter()
 const route = useRoute()
 const {slug} = route.params;
