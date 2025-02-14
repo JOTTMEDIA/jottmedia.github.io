@@ -5,10 +5,10 @@ seoTitle: What is the IoT and what is it needed for - with practical example
 description: The Internet of Things (IoT) refers to a network of physical objects (‘things’) that are equipped with sensors, software and other technology. These objects can network with other devices and systems via the internet and exchange data.
 date: 21.06.2024
 author: Jonathan
-slug: was-ist-das-iot-und-wofür-wird-es-benötigt-mit-praxisbeispiel
+slug: what-is-it-and-what-is-it-needed-for-with-practical-examples
 categories:
-  - Allgemein
-  - Entwicklung
+  - General
+  - Development
 image: /images/Internet-of-Things-(IoT).jpeg
 imageAlt: Das Internet of Things (IoT)
 ---
