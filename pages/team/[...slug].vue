@@ -1,7 +1,7 @@
 <template>
 
   <UPage>
-    <UPageBody class="mt-0 pb-0 h-screen fixed">
+    <UPageBody class="mt-0 pb-0 h-screen">
       <UContainer
           :ui="{'constrained': 'max-w-full gap-0 px-0 sm:px-0 lg:px-0 '}"
           class="flex flex-col sm:flex-row sm:h-screen">
@@ -33,20 +33,18 @@
 </template>
 
 <script lang="ts" setup>
-import type {Collections} from '@nuxt/content'
+definePageMeta({
+  layout: 'minimal'
+});
 
 const {locale} = useI18n()
 const router = useRouter()
 const route = useRoute()
 const {slug} = route.params;
 
-
-const collection = computed(() => `team_${locale.value}` as keyof Collections)
-
 const {data: person} = await useAsyncData(async () => {
-  console.log('Fetching from collection:', collection)
-  console.log('Using route path:', route.path)
-  const result = await queryCollection(`team_${locale.value}`)
+
+  return await queryCollection(`team_${locale.value}`)
       .where("slug", "=", slug)
       .select(
           "title",
@@ -56,8 +54,7 @@ const {data: person} = await useAsyncData(async () => {
           "meta"
       )
       .first()
-  console.log('Fetched result:', result)
-  return result
+
 }, {
   watch: [locale],
 })
@@ -65,7 +62,4 @@ const {data: person} = await useAsyncData(async () => {
 function navigateBack() {
   router.back()
 }
-
-console.log(route.path + ' route path')
-console.log(collection.value + ' collection')
 </script>
