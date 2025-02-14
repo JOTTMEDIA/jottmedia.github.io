@@ -1,4 +1,5 @@
 <template>
+
   <UPage>
     <UPageBody class="mt-0 pb-0 h-screen">
       <UContainer
@@ -21,7 +22,7 @@
           <UContainer class="relative pt-0 z-10">
             <Center>
               <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-                <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">Lerne uns kennen</Button>
+                <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">{{ t('knowButton') }}</Button>
               </NuxtLink>
             </Center>
           </UContainer>
@@ -35,17 +36,30 @@
 definePageMeta({
   layout: 'minimal'
 });
-const route = useRoute()
+
+const {locale, t} = useI18n()
 const router = useRouter()
+const route = useRoute()
+const {slug} = route.params;
 
-function navigateBack() {
-  router.back();
-}
+const {data: person} = await useAsyncData(async () => {
 
-const {data: person} = await useAsyncData(() => {
-  return queryCollection('team')
-      .path(route.path)
+  return await queryCollection(`team_${locale.value}`)
+      .where("slug", "=", slug)
+      .select(
+          "title",
+          "slug",
+          "description",
+          "body",
+          "meta"
+      )
       .first()
+
+}, {
+  watch: [locale],
 })
 
+function navigateBack() {
+  router.back()
+}
 </script>

@@ -11,28 +11,28 @@
         </Center>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pt-10">
-        <h1 class="text-4xl" v-html="page?.title"/>
+        <h1 class="text-4xl" v-html="articles?.meta.title"/>
         <div class="flex gap-2 mb-2">
-          <UBadge v-for="category in page?.meta.categories"
+          <UBadge v-for="category in articles?.meta.categories"
                   :key="category" :label="category"
                   :ui="{ rounded: 'rounded-lg', font: 'font-extrabold', size: { xs: 'text-xs px-3 py-0.5' } }"
                   size="xs"/>
         </div>
-        <small>{{ page?.meta.date }} von
-          <NuxtLink :to="`../team/${(page?.meta.author as string).toLowerCase()}`"><b
-              class="text-jm-primary-green">{{ page?.meta.author }}
+        <small>{{ articles?.meta.date }} von
+          <NuxtLink :to="`../team/${(articles?.meta.author as string)?.toLowerCase()}`"><b
+              class="text-jm-primary-green">{{ articles?.meta.author }}
           </b></NuxtLink>
         </small>
-        <p class="lead">{{ page?.description }}</p>
+        <p class="lead">{{ articles?.description }}</p>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-4xl'}">
-        <Image :alt="page?.meta.imageAlt as string | undefined"
-               :hint="page?.meta.imageAlt as string | undefined"
+        <Image :alt="articles?.meta.imageAlt as string | undefined"
+               :hint="articles?.meta.imageAlt as string | undefined"
                :public-src="true"
-               :src="page?.meta.image as string"/>
+               :src="articles?.meta.image as string"/>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pb-10">
-        <ContentRenderer v-if="page?.body" :value="page"/>
+        <ContentRenderer v-if="articles?.body" :value="articles"/>
       </UContainer>
     </UPageBody>
   </UPage>
@@ -41,18 +41,32 @@
 <script lang="ts" setup>
 
 const route = useRoute()
-const {data: page} = await useAsyncData(() => {
-  return queryCollection('blog')
-      .path(route.path)
+const {locale} = useI18n()
+const {slug} = route.params;
+
+const {data: articles} = await useAsyncData(async () => {
+
+  return await queryCollection(`articles_${locale.value}`)
+      .where("slug", "=", slug)
+      .select(
+          "title",
+          "slug",
+          "description",
+          "body",
+          "meta"
+      )
       .first()
+
+}, {
+  watch: [locale],
 })
 
 useSeoMeta({
-  title: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
-  ogTitle: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
-  description: page.value?.description,
-  ogDescription: page.value?.description,
-  ogImage: "https://jott.media" + page.value?.meta.image,
+  title: articles.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
+  ogTitle: articles.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
+  description: articles.value?.description,
+  ogDescription: articles.value?.description,
+  ogImage: "https://jott.media" + articles.value?.meta.image,
   twitterCard: 'summary_large_image',
 })
 </script>
