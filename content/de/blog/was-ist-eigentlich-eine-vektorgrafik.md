@@ -6,7 +6,7 @@ description: |
   “Wir benötigen eine Vektorgrafik von dem Logo!” Diesen Satz haben sicherlich viele schon einmal gehört, wenn sie mit einem Dienstleister zusammenarbeiten möchten. Aber was ist das eigentlich, eine Vektorgrafik? In diesem Blogartikel geht es darum, was eine Vektorgrafik ist und wofür diese benötigt wird. Eins gleich vorne weg: Es reicht nicht, seine Datei Logo.png in Logo.svg oder Logo.eps umzubenennen - schade, aber nun der Reihe nach.
 date: 28.06.2024
 author: Jan
-slug: blog/mysterium-vektorgrafik-oder-warum-wird-mein-logo-pixelig
+slug: mysterium-vektorgrafik-oder-warum-wird-mein-logo-pixelig
 categories:
   - Allgemein
   - Design

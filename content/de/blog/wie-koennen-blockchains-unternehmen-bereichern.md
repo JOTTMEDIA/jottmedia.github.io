@@ -5,7 +5,7 @@ seoTitle: Wie können Blockchains Unternehmen bereichern?
 description: Zehn Millionen Euro ans andere Ende der Welt für einen Bruchteil eines Cents senden - und das mehrere tausendmal binnen weniger Sekunden? Blockchain-Technologien revolutionieren im Marschtempo sämtliche Wirtschaftssektoren. Doch was sind Blockchains? Wie genau verändert dies die Art und Weise zu wirtschaften und wie profitieren Unternehmen davon?
 date: 10.07.2024
 author: Arian
-slug: blog/wie-koennen-blockchains-unternehmen-bereichern
+slug: wie-koennen-blockchains-unternehmen-bereichern
 categories:
   - Allgemein
   - Entwicklung
