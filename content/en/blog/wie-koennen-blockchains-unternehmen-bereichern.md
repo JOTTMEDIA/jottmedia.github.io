@@ -5,7 +5,7 @@ seoTitle: How can blockchains enrich companies?
 description: Sending ten million euros to the other side of the world for a fraction of a cent - several thousand times within a few seconds? Blockchain technologies are revolutionising all sectors of the economy at breakneck speed. But what are blockchains? How exactly is this changing the way we do business and how do companies benefit from it?
 date: 10.07.2024
 author: Arian
-slug: en/blog/wie-koennen-blockchains-unternehmen-bereichern
+slug: wie-koennen-blockchains-unternehmen-bereichern
 categories:
   - Allgemein
   - Entwicklung

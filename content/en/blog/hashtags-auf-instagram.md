@@ -5,7 +5,7 @@ seoTitle: 'Hashtags auf Instagram: Eine Anleitung zur effektiven Nutzung'
 description: Hashtags are an important tool for making your Instagram posts accessible to a wider audience. In this article, you will learn how to use hashtags effectively to maximise the visibility of your posts and boost your Instagram presence.
 date: 01.07.2024
 author: Annika
-slug: en/blog/hashtags-auf-instagram
+slug: hashtags-auf-instagram
 categories:
   - Allgemein
   - Social Media
