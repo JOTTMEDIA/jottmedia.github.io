@@ -29,7 +29,8 @@
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article.path" class="grid items-end h-full">
+            <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})"
+                      class="grid items-end h-full">
               <NuxtImg :src="article.meta.image as string | undefined" class="w-full h-full" format="webp"/>
               <section class="px-3 lg:px-7 pb-5">
                 <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.date }} von <b
@@ -71,7 +72,7 @@ const {locale, t} = useI18n()
 const route = useRoute()
 const page = ref(1)
 const categories: Ref<string[] | undefined> = ref([])
-
+const localePath = useLocalePath()
 const pageMaxArticles = ref(6);
 
 
