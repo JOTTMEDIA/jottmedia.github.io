@@ -13,7 +13,7 @@
               Bahnhofstraße 33<br>
               31675 Bückeburg<br>
               <br>
-              <nuxt-link href="tel:+4957229979070">+49 5722 99790 70</nuxt-link><br>
+              <nuxt-link href="tel:+4957229184984">+49 5722 9184984</nuxt-link><br>
               <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link>
             </address>
           </div>
