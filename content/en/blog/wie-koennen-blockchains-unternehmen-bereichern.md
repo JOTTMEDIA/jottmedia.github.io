@@ -45,8 +45,7 @@ In addition to the aforementioned benefits offered by the network, traditional c
 expensive and inefficient. RippleNet, on the other hand, enables almost instant transactions at a fraction of the cost.
 
 This allows banks and financial institutions to reduce their operating costs and offer their customers faster and
-cheaper
-services.
+cheaper services.
 
 By combining speed, cost-effectiveness and security, it offers a superior alternative to
 traditional payment systems. In addition, as mentioned, the decentralized structure of the network promotes
@@ -89,7 +88,7 @@ Furthermore, the decentralized nature of the blockchain enables the company to e
 with the parties involved in real time without delay. This leads to a significant reduction in processing times and more
 efficient processing of business transactions. The transparency and traceability of all transactions and data are
 significantly improved. As mentioned, every transaction is stored immutably and is visible to all participants in the
-network. In addition, they cannot be manipulated and the distributed storage minimizes the risk of data loss and
+network. In addition, they cannot be manipulated, and the distributed storage minimizes the risk of data loss and
 increases reliability.
 
 This creates trust and, above all, prevents fraud, as every transaction is verifiable. The transparency gained in this

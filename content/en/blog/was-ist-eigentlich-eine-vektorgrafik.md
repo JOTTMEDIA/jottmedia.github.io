@@ -16,7 +16,7 @@ imageAlt: Mysterium Vektorgrafik
 
 ## **What actually is a vector graphic?**
 
-Vector graphics are ‘images’ that are defined by mathematical calculations and are not made up of individual pixels (
+Vector graphics are ‘images’ that are defined by mathematical calculations and are not made up of individual(
 pixels), like raster graphics. All objects in the image are described using coordinates, sizes and
 thicknesses.
 
@@ -30,7 +30,7 @@ Everyone is familiar with pixel images, every photo taken with a smartphone is a
 strongest advantage. Pixel images are unbeatable when it comes to detailed graphics and textures, photorealistic
 representation.
 realistic representation. They are also super easy to handle and create. However, if you enlarge such an image too
-too much, it becomes grainy and blurred. Many people then say: pixelated.
+much, it becomes grainy and blurred. Many people then say: pixelated.
 
 ![Vector graphic vs. pixel image](/images/Vector graphic%20vs.%20Pixel image.jpeg)
 
@@ -51,7 +51,8 @@ media
 whether on the web or on a lorry tarpaulin.
 
 However, if you want to create very detailed images that have a photorealistic character, then raster graphics are the
-better choice. raster graphics are the better method.
+better choice.
+Raster graphics are the better method.
 
 Here is a list of the most common pixel file formats:
 
@@ -84,7 +85,7 @@ it is a vector file.
 
 ![File formats](/images/Fileformats.jpeg)
 
-To summarise, both file types have their advantages and disadvantages. Which
+To summarize, both file types have their advantages and disadvantages. Which
 type is the right one depends on the intended use and what I want to depict.
 
 Basically anyone can create a pixel image, but with vector graphics it is more difficult and I need suitable software

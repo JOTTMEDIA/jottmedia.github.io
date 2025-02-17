@@ -25,7 +25,7 @@ If you are interested in a specific topic, you can follow a hashtag - for exampl
 ## **What exactly is an Instagram hashtag?**
 
 A hashtag is characterised by a hashtag symbol (#) immediately before a single keyword or phrase.
-characterised. It is also known as a number sign or hash. This symbol signals Instagram to link the following
+It is also known as a number sign or hash. This symbol signals Instagram to link the following
 to link the following text. This link ensures that you can be found on Instagram. Basically, any word
 can be a hashtag.
 
@@ -33,7 +33,7 @@ can be a hashtag.
 
 Firstly, of course, in Instagram posts. Here you can insert your hashtags at the bottom of the captions, the same
 applies to
-Instagram reels. If you click on the hashtag, you will land on an overview page in both cases. You can also add hashtags
+Instagram reels. If you click on the hashtag, you will land on an overview page in both cases. You can add hashtags
 in your story as well.
 
 ## **How many hashtags should I use?**
@@ -70,8 +70,8 @@ There are a few other things you should pay attention to in order to use hashtag
   hidden under the frame. Just make sure you don't accidentally throw them in the bin!
 - Minimise your hashtags and cover them with a sticker. Animated stickers make your story stand out from the crowd
   and cover up the hashtag clutter.
-- Make your hashtags invisible with the pipette by colour-matching the hashtag text to a plain background.
-  to a solid colour background.
+- Make your hashtags invisible with the pipette by color-matching the hashtag text to a plain background.
+  to a solid color background.
 
 ## **Last but not least: Create a hashtag collection**
 

@@ -29,22 +29,21 @@ automatically informs the heating that it should be switched on or off: Keyword 
 
 ## Why, why: the technology behind IoT
 
-It is not possible to generalise about which technology is used, as IoT is only the generic term. In principle, however
+It is not possible to generalize about which technology is used, as IoT is only the generic term. In principle, however
 network, e.g. the narrowband, which is based on 4G technology and uses a different frequency band than our smartphone.
-than our smartphone. This frequency band is optimised for a better range (penetration), but is slower in speed.
+than our smartphone. This frequency band is optimized for a better range (penetration), but is slower in speed.
 however, it is slower in terms of speed. Due to the fact that IoT devices do not send large data, but rather small
 signals, such as
-small signals, such as ‘start coffee machine’, this compromise is optimal. It is more important that every IoT device
+small signals, such as ‘start coffee machine,’ this compromise is optimal. It is more important that every IoT device
 has perfect reception to ensure stable communication. No coffee in the morning is not a
 solution either.
 
 Of course, there are protocols developed for IoT devices that can transmit data even more efficiently, such as MQTT.
 Microcontrollers and hardware are being developed specifically for IoT applications. All with the aim of transferring
-data as
-as quickly, efficiently and, above all, consistently as possible.
+data as quickly, efficiently and, above all, consistently as possible.
 
 Basically, you can say that all devices that can communicate with each other autonomously belong in this area. The
-intelligence that we as humans perceive when the hoover automatically brews a coffee in the morning is based on the
+intelligence that we as humans perceive when the hover automatically brews a coffee in the morning is based on the
 coffee in the morning is based on the networking of these devices and the associated automation.
 
 ## Example of trap detectors: No more abstract theory
@@ -76,9 +75,9 @@ As our trap alarm should of course run independently, we need a battery to suppl
 Often at least 3.7 V - 5 V is required - so normal batteries would be possible, but here you have to make sure that
 sufficient mAh are available so that the batteries do not have to be replaced every second day. Anyone who deals with
 the
-power supply will quickly realise that this is often the bottleneck.
+power supply will quickly realize that this is often a bottleneck.
 
-The centrepiece is, of course, the right microcontroller. The Arduino platform is recommended for beginners. This
+The centerpiece is, of course, the right microcontroller. The Arduino platform is recommended for beginners. This
 offers its own IDE with which we can transfer the programming code directly to the microcontroller and debug it.
 Arduino offers many instructions and various boards for different applications.
 

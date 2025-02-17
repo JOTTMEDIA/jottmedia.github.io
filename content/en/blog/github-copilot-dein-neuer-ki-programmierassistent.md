@@ -27,8 +27,8 @@ improve the code.
 
 But how exactly does it work? For example, if you write a function in Python, GitHub Copilot can take into account the
 context of your input and previous lines to intelligently suggest what the next section might look like.
-section might look like. You might start with the definition of a function and as soon as you start writing the
-actual code, Copilot generates the subsequent steps that complete the function. It
+Section might look like. You might start with the definition of a function and as soon as you start writing the
+actual code, Copilot generates the later steps that complete the function. It
 is as if you have an experienced colleague by your side whispering suggestions on what lines of code you could write
 next, you could write next.
 
@@ -50,7 +50,6 @@ Of course, there are two sides to every coin, and GitHub Copilot is no exception
 is the significant time savings. Programmers can significantly speed up their workflows by
 automating routine tasks and using intelligent suggestions. This leads to higher productivity, as
 developers can spend more time on creative and strategic thinking instead of monotonous tasks.
-tasks.
 
 ### Disadvantages
 
@@ -66,7 +65,7 @@ final code.
 ## Security and data protection
 
 Another aspect that needs to be considered is security. GitHub Copilot uses data from public repositories, which raises
-questions about data protection. GitHub itself emphasises that the protection of personal
+questions about data protection. GitHub itself emphasizes that the protection of personal
 data is a top
 priority and that all security standards are adhered to. Nevertheless, it is advisable to think carefully about which
 data is used in a project and what security measures can be taken to protect it.
@@ -85,9 +84,9 @@ we can expect in the coming years.
 ## Conclusion
 
 To summarise, GitHub Copilot is a fascinating technology that could change the programming world forever.
-It offers developers valuable support, saves time and can significantly increase productivity. But despite
-Despite all the benefits, users should be aware of the potential risks and use the technology responsibly.
-responsibly. Whether for experienced programmers or beginners, Copilot is an exciting development that will certainly
+It offers developers valuable support, saves time and can significantly increase productivity. But
+despite all the benefits, users should be aware of the potential risks and use the technology responsibly.
+Whether for experienced programmers or beginners, Copilot is an exciting development that will certainly
 many exciting applications and possibilities.
 
 ### FAQs
@@ -103,7 +102,7 @@ as you code.
 
 Basic programming knowledge is helpful, but Copilot can also make useful suggestions for beginners and help them learn
 by
-help them learn by providing contextualised hints and full code examples.
+help them learn by providing contextualized hints and full code examples.
 
 3 **How is GitHub Copilot different from other programming tools?
 
@@ -118,7 +117,7 @@ TypeScript, Ruby and Go. The list is constantly expanding to meet the needs of t
 
 5 **How can GitHub Copilot support my learning through coding?
 
-Copilot provides not only coding suggestions, but also contextualised examples and explanations to help you understand
+Copilot provides not only coding suggestions, but also contextualized examples and explanations to help you understand
 and learn new concepts.
 and learning new concepts. It's like a tutor that helps you with your coding and guides you step by step.
 step by step.
