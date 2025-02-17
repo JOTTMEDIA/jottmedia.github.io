@@ -5,7 +5,8 @@
         prose>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
-          <NuxtLink class="inline-block no-underline border-0" to="/">
+          <NuxtLink :to="localePath({path: '/'})"
+                    class="inline-block no-underline border-0">
             <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
           </NuxtLink>
         </Center>
@@ -43,6 +44,7 @@
 const route = useRoute()
 const {locale} = useI18n()
 const {slug} = route.params;
+const localePath = useLocalePath()
 
 const {data: articles} = await useAsyncData(async () => {
 

@@ -20,7 +20,8 @@
               |
               <button :class="{ 'font-bold': currentLocale === 'en' }" @click="setLocale('en')">EN</button>
               <Center>
-                <NuxtLink class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0" to="/"
+                <NuxtLink :to="localePath({path: '/'})"
+                          class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0"
                           @click="open = false">
                   <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-full"
                          src="logo-overlay.svg"/>
