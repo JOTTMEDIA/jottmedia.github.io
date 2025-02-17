@@ -12,15 +12,15 @@
   },
   "devDependencies": {
     "@nuxtjs/i18n": "^9.2.0",
-    "@nuxt/devtools": "2.1.0",
+    "@nuxt/devtools": "^2.1.0",
     "@nuxt/ui": "^2.21.0",
     "@nuxthq/studio": "^2.2.1",
     "nuxt": "^3.15.4",
     "sass": "^1.85.0"
   },
   "dependencies": {
+    "@nuxt/content": "^3.1.1",
     "@iconify-json/mdi": "^1.2.3",
-    "@nuxt/content": "^3.1.0",
     "@nuxt/image": "^1.9.0",
     "@nuxt/ui-pro": "^1.7.0",
     "@tailwindcss/forms": "^0.5.10",
