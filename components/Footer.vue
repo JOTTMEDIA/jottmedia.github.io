@@ -13,16 +13,17 @@
               Bahnhofstraße 33<br>
               31675 Bückeburg<br>
               <br>
-              <nuxt-link href="tel:+4957229184984">+49 5722 9184984</nuxt-link><br>
+              <nuxt-link href="tel:+4957229184984">+49 5722 9184984</nuxt-link>
+              <br>
               <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link>
             </address>
           </div>
           <div class="text-right">
-            <nuxt-link class="block font-[800] text-jm-primary-green uppercase" to="/imprint">{{
+            <nuxt-link :to="localePath({path: 'imprint'})" class="block font-[800] text-jm-primary-green uppercase">.{{
                 t('imprint')
               }}
             </nuxt-link>
-            <nuxt-link class="block font-[800] text-jm-primary-green uppercase" to="/privacy">{{
+            <nuxt-link :to="localePath({path: 'privacy'})" class="block font-[800] text-jm-primary-green uppercase">.{{
                 t('privacy')
               }}
             </nuxt-link>
@@ -42,4 +43,5 @@
 </template>
 <script lang="ts" setup>
 const {t} = useI18n()
+const localePath = useLocalePath()
 </script>

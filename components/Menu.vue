@@ -40,11 +40,13 @@
                 </li>
               </ul>
               <div class="text-left sm:text-right mt-8 sm:mt-0">
-                <nuxt-link class="block font-extrabold text-sm sm:text-base" to="/privacy" @click="open = false">
-                  {{ t('privacy') }}
+                <nuxt-link :to="localePath({path: 'privacy'})" class="block font-extrabold text-sm sm:text-base"
+                           @click="open = false">
+                  .{{ t('privacy') }}
                 </nuxt-link>
-                <nuxt-link class="block font-extrabold text-sm sm:text-base" to="/imprint" @click="open = false">
-                  {{ t('imprint') }}
+                <nuxt-link :to="localePath({path: 'imprint'})" class="block font-extrabold text-sm sm:text-base"
+                           @click="open = false">
+                  .{{ t('imprint') }}
                 </nuxt-link>
                 <address class="not-italic text-sm  mt-6 sm:mt-16">
                   JOTT.MEDIA GmbH<br>
