@@ -17,7 +17,7 @@
           31675 Bückeburg
         </p>
 
-        <h3>{{ t('imprintSite.director') }}</h3>
+        <h3>{{ t('director') }}</h3>
         <p>
           Jan Jünemann<br>
           Jonathan Schneider
