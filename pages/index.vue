@@ -5,7 +5,7 @@
         <UContainer :ui="{'constrained': 'max-w-3xl'}"
                     class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
           <Center>
-            <NuxtLink :to="localePath({path: '/'})" class="inline-block no-underline border-0">
+            <NuxtLink :to="localePath({path: '/'})" class="inline-block mt-6 no-underline border-0">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
             </NuxtLink>
           </Center>
@@ -63,7 +63,12 @@
         <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
       </div>
       <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10">
-        <Image alt="Arian und Jan im Termin" src="team.jpg"/>
+        <NuxtImg
+            alt="Arian und Jan im Termin"
+            class="w-full"
+            format="webp"
+            loading="lazy"
+            src="team.jpg"/>
       </UContainer>
 
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
