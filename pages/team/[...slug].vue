@@ -6,8 +6,8 @@
           :ui="{'constrained': 'max-w-full gap-0 px-0 sm:px-0 lg:px-0 '}"
           class="flex flex-col sm:flex-row sm:h-screen">
         <div class="sm:w-1/2 h-1/2 sm:h-full">
-          <Image :cover="true" :parallax="false" :shine="false" :src="person?.meta?.src as string"
-                 class="w-full h-full"/>
+          <NuxtImg :src="person?.meta?.src as string" class="w-full h-full"
+                   format="webp" loading="lazy"/>
         </div>
         <div
             :class="person?.meta.bg"
