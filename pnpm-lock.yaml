@@ -45,6 +45,9 @@ importers:
       '@nuxtjs/i18n':
         specifier: ^9.2.0
         version: 9.2.0(@vue/compiler-dom@3.5.13)(eslint@9.20.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.34.3)(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
+      '@nuxtjs/web-vitals':
+        specifier: ^0.2.7
+        version: 0.2.7(magicast@0.3.5)(rollup@4.34.3)
       nuxt:
         specifier: ^3.15.4
         version: 3.15.4(@parcel/watcher@2.5.1)(@types/node@22.13.1)(better-sqlite3@11.8.1)(db0@0.2.3(better-sqlite3@11.8.1))(eslint@9.20.0(jiti@2.4.2))(ioredis@5.4.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.34.3)(sass@1.85.0)(terser@5.38.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.1)(jiti@2.4.2)(sass@1.85.0)(terser@5.38.0)(yaml@2.7.0))(yaml@2.7.0)
@@ -725,6 +728,9 @@ packages:
 
   '@nuxtjs/tailwindcss@6.13.1':
     resolution: {integrity: sha512-atL2SaPsxLfMTlXUQvr1UpDYdz6ocNOhH35H+t7M++g4r79QiQScJ7XuyyMR9AyBN19lkPA3nw7NXxazXmYxlA==}
+
+  '@nuxtjs/web-vitals@0.2.7':
+    resolution: {integrity: sha512-ztqk+PsdozVExk0IkzH64+5LnHhyUQboIBp/IdDHaOZEHybMZRtdMB53z6OqSg/DCK3638sHDXoza44DYvveaw==}
 
   '@parcel/watcher-android-arm64@2.5.1':
     resolution: {integrity: sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==}
@@ -4832,6 +4838,9 @@ packages:
   web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
 
+  web-vitals@3.5.2:
+    resolution: {integrity: sha512-c0rhqNcHXRkY/ogGDJQxZ9Im9D19hDihbzSQJrsioex+KnFgmMzBiy57Z1EjkhX/+OjyBpclDCzz2ITtjokFmg==}
+
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
@@ -6163,6 +6172,18 @@ snapshots:
       - rollup
       - supports-color
       - ts-node
+
+  '@nuxtjs/web-vitals@0.2.7(magicast@0.3.5)(rollup@4.34.3)':
+    dependencies:
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.34.3)
+      defu: 6.1.4
+      pathe: 1.1.2
+      ufo: 1.5.4
+      web-vitals: 3.5.2
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
@@ -11103,6 +11124,8 @@ snapshots:
       typescript: 5.7.3
 
   web-namespaces@2.0.1: {}
+
+  web-vitals@3.5.2: {}
 
   webidl-conversions@3.0.1: {}
 
