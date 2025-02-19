@@ -60,8 +60,16 @@ export default defineNuxtConfig({
         '@nuxt/ui',
         '@vueuse/nuxt',
         '@nuxt/image',
-        '@nuxthq/studio'
+        '@nuxthq/studio',
+        '@nuxtjs/web-vitals'
     ],
+
+    webVitals: {
+        provider: 'log', // Define the provider here (e.g., 'log', 'ga', 'gtag', 'datadog', etc.)
+        debug: true, // Optional: Enable debug mode
+        disabled: false, // Optional: Disable the module
+        // Add any other options specific to the provider
+    },
     i18n: {
         lazy: true,
         defaultLocale: 'de',
