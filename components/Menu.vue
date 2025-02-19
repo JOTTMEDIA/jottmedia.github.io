@@ -6,14 +6,14 @@
       <Center>
         <div
             v-if="props.open"
-            class="top-0 left-0 w-screen h-screen flex flex-col justify-start  z-30 bg-jm-primary-brown fixed">
+            class="top-0 left-0 w-screen h-screen flex flex-col justify-start z-30 bg-jm-primary-brown fixed">
           <UContainer :ui="{'constrained': 'sm:max-w-8xl'}" class="my-8">
             <button :class="{ 'font-bold': currentLocale === 'de' }" @click="setLocale('de')">DE</button>
             |
             <button :class="{ 'font-bold': currentLocale === 'en' }" @click="setLocale('en')">EN</button>
             <Center>
               <NuxtLink :to="localePath({path: '/'})"
-                        class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0"
+                        class="inline-block no-underline w-full mt-2 xl:mr-3 sm:w-[325px] border-0"
                         @click="open = false">
                 <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-full"
                        src="logo-overlay.svg"/>
