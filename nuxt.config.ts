@@ -51,7 +51,9 @@ export default defineNuxtConfig({
             ]
         },
     },
-
+    experimental: {
+        viewTransition: true,
+    },
     extends: ['@nuxt/ui-pro'],
 
     modules: [
@@ -69,6 +71,9 @@ export default defineNuxtConfig({
         debug: true, // Optional: Enable debug mode
         disabled: false, // Optional: Disable the module
         // Add any other options specific to the provider
+    },
+    image: {
+        domains: ['jott.media'],
     },
     i18n: {
         lazy: true,
