@@ -5,21 +5,30 @@
         <UContainer :ui="{'constrained': 'max-w-3xl'}"
                     class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
           <Center>
-            <NuxtLink class="inline-block no-underline border-0" to="/">
+            <NuxtLink :to="localePath({path: '/'})" class="inline-block mt-6 no-underline border-0">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
             </NuxtLink>
           </Center>
           <Center>
-            <Headline class="pb-5" type="h1">Machen wir es<br><span
-                class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
+            <Headline class="pb-5" type="h1">{{ t('make.we') }}<br><span
+                class="text-jm-primary-green uppercase">
+              {{ t('make.simple') }}</span>
+              <b class="uppercase">digital</b>.
             </Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
-              <Button>Einfach machen</Button>
+            <NuxtLink :to="{ hash: '#machen' }" prefetchOn="interaction" @click="scrollTo">
+              <Button>{{ t('makeSimpleButton') }}</Button>
             </NuxtLink>
           </Center>
           <Center>
-            <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
+            <Headline type="h3">
+              {{ t('office.your') }}
+              <span class="lowercase">
+                {{ t('office.for') }}
+              </span>
+              <b>{{ t('office.development') }}
+              </b>
+            </Headline>
+            <NuxtLink :to="{ hash: '#machen' }" prefetchOn="interaction" @click="scrollTo">
               <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down"/>
             </NuxtLink>
           </Center>
@@ -30,37 +39,76 @@
       <div class="relative bg-jm-primary-green">
         <Background height="644px" parallax="to-left" position="top" src="header-green-top.svg"/>
         <UContainer id="machen" :ui="{'constrained': 'max-w-3xl'}" class="relative py-10">
-          <Headline type="h6">Das bekommst du <b class="uppercase">von uns</b></Headline>
-          <Headline type="h4"><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines
-            Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für
-            <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.
+          <Headline type="h6">
+            {{ t('get.what') }}
+            <b class="uppercase">
+              {{ t('get.fromUs') }}
+            </b>
+          </Headline>
+          <Headline type="h4">
+            <b>
+              {{ t('get.time') }}
+            </b>
+            {{ t('get.energy') }}
+            <b>
+              {{ t('get.success') }}
+            </b>
+            {{ t('get.growth') }}
+            <b>
+              {{ t('get.efficiency') }}
+            </b>
+            {{ t('get.business') }}
           </Headline>
         </UContainer>
         <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
       </div>
       <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10">
-        <Image alt="Arian und Jan im Termin" src="team.jpg"/>
+        <NuxtImg
+            alt="Arian und Jan im Termin"
+            class="w-full"
+            format="webp"
+            loading="lazy"
+            src="team.jpg"/>
       </UContainer>
 
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
-        <Headline type="h6">Die wichtigste <b class="uppercase">Frage</b></Headline>
-        <Headline class="font-[400]" type="h2">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
-          Unternehmen wirklich?</b>“
+        <Headline type="h6">{{ t('question.important') }}
+          <b class="uppercase">
+            {{ t('question.question') }}
+          </b>
+        </Headline>
+        <Headline class="font-[400]" type="h2">„<b class="uppercase">{{ t('question.what') }}</b>
+          {{ t('question.exactly') }}
+          <b class="uppercase">
+            {{ t('question.need') }}
+          </b>“
         </Headline>
       </UContainer>
 
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
-        <Headline type="h6">So arbeiten wir <b class="uppercase">für Dich</b></Headline>
-        <Headline class="text-jm-primary-brown" type="h5"><b>Ehrlich. zuverlässig. partnerschaftlich.</b></Headline>
-        <Paragraph>Die Lösung muss immer zum Problem passen. Darum steht bei uns <b>an erster Stelle</b> die Analyse
-          deiner Herausforderung. Erst, wenn diese glasklar ist, widmen wir uns der <b>Konzeption und Umsetzung</b> des
-          tatsächlichen Produkts, wie auch immer das in deinem konkreten Fall aussehen mag. Damit das funktioniert, ist
-          eine ehrliche, zuverlässige und partnerschaftliche Zusammenarbeit – <b>auf Augenhöhe</b> und auf beiden Seiten
-          – unabdingbar.
+        <Headline type="h6">
+          {{ t('work.we') }}
+          <b class="uppercase">
+            {{ t('work.forYou') }}
+          </b>
+        </Headline>
+        <Headline class="text-jm-primary-brown" type="h5">
+          <b>{{ t('work.honesty') }}</b></Headline>
+        <Paragraph>
+          {{ t('solution.problem') }}
+          <b>
+            {{ t('solution.solution') }}
+          </b>
+          {{ t('solution.priority') }}
+          {{ t('solution.analyze') }}
+          <b>{{ t('solution.conception') }}</b>
+          {{ t('solution.products') }}
+          {{ t('solution.equal') }}
+          {{ t('solution.sides') }}
         </Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Lass uns gemeinsam loslegen</Button>
+            <Button>{{ t('startButton') }}</Button>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -69,9 +117,11 @@
         <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10 md:mb-40 z-10">
           <ImageFigure
               v-for="person in team"
+              v-once
+              :key="person.path"
               :align="person.meta.align as string | undefined"
               :hint="person.meta.hint as string | undefined"
-              :link="person.path as string | undefined"
+              :link="localePath({name: 'team-slug', params: {slug: person.slug}})"
               :quote="person.meta.quote as string | undefined"
               :src="person.meta.src as string | undefined">
           </ImageFigure>
@@ -81,7 +131,7 @@
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10 z-10">
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Lerne uns kennen</Button>
+            <Button>{{ t('knowButton') }}</Button>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -89,9 +139,20 @@
       <div class="relative bg-jm-primary-green mt-64">
         <Background height="702px" parallax="to-right" position="top" src="green-top.svg"/>
         <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
-          <Headline type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
-          <Headline class="font-[400]" type="h3">Wir entwickeln und designen <b class="text-jm-primary-brown">digitale
-            Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></Headline>
+          <Headline type="h6">
+            {{ t('we.do') }}
+            <b class="uppercase">
+              {{ t('we.forYou') }}
+            </b>
+          </Headline>
+          <Headline class="font-[400]" type="h3">
+            {{ t('we.development') }}
+            <b
+                class="text-jm-primary-brown">
+              {{ t('we.digital') }}</b>
+            <b>{{ t('we.customise') }}
+            </b>
+          </Headline>
         </UContainer>
         <Background height="517px" parallax="to-right" position="bottom" src="green-bottom.svg"/>
       </div>
@@ -101,15 +162,27 @@
       </UContainer>
 
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="py-10">
-        <Paragraph><b class="text-jm-primary-brown uppercase">Konzeption, Prototyping, Programmierung & Design</b> von
-          <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir
-            machen Kompliziertes einfach</b> – und räumen Wachstumsbremsen aus dem Weg. <b>Ganz gleich, ob Webseite,
-            Web-Applikation oder App</b>: Unsere Lösungen zeichnen sich durch beeindruckende Funktionalität,
-          begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.
+        <Paragraph><b class="text-jm-primary-brown uppercase">
+          {{ t('challenges.conception') }}
+        </b> {{ t('challenges.of') }}
+          <b>
+            {{ t('challenges.digital') }}
+          </b>
+          {{ t('challenges.challenge') }}
+          <b>{{ t('challenges.master') }}
+          </b>
+          {{ t('challenges.other') }}
+          <b>{{ t('challenges.complicated') }}
+          </b> {{ t('challenges.obstacles') }}
+          <b>{{ t('challenges.website') }}
+          </b> {{ t('challenges.solutions') }}
+          <b>{{ t('challenges.aesthetics') }}
+          </b>
+          {{ t('challenges.start') }}
         </Paragraph>
         <Center>
           <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Los geht's</Button>
+            <Button>{{ t('goButton') }}</Button>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -117,19 +190,20 @@
       <UContainer :ui="{'constrained': 'max-w-5xl'}" class="pt-20">
         <Center>
           <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
-            <b class="text-jm-primary-brown uppercase">Neues</b> aus der
-            <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
+            <b class="text-jm-primary-brown uppercase">{{ t('world.new') }}</b> {{ t('world.from') }} <b
+              class="text-jm-primary-brown uppercase">{{ t('world.digital') }}</b>
           </Headline>
         </Center>
-        <UBlogList>
+        <UBlogList v-once>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article.path">
-              <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
-                     :shine="false"
-                     :src="article.meta.image as string"
-                     class="w-full"/>
+            <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})">
+              <NuxtImg :alt="article.meta.imageAlt as string | undefined"
+                       :src="article.meta.image as string" class="w-full"
+                       format="webp"
+                       loading="lazy"
+                       sizes="100vw md:370px"/>
               <section class="px-3 pb-3">
-                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} von <b
+                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} {{ t('challenges.of') }} <b
                     class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
                 <UBadge
@@ -145,29 +219,49 @@
           </UBlogPost>
         </UBlogList>
         <Center>
-          <NuxtLink to="blog">
-            <Button class="mt-8">Zum Blog</Button>
+          <NuxtLink :to="localePath({name: 'blog'})" prefetchOn="interaction">
+            <Button class="mt-4">{{ t('blogButton') }}</Button>
           </NuxtLink>
         </Center>
-
       </UContainer>
     </UPageBody>
   </UPage>
 </template>
 
 <script lang="ts" setup>
+import type {Collections} from '@nuxt/content'
 
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
-const {data: articles} = await useAsyncData(() => {
-  return queryCollection('blog').all()
+
+preloadComponents('Background')
+
+const localePath = useLocalePath()
+const {t, locale} = useI18n()
+
+const {data: articles} = await useAsyncData(async () => {
+
+  const articles = await queryCollection(`articles_${locale.value}`)
+      .limit(3)
+      .order('date', 'DESC')
+      .all() as Collections['articles_en'][] | Collections['articles_de'][]
+
+  return articles.map(article => ({
+    ...article,
+    date: new Date(article.date).toISOString().slice(0, 10).replace(/-/g, '.') // Format date to yyyy.mm.dd
+  }))
+}, {
+  watch: [locale],
 })
 
-const {data: team} = await useAsyncData(() => {
-  return queryCollection('team').all()
+const {data: team} = await useAsyncData(async () => {
+  const collection = ('team_' + locale.value) as keyof Collections
+  return await queryCollection(collection)
+      .all() as Collections['team_en'][] | Collections['team_de'][]
+}, {
+  watch: [locale],
 })
-
 
 const scrollTo = () => {
   const element = document.getElementById('machen');

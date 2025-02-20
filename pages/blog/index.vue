@@ -3,20 +3,18 @@
     <UPageBody>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
-          <NuxtLink class="inline-block no-underline border-0" to="/">
+          <NuxtLink :to="localePath({path: '/'})"
+                    class="inline-block no-underline border-0">
             <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
           </NuxtLink>
         </Center>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-7xl'}" class="pt-16">
         <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
-          <b class="text-jm-primary-brown uppercase">Neues</b> aus der
-          <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
+          <b class="text-jm-primary-brown uppercase">{{ t('world.new') }}</b> {{ t('world.from') }}
+          <b class="text-jm-primary-brown uppercase">{{ t('world.digital') }}</b>
         </Headline>
-        <Paragraph class="text-sm lg:text-tiny mb-8">Hier möchten wir gerne unser Wissen, über die digitale Zukunft,
-          Technologien, Design <br> und das Leben in einer digitalen Agentur, mit euch teilen, bleibt gespannt, wir sind
-          es auch.
-        </Paragraph>
+        <Paragraph class="text-sm lg:text-tiny mb-8 w-full md:w-2/3 xl:w-5/12">{{ t('blog.agency') }}</Paragraph>
         <UContainer :ui="{constrained: 'max-w-4xl space-x-4 space-y-4 ml-0', padding: 'px-0 sm:px-0 lg:px-0'}">
           <Button
               v-for="(category, index) in categories"
@@ -32,10 +30,15 @@
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article.path" class="grid items-end h-full">
-              <NuxtImg :src="article.meta.image as string | undefined" class="w-full h-full" format="webp"/>
+            <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})"
+                      class="grid items-end h-full">
+              <NuxtImg :src="article.meta.image as string | undefined"
+                       class="w-full h-full"
+                       format="webp"
+                       loading="lazy"
+                       sizes="100vw md:370px"/>
               <section class="px-3 lg:px-7 pb-5">
-                <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.meta.date }} von <b
+                <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.date }} von <b
                     class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
                 <Headline class="font-extrabold text-lg" type="h5" v-html="article.title"/>
                 <Paragraph class="text-sm mb-4 font-light">{{ truncateText(article.description, 250) }}</Paragraph>
@@ -68,18 +71,31 @@
 </template>
 
 <script lang="ts" setup>
+import type {Collections} from "@nuxt/content";
+
+const {locale, t} = useI18n()
 const route = useRoute()
 const page = ref(1)
 const categories: Ref<string[] | undefined> = ref([])
-
+const localePath = useLocalePath()
 const pageMaxArticles = ref(6);
-const {data: articles} = await useAsyncData(route.path, () =>
-    queryCollection('blog')
-        .limit(pageMaxArticles.value)
-        .skip(pageMaxArticles.value * (page.value - 1))
-        .order('id', 'DESC')
-        .all())
 
+
+const {data: articles} = await useAsyncData(async () => {
+
+  const articles = await queryCollection(`articles_${locale.value}`)
+      .limit(pageMaxArticles.value)
+      .skip(pageMaxArticles.value * (page.value - 1))
+      .order('date', 'DESC')
+      .all() as Collections['articles_en'][] | Collections['articles_de'][]
+
+  return articles.map(article => ({
+    ...article,
+    date: new Date(article.date).toISOString().slice(0, 10).replace(/-/g, '.') // Format date to yyyy.mm.dd
+  }))
+}, {
+  watch: [locale],
+})
 
 function fetchCategories() {
   categories.value = articles.value?.map(item => item.meta.categories)
@@ -94,13 +110,13 @@ const filteredArticles = computed(() => {
 });
 
 const loadMoreButtonLabel = computed(() => {
-  return articles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
+  return articles.value?.length < pageMaxArticles.value ? t('blog.no-posts') : t('blog.show');
 });
 
 async function loadMorePosts() {
   pageMaxArticles.value += 6
   await useAsyncData(route.path, () =>
-      queryCollection('blog')
+      queryCollection(`articles_${locale.value}`)
           .order('id', 'DESC')
           .limit(pageMaxArticles.value)
           .all()
