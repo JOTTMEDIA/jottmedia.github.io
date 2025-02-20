@@ -196,10 +196,11 @@
         <UBlogList>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
             <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})">
-              <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
-                     :shine="false"
-                     :src="article.meta.image as string"
-                     class="w-full"/>
+              <NuxtImg :alt="article.meta.imageAlt as string | undefined"
+                       :src="article.meta.image as string" class="w-full"
+                       format="webp"
+                       loading="lazy"
+                       sizes="100vw md:370px"/>
               <section class="px-3 pb-3">
                 <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.date }} {{ t('challenges.of') }} <b
                     class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
