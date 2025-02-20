@@ -27,10 +27,13 @@
         <p class="lead">{{ articles?.description }}</p>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-4xl'}">
-        <Image :alt="articles?.meta.imageAlt as string | undefined"
-               :hint="articles?.meta.imageAlt as string | undefined"
-               :public-src="true"
-               :src="articles?.meta.image as string"/>
+        <NuxtImg :alt="articles?.meta.imageAlt as string | undefined"
+                 :hint="articles?.meta.imageAlt as string | undefined"
+                 :src="articles?.meta.image as string"
+                 class="w-full"
+                 format="webp"
+                 loading="lazy"
+                 sizes="500px md:720px xl:1040px"/>
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pb-10">
         <ContentRenderer v-if="articles?.body" :value="articles"/>
