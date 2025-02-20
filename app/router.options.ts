@@ -13,7 +13,6 @@ function findHashPosition(hash: string): { el: any, behavior: ScrollBehavior, to
     }
 }
 
-// https://router.vuejs.org/api/#routeroptions
 export default <RouterConfig>{
     scrollBehavior(to, from, savedPosition) {
         const nuxtApp = useNuxtApp()
