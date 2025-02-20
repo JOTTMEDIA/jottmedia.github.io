@@ -13,8 +13,13 @@
 
 <script lang="ts" setup>
 import MenuButton from '~/components/MenuButton.vue'
+import {hydrateOnIdle} from "@vue/runtime-core";
 
-const Menu = defineAsyncComponent(() => import('@/components/Menu.vue'))
+const Menu = defineAsyncComponent({
+  loader: () => import('@/components/Menu.vue'),
+  hydrate: hydrateOnIdle()
+})
+
 const open = ref(false)
 </script>
 
