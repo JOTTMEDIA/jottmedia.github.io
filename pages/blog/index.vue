@@ -14,7 +14,7 @@
           <b class="text-jm-primary-brown uppercase">{{ t('world.new') }}</b> {{ t('world.from') }}
           <b class="text-jm-primary-brown uppercase">{{ t('world.digital') }}</b>
         </Headline>
-        <Paragraph class="text-sm lg:text-tiny mb-8 w-5/12">{{ t('blog.agency') }}</Paragraph>
+        <Paragraph class="text-sm lg:text-tiny mb-8 w-full md:w-2/3 xl:w-5/12">{{ t('blog.agency') }}</Paragraph>
         <UContainer :ui="{constrained: 'max-w-4xl space-x-4 space-y-4 ml-0', padding: 'px-0 sm:px-0 lg:px-0'}">
           <Button
               v-for="(category, index) in categories"
@@ -32,7 +32,11 @@
               class="bg-jm-secondary-grey-lighter">
             <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})"
                       class="grid items-end h-full">
-              <NuxtImg :src="article.meta.image as string | undefined" class="w-full h-full" format="webp"/>
+              <NuxtImg :src="article.meta.image as string | undefined"
+                       class="w-full h-full"
+                       format="webp"
+                       loading="lazy"
+                       sizes="100vw md:370px"/>
               <section class="px-3 lg:px-7 pb-5">
                 <Paragraph class="mt-4 mb-2 text-sm font-light">{{ article.date }} von <b
                     class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
