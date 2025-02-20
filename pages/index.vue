@@ -117,6 +117,7 @@
         <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10 md:mb-40 z-10">
           <ImageFigure
               v-for="person in team"
+              v-once
               :key="person.path"
               :align="person.meta.align as string | undefined"
               :hint="person.meta.hint as string | undefined"
@@ -193,7 +194,7 @@
               class="text-jm-primary-brown uppercase">{{ t('world.digital') }}</b>
           </Headline>
         </Center>
-        <UBlogList>
+        <UBlogList v-once>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
             <NuxtLink :to="localePath({name: 'blog-slug', params: {slug: article.slug as string}})">
               <NuxtImg :alt="article.meta.imageAlt as string | undefined"
@@ -218,7 +219,7 @@
           </UBlogPost>
         </UBlogList>
         <Center>
-          <NuxtLink :to="localePath({name: 'blog'})">
+          <NuxtLink :to="localePath({name: 'blog'})" prefetchOn="interaction">
             <Button class="mt-4">{{ t('blogButton') }}</Button>
           </NuxtLink>
         </Center>
