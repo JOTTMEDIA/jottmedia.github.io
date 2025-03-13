@@ -28,7 +28,7 @@
           </Button>
         </UContainer>
 
-        <UBlogList class="mt-10 gap-y-8 lg:grid-cols-2 xl:grid-cols-3" orientation="horizontal">
+        <UBlogPosts class="mt-10 gap-y-8 lg:grid-cols-2 xl:grid-cols-3" orientation="horizontal">
           <UBlogPost
               v-for="(article, index) in filteredArticles" :key="index"
               class="bg-jm-secondary-grey-lighter">
@@ -50,7 +50,7 @@
               </section>
             </NuxtLink>
           </UBlogPost>
-        </UBlogList>
+        </UBlogPosts>
 
         <Button
             :class="{
