@@ -1,9 +1,10 @@
 <template>
   <main>
     <Menu/>
-    <UMain>
-      <slot/>
-    </UMain>
-    <Footer/>
+    <UPage>
+      <UPageBody>
+        <slot/>
+      </UPageBody>
+    </UPage>
   </main>
 </template>
