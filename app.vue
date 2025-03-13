@@ -1,13 +1,17 @@
 <template>
-  <div class="custom-cursor overflow-x-hidden scroll-smooth"
-       :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}"
-       :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
-  </div>
+  <UApp>
+    <div :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}"
+         :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }"
+         class="custom-cursor overflow-x-hidden scroll-smooth">
+      <NuxtLayout>
+        <UMain>
+          <NuxtPage/>
+        </UMain>
+      </NuxtLayout>
+    </div>
+  </UApp>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 const cursorX = ref(0);
 const cursorY = ref(0);
 const isMouseDown = ref(false);
@@ -83,10 +87,12 @@ onUnmounted(() => {
   }
 
 }
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;
 }
+
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
