@@ -1,9 +1,9 @@
 <template>
   <UPage>
     <UPageBody class="m-0 p-0">
-      <div class="relative bg-jm-secondary-grey-lighter">
-        <UContainer :ui="{'constrained': 'max-w-3xl'}"
-                    class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
+      <div class="relative">
+        <UContainer
+            class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
           <Center>
             <NuxtLink class="inline-block no-underline border-0" to="/">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
@@ -11,7 +11,7 @@
           </Center>
           <Center>
             <Headline class="pb-5" type="h1">Machen wir es<br><span
-                class="text-jm-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
+                class="text-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
             </Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
               <Button>Einfach machen</Button>
@@ -121,7 +121,7 @@
             <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
           </Headline>
         </Center>
-        <UBlogList>
+        <UBlogPosts>
           <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
             <NuxtLink :to="article.path">
               <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
@@ -143,7 +143,7 @@
               </section>
             </NuxtLink>
           </UBlogPost>
-        </UBlogList>
+        </UBlogPosts>
         <Center>
           <NuxtLink to="blog">
             <Button class="mt-8">Zum Blog</Button>
