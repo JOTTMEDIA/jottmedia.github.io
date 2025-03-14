@@ -1,9 +1,0 @@
-<template>
-  <UButton
-      color="primary"
-      outline="true"
-      size="xl"
-  >
-    <slot/>
-  </UButton>
-</template>
