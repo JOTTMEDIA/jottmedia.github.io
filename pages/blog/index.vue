@@ -8,6 +8,17 @@
           </NuxtLink>
         </Center>
       </UContainer>
+
+      <UButton
+          v-for="(category, index) in categories"
+          :key="index"
+          :label="category"
+          color="secondary"
+          outline="true"
+          size="lg"
+          variant="outline"
+          @click="selectedCategory = category"
+      />
       <UContainer :ui="{'constrained': 'max-w-7xl'}" class="pt-16">
         <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
           <b class="text-jm-primary-brown uppercase">Neues</b> aus der
@@ -18,14 +29,16 @@
           es auch.
         </Paragraph>
         <UContainer :ui="{constrained: 'max-w-4xl space-x-4 space-y-4 ml-0', padding: 'px-0 sm:px-0 lg:px-0'}">
-          <Button
+          <UButton
               v-for="(category, index) in categories"
               :key="index"
-              :class="category === selectedCategory ? 'bg-jm-primary-brown text-jm-secondary-white' : 'text-jm-primary-brown border-jm-primary-brown'"
-              class="text-jm-primary-brown border-jm-primary-brown "
+              :label="category"
+              color="secondary"
+              outline="true"
+              size="lg"
+              variant="outline"
               @click="selectedCategory = category"
-          >{{ category }}
-          </Button>
+          />
         </UContainer>
 
         <UBlogPosts class="mt-10 gap-y-8 lg:grid-cols-2 xl:grid-cols-3" orientation="horizontal">
@@ -51,17 +64,17 @@
             </NuxtLink>
           </UBlogPost>
         </UBlogPosts>
-
-        <Button
-            :class="{
-            'text-jm-primary-brown border-jm-primary-brown': articles?.length > pageMaxArticles,
-            'text-jm-primary-brown': articles?.length < pageMaxArticles
-          }"
-            :disabled="articles?.length < pageMaxArticles"
-            class="mt-8 mx-auto flex text-jm-primary-brown border-jm-primary-brown"
-            @click="loadMorePosts"
-        >{{ loadMoreButtonLabel }}
-        </Button>
+        <Center>
+          <UButton
+              :disabled="articles?.length < pageMaxArticles"
+              :label="loadMoreButtonLabel"
+              color="secondary"
+              outline="true"
+              size="lg"
+              variant="outline"
+              @click="loadMorePosts"
+          />
+        </Center>
       </UContainer>
     </UPageBody>
   </UPage>
