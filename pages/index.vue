@@ -11,11 +11,18 @@
           </Center>
           <Center>
             <Headline class="pb-5" type="h1">Machen wir es<br><span
-                class="text-primary-green uppercase">einfach:</span> <b class="uppercase">digital</b>.
+                class="text-[var(--color-nuxt-ui-primary-50)] uppercase">einfach:</span> <b
+                class="uppercase">digital</b>.
             </Headline>
-            <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
-              <Button>Einfach machen</Button>
-            </NuxtLink>
+            <UButton
+                :to="{path: '/', hash: '#machen'}"
+                color="secondary"
+                label="Einfach machen"
+                outline="true"
+                size="lg"
+                variant="outline"
+                @click="scrollTo"
+            />
           </Center>
           <Center>
             <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
@@ -59,9 +66,16 @@
           – unabdingbar.
         </Paragraph>
         <Center>
-          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Lass uns gemeinsam loslegen</Button>
-          </NuxtLink>
+          <UButton
+              color="secondary"
+              label="Lass uns gemeinsam loslegen"
+              outline="true"
+              size="lg"
+              target="_blank"
+              to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
+              variant="outline"
+          >
+          </UButton>
         </Center>
       </UContainer>
       <div class="relative">
@@ -80,9 +94,15 @@
       </div>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10 z-10">
         <Center>
-          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Lerne uns kennen</Button>
-          </NuxtLink>
+          <UButton
+              color="secondary"
+              label="Lerne uns kennen"
+              outline="true"
+              size="lg"
+              target="_blank"
+              to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
+              variant="outline"
+          ></UButton>
         </Center>
       </UContainer>
 
@@ -108,9 +128,16 @@
           begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.
         </Paragraph>
         <Center>
-          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Los geht's</Button>
-          </NuxtLink>
+          <UButton
+              color="secondary"
+              label="Los geht's"
+              outline="true"
+              size="lg"
+              target="_blank"
+              to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
+              variant="outline"
+          >
+          </UButton>
         </Center>
       </UContainer>
 
@@ -145,9 +172,16 @@
           </UBlogPost>
         </UBlogPosts>
         <Center>
-          <NuxtLink to="blog">
-            <Button class="mt-8">Zum Blog</Button>
-          </NuxtLink>
+          <UButton
+              class="mt-8"
+              color="secondary"
+              label="Zum Blog"
+              outline="true"
+              size="lg"
+              to="blog"
+              variant="outline"
+          >
+          </UButton>
         </Center>
 
       </UContainer>
