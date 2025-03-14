@@ -10,16 +10,100 @@
 
 
 :root {
+
+
     --radius-sm: 4.25rem;
     --container-xl: 320px;
     --container-3xl: 768px;
     --ui-text-primary: red;
-    --ui-primary: pink;
-    --ui-bg: #EAEBEA;
+
+    --ui-primary: orange;
+    --ui-bg: var(--color-jm-secondary-grey-lighter);
     --ui-container-small: var(--container-xl);
     --ui-container-base: var(--container-3xl);
     /*    --ui-primary: #9B9371;*/
     --ui-radius: var(--radius-sm);
+
+
+    /* Font Families */
+    --font-family-sans: 'Open Sans', sans-serif;
+
+    /* Font Sizes */
+    --font-size-xs: 0.65rem;
+    --font-size-sm: 0.8rem;
+    --font-size-tiny: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 1.8rem;
+    --font-size-3xl: 2.1rem;
+    --font-size-4xl: 3.2rem;
+    --font-size-5xl: 3.2rem;
+    --font-size-6xl: 3.2rem;
+    --font-size-7xl: 3.2rem;
+
+    /* Colors */
+    --color-nuxt-ui-primary-50: #687E5E;
+    --color-nuxt-ui-primary-100: #687E5E;
+    --color-nuxt-ui-primary-200: #687E5E;
+    --color-nuxt-ui-primary-300: #687E5E;
+    --color-nuxt-ui-primary-400: #687E5E;
+    --color-nuxt-ui-primary-500: #687E5E;
+    --color-nuxt-ui-primary-600: #687E5E;
+    --color-nuxt-ui-primary-700: #687E5E;
+    --color-nuxt-ui-primary-800: #687E5E;
+    --color-nuxt-ui-primary-900: #687E5E;
+    --color-nuxt-ui-primary-950: #687E5E;
+
+    --color-nuxt-ui-grey-50: #7C7B7B;
+    --color-nuxt-ui-grey-100: #7C7B7B;
+    --color-nuxt-ui-grey-200: #7C7B7B;
+    --color-nuxt-ui-grey-300: #7C7B7B;
+    --color-nuxt-ui-grey-400: #7C7B7B;
+    --color-nuxt-ui-grey-500: #7C7B7B;
+    --color-nuxt-ui-grey-600: #7C7B7B;
+    --color-nuxt-ui-grey-700: #7C7B7B;
+    --color-nuxt-ui-grey-800: #7C7B7B;
+    --color-nuxt-ui-grey-900: #7C7B7B;
+    --color-nuxt-ui-grey-950: #7C7B7B;
+
+    --color-nuxt-ui-brown-50: #9B9371;
+    --color-nuxt-ui-brown-100: #9B9371;
+    --color-nuxt-ui-brown-200: #9B9371;
+    --color-nuxt-ui-brown-300: #9B9371;
+    --color-nuxt-ui-brown-400: #9B9371;
+    --color-nuxt-ui-brown-500: #9B9371;
+    --color-nuxt-ui-brown-600: #9B9371;
+    --color-nuxt-ui-brown-700: #9B9371;
+    --color-nuxt-ui-brown-800: #9B9371;
+    --color-nuxt-ui-brown-900: #9B9371;
+    --color-nuxt-ui-brown-950: #9B9371;
+
+    --color-jm-primary-brown: #9B9371;
+    --color-jm-primary-brown-light: #C3C2B4;
+    --color-jm-primary-brown-lighter: #DBDAD2;
+
+    --color-jm-primary-grey: #7C7B7B;
+    --color-jm-primary-grey-light: #B5B7B5;
+    --color-jm-primary-grey-lighter: #D2D4D3;
+
+    --color-jm-primary-green: #687E5E;
+    --color-jm-primary-green-light: #AEB9AC;
+    --color-jm-primary-green-lighter: #CFD5CD;
+
+    --color-jm-secondary-grey: #C9CAC9;
+    --color-jm-secondary-grey-light: #DDDEDC;
+    --color-jm-secondary-grey-lighter: #EAEBEA;
+
+    --color-jm-secondary-white: #FFFFFF;
+
+    --color-jm-contrast-blue: #3B5B5D;
+    --color-jm-contrast-blue-light: #9BA7A7;
+    --color-jm-contrast-blue-lighter: #C3CACA;
+
+    --color-jm-contrast-black: #000000;
+    --color-jm-contrast-black-light: #808082;
+    --color-jm-contrast-black-lighter: #B3B3B4;
 }
 
 @font-face {
