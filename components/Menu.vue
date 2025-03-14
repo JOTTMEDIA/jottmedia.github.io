@@ -1,42 +1,52 @@
 <template>
   <div class="fixed flex flex-col justify-center -bottom-2 sm:bottom-0 right-4 sm:right-8 z-50">
-    <button @click="open = !open"
-            class="h-10 w-10 sm:h-12 sm:w-12 flex justify-center items-center bg-jm-contrast-black transition-all duration-700 bg-opacity-70 hover:bg-opacity-100  rounded-full z-50">
+    <UButton
+        :style="{ backgroundColor: 'var(--color-jm-contrast-black)'}"
+        :ui="{ base: 'h-10 w-10 sm:h-12 sm:w-12 border-0 flex justify-center items-center transition-all duration-700 opacity-70 rounded-full z-50' }"
+        class="hover:!opacity-100"
+        color="secondary"
+        label="Einfach machen"
+        outline="true"
+        size="lg"
+        variant="outline"
+        @click="open = !open"
+    >
       <UIcon v-if="!open" class="text-lg sm:text-2xl text-jm-primary-brown transition-all z-50" name="i-mdi-menu"/>
       <UIcon v-else class="text-lg sm:text-2xl text-jm-primary-brown transition-all z-50" name="i-mdi-close-thick"/>
-    </button>
+    </UButton>
     <div class="relative py-3 mx-auto ">
       <Center>
-        <transition name="page" mode="in-out">
+        <transition mode="in-out" name="page">
           <div
               v-if="open"
               class="top-0 left-0 w-screen h-screen flex flex-col justify-start  z-30 bg-jm-primary-brown fixed">
-            <UContainer class="my-8" :ui="{'constrained': 'sm:max-w-6xl'}">
+            <UContainer :ui="{'constrained': 'sm:max-w-6xl'}" class="my-8">
               <Center>
-                <NuxtLink to="/" @click="open = false" class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0">
-                  <Image src="logo-overlay.svg" alt="JOTT.MEDIA GmbH" class="w-full" :shine="false"
-                         :parallax="false"/>
+                <NuxtLink class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0" to="/"
+                          @click="open = false">
+                  <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-full"
+                         src="logo-overlay.svg"/>
                 </NuxtLink>
               </Center>
             </UContainer>
 
-            <UContainer class="sm:mt-12 flex flex-col sm:flex-row justify-around"
-                        :ui="{'constrained': 'w-full', padding: 'space-x-2 sm:space-x-4'}">
+            <UContainer :ui="{'constrained': 'w-full', padding: 'space-x-2 sm:space-x-4'}"
+                        class="sm:mt-12 flex flex-col sm:flex-row justify-around">
               <ul class="uppercase font-extrabold text-left text-xl xl:text-3xl space-y-4 sm:space-y-8 text-jm-contrast-black">
                 <li>
-                  <NuxtLink @click="open = false" to="/">.Startseite</NuxtLink>
+                  <NuxtLink to="/" @click="open = false">.Startseite</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink @click="open = false" to="/blog">.Blog</NuxtLink>
+                  <NuxtLink to="/blog" @click="open = false">.Blog</NuxtLink>
                 </li>
               </ul>
               <div class="text-left sm:text-right mt-8 sm:mt-0">
-                  <nuxt-link to="/privacy" @click="open = false" class="block font-extrabold text-sm sm:text-base">
-                    Datenschutz
-                  </nuxt-link>
-                  <nuxt-link to="/imprint" @click="open = false" class="block font-extrabold text-sm sm:text-base">
-                    Impressum
-                  </nuxt-link>
+                <nuxt-link class="block font-extrabold text-sm sm:text-base" to="/privacy" @click="open = false">
+                  Datenschutz
+                </nuxt-link>
+                <nuxt-link class="block font-extrabold text-sm sm:text-base" to="/imprint" @click="open = false">
+                  Impressum
+                </nuxt-link>
                 <address class="not-italic text-sm  mt-6 sm:mt-16">
                   JOTT.MEDIA GmbH<br>
                   Bahnhofstraße 33<br>
@@ -49,12 +59,13 @@
                   <br>
                   <div class="text-left sm:text-right flex sm:justify-end items-center space-x-1">
                     <p class="pr-2">Folge uns:</p>
-                    <NuxtLink href="https://www.instagram.com/jott.media/" target="_blank"
-                              class="inline-block no-underline border-0">
+                    <NuxtLink class="inline-block no-underline border-0" href="https://www.instagram.com/jott.media/"
+                              target="_blank">
                       <UIcon class="text-[#1E1E1E] text-2xl block " name="i-mdi-instagram"/>
                     </NuxtLink>
-                    <NuxtLink href="https://de.linkedin.com/company/jottmedia" target="_blank"
-                              class="inline-block no-underline border-0">
+                    <NuxtLink class="inline-block no-underline border-0"
+                              href="https://de.linkedin.com/company/jottmedia"
+                              target="_blank">
                       <UIcon class="text-[#1E1E1E] text-2xl block" name="i-mdi-linkedin"/>
                     </NuxtLink>
                   </div>
