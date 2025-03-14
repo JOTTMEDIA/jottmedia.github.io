@@ -1,12 +1,21 @@
 <template>
-  <div class="flex" :class="typeToClass[align]">
+  <div :class="typeToClass[align]" class="flex">
     <div class="md:w-2/5 space-y-10 relative">
-      <Image :src="src" :alt="hint ?? ''"/>
-      <NuxtLink :to="link">
-        <button class="w-12 h-12 bg-jm-contrast-black bg-opacity-70 hover:bg-opacity-100 flex justify-center items-center rounded-full absolute sm:-right-6 top-0 sm:top-auto sm:-bottom-5  transition-all z-10">
-          <UIcon name="i-mdi-plus" class="text-2xl h-9 w-9 text-jm-primary-brown"/>
-        </button>
-      </NuxtLink>
+      <Image :alt="hint ?? ''" :src="src"/>
+      <UButton
+          :style="{ backgroundColor: 'var(--color-jm-contrast-black)'}"
+          :to="link"
+          :ui="{ base: 'h-12 w-12 flex opacity-70 justify-center border-0 items-center transition-opacity duration-300 ease rounded-full absolute sm:-right-6 top-0 sm:top-auto sm:-bottom-5 rounded-full transition-all z-10' }"
+          class="hover:!opacity-100"
+          outline="false"
+          size="lg"
+          variant="outline"
+      >
+        <UIcon
+            class="bg-[var(--color-nuxt-ui-brown-50)] size-7"
+            name="i-mdi-plus"
+        />
+      </UButton>
       <div class="md:absolute">
         <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="quote"/>
         <Paragraph v-if="hint != null" class="italic text-sm mb-10">{{ hint }}</Paragraph>
@@ -15,7 +24,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 defineProps({
   align: {
     type: String,
