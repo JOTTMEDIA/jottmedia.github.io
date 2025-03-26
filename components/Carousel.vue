@@ -10,7 +10,7 @@
         @click="x -= carousel?.children[0].clientWidth + 20"
     >
       <UIcon
-          class="bg-[var(--color-nuxt-ui-brown-50)] size-7"
+          class="bg-(--color-nuxt-ui-brown-50) size-7"
           name="i-mdi-chevron-left"
       />
     </UButton>
@@ -31,7 +31,7 @@
         @click="x += carousel?.children[0].clientWidth + 20"
     >
       <UIcon
-          class="bg-[var(--color-nuxt-ui-brown-50)]"
+          class="bg-(--color-nuxt-ui-brown-50)"
           name="i-mdi-chevron-right"
           size="2.1rem"/>
     </UButton>
