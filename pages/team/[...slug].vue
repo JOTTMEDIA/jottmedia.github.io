@@ -28,18 +28,18 @@
           <h1 class="text-lg xl:text-xl uppercase font-extrabold" v-html="person?.meta.name"/>
           <p class="font-light" v-html="person?.description"></p>
           <UContainer class="relative pt-0 z-10">
-            <Center>
-              <UButton
-                  :class="person?.meta.button"
-                  color="secondary"
-                  label="Lerne uns kennen"
-                  outline="true"
-                  size="lg"
-                  target="_blank"
-                  to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
-                  variant="outline"
-              />
-            </Center>
+
+            <UButton
+                :class="person?.meta.button"
+                color="secondary"
+                label="Lerne uns kennen"
+                outline="true"
+                size="lg"
+                target="_blank"
+                to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
+                variant="outline"
+            />
+
           </UContainer>
         </div>
       </UContainer>
