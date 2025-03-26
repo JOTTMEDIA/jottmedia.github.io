@@ -2,13 +2,11 @@
   <UPage>
     <UPageBody prose>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
-        <Center>
-          <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" :shine="false" :parallax="false" />
-          </NuxtLink>
-        </Center>
+        <NuxtLink class="inline-block no-underline border-0" to="/">
+          <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
+        </NuxtLink>
       </UContainer>
-      <UContainer class="py-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="py-10">
         <h1>Datenschutzerklärung</h1>
         <p>
           Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und
@@ -48,7 +46,6 @@
           - Sicherheitsmaßnahmen.<br>
           - Reichweitenmessung/Marketing<br>
         </p>
-
         <h3>Verwendete Begrifflichkeiten</h3>
         <p>
           „Personenbezogene Daten“ sind alle Informationen, die sich auf eine
@@ -539,7 +536,7 @@
   </UPage>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 useHead({
   title: 'Datenschutz - JOTT.MEDIA'
 })
