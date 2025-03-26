@@ -2,11 +2,11 @@
   <UPage>
     <UPageBody>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
-        <Center>
-          <NuxtLink class="inline-block no-underline border-0" to="/">
-            <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
-          </NuxtLink>
-        </Center>
+
+        <NuxtLink class="inline-block no-underline border-0" to="/">
+          <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
+        </NuxtLink>
+
       </UContainer>
 
       <UButton
@@ -64,17 +64,17 @@
             </NuxtLink>
           </UBlogPost>
         </UBlogPosts>
-        <Center>
-          <UButton
-              :disabled="articles?.length < pageMaxArticles"
-              :label="loadMoreButtonLabel"
-              color="secondary"
-              outline="true"
-              size="lg"
-              variant="outline"
-              @click="loadMorePosts"
-          />
-        </Center>
+
+        <UButton
+            :disabled="articles?.length < pageMaxArticles"
+            :label="loadMoreButtonLabel"
+            color="secondary"
+            outline="true"
+            size="lg"
+            variant="outline"
+            @click="loadMorePosts"
+        />
+
       </UContainer>
     </UPageBody>
   </UPage>
