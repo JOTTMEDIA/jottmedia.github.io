@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import 'tailwindcss/theme' layer(theme) theme(static);
+@import 'tailwindcss/theme' layer(theme);
 @import 'tailwindcss/utilities' layer(utilities);
 @import 'tailwindcss/preflight' layer(base);
 @import '@nuxt/ui-pro';
@@ -13,17 +13,9 @@
 
 
     --radius-sm: 4.25rem;
-    --container-xl: 320px;
-    --container-3xl: 768px;
-    --ui-text-primary: red;
-
-    --ui-primary: orange;
+    --ui-primary: #9B9371;
     --ui-bg: var(--color-jm-secondary-grey-lighter);
-    --ui-container-small: var(--container-xl);
-    --ui-container-base: var(--container-3xl);
-    /*    --ui-primary: #9B9371;*/
     --ui-radius: var(--radius-sm);
-
 
     /* Font Families */
     --font-family-sans: 'Open Sans', sans-serif;
