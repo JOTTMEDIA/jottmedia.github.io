@@ -1,14 +1,16 @@
 <template>
-  <div class="custom-cursor overflow-x-hidden scroll-smooth" :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}" :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }">
+  <div :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}"
+       :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }"
+       class="custom-cursor overflow-x-hidden scroll-smooth">
     <NuxtLayout>
       <UPage>
         <UPageBody prose>
           <UContainer :ui="{'constrained': 'max-w-2xl'}">
-            <Center>
-              <Image src="404.svg" alt="404" class="w-[325px] m-auto" :shine="false" :parallax="false" />
-              <h1>Ups.. Seite nicht gefunden!</h1>
-              <Button @click="handleError">git rebase master</Button>
-            </Center>
+
+            <Image :parallax="false" :shine="false" alt="404" class="w-[325px] m-auto" src="404.svg"/>
+            <h1>Ups.. Seite nicht gefunden!</h1>
+            <Button @click="handleError">git rebase master</Button>
+
           </UContainer>
         </UPageBody>
       </UPage>
@@ -16,8 +18,8 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import type { NuxtError } from '#app'
+<script lang="ts" setup>
+import type {NuxtError} from '#app'
 
 useHead({
   title: '404 - JOTT.MEDIA'
@@ -27,7 +29,7 @@ const props = defineProps({
   error: Object as () => NuxtError
 })
 
-const handleError = () => clearError({ redirect: '/' })
+const handleError = () => clearError({redirect: '/'})
 
 const cursorX = ref(0);
 const cursorY = ref(0);
@@ -36,7 +38,7 @@ const isMouseShow = ref(true);
 
 const updateCursorPosition = (e: MouseEvent) => {
   isMouseShow.value = true;
-  cursorX.value = e.clientX  + document.body.scrollLeft + document.documentElement.scrollLeft;
+  cursorX.value = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
   cursorY.value = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 };
 
@@ -69,7 +71,9 @@ onUnmounted(() => {
 
 <style lang="scss">
 @media (hover: hover) {
-  * { cursor: none !important; }
+  * {
+    cursor: none !important;
+  }
 
   .custom-cursor {
     --mouse-x: 0;
