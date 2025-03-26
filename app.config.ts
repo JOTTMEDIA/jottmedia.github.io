@@ -1,13 +1,11 @@
 export default defineAppConfig({
     ui: {
         container: {
-            base: 'max-w-[var(--ui-container-base)] mx-auto px-4 sm:px-6 lg:px-8',
-            small: 'max-w-[var(--ui-container-small)] mx-auto px-4 sm:px-6 lg:px-8',
+            base: 'max-w-(--container-3xl) mx-auto px-4 sm:px-6 lg:px-8',
         },
         colors: {
             primary: 'nuxt-ui-primary',
             secondary: 'nuxt-ui-brown',
-
         },
         button: {
             defaultVariants: {
@@ -16,9 +14,7 @@ export default defineAppConfig({
             slots: {
                 base: 'inline-block border-[3px] border-jm-primary-brown rounded px-3 py-2 uppercase font-[800] text-sm text-jm-primary-brown hover:text-jm-secondary-white hover:bg-jm-primary-brown transition',
             }
-
         },
-
         size: {
             xs: {
                 base: 'px-2 py-1 text-xs gap-1',
@@ -61,5 +57,5 @@ export default defineAppConfig({
                 foreground: '000 000 000'
             },
         }
-    }
+    },
 })
