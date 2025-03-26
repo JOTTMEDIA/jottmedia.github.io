@@ -12,7 +12,7 @@
           variant="outline"
       >
         <UIcon
-            class="bg-[var(--color-nuxt-ui-brown-50)] size-7"
+            class="bg-(--color-nuxt-ui-brown-50) size-7"
             name="i-mdi-plus"
         />
       </UButton>
