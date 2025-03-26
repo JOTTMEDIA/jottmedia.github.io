@@ -4,11 +4,11 @@
         class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
         prose>
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
-        <Center>
-          <NuxtLink class="inline-block no-underline border-0" to="/">
-            <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
-          </NuxtLink>
-        </Center>
+
+        <NuxtLink class="inline-block no-underline border-0" to="/">
+          <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
+        </NuxtLink>
+
       </UContainer>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="pt-10">
         <h1 class="text-4xl" v-html="page?.title"/>
