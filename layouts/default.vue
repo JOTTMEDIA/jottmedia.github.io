@@ -2,9 +2,8 @@
   <main>
     <Menu/>
     <UPage>
-      <UPageBody>
-        <slot/>
-      </UPageBody>
+      <slot/>
     </UPage>
+    <Footer/>
   </main>
 </template>
