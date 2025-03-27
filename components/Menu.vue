@@ -15,23 +15,20 @@
       <UIcon v-else class="text-lg sm:text-2xl text-jm-primary-brown transition-all z-50" name="i-mdi-close-thick"/>
     </UButton>
     <div class="relative py-3 mx-auto ">
-
       <transition mode="in-out" name="page">
         <div
             v-if="open"
-            class="top-0 left-0 w-screen h-screen flex flex-col justify-start  z-30 bg-[var(--color-jm-primary-brown)] fixed">
-          <UContainer :ui="{'constrained': 'sm:max-w-6xl'}" class="my-8">
+            class="top-0 left-0 w-screen h-screen flex flex-col justify-start z-30 bg-(--color-jm-primary-brown) fixed">
+          <UContainer class="my-8">
 
-            <NuxtLink class="inline-block no-underline w-full mt-2 sm:w-[325px] border-0" to="/"
+            <NuxtLink class="inline-block no-underline w-full mt-2 pr-2 sm:w-[325px] border-0" to="/"
                       @click="open = false">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-full"
                      src="logo-overlay.svg"/>
             </NuxtLink>
-
           </UContainer>
-
-          <UContainer :ui="{'constrained': 'w-full', padding: 'space-x-2 sm:space-x-4'}"
-                      class="sm:mt-12 flex flex-col sm:flex-row justify-around">
+          <UContainer :ui="{ padding: 'space-x-2 sm:space-x-4'}"
+                      class="max-w-(--container-6xl) w-full sm:mt-12 flex flex-col sm:flex-row justify-around">
             <ul class="uppercase font-extrabold text-left text-xl xl:text-3xl space-y-4 sm:space-y-8 text-jm-contrast-black">
               <li>
                 <NuxtLink to="/" @click="open = false">.Startseite</NuxtLink>
