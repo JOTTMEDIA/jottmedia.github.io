@@ -11,7 +11,8 @@
 
 :root {
 
-
+    --ui-background: 255 255 255;
+    --ui-foreground: 000 000 000;
     --radius-sm: 4.25rem;
     --ui-primary: #9B9371;
     --ui-bg: var(--color-jm-secondary-grey-lighter);
@@ -19,20 +20,6 @@
 
     /* Font Families */
     --font-family-sans: 'Open Sans', sans-serif;
-
-    /* Font Sizes */
-    --font-size-xs: 0.65rem;
-    --font-size-sm: 0.8rem;
-    --font-size-tiny: 0.9rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.2rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 1.8rem;
-    --font-size-3xl: 2.1rem;
-    --font-size-4xl: 3.2rem;
-    --font-size-5xl: 3.2rem;
-    --font-size-6xl: 3.2rem;
-    --font-size-7xl: 3.2rem;
 
     /* Colors */
     --color-nuxt-ui-primary-50: #687E5E;
@@ -206,13 +193,10 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', 'sans-serif';
-    font-weight: 400;
-    color: #000000;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
+    --tw-bg-opacity: 1;
+    font-family: Open Sans, sans-serif;
+    --tw-text-opacity: 1;
+    color: rgb(var(--ui-foreground) / var(--tw-text-opacity, 1));
 }
 
 b, strong {
