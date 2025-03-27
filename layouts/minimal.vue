@@ -1,9 +1,7 @@
 <template>
   <main>
     <UPage>
-      <UPageBody>
-        <slot/>
-      </UPageBody>
+      <slot/>
     </UPage>
   </main>
 </template>
