@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-(--color-jm-secondary-grey-lighter) mt-40">
+  <div class="relative bg-(--color-jm-secondary-grey-lighter) ">
     <Background height="127px" parallax="to-left" position="top" src="footer-top.svg"/>
 
     <div class="relative z-10">
