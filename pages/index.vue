@@ -1,5 +1,5 @@
 <template>
-  <UPageBody class="m-0 p-0 text-center bg-(--color-jm-secondary-white)">
+  <UPageBody class="m-0 p-0 text-center bg-(--color-jm-secondary-white) pb-12">
     <div class="relative bg-(--color-jm-secondary-grey-lighter)">
       <UContainer
           class="relative h-screen z-10 xl:pt-10">
@@ -133,32 +133,38 @@
         variant="outline"
     >
     </UButton>
-    <UContainer class="max-w-(--container-5xl) pt-20">
+    <UContainer class="max-w-(--container-6xl) py-20">
       <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
         <b class="text-(--color-jm-primary-brown) uppercase">Neues</b> aus der
         <b class="text-(--color-jm-primary-brown) uppercase"> digitalen Welt </b>
       </Headline>
       <UBlogPosts>
-        <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-(--color-jm-secondary-grey-lighter)">
-          <NuxtLink :to="article.path">
-            <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
-                   :shine="false"
-                   :src="article.meta.image as string"
-                   class="w-full"/>
-            <section class="px-3 pb-3">
-              <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} von <b
-                  class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
-              <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
-              <UBadge
-                  v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
-                  :key="index"
-                  class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
-                  color="white"
-                  size="sm"
-                  variant="solid">{{ category }}
-              </UBadge>
-            </section>
-          </NuxtLink>
+        <UBlogPost
+            v-for="(article, index) in articles"
+            :key="index"
+            :authors="[{ name: article.meta.author as string | undefined, as: 'string' }]"
+            :date="article.meta.date as string | Date | undefined"
+            :image="article.meta.image as string | Partial<HTMLImageElement> | undefined"
+            :to="article.path"
+            class="text-left ring-0"
+            v-bind="article"
+        >
+          <template #title>
+            <div v-html="article.title"></div>
+          </template>
+          <template #description>
+            <div></div>
+          </template>
+          <template #badge>
+            <UBadge
+                v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
+                :key="index"
+                class="text-xs text-(--color-jm-secondary-white) bg-(--color-jm-primary-brown) font-extrabold uppercase"
+                color="primary"
+                size="xs"
+                variant="solid">{{ category }}
+            </UBadge>
+          </template>
         </UBlogPost>
       </UBlogPosts>
       <UButton
@@ -181,7 +187,7 @@ useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
 const {data: articles} = await useAsyncData(() => {
-  return queryCollection('blog').all()
+  return queryCollection('blog').limit(3).all()
 })
 
 const {data: team} = await useAsyncData(() => {
@@ -189,8 +195,6 @@ const {data: team} = await useAsyncData(() => {
 })
 
 console.log(articles)
-
-console.log(team)
 const scrollTo = () => {
   const element = document.getElementById('machen');
   if (element) {
