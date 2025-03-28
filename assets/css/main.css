@@ -13,11 +13,8 @@
 
     --ui-background: 255 255 255;
     --ui-foreground: 000 000 000;
-    --radius-sm: 4.25rem;
     --ui-primary: #9B9371;
     --ui-bg: var(--color-jm-secondary-grey-lighter);
-    --ui-radius: var(--radius-sm);
-
     /* Font Families */
     --font-family-sans: 'Open Sans', sans-serif;
 
