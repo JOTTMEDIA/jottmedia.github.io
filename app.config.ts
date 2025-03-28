@@ -58,4 +58,22 @@ export default defineAppConfig({
             },
         }
     },
+    /*    uiPro: {
+            blogPost: {
+                slots: {
+                    root: 'relative group/blog-post flex flex-col rounded-[calc(var(--ui-radius)*2)] overflow-hidden',
+                    header: 'relative overflow-hidden aspect-[16/9] w-full pointer-events-none',
+                    body: 'min-w-0 flex-1 flex flex-col p-0',
+                    footer: '',
+                    image: 'object-cover object-top w-full h-full',
+                    title: 'text-xl text-pretty font-semibold text-(--ui-text-highlighted)',
+                    description: 'mt-1 text-base text-pretty',
+                    authors: 'pt-4 mt-auto flex flex-wrap gap-x-3 gap-y-1.5',
+                    avatar: '',
+                    meta: 'flex items-center gap-2 mb-2',
+                    date: 'text-sm',
+                    badge: ''
+                },
+            }
+        }*/
 })
