@@ -19,7 +19,7 @@
     "@nuxt/content": "^3.4.0",
     "nuxt": "^3.16.1",
     "@nuxt/image": "^1.10.0",
-    "@nuxt/ui-pro": "^3.0.1",
+    "@nuxt/ui-pro": "^3.0.2",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@vueuse/nuxt": "^13.0.0",
