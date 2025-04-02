@@ -5,7 +5,7 @@
     <NuxtLayout>
       <UPage>
         <UPageBody prose>
-          <UContainer :ui="{'constrained': 'max-w-2xl'}">
+          <UContainer class="max-w-(--container-2xl)">
 
             <Image :parallax="false" :shine="false" alt="404" class="w-[325px] m-auto" src="404.svg"/>
             <h1>Ups.. Seite nicht gefunden!</h1>
