@@ -1,4 +1,16 @@
 export default defineAppConfig({
+    uiPro: {
+        blogPost: {
+            slots: {
+                image: 'object-fill w-full max-w-full h-full block bg-center bg-cover bg-no-repeat',
+                authors: 'pt-4',
+                meta: 'gap-1',
+                root: 'relative group/blog-post flex flex-col overflow-hidden',
+                description: 'mb-0 text-xs text-pretty jm-contrast-black color-jm-contrast-black',
+            },
+        }
+    },
+
     ui: {
         container: {
             base: 'max-w-(--container-3xl) mx-auto px-4 sm:px-6 lg:px-8',
@@ -58,22 +70,5 @@ export default defineAppConfig({
             },
         }
     },
-    /*    uiPro: {
-            blogPost: {
-                slots: {
-                    root: 'relative group/blog-post flex flex-col rounded-[calc(var(--ui-radius)*2)] overflow-hidden',
-                    header: 'relative overflow-hidden aspect-[16/9] w-full pointer-events-none',
-                    body: 'min-w-0 flex-1 flex flex-col p-0',
-                    footer: '',
-                    image: 'object-cover object-top w-full h-full',
-                    title: 'text-xl text-pretty font-semibold text-(--ui-text-highlighted)',
-                    description: 'mt-1 text-base text-pretty',
-                    authors: 'pt-4 mt-auto flex flex-wrap gap-x-3 gap-y-1.5',
-                    avatar: '',
-                    meta: 'flex items-center gap-2 mb-2',
-                    date: 'text-sm',
-                    badge: ''
-                },
-            }
-        }*/
+
 })
