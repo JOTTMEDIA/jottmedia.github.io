@@ -133,7 +133,7 @@
         variant="outline"
     >
     </UButton>
-    <UContainer class="max-w-(--container-6xl) py-20">
+    <UContainer class="max-w-(--container-5xl) py-20">
       <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
         <b class="text-(--color-jm-primary-brown) uppercase">Neues</b> aus der
         <b class="text-(--color-jm-primary-brown) uppercase"> digitalen Welt </b>
@@ -142,9 +142,7 @@
         <UBlogPost
             v-for="(article, index) in articles"
             :key="index"
-            :authors="[{ name: article.meta.author as string | undefined, as: 'string' }]"
-            :date="article.meta.date as string | Date | undefined"
-            :image="article.meta.image as string | Partial<HTMLImageElement> | undefined"
+            :image="{src: article.meta.image , width: 416, height: 416, format: 'webp' }"
             :to="article.path"
             class="text-left ring-0"
             v-bind="article"
@@ -152,14 +150,22 @@
           <template #title>
             <div v-html="article.title"></div>
           </template>
+          <template #date>
+            <b class="text-(--color-jm-primary-green)">
+              {{ article.meta.author }}
+            </b>
+          </template>
           <template #description>
             <div></div>
           </template>
           <template #badge>
+            <p class="text-sm font-light">{{ article.meta.date as string | Date | undefined }} von</p>
+          </template>
+          <template #authors>
             <UBadge
                 v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
                 :key="index"
-                class="text-xs text-(--color-jm-secondary-white) bg-(--color-jm-primary-brown) font-extrabold uppercase"
+                class="px-2 text-xs text-(--color-jm-secondary-white) bg-(--color-jm-primary-brown) font-extrabold uppercase"
                 color="primary"
                 size="xs"
                 variant="solid">{{ category }}
