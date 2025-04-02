@@ -10,9 +10,8 @@
 
 
 :root {
-
-    --ui-background: 255 255 255;
-    --ui-foreground: 000 000 000;
+    --ui-text-muted: #000000;
+    --ui-text-highlighted: 104 126 94;
     --ui-primary: #9B9371;
     --ui-bg: var(--color-jm-secondary-grey-lighter);
     /* Font Families */
