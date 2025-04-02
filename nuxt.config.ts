@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     routeRules: {
         '/': {prerender: true},
     },
+    image: {
+        format: ['webp'],
+        quality: 80,
+    },
     css: ['~/assets/css/main.css'],
     app: {
         pageTransition: {name: 'page', mode: 'out-in'},
