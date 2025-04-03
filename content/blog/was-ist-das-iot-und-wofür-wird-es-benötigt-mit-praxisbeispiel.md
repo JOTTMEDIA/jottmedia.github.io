@@ -12,7 +12,7 @@ image: /images/Internet-of-Things-(IoT).jpeg
 imageAlt: Das Internet of Things (IoT)
 ---
 
-## Hello World: Kickstart in die IoT-Welt
+## **Hello World: Kickstart in die IoT-Welt**
 
 Viele Geräte des alltäglichen Lebens sind bereits vernetzt, egal ob die Kaffeemaschine, die Waschmaschine oder unser
 Auto. Wir sind es gewohnt, dass moderne Produkte Informationen digital auf unserem Handy bereitstellen oder intelligent
@@ -24,7 +24,7 @@ Daten konsumieren oder Befehle absetzen beziehungsweise Inhalte bereitstellen. D
 die der Kaffeemaschine die Anweisung gibt, einen Kaffee zu brühen oder ein intelligentes Thermometer, welches
 automatisch der Heizung mitteilt, dass sie eingeschaltet oder abgeschaltet werden soll: Stichwort Automatisierung.
 
-## Wieso, weshalb: Die Technik hinter IoT
+## **Wieso, weshalb: Die Technik hinter IoT**
 
 Welche Technik genutzt wird, kann pauschal nicht gesagt werden, da IoT erstmal nur der Obergriff ist. Grundsätzlich gibt
 es aber immer ein Netzwerk, z.B. das Narrowband welches auf der 4G Technologie basiert und ein anderes Frequenzband
@@ -42,7 +42,7 @@ Grundsätzlich kann man sagen, alle Geräte, die autark miteinander kommuniziere
 vermeintliche Intelligenz, die wir als Menschen wahrnehmen, wenn der Staubsauger sich morgens automatisch erst einen
 Kaffee brüht, beruht auf die Vernetzung dieser Geräte und die damit verbundene Automatisierung.
 
-## Beispiel Fallenmelder: Schluss mit der abstrakten Theorie
+## **Beispiel Fallenmelder: Schluss mit der abstrakten Theorie**
 
 Gelernt haben wir, wofür IoT steht und wie es theoretisch arbeitet beziehungsweise was im Kern der Mehrwert ist.
 Allgemein ist es aber vielleicht immer noch recht schwer zu greifen, da alles etwas abstrakt wirkt. Daher gibt es jetzt
@@ -52,7 +52,7 @@ Nehmen wir an, wir möchten einen Fallenmelder bauen, der automatisch über eine
 schickt, sobald dieser ausgelöst wurde. Sprich, wird die Falle ausgelöst, wird über ein Seil ein Magnet von unserem
 IoT-Gerät abgerissen.
 
-### Was brauchen wir dafür?
+### **Was brauchen wir dafür?**
 
 - Wasserdichtes Gehäuse
 - Akku für die Stromversorgung
@@ -87,7 +87,7 @@ Folgend können wir das Signal jetzt über ein HTTP Request an unseren Server sc
 bietet sich ein Headless CMS mit einer RESTful-API an, z.B. Directus. Das Signal wird vom Server verarbeitet und weitere
 Aktionen eingeleitet. Zum Beispiel ein Push an euer Handy geschickt oder die genaue Zeit und der Ort notiert.
 
-## Overall: IoT ist zugänglich
+## **Overall: IoT ist zugänglich**
 
 An dem Beispiel des Fallenmelders hat man gesehen, das IoT nicht nur ein Industriethema ist, sondern jeder mitwirken
 kann und für seine eigenen Bedürfnisse, mit wenig Geld und ein bisschen technischen Verständnis, umsetzen kann. ✌️
