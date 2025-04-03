@@ -142,7 +142,7 @@
         <UBlogPost
             v-for="(article, index) in articles"
             :key="index"
-            :image="{src: article.meta.image , width: 416, height: 416, format: 'webp' }"
+            :image="{src: article.meta.image , width: 416, height: 416, format: 'webp', aspectRatio: 'cover' }"
             :to="article.path"
             class="text-left ring-0"
             v-bind="article"
@@ -151,9 +151,10 @@
             <div v-html="article.title"></div>
           </template>
           <template #date>
-            <b class="text-(--color-jm-primary-green)">
+            <NuxtLink :to="`/team/${article?.meta?.author?.toLowerCase()}`"
+                      class="text-(--color-jm-primary-green) font-extrabold z-50">
               {{ article.meta.author }}
-            </b>
+            </NuxtLink>
           </template>
           <template #description>
             <div></div>
