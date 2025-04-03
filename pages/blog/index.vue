@@ -50,12 +50,13 @@
               class="bg-(--color-jm-secondary-grey-lighter)"
               v-bind="article">
             <template #title>
-              <div v-html="article.title"></div>
+              <div class="py-2" v-html="article.title"></div>
             </template>
             <template #date>
-              <b class="text-(--color-jm-primary-green)">
+              <NuxtLink :to="`/team/${article?.meta?.author?.toLowerCase()}`"
+                        class="text-(--color-jm-primary-green) font-extrabold z-50">
                 {{ article.meta.author }}
-              </b>
+              </NuxtLink>
             </template>
             <template #description>
               <p class="text-sm font-light">{{
