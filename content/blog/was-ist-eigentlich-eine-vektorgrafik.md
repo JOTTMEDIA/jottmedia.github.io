@@ -13,7 +13,7 @@ image: /images/Was-ist-eigentlich-eine-Vektorgrafik.jpeg
 imageAlt: Mysterium Vektorgrafik
 ---
 
-## **Was ist eigentlich eine Vektorgrafik?**
+# **Was ist eigentlich eine Vektorgrafik?**
 
 Vektorgrafiken sind “Bilder”, die sich über mathematische Berechnungen definieren und nicht aus einzelnen Bildpunkten (
 Pixeln) aufgebaut sind, wie Rastergrafiken. Alle im Bild befindlichen Objekte werden über Koordinaten, Größen und
@@ -22,7 +22,7 @@ Stärken beschrieben.
 Dadurch bleiben Vektorgrafiken sehr flexibel und können auch im Nachhinein ohne Qualitätsverlust skaliert werden, egal
 in welcher Größe sie benötigt werden.
 
-## **Vektorgrafik vs. Pixelbild**
+# **Vektorgrafik vs. Pixelbild**
 
 Pixelbilder kennt jeder, jedes Foto mit dem Smartphone erstellt, ist ein Pixelbild.Und hier zeigt sich auch direkt der
 stärkste Vorteil. Pixelbilder sind unschlagbar, wenn es um detailreiche Grafiken und Texturen geht, fotorealistische
@@ -38,7 +38,7 @@ Qualitätseinbußen.
 Für welchen Typ ich mich entscheide, hängt aber stark davon ab, was ich darstellen möchte und für welches Einsatzgebiet
 ich die Datei erstelle.
 
-## **Wann nutze ich vektorbasierte Grafiken?**
+# **Wann nutze ich vektorbasierte Grafiken?**
 
 Die jeweilige Nutzung der Datei gibt letztendlich vor, welche Art wir auswählen.
 
@@ -56,7 +56,7 @@ Hier sind einmal die gängigsten Pixel-Dateiformate aufgeführt:
 - PNG
 - WebP
 
-## **Welche Dateiformate können überhaupt Vektorgrafiken enthalten?**
+# **Welche Dateiformate können überhaupt Vektorgrafiken enthalten?**
 
 Hier aufgelistet, einmal die Klassiker, ohne Anspruch auf Vollständigkeit.
 
