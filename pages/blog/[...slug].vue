@@ -1,7 +1,7 @@
 <template>
   <UPage class="m-0 p-0 bg-(--color-jm-secondary-white)">
     <UPageBody
-        class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
+        class="prose-h1:uppercase prose-h1:py-4 prose-h1:text-2xl prose-p:leading-7  prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
         prose>
       <UContainer class="max-w-(--container-2xl) text-center">
 
@@ -50,6 +50,7 @@ const {data: page} = await useAsyncData(() => {
       .first()
 })
 
+console.log(page)
 useSeoMeta({
   title: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
   ogTitle: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
