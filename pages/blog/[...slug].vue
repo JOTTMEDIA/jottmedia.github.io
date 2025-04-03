@@ -3,27 +3,30 @@
     <UPageBody
         class="prose-h1:normal-case prose-h1:font-normal prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
         prose>
-      <UContainer class="max-w-(--container-2xl)">
+      <UContainer class="max-w-(--container-2xl) text-center">
 
         <NuxtLink class="inline-block no-underline border-0" to="/">
           <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
         </NuxtLink>
 
       </UContainer>
-      <UContainer class="pt-10 max-w-(--container-2xl)">
-        <h1 class="text-4xl" v-html="page?.title"/>
-        <div class="flex gap-2 mb-2">
+      <UContainer class="max-w-(--container-2xl)">
+        <UPageHeader class="text-5xl leading-14" v-html="page?.title"/>
+        <div class="flex gap-2 mt-12 mb-2">
           <UBadge v-for="category in page?.meta.categories"
-                  :key="category" :label="category"
-                  :ui="{ rounded: 'rounded-lg', font: 'font-extrabold', size: { xs: 'text-sm px-3 py-0.5' } }"
-                  size="xs"/>
+                  :key="category"
+                  :label="category"
+                  class="px-2 text-xs text-(--color-jm-secondary-white) bg-(--color-jm-primary-green) font-extrabold"
+                  color="primary"
+                  size="xs"
+                  variant="solid"/>
         </div>
         <small>{{ page?.meta.date }} von
-          <NuxtLink :to="`../team/${(page?.meta.author as string).toLowerCase()}`"><b
-              class="text-(--color-jm-primary-green)">{{ page?.meta.author }}
+          <NuxtLink :to="`/team/${(page?.meta.author as string).toLowerCase()}`"><b
+              class="text-(--color-jm-primary-green) ">{{ page?.meta.author }}
           </b></NuxtLink>
         </small>
-        <p class="lead">{{ page?.description }}</p>
+        <p class="lead pt-6">{{ page?.description }}</p>
       </UContainer>
       <UContainer class="max-w-(--container-4xl)">
         <Image :alt="page?.meta.imageAlt as string | undefined"
