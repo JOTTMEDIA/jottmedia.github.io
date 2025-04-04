@@ -2,13 +2,13 @@
   <UPageBody class="m-0 p-0 text-center bg-(--color-jm-secondary-white) pb-12">
     <div class="relative bg-(--color-jm-secondary-grey-lighter)">
       <UContainer
-          class="relative h-screen z-10 xl:pt-10">
-        <NuxtLink class="inline-block no-underline border-0 xl:pb-32" to="/">
-          <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
+
+          class="relative h-screen mx-auto px-4 sm:px-6 lg:px-8 max-w-(--container-3xl) py-10 flex flex-col justify-between items-center gap-y-5 sm:gap-y-0 z-10">
+        <NuxtLink class="inline-block no-underline border-0 " to="/">
+          <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" src="logo.svg"/>
         </NuxtLink>
-        <Headline class="pb-5 text-5xl" type="h1">Machen wir es<br><span
-            class="text-(--color-nuxt-ui-primary-50) uppercase text-5xl">einfach:</span> <b
-            class="text-5xl uppercase">digital</b>.
+        <Headline class="pt-5 pb-11 xl:pb-5 text-3xl xl:text-5xl xl:leading-14" format="div" type="h1">Machen wir es<br><span
+            class="text-(--color-nuxt-ui-primary-50) uppercase">einfach:</span><b class="uppercase"> digital</b>.
         </Headline>
         <UButton
             :to="{path: '/', hash: '#machen'}"
@@ -20,12 +20,16 @@
             variant="outline"
             @click="scrollTo"
         />
-        <Headline class="xl:pt-28 uppercase" type="h2">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und
-          Design.</b>
-        </Headline>
-        <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
-          <UIcon class="text-(--color-jm-secondary-grey) text-[70px]" name="i-mdi-arrow-down"/>
-        </NuxtLink>
+        <div>
+          <Headline class="pt-12 xl:pt-28 uppercase text-2xl xl:text-3xl mb-0" format="div" type="h2">Dein Büro <span
+              class="lowercase">für</span> <b>Entwicklung
+            und
+            Design.</b>
+          </Headline>
+          <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
+            <UIcon class="text-(--color-jm-secondary-grey) text-[70px]" name="i-mdi-arrow-down"/>
+          </NuxtLink>
+        </div>
       </UContainer>
       <Background :out="false" height="1100px" position="bottomLeft" src="header-box.png" width="1100px"/>
       <Background :out="false" height="701px" parallax="to-right" position="bottom" src="header-grey.svg"/>
@@ -45,7 +49,7 @@
       <Image alt="Arian und Jan im Termin" src="team.jpg"/>
     </UContainer>
 
-    <UContainer class="max-w-(--container-2xl) text-left relative py-10">
+    <UContainer class="xl:max-w-(--container-2xl) w-2/3  mx-0 lg:mx-auto text-left relative py-10">
       <Headline type="h6">Die wichtigste <b class="uppercase">Frage</b></Headline>
       <Headline class="font-[400]" type="h2">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
         Unternehmen wirklich?</b>“
@@ -87,7 +91,7 @@
       </UContainer>
       <Background :out="false" height="854px" parallax="to-left" position="bottom" src="grey-bottom.svg"/>
     </div>
-    <UContainer class="max-w-(--container-2xl) relative pt-4 z-10">
+    <UContainer class="max-w-(--container-2xl) relative xl:pt-4 z-10">
       <UButton
           color="secondary"
           label="Lerne uns kennen"
@@ -134,15 +138,15 @@
     >
     </UButton>
     <UContainer class="max-w-(--container-5xl) py-20">
-      <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
+      <Headline class="pb-8 leading-9 xl:leading-5 text-3xl lowercase" type="h2">
         <b class="text-(--color-jm-primary-brown) uppercase">Neues</b> aus der
         <b class="text-(--color-jm-primary-brown) uppercase"> digitalen Welt </b>
       </Headline>
-      <UBlogPosts>
+      <UBlogPosts class="mt-10 gap-y-8 grid-cols-1! lg:grid-cols-2! 2xl:grid-cols-3!" orientation="horizontal">
         <UBlogPost
             v-for="(article, index) in articles"
             :key="index"
-            :image="{src: article.meta.image , width: 416, height: 416, format: 'webp', aspectRatio: 'cover' }"
+            :image="{src: article.meta.image , width: 1000, height: 600, format: 'webp', aspectRatio: 'cover' }"
             :to="article.path"
             class="text-left ring-0"
             v-bind="article"
