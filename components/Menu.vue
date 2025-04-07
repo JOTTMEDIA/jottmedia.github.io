@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed flex flex-col justify-center -bottom-2 sm:bottom-0 right-4 sm:right-8 z-50">
+  <div class="fixed text-center flex flex-col justify-center -bottom-2 sm:bottom-0 right-4 sm:right-8 z-50">
     <UButton
         :style="{ backgroundColor: 'var(--color-jm-contrast-black)'}"
         :ui="{ base: 'h-10 w-10 sm:h-12 sm:w-12 border-0 flex justify-center items-center transition-all duration-700 opacity-70 rounded-full z-50' }"
