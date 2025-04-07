@@ -1,14 +1,16 @@
 <template>
-  <UPage>
-    <UPageBody prose>
-      <UContainer :ui="{'constrained': 'max-w-2xl'}">
+  <UPage class="m-0 p-0 bg-(--color-jm-secondary-white)">
+    <UPageBody
+        class="prose-h1:uppercase prose-h1:py-4 prose-h1:font-bold prose-h1:text-3xl prose-h3:normal-case prose-h3:py-4 prose-h3:font-bold prose-h3:text-2xl prose-p:leading-7  prose-headings:uppercase prose-lead:uppercase prose-lead:text-base"
+        prose>
+      <UContainer class="max-w-(--container-2xl) text-center">
 
         <NuxtLink class="inline-block no-underline border-0" to="/">
           <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" src="logo.svg"/>
         </NuxtLink>
 
       </UContainer>
-      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="py-10">
+      <UContainer class="max-w-(--container-2xl) py-10">
         <h1>Impressum</h1>
         <h3>Angaben gemäß § 5 TMG:</h3>
         <p>
