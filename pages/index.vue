@@ -156,7 +156,7 @@
           </template>
           <template #date>
             <NuxtLink :to="`/team/${article?.meta?.author?.toLowerCase()}`"
-                      class="text-(--color-jm-primary-green) font-extrabold z-50">
+                      class="text-(--color-jm-primary-green) font-extrabold z-10">
               {{ article.meta.author }}
             </NuxtLink>
           </template>
