@@ -81,8 +81,8 @@ $color: #fff;
   &::before {
     background: linear-gradient(
             to right,
-            color.scale($color, $alpha: 0.3) 0%,
-            color.scale($color, $alpha: 0.7) 100%
+            color.scale($color, $alpha: 0.3%) 0%,
+            color.scale($color, $alpha: 0.7%) 100%
     );
     content: "";
     display: block;
