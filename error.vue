@@ -15,6 +15,7 @@
         </UPageBody>
       </UPage>
     </NuxtLayout>
+  </div>
 </template>
 
 <script lang="ts" setup>
