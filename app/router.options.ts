@@ -6,7 +6,7 @@ function findHashPosition(hash: string): { el: any, behavior: ScrollBehavior, to
         const top = 60
 
         return {
-            el: hash,
+            el: el,
             behavior: 'smooth',
             top,
         }
