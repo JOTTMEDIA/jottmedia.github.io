@@ -19,7 +19,7 @@
         <div
             v-if="open"
             class="top-0 left-0 w-screen h-screen flex flex-col justify-start z-30 bg-(--color-jm-primary-brown) fixed">
-          <UContainer class="my-8">
+          <UContainer class="my-8 sm:my-2 xl:my-8">
 
             <NuxtLink class="inline-block no-underline w-full mt-2 pr-2 sm:w-[325px] border-0" to="/"
                       @click="open = false">
@@ -44,7 +44,7 @@
               <nuxt-link class="block font-extrabold text-sm sm:text-base" to="/imprint" @click="open = false">
                 Impressum
               </nuxt-link>
-              <address class="not-italic text-sm  mt-6 sm:mt-16">
+              <address class="not-italic text-sm  mt-6 sm:mt-12 xl:mt-16">
                 JOTT.MEDIA GmbH<br>
                 Bahnhofstraße 33<br>
                 31675 Bückeburg<br>
