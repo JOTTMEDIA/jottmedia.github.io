@@ -23,7 +23,7 @@
 
             <NuxtLink class="inline-block no-underline w-full mt-2 pr-2 sm:w-[325px] border-0" to="/"
                       @click="open = false">
-              <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-full"
+              <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="w-2/3 sm:w-full mx-auto"
                      src="logo-overlay.svg"/>
             </NuxtLink>
           </UContainer>
