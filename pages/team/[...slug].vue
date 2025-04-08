@@ -22,7 +22,7 @@
       </UButton>
 
       <h1 class="text-lg xl:text-2xl uppercase font-extrabold" v-html="person?.meta.name"/>
-      <p class="font-light text-sm xl:text-base" v-html="person?.description"></p>
+      <p class="font-light text-sm xl:text-base 2xl:text-lg" v-html="person?.description"></p>
       <UContainer class="relative pt-4 text-center z-10">
         <UButton
             :class="person?.meta.button"
