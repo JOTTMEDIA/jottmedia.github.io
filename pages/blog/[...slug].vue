@@ -50,7 +50,6 @@ const {data: page} = await useAsyncData(() => {
       .first()
 })
 
-console.log(page)
 useSeoMeta({
   title: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',
   ogTitle: page.value?.meta.seoTitle + ' - Blog - JOTT.MEDIA',

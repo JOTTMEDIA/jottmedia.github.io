@@ -205,7 +205,6 @@ const {data: team} = await useAsyncData(() => {
   return queryCollection('team').all()
 })
 
-console.log(articles)
 const scrollTo = () => {
   const element = document.getElementById('machen');
   if (element) {
