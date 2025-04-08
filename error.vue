@@ -9,7 +9,7 @@
 
             <Image :parallax="false" :shine="false" alt="404" class="w-[325px] m-auto" src="404.svg"/>
             <h1>Ups.. Seite nicht gefunden!</h1>
-            <Button @click="handleError">git rebase master</Button>
+            <UButton @click="handleError">git rebase master</UButton>
 
           </UContainer>
         </UPageBody>
