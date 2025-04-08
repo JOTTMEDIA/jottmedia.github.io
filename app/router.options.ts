@@ -1,6 +1,7 @@
 import type {RouterConfig} from '@nuxt/schema'
 
 const FIXED_OFFSET = 60
+const SCROLL_DELAY = 50
 
 function findHashPosition(hash: string): { el: any, behavior: ScrollBehavior, top: number } | undefined {
     const el = document.querySelector(hash)
@@ -38,10 +39,10 @@ export default <RouterConfig>{
         if (to.hash) {
             return new Promise((resolve) => {
                 if (to.path === from.path) {
-                    setTimeout(() => resolve(findHashPosition(to.hash)), 50)
+                    setTimeout(() => resolve(findHashPosition(to.hash)), SCROLL_DELAY)
                 } else {
                     nuxtApp.hooks.hookOnce('page:finish', () => {
-                        setTimeout(() => resolve(findHashPosition(to.hash)), 50)
+                        setTimeout(() => resolve(findHashPosition(to.hash)), SCROLL_DELAY)
                     })
                 }
             })
