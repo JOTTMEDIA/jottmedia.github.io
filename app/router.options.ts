@@ -1,14 +1,14 @@
 import type {RouterConfig} from '@nuxt/schema'
 
+const FIXED_OFFSET = 60
+
 function findHashPosition(hash: string): { el: any, behavior: ScrollBehavior, top: number } | undefined {
     const el = document.querySelector(hash)
     if (el) {
-        const top = 60
-
         return {
             el: el,
             behavior: 'smooth',
-            top,
+            top: FIXED_OFFSET
         }
     }
 }
@@ -27,9 +27,7 @@ export default <RouterConfig>{
             }
         }
 
-
         if (savedPosition) {
-
             return new Promise((resolve) => {
                 nuxtApp.hooks.hookOnce('page:finish', () => {
                     setTimeout(() => resolve(savedPosition), 250)
