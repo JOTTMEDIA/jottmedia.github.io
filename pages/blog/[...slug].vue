@@ -11,7 +11,7 @@
 
       </UContainer>
       <UContainer class="max-w-(--container-2xl)">
-        <UPageHeader class="text-5xl leading-14" v-html="page?.title"/>
+        <UPageHeader class="text-2xl xl:text-5xl xl:leading-14" v-html="page?.title"/>
         <div class="flex gap-2 mt-12 mb-2">
           <UBadge v-for="category in page?.meta.categories"
                   :key="category"
