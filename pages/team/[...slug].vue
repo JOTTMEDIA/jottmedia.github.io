@@ -9,7 +9,7 @@
         class="sm:w-1/2 flex flex-col justify-center p-4 space-y-4 lg:px-6 lg:space-y-6 xl:space-y-8 xl:px-8 2xl:space-y-12 2xl:px-20">
       <UButton
           :style="{ backgroundColor: 'var(--color-jm-contrast-black)', position : 'fixed' }"
-          :ui="{ base: 'fixed h-10 w-10 border-0 bottom-0 right-2 xl:bottom-1  lg:right-4 xl:right-10 sm:h-12 sm:w-12 flex justify-center items-center transition-all duration-700 opacity-70 rounded-full z-50' }"
+          :ui="{ base: 'fixed h-10 w-10 border-0 bottom-0 right-2 xl:bottom-1 2xl:-bottom-6  lg:right-4 xl:right-10 sm:h-12 sm:w-12 flex justify-center items-center transition-all duration-700 opacity-70 rounded-full z-50' }"
           class="hover:!opacity-100"
           color="secondary"
           label="Einfach machen"
