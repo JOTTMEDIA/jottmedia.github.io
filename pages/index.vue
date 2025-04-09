@@ -58,7 +58,8 @@
 
     <UContainer class="max-w-(--container-2xl) relative pt-4 text-left">
       <Headline type="h6">So arbeiten wir <b class="uppercase">für Dich</b></Headline>
-      <Headline class="text-(--color-jm-primary-brown)" type="h5"><b>Ehrlich. zuverlässig. partnerschaftlich.</b>
+      <Headline class="text-(--color-jm-primary-brown)" type="h4"><b>Ehrlich. zuverlässig.
+        partnerschaftlich.</b>
       </Headline>
       <Paragraph>Die Lösung muss immer zum Problem passen. Darum steht bei uns <b>an erster Stelle</b> die Analyse
         deiner Herausforderung. Erst, wenn diese glasklar ist, widmen wir uns der <b>Konzeption und Umsetzung</b> des
@@ -105,7 +106,7 @@
 
     <div class="relative bg-(--color-jm-primary-green) mt-64">
       <Background height="702px" parallax="to-right" position="top" src="green-top.svg"/>
-      <UContainer class="max-w-(--container-3xl) relative px-2 py-10 text-left">
+      <UContainer class="max-w-(--container-xl) relative px-2 py-10 text-left">
         <Headline class="" type="h6">Das leisten wir <b class="uppercase">für dich</b></Headline>
         <Headline class="font-[400] uppercase" type="h2">Wir entwickeln und designen <b
             class="text-(--color-jm-primary-brown)">digitale
@@ -138,7 +139,7 @@
     >
     </UButton>
     <UContainer class="max-w-(--container-5xl) py-20">
-      <Headline class="pb-8 leading-9 xl:leading-5 text-3xl lowercase" type="h2">
+      <Headline class="pb-8 leading-9 xl:leading-5 text-3xl xl:text-4xl lowercase" type="h2">
         <b class="text-(--color-jm-primary-brown) uppercase">Neues</b> aus der
         <b class="text-(--color-jm-primary-brown) uppercase"> digitalen Welt </b>
       </Headline>
