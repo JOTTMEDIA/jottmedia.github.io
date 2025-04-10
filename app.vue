@@ -2,7 +2,7 @@
   <UApp>
     <div :class="{'cursor-down': isMouseDown, 'cursor-show': isMouseShow}"
          :style="{ '--mouse-x': cursorX + 'px', '--mouse-y': cursorY + 'px' }"
-         class="custom-cursor overflow-x-hidden scroll-smooth">
+         class="custom-cursor overflow-hidden scroll-smooth">
       <NuxtLayout>
         <UMain>
           <NuxtPage/>
@@ -12,6 +12,33 @@
   </UApp>
 </template>
 <script lang="ts" setup>
+
+
+const router = useRouter()
+const pageTransition = ref(false)
+const ROUTING_DELAY = 1000
+
+router.beforeEach((to, from, next) => {
+
+  if (pageTransition.value) return next()
+
+  pageTransition.value = true
+
+  setTimeout(() => {
+    next()
+  }, ROUTING_DELAY)
+})
+
+watch(pageTransition, (newVal) => {
+
+  if (newVal) {
+    setTimeout(() => {
+      pageTransition.value = false
+    }, 600)
+  }
+})
+
+
 const cursorX = ref(0);
 const cursorY = ref(0);
 const isMouseDown = ref(false);
@@ -90,12 +117,18 @@ onUnmounted(() => {
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+  transition: transform 0.4s ease-in-out;
 }
 
 .page-enter-from,
 .page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
+  transform: translateY(100%);
 }
+
+.page-enter-to,
+.page-leave-from {
+  transform: translateY(0%);
+}
+
+
 </style>
