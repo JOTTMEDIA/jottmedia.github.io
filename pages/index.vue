@@ -1,9 +1,14 @@
 <template>
   <UPage>
     <UPageBody class="m-0 p-0">
+
       <div class="relative bg-jm-secondary-grey-lighter">
+
         <UContainer :ui="{'constrained': 'max-w-3xl'}"
                     class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
+
+          <LinkedIn/>
+
           <Center>
             <NuxtLink class="inline-block no-underline border-0" to="/">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
@@ -156,6 +161,44 @@
 </template>
 
 <script lang="ts" setup>
+
+
+/*const loginWithLinkedIn = () => {
+  const clientId = '78on1bq9ulsy33';
+  const redirectUri = 'http://localhost:3000/api/linkedin/callback';
+  const scope = 'r_liteprofile r_organization_social rw_organization_admin w_member_social';
+  const url = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
+  window.location.href = url;
+};
+
+const url2 = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78on1bq9ulsy33&redirect_uri=http://localhost:3000/api/linkedin/callback&scope=r_liteprofile%20r_ads%20r_ads_reporting%20rw_organization_admin`;
+
+;*/
+
+/*
+const token = useCookie('linkedin_token');
+
+if (!token.value) {
+  const clientId = '78on1bq9ulsy33';
+  const redirectUri = encodeURIComponent('http://localhost:3000/api/linkedin/callback');
+  const scope = 'r_organization_social r_liteprofile';
+
+  const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+
+  window.location.href = authUrl;
+
+  console.log(authUrl);
+}
+*/
+
+onMounted(async () => {
+  try {
+    const data = await $fetch('/api/linkedin/posts', {})
+    console.log(data)
+  } catch (err) {
+    console.error('Błąd przy pobieraniu postów:', err)
+  }
+});
 
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
