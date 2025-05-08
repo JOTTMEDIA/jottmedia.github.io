@@ -7,7 +7,7 @@
         <UContainer :ui="{'constrained': 'max-w-3xl'}"
                     class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
 
-          <LinkedIn/>
+          <!--          <LinkedIn/>-->
 
           <Center>
             <NuxtLink class="inline-block no-underline border-0" to="/">
@@ -193,8 +193,15 @@ if (!token.value) {
 
 onMounted(async () => {
   try {
-    const data = await $fetch('/api/linkedin/posts', {})
-    console.log(data)
+
+    const response = await fetch('/api/linkedin/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    console.log(response)
   } catch (err) {
     console.error('Błąd przy pobieraniu postów:', err)
   }
