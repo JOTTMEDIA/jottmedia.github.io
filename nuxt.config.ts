@@ -70,6 +70,7 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@nuxt/image',
     ],
+
     pages: true,
     colorMode: {
         preference: 'light'
