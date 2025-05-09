@@ -192,19 +192,46 @@ if (!token.value) {
 */
 
 onMounted(async () => {
-  try {
 
-    const response = await fetch('/api/linkedin/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
 
-    console.log(response)
-  } catch (err) {
-    console.error('Błąd przy pobieraniu postów:', err)
-  }
+  const clientId = '78on1bq9ulsy33'
+  const redirectUri = 'http://localhost:3000/linkedin/callback'
+  const scope = 'r_liteprofile r_emailaddress r_organization_social' // zależnie od celu
+  const state = crypto.randomUUID() // zapobiega CSRF
+
+  const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}&state=${state}`
+
+  window.location.href = authUrl
+
+
+  /*  const config = useRuntimeConfig();
+    const token = 'AQS4BK3u195CLAhVoKE0e_TCwIZMJOWHGtCH6KjMVFImUy0PImDhbV4qYNHopXptCIZK0oYNRi5zmKNsYfbDr_XsvNmANn6km9Cj4VuzcusTBtTO9zhIiWmbPg-9eDhNlaw-Q4Hrtwq6BCVxbjRcaHPVNFcTg8QwQkre9YuNKPBVGyuE6dp5ZPXkIhKHQ1bGZrOjPFiOGZPIhHpzP0w';
+
+    if (!token) {
+      throw createError({statusCode: 401, statusMessage: 'Missing LinkedIn access token'});
+    }
+
+    const organizationURN = 'urn:li:organization:70562871'; // ← Zamień na swój URN
+
+    try {
+      const response = await $fetch('https://api.linkedin.com/v2/ugcPosts', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'X-Restli-Protocol-Version': '2.0.0'
+        },
+        params: {
+          q: 'authors',
+          authors: [organizationURN],
+          count: 10
+        }
+      });
+
+      return response;
+    } catch (err) {
+      console.error('LinkedIn API error:', err);
+      throw createError({statusCode: 500, statusMessage: 'LinkedIn API call failed'});
+    }*/
 });
 
 useHead({
