@@ -21,3 +21,9 @@ pnpm install
 ```bash
 pnpm build
 ```
+
+## Beispiel `.env`-Datei
+
+```dotenv
+NUXT_UI_PRO_LICENSE
+GOOGLE_API_TOKEN
