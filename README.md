@@ -22,7 +22,7 @@ pnpm install
 pnpm build
 ```
 
-## Beispiel `.env`-Datei
+## Example `.env`
 
 ```dotenv
 NUXT_UI_PRO_LICENSE
