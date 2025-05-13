@@ -21,3 +21,12 @@ pnpm install
 ```bash
 pnpm build
 ```
+
+## Example `.env`
+
+```dotenv
+NUXT_UI_PRO_LICENSE
+LINKEDIN_CLIENT_ID
+LINKEDIN_CLIENT_SECRET
+LINKEDIN_REDIRECT_URI
+LINKEDIN_TOKEN
