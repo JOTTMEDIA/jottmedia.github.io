@@ -5,6 +5,8 @@
         <UContainer :ui="{'constrained': 'max-w-3xl'}"
                     class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
           <Center>
+
+            <GooglePosts/>
             <NuxtLink class="inline-block no-underline border-0" to="/">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
             </NuxtLink>
