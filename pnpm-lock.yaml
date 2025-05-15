@@ -32,9 +32,6 @@ importers:
       puppeteer:
         specifier: ^24.2.1
         version: 24.2.1(typescript@5.7.3)
-      xmldom:
-        specifier: ^0.6.0
-        version: 0.6.0
     devDependencies:
       '@nuxt/devtools':
         specifier: 2.1.0
@@ -4734,10 +4731,6 @@ packages:
       utf-8-validate:
         optional: true
 
-  xmldom@0.6.0:
-    resolution: {integrity: sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==}
-    engines: {node: '>=10.0.0'}
-
   xmlhttprequest-ssl@2.1.2:
     resolution: {integrity: sha512-TEU+nJVUUnA4CYJFLvK5X9AOeH4KvDvhIfm0vV1GaQRtchnG0hgK5p8hw/xjv8cunWYCsiPCSDzObPyhEwq3KQ==}
     engines: {node: '>=0.4.0'}
@@ -8610,7 +8603,7 @@ snapshots:
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-util-character@2.1.1:
     dependencies:
@@ -10825,8 +10818,6 @@ snapshots:
   ws@8.17.1: {}
 
   ws@8.18.0: {}
-
-  xmldom@0.6.0: {}
 
   xmlhttprequest-ssl@2.1.2: {}
 
