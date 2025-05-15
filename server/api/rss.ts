@@ -2,14 +2,14 @@ export default defineEventHandler(async () => {
     const feedUrl = 'https://zapier.com/engine/rss/13408009/google-local-posts';
 
     try {
-        const xmlData = await $fetch(feedUrl, {responseType: 'text'});
+        const xmlData = await $fetch<string>(feedUrl, {responseType: 'text'});
 
         const itemMatches = [...xmlData.matchAll(/<item>([\s\S]*?)<\/item>/g)];
 
         const items = itemMatches.map(match => {
             const itemXml = match[1];
 
-            const getTagContent = (tag) => {
+            const getTagContent = (tag: string) => {
                 const regex = new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`);
                 const res = itemXml.match(regex);
                 return res ? res[1].trim() : '';
@@ -41,7 +41,7 @@ export default defineEventHandler(async () => {
 
         return {posts: items};
     } catch (error) {
-        console.error('RSS Fehler:', error.message);
+        console.error('RSS Fehler:', error instanceof Error ? error.message : 'Unbekannter Fehler');
         throw createError({statusCode: 500, statusMessage: 'RSS-Feed Fehler'});
     }
 });
