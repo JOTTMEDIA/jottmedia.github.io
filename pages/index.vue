@@ -6,7 +6,7 @@
                     class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
           <Center>
 
-            <GooglePosts/>
+
             <NuxtLink class="inline-block no-underline border-0" to="/">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
             </NuxtLink>
@@ -146,12 +146,12 @@
             </NuxtLink>
           </UBlogPost>
         </UBlogList>
+        <GooglePosts/>
         <Center>
           <NuxtLink to="blog">
             <Button class="mt-8">Zum Blog</Button>
           </NuxtLink>
         </Center>
-
       </UContainer>
     </UPageBody>
   </UPage>
