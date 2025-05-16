@@ -20,7 +20,7 @@ export default defineEventHandler(async () => {
             };
 
             const descriptionHtml = getTagContent('description');
-            const link = getTagContent('link').replace(/&amp;/g, '&'); // Zamiana &amp; na &
+            const link = getTagContent('link').replace(/&amp;/g, '&');
             const pubDate = getTagContent('pubDate');
             const enclosureUrl = getEnclosureUrl();
 
