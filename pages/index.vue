@@ -131,7 +131,7 @@
           >
             <NuxtLink :to="item.path">
               <Image
-                  :alt="item.meta.imageAlt || 'Bild'"
+                  :alt="item.meta.imageAlt?.toString() || 'Bild'"
                   :parallax="false"
                   :publicSrc="true"
                   :shine="false"
@@ -182,20 +182,11 @@ useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
 
-
-interface BlogMeta {
-  image: string;
-  imageAlt?: string;
-  date: string;
-  author: string;
-  categories: string[];
-}
-
-const {data: articles} = await useAsyncData<{ meta: BlogMeta }[]>(() => {
+const {data: articles} = await useAsyncData('articles', () => {
   return queryCollection('blog').all()
 })
 
-const {data: team} = await useAsyncData(() => {
+const {data: team} = await useAsyncData('team', () => {
   return queryCollection('team').all()
 })
 
@@ -211,7 +202,7 @@ const combinedItems = computed(() => {
     path: post.link,
     meta: {
       image: post.image,
-      imageAlt: '',  // dodajemy domyślną pustą wartość
+      imageAlt: '',
       date: post.pubDate ? formatDate(post.pubDate) : '',
       author: 'Jonathan',
       categories: ['Entwicklung'],
@@ -236,7 +227,7 @@ const limitedItems = computed(() => {
   return combinedItems.value.slice(0, 3);
 });
 
-function formatDate(dateString) {
+function formatDate(dateString: string) {
   const date = new Date(dateString);
   return date.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: 'numeric'});
 }
