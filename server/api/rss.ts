@@ -19,9 +19,8 @@ export default defineEventHandler(async () => {
                 return enclosureMatch ? enclosureMatch[1] : '';
             };
 
-
             const descriptionHtml = getTagContent('description');
-            const link = getTagContent('link');
+            const link = getTagContent('link').replace(/&amp;/g, '&'); // Zamiana &amp; na &
             const pubDate = getTagContent('pubDate');
             const enclosureUrl = getEnclosureUrl();
 
