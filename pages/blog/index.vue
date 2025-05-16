@@ -40,7 +40,7 @@
                 <Headline class="font-extrabold text-lg" type="h5" v-html="article.title"/>
                 <Paragraph class="text-sm mb-4 font-light">{{ truncateText(article.description, 250) }}</Paragraph>
                 <UBadge
-                    v-for="(category, index) in article.meta?.categories.slice(1)"
+                    v-for="(category, index) in (article.meta?.categories ?? []).slice(1)"
                     :key="index"
                     class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
                     color="white"
@@ -54,10 +54,10 @@
 
         <Button
             :class="{
-            'text-jm-primary-brown border-jm-primary-brown': articles?.length > pageMaxArticles,
-            'text-jm-primary-brown': articles?.length < pageMaxArticles
+            'text-jm-primary-brown border-jm-primary-brown': (articles?.length ?? 0) > pageMaxArticles,
+            'text-jm-primary-brown': (articles?.length ?? 0) < pageMaxArticles
           }"
-            :disabled="articles?.length < pageMaxArticles"
+            :disabled="(articles?.length ?? 0) < pageMaxArticles"
             class="mt-8 mx-auto flex text-jm-primary-brown border-jm-primary-brown"
             @click="loadMorePosts"
         >{{ loadMoreButtonLabel }}
@@ -94,30 +94,44 @@ const rssPosts = computed(() => rssData.value?.posts.map((post) => ({
     categories: ['Entwicklung'],
   },
   title: post.title,
-  description: '',
+  description: post.descriptionHtml,
 })) || []);
 
+interface ArticleMeta {
+  date: string;
+  author: string;
+  categories: string[];
+  image?: string;
+}
+
+interface Article {
+  path: string;
+  meta: ArticleMeta;
+  title: string;
+  description: string;
+}
+
 const combinedArticles = computed(() => {
-  const allItems = [...(articles.value || []), ...rssPosts.value];
+  const allItems = [...(articles.value || []), ...rssPosts.value] as Article[];
   return allItems.sort((a, b) => {
-    const getTimestamp = (item: any) => {
+    const getTimestamp = (item: Article) => {
       if (!item?.meta?.date) return 0;
       return new Date(item.meta.date.split('.').reverse().join('-')).getTime();
     };
     return getTimestamp(b) - getTimestamp(a);
   });
-});
+}) as ComputedRef<Article[]>;
 
 function fetchCategories() {
-  categories.value = combinedArticles.value?.map(item => item.meta.categories)
+  categories.value = combinedArticles.value?.map(item => item.meta.categories as string[])
       .flat()
       .filter((item, index, self) => self.indexOf(item) === index) || [];
 }
 
 const selectedCategory = ref('');
-const filteredArticles = computed(() => {
+const filteredArticles = computed<Article[]>(() => {
   if (!selectedCategory.value) return combinedArticles.value;
-  return combinedArticles.value?.filter(article => (article.meta.categories as string[]).includes(selectedCategory.value));
+  return combinedArticles.value?.filter(article => article.meta.categories.includes(selectedCategory.value)) ?? [];
 });
 
 const loadMoreButtonLabel = computed(() => {
@@ -142,7 +156,7 @@ function truncateText(text: string, maxLength: number) {
   return text;
 }
 
-function formatDate(dateString) {
+function formatDate(dateString: string) {
   const date = new Date(dateString);
   return date.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: 'numeric'});
 }
