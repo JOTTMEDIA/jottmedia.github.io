@@ -68,9 +68,9 @@
 </template>
 
 <script lang="ts" setup>
-const route = useRoute()
-const page = ref(1)
-const categories: Ref<string[] | undefined> = ref([])
+const route = useRoute();
+const page = ref(1);
+const categories: Ref<string[] | undefined> = ref([]);
 
 const pageMaxArticles = ref(6);
 const {data: articles} = await useAsyncData(route.path, () =>
@@ -78,36 +78,62 @@ const {data: articles} = await useAsyncData(route.path, () =>
         .limit(pageMaxArticles.value)
         .skip(pageMaxArticles.value * (page.value - 1))
         .order('id', 'DESC')
-        .all())
+        .all()
+);
 
+const {data: rssData} = await useAsyncData('rss', async () => {
+  return await $fetch('/api/rss');
+});
+
+const rssPosts = computed(() => rssData.value?.posts.map((post) => ({
+  path: post.link,
+  meta: {
+    image: post.image,
+    date: post.pubDate ? formatDate(post.pubDate) : '',
+    author: 'Jonathan',
+    categories: ['Entwicklung'],
+  },
+  title: post.title,
+  description: '',
+})) || []);
+
+const combinedArticles = computed(() => {
+  const allItems = [...(articles.value || []), ...rssPosts.value];
+  return allItems.sort((a, b) => {
+    const getTimestamp = (item: any) => {
+      if (!item?.meta?.date) return 0;
+      return new Date(item.meta.date.split('.').reverse().join('-')).getTime();
+    };
+    return getTimestamp(b) - getTimestamp(a);
+  });
+});
 
 function fetchCategories() {
-  categories.value = articles.value?.map(item => item.meta.categories)
+  categories.value = combinedArticles.value?.map(item => item.meta.categories)
       .flat()
-      .filter((item, index, self) => self.indexOf(item) === index) || []
+      .filter((item, index, self) => self.indexOf(item) === index) || [];
 }
 
-const selectedCategory = ref('')
+const selectedCategory = ref('');
 const filteredArticles = computed(() => {
-  if (!selectedCategory.value) return articles.value;
-  return articles.value?.filter(article => (article.meta.categories as string[]).includes(selectedCategory.value));
+  if (!selectedCategory.value) return combinedArticles.value;
+  return combinedArticles.value?.filter(article => (article.meta.categories as string[]).includes(selectedCategory.value));
 });
 
 const loadMoreButtonLabel = computed(() => {
-  return articles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
+  return combinedArticles.value?.length < pageMaxArticles.value ? 'Keine weiteren Beiträge' : 'Mehr Anzeigen';
 });
 
 async function loadMorePosts() {
-  pageMaxArticles.value += 6
+  pageMaxArticles.value += 6;
   await useAsyncData(route.path, () =>
       queryCollection('blog')
           .order('id', 'DESC')
           .limit(pageMaxArticles.value)
           .all()
-  )
-  fetchCategories()
+  );
+  fetchCategories();
 }
-
 
 function truncateText(text: string, maxLength: number) {
   if (text.length > maxLength) {
@@ -116,9 +142,14 @@ function truncateText(text: string, maxLength: number) {
   return text;
 }
 
-useHead({
-  title: 'Blog - JOTT.MEDIA'
-})
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: 'numeric'});
+}
 
-fetchCategories()
+useHead({
+  title: 'Blog - JOTT.MEDIA',
+});
+
+fetchCategories();
 </script>
