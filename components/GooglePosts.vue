@@ -18,7 +18,7 @@
   <UBlogList>
     <UBlogPost v-for="(post, index) in posts" :key="index" class="bg-jm-secondary-grey-lighter">
 
-      <NuxtLink :to="post.link" target="_blank">
+      <NuxtLink :to="post.link">
         <Image :parallax="false"
                :publicSrc="true"
                :shine="false"
@@ -27,7 +27,12 @@
         <section class="px-3 pb-3">
           <Paragraph class="mt-3 mb-2 text-sm font-light">{{ formatDate(post.pubDate) }}</Paragraph>
           <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="post.title"/>
-          <div v-html="post.descriptionHtml"/>
+          <UBadge
+              class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
+              color="white"
+              size="sm"
+              variant="solid"> Entwicklung
+          </UBadge>
         </section>
       </NuxtLink>
     </UBlogPost>
