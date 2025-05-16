@@ -124,29 +124,48 @@
           </Headline>
         </Center>
         <UBlogList>
-          <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article.path">
-              <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
-                     :shine="false"
-                     :src="article.meta.image as string"
-                     class="w-full"/>
-              <section class="px-3 pb-3">
-                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} von <b
-                    class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
-                <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
-                <UBadge
-                    v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
-                    :key="index"
-                    class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
-                    color="white"
-                    size="sm"
-                    variant="solid">{{ category }}
-                </UBadge>
+          <UBlogPost
+              v-for="(item, index) in limitedItems"
+              :key="index"
+              class="bg-jm-secondary-grey-lighter h-full"
+          >
+            <NuxtLink :to="item.path">
+              <Image
+                  :alt="item.meta.imageAlt || 'Bild'"
+                  :parallax="false"
+                  :publicSrc="true"
+                  :shine="false"
+                  :src="item.meta.image as string"
+                  class="w-full h-52"
+              />
+              <section class="px-3 pb-3 flex flex-col  items-start h-40 justify-between">
+                <Paragraph class="mt-3 mb-2 text-sm font-light">
+                  {{ item.meta.date }} von
+                  <b class="text-jm-primary-green uppercase">
+                    {{ item.meta.author }}
+                  </b>
+                </Paragraph>
+                <Headline
+                    class="font-extrabold text-lg leading-5"
+                    type="h5"
+                    v-html="item.title"
+                />
+                <div class="flex">
+                  <UBadge
+                      v-for="(category, index) in item.meta.categories"
+                      :key="index"
+                      class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
+                      color="white"
+                      size="sm"
+                      variant="solid"
+                  >
+                    {{ category }}
+                  </UBadge>
+                </div>
               </section>
             </NuxtLink>
           </UBlogPost>
         </UBlogList>
-        <GooglePosts/>
         <Center>
           <NuxtLink to="blog">
             <Button class="mt-8">Zum Blog</Button>
@@ -162,7 +181,17 @@
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
-const {data: articles} = await useAsyncData(() => {
+
+
+interface BlogMeta {
+  image: string;
+  imageAlt?: string;
+  date: string;
+  author: string;
+  categories: string[];
+}
+
+const {data: articles} = await useAsyncData<{ meta: BlogMeta }[]>(() => {
   return queryCollection('blog').all()
 })
 
@@ -170,6 +199,47 @@ const {data: team} = await useAsyncData(() => {
   return queryCollection('team').all()
 })
 
+const {data} = await useAsyncData('rss', async () => {
+  return await $fetch('/api/rss');
+});
+
+
+const rssPosts = computed(() => data.value?.posts || []);
+
+const combinedItems = computed(() => {
+  const formattedPosts = rssPosts.value?.map((post) => ({
+    path: post.link,
+    meta: {
+      image: post.image,
+      imageAlt: '',  // dodajemy domyślną pustą wartość
+      date: post.pubDate ? formatDate(post.pubDate) : '',
+      author: 'Jonathan',
+      categories: ['Entwicklung'],
+    },
+    title: post.title,
+    description: '',
+  })) || [];
+
+  console.log(formattedPosts)
+  const allItems = [...(articles.value || []), ...formattedPosts];
+
+  return allItems.sort((a, b) => {
+    const getTimestamp = (item: any) => {
+      if (!item?.meta?.date) return 0;
+      return new Date(item.meta.date.split('.').reverse().join('-')).getTime();
+    };
+    return getTimestamp(b) - getTimestamp(a);
+  });
+});
+
+const limitedItems = computed(() => {
+  return combinedItems.value.slice(0, 3);
+});
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: 'numeric'});
+}
 
 const scrollTo = () => {
   const element = document.getElementById('machen');
