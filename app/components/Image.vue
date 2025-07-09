@@ -1,14 +1,15 @@
 <template>
-  <div class="image-wrapper" :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}">
-    <img ref="image" :style="imageStyle" :src="getImageAbsolutePath(src)" :alt="alt" class="w-full h-full block m-0 cover bg-center" />
+  <div :class="{'shine': shine}" :style="parallax ? {perspective: '2000px'} : {}" class="image-wrapper">
+    <img ref="image" :alt="alt" :src="getImageAbsolutePath(src)" :style="imageStyle"
+         class="w-full h-full block m-0 cover bg-center"/>
     <UContainer :ui="{'constrained': 'max-w-2xl'}">
       <Paragraph v-if="hint != null" class="text-jm-primary-gre italic text-sm !mb-0">{{ hint }}</Paragraph>
     </UContainer>
   </div>
 </template>
 
-<script setup lang="ts">
-import { useParallax } from '@vueuse/core'
+<script lang="ts" setup>
+import {useParallax} from '@vueuse/core'
 
 const image = ref(null)
 const parallax = reactive(useParallax(image))
@@ -59,9 +60,9 @@ const props = defineProps({
   },
 })
 
-const glob = import.meta.glob<Record<string, string>>('@/assets/images/**/*', { eager: true })
+const glob = import.meta.glob<Record<string, string>>('@/assets/images/**/*', {eager: true})
 const getImageAbsolutePath = (imageName: string): string | undefined => {
-  if(!props.publicSrc) {
+  if (!props.publicSrc) {
     return glob[`/assets/images/${imageName}`]['default'];
   }
 
@@ -71,6 +72,7 @@ const getImageAbsolutePath = (imageName: string): string | undefined => {
 
 <style lang="scss">
 @use 'sass:color';
+
 $color: #fff;
 .shine {
   position: relative;
@@ -79,8 +81,8 @@ $color: #fff;
   &::before {
     background: linear-gradient(
             to right,
-            fade_out($color, 1) 0%,
-            fade_out($color, 0.7) 100%
+            color.scale($color, $alpha: 0.3%) 0%,
+            color.scale($color, $alpha: 0.7%) 100%
     );
     content: "";
     display: block;
