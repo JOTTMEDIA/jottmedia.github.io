@@ -4,6 +4,5 @@
     <UMain>
       <slot/>
     </UMain>
-    <Footer/>
   </main>
 </template>
