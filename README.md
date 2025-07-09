@@ -1,23 +1,76 @@
-# JOTT.MEDIA Website
+# Nuxt Minimal Starter
 
-We are super happy to release our new website in 2023. We have stored our old one in our archive tag.
-
-## Prerequisites
-
-- [Node.js 22+](https://nodejs.org/en/download/)
-- [PNPM](https://pnpm.io/installation)
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-1. Clone the repository:
-2. Install dependencies:
+Make sure to install dependencies:
 
 ```bash
+# npm
+npm install
+
+# pnpm
 pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-3. Build the packages:
+## Development Server
+
+Start the development server on `http://localhost:3000`:
 
 ```bash
-pnpm build
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+# nuxt-4-test
