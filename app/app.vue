@@ -1,12 +1,9 @@
 <template>
-
-  <UApp dir="rtl">
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
+  <UApp>
+    <UMain class="h-screen">
+      <NuxtLayout>
+        <NuxtPage/>
+      </NuxtLayout>
+    </UMain>
   </UApp>
 </template>
-<script setup lang="ts">
-
-console.log('Hello from app.vue!')
-</script>
