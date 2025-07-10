@@ -1,5 +1,16 @@
 export default defineAppConfig({
     uiPro: {
+        footer: {
+            slots: {
+                root: '',
+                top: 'lg:pt-4',
+                bottom: 'py-8 lg:py-0',
+                container: 'py-8 lg:py-0 lg:flex lg:items-center lg:justify-between lg:gap-x-3',
+                left: 'flex items-center justify-center lg:justify-start lg:flex-1 gap-x-1.5 mt-3 lg:mt-0 lg:order-1',
+                center: 'mt-3 lg:mt-0 lg:order-2 flex items-center justify-center',
+                right: 'lg:flex-1 flex items-center justify-center lg:justify-end gap-x-1.5 lg:order-3'
+            }
+        },
         blogPost: {
             slots: {
                 authors: 'pt-4',
@@ -50,8 +61,15 @@ export default defineAppConfig({
         }
     },
     ui: {
+        navigationMenu: {
+            slots: {
+                arrow: 'hidden',
+                base: 'text-(--color-jm-secondary-grey)',
+                link: 'block font-[800] text-red nuxt-ui-primary-50 text-(--color-nuxt-ui-primary-100) jm-contrast-black text-highlighted jm-primary-green uppercase hover:!text-jm-primary-green-light'
+            }
+        },
         container: {
-            base: 'max-w-(--container-3xl) mx-auto px-4 sm:px-6 lg:px-8',
+            base: 'max-w-(--container-3xl) mx-auto px-4 sm:px-6 lg:px-8 py-0', // <- py-0 usuwa padding-block
         },
         colors: {
             primary: 'nuxt-ui-primary',
@@ -108,5 +126,4 @@ export default defineAppConfig({
             },
         }
     },
-
 })
