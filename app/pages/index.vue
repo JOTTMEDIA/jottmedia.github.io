@@ -13,10 +13,10 @@ function scrollTo(event: Event) {
 }
 </script>
 <template>
-  <UPageBody class="h-screen text-center bg-(--color-jm-secondary-white)">
+  <UPageBody class="text-center bg-(--color-jm-secondary-white)">
     <div class="relative bg-(--color-jm-secondary-grey-lighter)">
-      <Background :out="false" height="1100px"  position="bottomLeft" src="header-box.png" width="1100px"/>
-      <Background :out="false" height="701px"   parallax="to-right" position="bottom" src="header-grey.svg"/>
+      <Background :out="false" height="1100px" position="bottomLeft" src="header-box.png" width="1100px"/>
+      <Background :out="false" height="701px" parallax="to-right" position="bottom" src="header-grey.svg"/>
       <UPageHero
           class="py-4 z-10 relative"
           orientation="vertical"
