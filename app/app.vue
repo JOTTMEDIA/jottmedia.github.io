@@ -1,6 +1,6 @@
 <template>
   <UApp>
-    <UMain class="h-screen">
+    <UMain>
       <NuxtLayout>
         <NuxtPage/>
       </NuxtLayout>
