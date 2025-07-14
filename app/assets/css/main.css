@@ -4,9 +4,10 @@
 :root {
     --ui-text-muted: #000000;
     --ui-text-highlighted: 104 126 94;
+    --ui-background: #FFFFFF;
     --ui-foreground: #000000;
     --ui-primary: #9B9371;
-    --ui-bg: var(--color-jm-secondary-grey-lighter);
+    --ui-bg: var(--color-jm-secondary-white);
     /* Font Families */
     --font-family-sans: 'Open Sans', sans-serif;
 
@@ -107,6 +108,7 @@ html {
 
 body {
     --tw-bg-opacity: 1;
+    background-color: rgb(var(--ui-background) / var(--tw-bg-opacity, 1));
     font-family: Open Sans, sans-serif;
     --tw-text-opacity: 1;
     color: rgb(var(--ui-foreground) / var(--tw-text-opacity, 1));
@@ -125,3 +127,29 @@ body {
     animation: text-weight-animation 1s ease-out forwards;
 }
 
+h1 {
+    color: var(--color-jm-contrast-black);
+    font-size: 2.25em;
+    font-weight: 800;
+    line-height: 1.1111111;
+    margin-bottom: .8888889em;
+    margin-top: 0;
+}
+
+p {
+    color: var(--color-jm-contrast-black);
+    font-size: 0.75em;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+}
+
+h3 {
+
+    color: var(--color-jm-contrast-black);
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: .6em;
+    margin-top: 1.6em;
+}
