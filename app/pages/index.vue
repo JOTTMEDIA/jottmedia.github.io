@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import {useTeamStore} from "~/stores/teamStore";
+import {useArticleStore} from "~/stores/articleStore";
+
 
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
@@ -11,6 +14,12 @@ function scrollTo(event: Event) {
     target.scrollIntoView({behavior: 'smooth'})
   }
 }
+
+const articleStore = useArticleStore()
+await articleStore.fetchArticles()
+const teamStore = useTeamStore()
+await teamStore.fetchTeam()
+
 </script>
 <template>
   <UPageBody class="text-center bg-(--color-jm-secondary-white)">
@@ -67,18 +76,15 @@ function scrollTo(event: Event) {
       </UContainer>
       <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
     </div>
-
     <UContainer class="max-w-(--container-4xl) relative py-10">
       <Image alt="Arian und Jan im Termin" src="team.jpg"/>
     </UContainer>
-
     <UContainer class="xl:max-w-(--container-2xl) w-2/3  mx-0 lg:mx-auto text-left relative py-10">
       <h6 class="animated-bold animation-h1">Die wichtigste <b class="uppercase">Frage</b></h6>
       <h2 class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
         Unternehmen wirklich?</b>“
       </h2>
     </UContainer>
-
     <UContainer class="max-w-(--container-2xl) relative pt-4 text-left">
       <h6>So arbeiten wir <b class="uppercase">für Dich</b></h6>
       <h4 class="text-(--color-jm-primary-brown)"><b>Ehrlich. zuverlässig.
@@ -101,6 +107,45 @@ function scrollTo(event: Event) {
         variant="outline"
     >
     </UButton>
+
+    <UContainer class="max-w-(--container-4xl) relative xl:pt-4 z-10">
+      <div class="mt-16 relative">
+        <div
+            v-for="(person, index) in teamStore.team"
+            :key="index"
+            :class="[
+          'w-2/5 absolute',
+          person.meta.align === 'right' ? 'right-0' : 'left-0'
+        ]"
+            :style="{
+          top: person.meta.align === 'right' ? `${index * 300 + 150}px` : `${index * 300}px`
+        }"
+        >
+          <div class="relative">
+            <UBlogPost
+                :image="{src: person.meta.src , width: 1000, height: 600, format: 'webp', aspectRatio: 'cover' }"
+                :title="''"
+                :to="person.path"
+                class="text-left ring-0 overflow-visible"
+            >
+              <template #badge>
+                <NuxtLink :to="person.path">
+                  <button
+                      class="w-12 h-12 bg-black/70 hover:bg-black/100 flex justify-center items-center rounded-full absolute right-4 bottom-4 transition-all z-50">
+                    <UIcon class="text-2xl h-9 w-9 text-(--color-jm-primary-brown)" name="i-mdi-plus"/>
+                  </button>
+                </NuxtLink>
+              </template>
+            </UBlogPost>
+          </div>
+          <div class="mt-6 space-y-4">
+            <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="person.meta.quote"/>
+            <Paragraph v-if="person.meta.hint != null" class="italic text-sm">{{ person.meta.hint }}</Paragraph>
+          </div>
+        </div>
+        <div :style="{ height: `${teamStore.team.length * 300 + 400}px` }"></div>
+      </div>
+    </UContainer>
     <UContainer class="max-w-(--container-2xl) relative xl:pt-4 z-10">
       <UButton
           color="secondary"
@@ -112,7 +157,6 @@ function scrollTo(event: Event) {
           variant="outline"
       ></UButton>
     </UContainer>
-
     <div class="relative bg-(--color-jm-primary-green) mt-64">
       <UContainer class="max-w-(--container-xl) relative px-2 py-10 text-left">
         <h6>Das leisten wir <b class="uppercase">für dich</b></h6>
@@ -121,7 +165,6 @@ function scrollTo(event: Event) {
           Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></h2>
       </UContainer>
     </div>
-
     <UContainer class="max-w-(--container-2xl) pt-6 text-left">
       <Paragraph><b class="text-(--color-jm-primary-brown) uppercase">Konzeption, Prototyping, Programmierung &
         Design</b> von
@@ -146,7 +189,42 @@ function scrollTo(event: Event) {
         <b class="text-(--color-jm-primary-brown) uppercase">Neues</b> aus der
         <b class="text-(--color-jm-primary-brown) uppercase"> digitalen Welt </b>
       </h2>
-      <Content/>
+
+      <UBlogPosts class="mt-10 gap-y-8 grid-cols-1! lg:grid-cols-2! 2xl:grid-cols-3!" orientation="horizontal">
+        <UBlogPost
+            v-for="(article, index) in articleStore.articles"
+            :key="index"
+            :image="{src: article.meta.image , width: 1000, height: 600, format: 'webp', aspectRatio: 'cover' }"
+            :to="article.path"
+            class="text-left ring-0"
+        >
+          <template #title>
+            <div v-html="article.title"></div>
+          </template>
+          <template #date>
+            <NuxtLink :to="`/team/${article?.meta?.author?.toLowerCase()}`"
+                      class="text-(--color-jm-primary-green) font-extrabold z-10">
+              {{ article.meta.author }}
+            </NuxtLink>
+          </template>
+          <template #description>
+            <div></div>
+          </template>
+          <template #badge>
+            <p class="text-sm font-light">{{ article.meta.date as string | Date | undefined }} von</p>
+          </template>
+          <template #authors>
+            <UBadge
+                v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
+                :key="index"
+                class="px-2 text-xs text-(--color-jm-secondary-white) bg-(--color-jm-primary-brown) font-extrabold uppercase"
+                color="primary"
+                size="xs"
+                variant="solid">{{ category }}
+            </UBadge>
+          </template>
+        </UBlogPost>
+      </UBlogPosts>
       <UButton
           class="mt-8"
           color="secondary"
