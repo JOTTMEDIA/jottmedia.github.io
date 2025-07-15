@@ -1,7 +1,4 @@
 <template>
-  <Menu/>
-
-
   <div class="relative z-10">
     <slot/>
     <UFooter>
