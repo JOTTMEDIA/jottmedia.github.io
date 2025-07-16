@@ -5,10 +5,10 @@
           class="gap-0 px-0 sm:px-0 lg:px-0 flex flex-col sm:flex-row sm:h-screen max-w-(--container-full) ">
         <div class="sm:w-1/2 h-1/2 sm:h-full">
           <NuxtImg
-              :src="person?.meta.src"
-              format="webp"
               :alt="person?.meta.imageAlt || person?.meta.name"
-              class="w-full h-full"/>
+              :src="person?.meta.src"
+              class="w-full h-full"
+              format="webp"/>
         </div>
         <div
             :class="`bg-(--color-${person?.meta.bg})`"
@@ -16,13 +16,17 @@
           <button
               class="fixed bottom-3 sm:bottom-6 right-4 sm:right-10 h-10 w-10 sm:h-12 sm:w-12 flex justify-center items-center bg-jm-contrast-black transition-all duration-700 bg-opacity-70 hover:bg-opacity-100  rounded-full z-50"
               @click="$router.back()">
-            <UIcon class="text-lg sm:text-3xl text-jm-primary-brown transition-all z-50" name="i-mdi-close-thick"/>
+            <UIcon class="text-lg sm:text-3xl text-(--color-jm-primary-brown) transition-all z-50"
+                   name="i-mdi-close-thick"/>
           </button>
-          <h1 class="text-lg xl:text-xl uppercase font-extrabold" v-html="person?.meta.name"/>
-          <p class="font-light" v-html="person?.seo.description"></p>
-          <UContainer class="relative pt-0 z-10">
+          <h1 class="text-lg uppercase font-extrabold" v-html="person?.meta.name"/>
+          <p class="font-light text-base!"> {{ person?.seo.description }}</p>
+          <UContainer class="relative pt-0 z-10 text-center">
             <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-              <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">Lerne uns kennen</Button>
+              <button
+                  :class="['border-2 rounded', 'text-xs lg:text-base px-4 py-2 uppercase font-bold', person?.meta.button]">
+                Lerne uns kennen
+              </button>
             </NuxtLink>
           </UContainer>
         </div>
@@ -32,7 +36,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useTeamStore } from '~/stores/teamStore'
+import {useTeamStore} from '~/stores/teamStore'
 
 definePageMeta({
   layout: 'minimal'
