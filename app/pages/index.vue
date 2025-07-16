@@ -108,7 +108,7 @@ await teamStore.fetchTeam()
     >
     </UButton>
 
-    <UContainer class="max-w-(--container-4xl) relative xl:pt-4 z-10">
+    <UContainer class="max-w-(--container-4xl) relative xl:pt-4 z-10 text-left">
       <div class="mt-16 relative">
         <div
             v-for="(person, index) in teamStore.team"
@@ -123,7 +123,7 @@ await teamStore.fetchTeam()
         >
           <div class="relative">
             <UBlogPost
-                :image="{src: person.meta.src , width: 1000, height: 600, format: 'webp', aspectRatio: 'cover' }"
+                :image="{src: person.meta.src , width: 600, height: 1000, format: 'webp', aspectRatio: 'cover' }"
                 :title="''"
                 :to="person.path"
                 class="text-left ring-0 overflow-visible"
