@@ -6,6 +6,6 @@ description: Ich bin Inke und seit über 30 Jahren in der Buchhaltung und im Bac
 src: team/inke.jpg
 imageAlt: Inke
 bg: jm-secondary-grey
-button: border-jm-primary-green text-jm-primary-green
+button: border-jm-primary-green text-(--color-jm-primary-green)
 align: right
 ---

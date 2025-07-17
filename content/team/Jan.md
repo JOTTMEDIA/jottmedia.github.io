@@ -6,6 +6,6 @@ description: Mein Name ist Jan und ich bin der kreative Kopf und Geschäftsführ
 src: team/jan.jpg
 imageAlt: Jan
 bg: jm-primary-brown
-button: border-jm-primary-green text-jm-primary-green
+button: border-jm-primary-green text-(--color-jm-primary-green)
 align: left
 ---

@@ -6,6 +6,6 @@ description: Ich bin Jonathan, Geschäftsführer von JOTT.MEDIA und leidenschaft
 src: team/jonathan.jpg
 imageAlt: Jonathan
 bg: jm-primary-green
-button: border-jm-primary-brown text-jm-primary-brown
+button: border-jm-primary-brown text-(--color-jm-primary-brown)
 align: right
 ---

@@ -6,6 +6,6 @@ description: Mein Name ist Paul und seit meiner Jugend bin ich von Computern fas
 src: team/paul.jpg
 imageAlt: Paul
 bg: jm-secondary-grey
-button: border-jm-primary-green text-jm-primary-green
+button: border-jm-primary-green text-(--color-jm-primary-green)
 align: left
 ---

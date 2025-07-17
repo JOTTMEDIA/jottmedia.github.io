@@ -6,6 +6,6 @@ description: Mein Name ist Arian und seit meiner Jugend bin ich fasziniert von d
 src: team/arian.jpg
 imageAlt: Arian
 bg: jm-primary-green
-button: border-jm-primary-brown text-jm-primary-brown
+button: border-jm-primary-brown text-(--color-jm-primary-brown)
 align: right
 ---
