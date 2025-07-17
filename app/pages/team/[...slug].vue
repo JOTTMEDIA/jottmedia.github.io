@@ -14,7 +14,7 @@
             :class="`bg-(--color-${person?.meta.bg})`"
             class="sm:w-1/2 h-1/2 sm:h-full flex flex-col justify-center px-4 space-y-4 lg:px-6 lg:space-y-6 xl:space-y-8 xl:px-8 2xl:space-y-12 2xl:px-20">
           <button
-              class="fixed bottom-3 sm:bottom-6 right-4 sm:right-10 h-10 w-10 sm:h-12 sm:w-12 flex justify-center items-center bg-jm-contrast-black transition-all duration-700 bg-opacity-70 hover:bg-opacity-100  rounded-full z-50"
+              class="w-12 h-12 bg-black/70 hover:bg-black/100 flex justify-center items-center rounded-full absolute right-12 bottom-0 transition-all z-50"
               @click="$router.back()">
             <UIcon class="text-lg sm:text-3xl text-(--color-jm-primary-brown) transition-all z-50"
                    name="i-mdi-close-thick"/>
