@@ -4,7 +4,7 @@
 :root {
     --ui-text-muted: #000000;
     --ui-text-highlighted: 104 126 94;
-    --ui-background: #FFFFFF;
+    --ui-background: var(--color-jm-secondary-white);
     --ui-foreground: #000000;
     --ui-primary: #9B9371;
     --ui-bg: var(--color-jm-secondary-white);
