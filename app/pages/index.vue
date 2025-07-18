@@ -107,43 +107,43 @@ await teamStore.fetchTeam()
         variant="outline"
     >
     </UButton>
-
     <UContainer class="max-w-(--container-4xl) relative xl:pt-4 z-10 text-left">
-      <div class="mt-16 relative">
-        <div
-            v-for="(person, index) in teamStore.team"
-            :key="index"
-            :class="[
-          'w-2/5 absolute',
-          person.meta.align === 'right' ? 'right-0' : 'left-0'
-        ]"
-            :style="{
-          top: person.meta.align === 'right' ? `${index * 300 + 150}px` : `${index * 300}px`
-        }"
-        >
-          <div class="relative">
-            <UBlogPost
-                :image="{src: person.meta.src , width: 600, height: 1000, format: 'webp', aspectRatio: 'cover' }"
-                :title="''"
-                :to="person.path"
-                class="text-left ring-0 overflow-visible"
-            >
-              <template #badge>
-                <NuxtLink :to="person.path">
-                  <button
-                      class="w-12 h-12 bg-black/70 hover:bg-black/100 flex justify-center items-center rounded-full absolute right-4 bottom-4 transition-all z-50">
-                    <UIcon class="text-2xl h-9 w-9 text-(--color-jm-primary-brown)" name="i-mdi-plus"/>
-                  </button>
-                </NuxtLink>
-              </template>
-            </UBlogPost>
+      <div class="mt-16">
+        <UBlogPosts class="!grid !grid-cols-2 gap-x-8 gap-y-16 items-start">
+          <div
+              v-for="(person, index) in teamStore.team"
+              :key="index"
+              :class="[
+            'flex flex-col',
+            (person as any).meta.align === 'right' ? 'mt-56' : ''
+          ]"
+          >
+            <div class="relative">
+              <UBlogPost
+                  :key="index"
+                  :image="{src: (person as any).meta.src, width: 418, height: 418, format: 'webp', aspectRatio: '16/9' }"
+                  :to="(person as any).path"
+                  class="text-left ring-0 overflow-visible"
+              >
+                <template #badge>
+                  <NuxtLink :to="(person as any).path">
+                    <button
+                        class="w-12 h-12 bg-black/70 hover:bg-black/100 flex justify-center items-center rounded-full absolute right-4 bottom-4 transition-all z-50">
+                      <UIcon class="text-2xl h-9 w-9 text-(--color-jm-primary-brown)" name="i-mdi-plus"/>
+                    </button>
+                  </NuxtLink>
+                </template>
+              </UBlogPost>
+            </div>
+            <div class="mt-6 space-y-4 mb-8">
+              <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="(person as any).meta.quote"/>
+              <Paragraph v-if="(person as any).meta.hint != null" class="italic text-sm">{{
+                  (person as any).meta.hint
+                }}
+              </Paragraph>
+            </div>
           </div>
-          <div class="mt-6 space-y-4">
-            <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="person.meta.quote"/>
-            <Paragraph v-if="person.meta.hint != null" class="italic text-sm">{{ person.meta.hint }}</Paragraph>
-          </div>
-        </div>
-        <div :style="{ height: `${teamStore.team.length * 300 + 400}px` }"></div>
+        </UBlogPosts>
       </div>
     </UContainer>
     <UContainer class="max-w-(--container-2xl) relative xl:pt-4 z-10">
@@ -194,7 +194,7 @@ await teamStore.fetchTeam()
         <UBlogPost
             v-for="(article, index) in articleStore.articles"
             :key="index"
-            :image="{src: article.meta.image , width: 1000, height: 600, format: 'webp', aspectRatio: 'cover' }"
+            :image="{src: article.meta.image , width: 418, height: 418, format: 'webp', aspectRatio: 'cover' }"
             :to="article.path"
             class="text-left ring-0"
         >
