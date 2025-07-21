@@ -100,7 +100,7 @@ await teamStore.fetchTeam()
 
 <template>
   <UPageBody class="text-center bg-(--color-jm-secondary-white) mt-0">
-    <div class="relative bg-(--color-jm-secondary-grey-lighter) overflow-hidden">
+    <div class="mb-0 relative bg-(--color-jm-secondary-grey-lighter) overflow-hidden">
       <NuxtImg
           ref="headerBox"
           alt="Header Box"
@@ -121,12 +121,10 @@ await teamStore.fetchTeam()
           width="100%"
       />
       <NuxtImg
-          ref="headerGrey"
-          alt="Header Grey"
+          alt="Header Top"
           class="absolute pointer-events-none parallax-element"
-          height="701"
           src="/images/header-green-top.svg"
-          style="z-index: 2; height: 701px; object-fit: cover;"
+          style="z-index: 2; height:1200px; object-fit: cover;"
           width="100%"
       />
 
