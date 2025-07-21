@@ -62,9 +62,9 @@ const setupParallax = () => {
     if (greyElement.querySelector('img')) greyElement = greyElement.querySelector('img')
 
     $gsap.fromTo(greyElement,
-        {x: -100, opacity: 0.7},
+        {y: -200, opacity: 0.7},
         {
-          x: 150,
+          y: 150,
           opacity: 1,
           scrollTrigger: {
             trigger: greyElement,
@@ -138,7 +138,7 @@ await teamStore.fetchTeam()
       <NuxtImg
           ref="headerGrey"
           alt="Header Grey"
-          class="absolute bottom-0 left-0 right-0 pointer-events-none parallax-element"
+          class="absolute  pointer-events-none parallax-element"
           height="701"
           src="/images/header-grey.svg"
           style="z-index: 2; height: 701px; object-fit: cover;"
