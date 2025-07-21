@@ -2,6 +2,106 @@
 import {useTeamStore} from "~/stores/teamStore";
 import {useArticleStore} from "~/stores/articleStore";
 
+const {$gsap} = useNuxtApp()
+
+const headerBox = ref(null)
+const headerGrey = ref(null)
+const headerGreenTop = ref(null)
+
+const setupParallax = () => {
+  const elements = [
+    {ref: headerBox, name: 'headerBox'},
+    {ref: headerGrey, name: 'headerGrey'},
+    {ref: headerGreenTop, name: 'headerGreenTop'},
+  ]
+
+  elements.forEach(({ref, name}) => {
+    if (!ref.value) {
+      console.warn(`Element ${name} not found`)
+      return
+    }
+
+    let domElement = ref.value
+    if (ref.value.$el) {
+      domElement = ref.value.$el
+    }
+    if (domElement.tagName === 'IMG' || domElement.querySelector('img')) {
+      if (domElement.querySelector('img')) {
+        domElement = domElement.querySelector('img')
+      }
+    }
+
+    console.log(`${name} element:`, domElement, domElement.tagName)
+  })
+
+  if (headerBox.value) {
+    let boxElement = headerBox.value
+    if (headerBox.value.$el) boxElement = headerBox.value.$el
+    if (boxElement.querySelector('img')) boxElement = boxElement.querySelector('img')
+
+    $gsap.set(boxElement, {
+      opacity: 0.8,
+      scale: 1.1
+    })
+
+    $gsap.to(boxElement, {
+      scale: 1.05,
+      rotation: 2,
+      scrollTrigger: {
+        trigger: boxElement,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1.2
+      }
+    })
+  }
+
+  if (headerGrey.value) {
+    let greyElement = headerGrey.value
+    if (headerGrey.value.$el) greyElement = headerGrey.value.$el
+    if (greyElement.querySelector('img')) greyElement = greyElement.querySelector('img')
+
+    $gsap.fromTo(greyElement,
+        {x: -100, opacity: 0.7},
+        {
+          x: 150,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: greyElement,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.5
+          }
+        }
+    )
+  }
+
+  if (headerGreenTop.value) {
+    let topElement = headerGreenTop.value
+    if (headerGreenTop.value.$el) topElement = headerGreenTop.value.$el
+    if (topElement.querySelector('img')) topElement = topElement.querySelector('img')
+
+    $gsap.fromTo(topElement,
+        {x: 100, y: 250},
+        {
+          x: -120,
+          y: -20,
+          scrollTrigger: {
+            trigger: topElement,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.8
+          }
+        }
+    )
+  }
+}
+
+onMounted(() => {
+  setTimeout(() => {
+    setupParallax()
+  }, 500)
+})
 
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
@@ -19,13 +119,32 @@ const articleStore = useArticleStore()
 await articleStore.fetchArticles()
 const teamStore = useTeamStore()
 await teamStore.fetchTeam()
-
 </script>
+
 <template>
   <UPageBody class="text-center bg-(--color-jm-secondary-white)">
-    <div class="relative bg-(--color-jm-secondary-grey-lighter)">
-      <Background :out="false" height="1100px" position="bottomLeft" src="header-box.png" width="1100px"/>
-      <Background :out="false" height="701px" parallax="to-right" position="bottom" src="header-grey.svg"/>
+    <div class="relative bg-(--color-jm-secondary-grey-lighter) overflow-hidden">
+      <NuxtImg
+          ref="headerBox"
+          alt="Header Box"
+          class="absolute bottom-0 left-0 pointer-events-none parallax-element"
+          format="webp"
+          height="1100"
+          src="/images/header-box.png"
+          style="z-index: 1; width: 1100px; height: 1100px; object-fit: cover;"
+          width="1100"
+      />
+
+      <NuxtImg
+          ref="headerGrey"
+          alt="Header Grey"
+          class="absolute bottom-0 left-0 right-0 pointer-events-none parallax-element"
+          height="701"
+          src="/images/header-grey.svg"
+          style="z-index: 2; height: 701px; object-fit: cover;"
+          width="100%"
+      />
+
       <UPageHero
           class="py-4 z-10 relative"
           orientation="vertical"
@@ -34,7 +153,6 @@ await teamStore.fetchTeam()
           <NuxtLink class="inline-block no-underline border-0" to="/">
             <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" src="logo.svg"/>
           </NuxtLink>
-
         </template>
         <template #headline>
           <h5 class="animated-bold text-5xl">
@@ -65,26 +183,39 @@ await teamStore.fetchTeam()
         </template>
       </UPageHero>
     </div>
-    <div class="relative bg-(--color-jm-primary-green) text-left">
-      <Background height="644px" parallax="to-left" position="top" src="header-green-top.svg"/>
-      <UContainer id="machen" class="relative py-24 min-h-[400px]">
+
+    <div class="relative bg-(--color-jm-primary-green) text-left overflow-hidden mb-0">
+
+
+      <UContainer id="machen" class="relative py-24 min-h-[400px] z-10 ">
         <h6>Das bekommst du <b class="uppercase">von uns</b></h6>
         <h3><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines
           Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für
           <b>mehr Effizienz, Zufriedenheit und Qualität</b> für dein Business.
         </h3>
       </UContainer>
-      <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
     </div>
-    <UContainer class="max-w-(--container-4xl) relative py-10">
+    <NuxtImg
+        alt="Header Green Bottom"
+        class="left-0 right-0 pointer-events-none absolute"
+        height="875"
+        src="/images/header-green-bottom.svg"
+        width="100%"
+    />
+
+    <UContainer class="max-w-(--container-4xl) relative py-10 z-10">
       <Image alt="Arian und Jan im Termin" src="team.jpg"/>
+
+
     </UContainer>
-    <UContainer class="xl:max-w-(--container-2xl) w-2/3  mx-0 lg:mx-auto text-left relative py-10">
+
+    <UContainer class="xl:max-w-(--container-2xl) w-2/3 mx-0 lg:mx-auto text-left relative py-10">
       <h6 class="animated-bold animation-h1">Die wichtigste <b class="uppercase">Frage</b></h6>
       <h2 class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
-        Unternehmen wirklich?</b>“
+        Unternehmen wirklich?</b>"
       </h2>
     </UContainer>
+
     <UContainer class="max-w-(--container-2xl) relative pt-4 text-left">
       <h6>So arbeiten wir <b class="uppercase">für Dich</b></h6>
       <h4 class="text-(--color-jm-primary-brown)"><b>Ehrlich. zuverlässig.
@@ -97,6 +228,7 @@ await teamStore.fetchTeam()
         – unabdingbar.
       </Paragraph>
     </UContainer>
+
     <UButton
         color="secondary"
         label="Lass uns gemeinsam loslegen"
@@ -105,8 +237,8 @@ await teamStore.fetchTeam()
         target="_blank"
         to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
         variant="outline"
-    >
-    </UButton>
+    />
+
     <UContainer class="max-w-(--container-4xl) relative xl:pt-4 z-10 text-left">
       <div class="mt-16">
         <UBlogPosts class="!grid !grid-cols-2 gap-x-8 gap-y-16 items-start">
@@ -114,9 +246,9 @@ await teamStore.fetchTeam()
               v-for="(person, index) in teamStore.team"
               :key="index"
               :class="[
-            'flex flex-col',
-            (person as any).meta.align === 'right' ? 'mt-56' : ''
-          ]"
+              'flex flex-col',
+              (person as any).meta.align === 'right' ? 'mt-56' : ''
+            ]"
           >
             <div class="relative">
               <UBlogPost
@@ -146,6 +278,7 @@ await teamStore.fetchTeam()
         </UBlogPosts>
       </div>
     </UContainer>
+
     <UContainer class="max-w-(--container-2xl) relative xl:pt-4 z-10">
       <UButton
           color="secondary"
@@ -155,8 +288,9 @@ await teamStore.fetchTeam()
           target="_blank"
           to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
           variant="outline"
-      ></UButton>
+      />
     </UContainer>
+
     <div class="relative bg-(--color-jm-primary-green) mt-64">
       <UContainer class="max-w-(--container-xl) relative px-2 py-10 text-left">
         <h6>Das leisten wir <b class="uppercase">für dich</b></h6>
@@ -165,6 +299,7 @@ await teamStore.fetchTeam()
           Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></h2>
       </UContainer>
     </div>
+
     <UContainer class="max-w-(--container-2xl) pt-6 text-left">
       <Paragraph><b class="text-(--color-jm-primary-brown) uppercase">Konzeption, Prototyping, Programmierung &
         Design</b> von
@@ -174,6 +309,7 @@ await teamStore.fetchTeam()
         begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.
       </Paragraph>
     </UContainer>
+
     <UButton
         color="secondary"
         label="Los geht's"
@@ -182,8 +318,8 @@ await teamStore.fetchTeam()
         target="_blank"
         to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
         variant="outline"
-    >
-    </UButton>
+    />
+
     <UContainer class="max-w-(--container-5xl) py-20">
       <h2 class="pb-8 leading-9 xl:leading-5 text-3xl xl:text-4xl lowercase">
         <b class="text-(--color-jm-primary-brown) uppercase">Neues</b> aus der
@@ -233,13 +369,15 @@ await teamStore.fetchTeam()
           size="lg"
           to="blog"
           variant="outline"
-      >
-      </UButton>
+      />
     </UContainer>
   </UPageBody>
-
 </template>
 
 <style scoped>
-
+.parallax-element {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 </style>
