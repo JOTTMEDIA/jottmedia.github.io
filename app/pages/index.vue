@@ -13,26 +13,6 @@ const setupParallax = () => {
     {ref: headerGreenTop, name: 'headerGreenTop'},
   ]
 
-  elements.forEach(({ref, name}) => {
-    if (!ref.value) {
-      console.warn(`Element ${name} not found`)
-      return
-    }
-
-    let domElement = ref.value
-    if (ref.value.$el) {
-      domElement = ref.value.$el
-    }
-    if (domElement.tagName === 'IMG' || domElement.querySelector('img')) {
-      if (domElement.querySelector('img')) {
-        domElement = domElement.querySelector('img')
-      }
-    }
-
-    console.log(`${name} element:`, domElement, domElement.tagName)
-  })
-
-
   if (headerGrey.value) {
     let greyElement = headerGrey.value
     if (headerGrey.value.$el) greyElement = headerGrey.value.$el
@@ -115,13 +95,13 @@ await teamStore.fetchTeam()
           ref="headerGrey"
           alt="Header Grey"
           class="absolute pointer-events-none parallax-element"
+          height="770"
           src="/images/header-grey.svg"
           style="z-index: 2; height: 770px; object-fit: cover;"
-          width="100%"
       />
       <NuxtImg
           alt="Header Top"
-          class="absolute pointer-events-none parallax-element"
+          class="absolute pointer-events-none parallax-element "
           src="/images/header-green-top.svg"
           style="z-index: 2; height:1200px; object-fit: cover;"
           width="100%"
