@@ -39,7 +39,7 @@ const setupParallax = () => {
     if (topElement.querySelector('img')) topElement = topElement.querySelector('img')
 
     $gsap.fromTo(topElement,
-        {x: 100, y: 250},
+        {x: 100, y: 150},
         {
           x: -120,
           y: -20,
@@ -148,7 +148,7 @@ await teamStore.fetchTeam()
 
     <div class="relative bg-(--color-jm-primary-green) text-left overflow-hidden mb-0">
 
-      <UContainer id="machen" class="relative py-24 min-h-[400px] z-10 ">
+      <UContainer id="machen" class="relative min-h-[400px] z-10 ">
         <h6>Das bekommst du <b class="uppercase">von uns</b></h6>
         <h3><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines
           Unternehmens fokussieren kannst. Dazu vereinfachen und digitalisieren wir deine Prozesse – und sorgen so für
