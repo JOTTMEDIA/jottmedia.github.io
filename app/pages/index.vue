@@ -4,13 +4,11 @@ import {useArticleStore} from "~/stores/articleStore";
 
 const {$gsap} = useNuxtApp()
 
-const headerBox = ref(null)
 const headerGrey = ref(null)
 const headerGreenTop = ref(null)
 
 const setupParallax = () => {
   const elements = [
-    {ref: headerBox, name: 'headerBox'},
     {ref: headerGrey, name: 'headerGrey'},
     {ref: headerGreenTop, name: 'headerGreenTop'},
   ]
@@ -34,27 +32,6 @@ const setupParallax = () => {
     console.log(`${name} element:`, domElement, domElement.tagName)
   })
 
-  if (headerBox.value) {
-    let boxElement = headerBox.value
-    if (headerBox.value.$el) boxElement = headerBox.value.$el
-    if (boxElement.querySelector('img')) boxElement = boxElement.querySelector('img')
-
-    $gsap.set(boxElement, {
-      opacity: 0.8,
-      scale: 1.1
-    })
-
-    $gsap.to(boxElement, {
-      scale: 1.05,
-      rotation: 2,
-      scrollTrigger: {
-        trigger: boxElement,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1.2
-      }
-    })
-  }
 
   if (headerGrey.value) {
     let greyElement = headerGrey.value
@@ -122,23 +99,22 @@ await teamStore.fetchTeam()
 </script>
 
 <template>
-  <UPageBody class="text-center bg-(--color-jm-secondary-white)">
+  <UPageBody class="text-center bg-(--color-jm-secondary-white) mt-0">
     <div class="relative bg-(--color-jm-secondary-grey-lighter) overflow-hidden">
       <NuxtImg
           ref="headerBox"
           alt="Header Box"
-          class="absolute bottom-0 left-0 pointer-events-none parallax-element"
+          class="absolute bottom-0 left-0 pointer-events-none"
           format="webp"
           height="1100"
           src="/images/header-box.png"
-          style="z-index: 1; width: 1100px; height: 1100px; object-fit: cover;"
-          width="1100"
+          style="z-index: 1; object-fit: cover;"
+          width="760"
       />
-
       <NuxtImg
           ref="headerGrey"
           alt="Header Grey"
-          class="absolute  pointer-events-none parallax-element"
+          class="absolute pointer-events-none parallax-element"
           height="701"
           src="/images/header-grey.svg"
           style="z-index: 2; height: 701px; object-fit: cover;"
@@ -173,7 +149,7 @@ await teamStore.fetchTeam()
         </template>
         <template #footer>
           <div>
-            <h2 class="animated-bold uppercase text-2xl xl:text-3xl mb-0">Dein Büro<span
+            <h2 class="animated-bold uppercase text-2xl xl:text-3xl mb-0">Dein Büro <span
                 class="lowercase">für</span> <b>Entwicklung und Design.</b>
             </h2>
             <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
@@ -185,7 +161,6 @@ await teamStore.fetchTeam()
     </div>
 
     <div class="relative bg-(--color-jm-primary-green) text-left overflow-hidden mb-0">
-
 
       <UContainer id="machen" class="relative py-24 min-h-[400px] z-10 ">
         <h6>Das bekommst du <b class="uppercase">von uns</b></h6>
