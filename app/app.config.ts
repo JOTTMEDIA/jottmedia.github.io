@@ -16,7 +16,7 @@ export default defineAppConfig({
                 authors: 'pt-4',
                 body: 'sm:p-3!',
                 description: 'mb-0 text-xs text-pretty jm-contrast-black color-jm-contrast-black',
-                image: 'object-fill w-full max-w-full h-full block bg-center bg-cover bg-no-repeat',
+                image: 'w-full h-full block m-0 cover bg-center',
                 meta: 'gap-1 px-0',
                 root: 'relative group/blog-post flex flex-col overflow-hidden p-0 test',
                 title: 'text-xl uppercase font-extrabold leading-6',
