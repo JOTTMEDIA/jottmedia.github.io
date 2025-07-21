@@ -120,6 +120,15 @@ await teamStore.fetchTeam()
           style="z-index: 2; height: 701px; object-fit: cover;"
           width="100%"
       />
+      <NuxtImg
+          ref="headerGrey"
+          alt="Header Grey"
+          class="absolute pointer-events-none parallax-element"
+          height="701"
+          src="/images/header-green-top.svg"
+          style="z-index: 2; height: 701px; object-fit: cover;"
+          width="100%"
+      />
 
       <UPageHero
           class="py-4 z-10 relative"
