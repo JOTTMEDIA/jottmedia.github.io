@@ -1,33 +1,33 @@
 <template>
-  <UCarousel
-      v-slot="{ item }"
-      :items="items"
-      :ui="{
-      container: 'transition-[height]',
-      controls: 'absolute -top-8 inset-x-12',
-      dots: '-top-7',
-      dot: 'w-6 h-1'
-    }"
-      arrows
-      auto-height
-      class="w-full max-w-xs mx-auto"
-      dots
-  >
-    <Image :alt="item.alt" :parallax="false" :shine="false" :src="item.src"/>
-  </UCarousel>
+  <div class="flex-1 w-full">
+    <UCarousel
+        ref="carousel"
+        v-slot="{ item }"
+        :items="items"
+        :next="{ onClick: onClickNext }"
+        :prev="{ onClick: onClickPrev }"
+        arrows
+        class="w-full max-w-xs mx-auto"
+        @select="onSelect"
+    >
+      <Image :alt="item.alt" :parallax="false" :shine="false" :src="item.src"/>
+    </UCarousel>
 
+    <div class="flex gap-1 justify-between pt-4 max-w-xs mx-auto">
+      <div
+          v-for="(item, index) in items"
+          :key="index"
+          :class="{ 'opacity-100': activeIndex === index }"
+          class="size-11 opacity-25 hover:opacity-100 transition-opacity cursor-pointer"
+          @click="select(index)"
+      >
+        <Image :alt="item.alt" :parallax="false" :shine="false" :src="item.src"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import {usePointerSwipe, useScroll} from '@vueuse/core'
-
-
-interface CarouselItems {
-  id: string
-  src: string
-  alt?: string
-}
-
 const props = defineProps({
   items: {
     type: Array as PropType<CarouselItems[]>,
@@ -35,20 +35,29 @@ const props = defineProps({
   },
 })
 
-const carousel = ref<HTMLElement | null>(null)
-const {x, y} = useScroll(carousel, {behavior: 'smooth'})
-usePointerSwipe(carousel, {
-  disableTextSelect: true,
-  onSwipeEnd(e: PointerEvent, direction) {
-    if (direction === 'left') {
-      x.value += (carousel.value?.children[0].clientWidth ?? 0) + 20
-    } else if (direction === 'right') {
-      x.value -= (carousel.value?.children[0].clientWidth ?? 0) + 20
-    }
-  },
-})
+interface CarouselItems {
+  id: string
+  src: string
+  alt?: string
+}
 
-onMounted(() => {
-  x.value = 0;
-})
+const carousel = useTemplateRef('carousel')
+const activeIndex = ref(0)
+
+function onClickPrev() {
+  activeIndex.value--
+}
+
+function onClickNext() {
+  activeIndex.value++
+}
+
+function onSelect(index: number) {
+  activeIndex.value = index
+}
+
+function select(index: number) {
+  activeIndex.value = index
+  carousel.value?.emblaApi?.scrollTo(index)
+}
 </script>
