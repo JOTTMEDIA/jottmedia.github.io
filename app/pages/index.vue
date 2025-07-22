@@ -19,12 +19,19 @@ const setupParallax = () => {
     if (greyElement.querySelector('img')) greyElement = greyElement.querySelector('img')
 
     $gsap.fromTo(greyElement,
-        {y: -200, opacity: 0.7},
+        {y: 0, x: 0},
         {
-          y: 150,
-          opacity: 1,
+          ease: "none",
+          opacity: 0.8,
+          scale: 1.05,
+          transformOrigin: "center center",
+        },
+        {
+
+
           scrollTrigger: {
             trigger: greyElement,
+            y: -100,
             start: "top bottom",
             end: "bottom top",
             scrub: 1.5
@@ -54,6 +61,34 @@ const setupParallax = () => {
   }
 }
 
+const carouselItems = ref([
+  {
+    id: '1',
+    src: '1-team-arian-annika.jpg',
+    alt: 'Arian und Annika spielen Klask',
+  },
+  {
+    id: '2',
+    src: '2-team-jonathan-jan.jpg',
+    alt: 'Jan und Jonathan sind im Termin',
+  },
+  {
+    id: '3',
+    src: '3-iphone-cd.jpg',
+    alt: 'Wir erstellen ein Bild von unserem iPhone'
+  },
+  {
+    id: '4',
+    src: '4-klask.jpg',
+    alt: 'Ein Klask-Match',
+  },
+  {
+    id: '5',
+    src: '5-work.jpg',
+    alt: 'Wir sind bei der Arbeit',
+  },
+])
+
 onMounted(() => {
   setTimeout(() => {
     setupParallax()
@@ -80,7 +115,7 @@ await teamStore.fetchTeam()
 
 <template>
   <UPageBody class="text-center bg-(--color-jm-secondary-white) mt-0">
-    <div class="mb-0 relative bg-(--color-jm-secondary-grey-lighter) overflow-hidden">
+    <div class="mb-0 bg-(--color-jm-secondary-grey-lighter) overflow-hidden relative">
       <NuxtImg
           ref="headerBox"
           alt="Header Box"
@@ -94,7 +129,7 @@ await teamStore.fetchTeam()
       <NuxtImg
           ref="headerGrey"
           alt="Header Grey"
-          class="absolute pointer-events-none parallax-element"
+          class="absolute pointer-events-none parallax-element top-23"
           height="770"
           src="/images/header-grey.svg"
           style="z-index: 2; height: 770px; object-fit: cover;"
@@ -103,7 +138,7 @@ await teamStore.fetchTeam()
           alt="Header Top"
           class="absolute pointer-events-none parallax-element "
           src="/images/header-green-top.svg"
-          style="z-index: 2; height:1200px; object-fit: cover;"
+          style="z-index: 3; height:1200px; object-fit: cover;"
           width="100%"
       />
 
@@ -147,7 +182,6 @@ await teamStore.fetchTeam()
     </div>
 
     <div class="relative bg-(--color-jm-primary-green) text-left overflow-hidden mb-0">
-
       <UContainer id="machen" class="relative min-h-[400px] z-10 ">
         <h6>Das bekommst du <b class="uppercase">von uns</b></h6>
         <h3><b>Mehr Zeit</b>, sodass du deine Energie auf den <b>Erfolg</b> und das Wachstum deines
@@ -163,20 +197,15 @@ await teamStore.fetchTeam()
         src="/images/header-green-bottom.svg"
         width="100%"
     />
-
     <UContainer class="max-w-(--container-4xl) relative py-10 z-10">
       <Image alt="Arian und Jan im Termin" src="team.jpg"/>
-
-
     </UContainer>
-
     <UContainer class="xl:max-w-(--container-2xl) w-2/3 mx-0 lg:mx-auto text-left relative py-10">
       <h6 class="animated-bold animation-h1">Die wichtigste <b class="uppercase">Frage</b></h6>
       <h2 class="font-[400]">„<b class="uppercase">Was</b> genau <b class="uppercase">braucht dein
         Unternehmen wirklich?</b>"
       </h2>
     </UContainer>
-
     <UContainer class="max-w-(--container-2xl) relative pt-4 text-left">
       <h6>So arbeiten wir <b class="uppercase">für Dich</b></h6>
       <h4 class="text-(--color-jm-primary-brown)"><b>Ehrlich. zuverlässig.
@@ -202,6 +231,13 @@ await teamStore.fetchTeam()
 
     <UContainer class="max-w-(--container-4xl) relative xl:pt-4 z-10 text-left">
       <div class="mt-16">
+        <NuxtImg
+            alt="Grey Top"
+            class="absolute pointer-events-none w-full"
+            src="/images/grey-top.svg"
+            style="z-index: -1; height:757px; object-fit: cover; width: 100vw; left: 50%; transform: translateX(-50%) scaleX(2);"
+            width="100%"
+        />
         <UBlogPosts class="!grid !grid-cols-2 gap-x-8 gap-y-16 items-start">
           <div
               v-for="(person, index) in teamStore.team"
@@ -218,6 +254,7 @@ await teamStore.fetchTeam()
                   :to="(person as any).path"
                   class="text-left ring-0 overflow-visible"
               >
+
                 <template #badge>
                   <NuxtLink :to="(person as any).path">
                     <button
@@ -237,7 +274,16 @@ await teamStore.fetchTeam()
             </div>
           </div>
         </UBlogPosts>
+
       </div>
+      <NuxtImg
+          alt="Grey Top"
+          class="absolute pointer-events-none w-full bottom-12"
+          src="/images/grey-bottom.svg"
+          style="z-index: -1; height:757px; object-fit: cover; width: 100vw; left: 50%;  transform: translateX(-50%) scaleX(2);"
+          width="100%"
+      />
+
     </UContainer>
 
     <UContainer class="max-w-(--container-2xl) relative xl:pt-4 z-10">
@@ -250,18 +296,40 @@ await teamStore.fetchTeam()
           to="https://calendar.app.google/rBDjAnPNYEQpfMvJ9"
           variant="outline"
       />
+
     </UContainer>
 
     <div class="relative bg-(--color-jm-primary-green) mt-64">
-      <UContainer class="max-w-(--container-xl) relative px-2 py-10 text-left">
+      <NuxtImg
+          alt="Green Top"
+          class="absolute pointer-events-none w-full bottom-32"
+          src="/images/green-top.svg"
+          style="z-index: 3; height:707px; object-fit: cover; width: 100vw; left: 50%; transform: translateX(-50%) scaleX(1);"
+          width="100%"
+      />
+      <NuxtImg
+          alt="Green Bottom"
+          class="absolute pointer-events-none w-full top-28"
+          src="/images/green-bottom.svg"
+          style="z-index: 0; height:517px; object-fit: cover; width: 100vw; left: 50%; transform: translateX(-50%) scaleX(2);"
+          width="100%"
+      />
+      <UContainer class="max-w-(--container-2xl) relative text-left pt-4">
+
         <h6>Das leisten wir <b class="uppercase">für dich</b></h6>
-        <h2 class="font-[400] uppercase">Wir entwickeln und designen <b
+        <h2 class="font-[400] uppercase text-3xl">Wir entwickeln und designen <b
             class="text-(--color-jm-primary-brown)">digitale
           Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></h2>
       </UContainer>
     </div>
 
-    <UContainer class="max-w-(--container-2xl) pt-6 text-left">
+
+    <UContainer class="max-w-(--container-4xl) py-10 z-20">
+      <Carousel :items="carouselItems"/>
+    </UContainer>
+
+
+    <UContainer class="max-w-(--container-2xl) pt-6 text-left  z-10">
       <Paragraph><b class="text-(--color-jm-primary-brown) uppercase">Konzeption, Prototyping, Programmierung &
         Design</b> von
         <b>digitalen Lösungen</b>, mit denen du deine Herausforderungen optimal <b>meisterst</b>. Anders gesagt: <b>wir
