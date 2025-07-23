@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type {Config} from 'tailwindcss'
 
 export default <Partial<Config>>{
     theme: {
@@ -22,30 +22,10 @@ export default <Partial<Config>>{
         extend: {
             colors: {
                 'nuxt-ui-primary': {
-                    50: '#687E5E',
-                    100: '#687E5E',
-                    200: '#687E5E',
-                    300: '#687E5E',
-                    400: '#687E5E',
-                    500: '#687E5E',
-                    600: '#687E5E',
-                    700: '#687E5E',
-                    800: '#687E5E',
-                    900: '#687E5E',
-                    950: '#687E5E'
+                    DEFAULT: '#687E5E',
                 },
                 'nuxt-ui-grey': {
-                    50: '#7C7B7B',
-                    100: '#7C7B7B',
-                    200: '#7C7B7B',
-                    300: '#7C7B7B',
-                    400: '#7C7B7B',
-                    500: '#7C7B7B',
-                    600: '#7C7B7B',
-                    700: '#7C7B7B',
-                    800: '#7C7B7B',
-                    900: '#7C7B7B',
-                    950: '#7C7B7B'
+                    DEFAULT: '#7C7B7B',
                 },
                 'jm-primary-brown': {
                     DEFAULT: '#9B9371',
