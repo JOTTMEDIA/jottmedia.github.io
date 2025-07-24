@@ -10,7 +10,12 @@
         class="w-full max-w-xs mx-auto"
         @select="onSelect"
     >
-      <Image :alt="item.alt" :parallax="false" :shine="false" :src="item.src"/>
+      <Image
+          :alt="item.alt"
+          :parallax="false"
+          :shine="false"
+          :src="item.src"
+      />
     </UCarousel>
 
     <div class="flex gap-1 justify-between pt-4 max-w-xs mx-auto">
@@ -21,42 +26,46 @@
           class="size-11 opacity-25 hover:opacity-100 transition-opacity cursor-pointer"
           @click="select(index)"
       >
-        <Image :alt="item.alt" :parallax="false" :shine="false" :src="item.src"/>
+        <Image
+            :alt="item.alt"
+            :parallax="false"
+            :shine="false"
+            :src="item.src"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-  items: {
-    type: Array as PropType<CarouselItems[]>,
-    required: true,
-  },
-})
-
-interface CarouselItems {
+interface CarouselItem {
   id: string
   src: string
   alt?: string
 }
 
+interface Props {
+  items: CarouselItem[]
+}
+
+const props = defineProps<Props>()
+
 const carousel = useTemplateRef('carousel')
 const activeIndex = ref(0)
 
-function onClickPrev() {
+function onClickPrev(): void {
   activeIndex.value--
 }
 
-function onClickNext() {
+function onClickNext(): void {
   activeIndex.value++
 }
 
-function onSelect(index: number) {
+function onSelect(index: number): void {
   activeIndex.value = index
 }
 
-function select(index: number) {
+function select(index: number): void {
   activeIndex.value = index
   carousel.value?.emblaApi?.scrollTo(index)
 }
