@@ -15,8 +15,6 @@ const setupParallax = () => {
 
   if (headerGrey.value) {
     let greyElement = headerGrey.value
-    if (headerGrey.value.$el) greyElement = headerGrey.value.$el
-    if (greyElement.querySelector('img')) greyElement = greyElement.querySelector('img')
 
     $gsap.fromTo(greyElement,
         {y: 0, x: 0},
@@ -42,8 +40,6 @@ const setupParallax = () => {
 
   if (headerGreenTop.value) {
     let topElement = headerGreenTop.value
-    if (headerGreenTop.value.$el) topElement = headerGreenTop.value.$el
-    if (topElement.querySelector('img')) topElement = topElement.querySelector('img')
 
     $gsap.fromTo(topElement,
         {x: 100, y: 150},
@@ -233,61 +229,72 @@ await teamStore.fetchTeam()
       <div class="mt-16">
         <NuxtImg
             alt="Grey Top"
-            class="absolute pointer-events-none w-full"
+            class="absolute pointer-events-none top-1/12 left-2/5 scale-200 -translate-x-1/2 h-64 bg-center -z-1"
             src="/images/grey-top.svg"
-            style="z-index: -1; height:757px; object-fit: cover; width: 100vw; left: 50%; transform: translateX(-50%) scaleX(2);"
+            style=" background-position: 46.8228% center"
             width="100%"
         />
-        <UBlogPosts class="!grid !grid-cols-2 gap-x-8 gap-y-16 items-start">
+
+
+        <UBlogPosts class="!flex !gap-y-0">
           <div
               v-for="(person, index) in teamStore.team"
               :key="index"
               :class="[
-              'flex flex-col',
-              (person as any).meta.align === 'right' ? 'mt-56' : ''
-            ]"
+        'flex',
+        (person as any).meta.align === 'right' ? 'justify-end' : 'justify-start'
+      ]"
           >
-            <div class="relative">
+            <div class="md:w-2/5 relative">
               <UBlogPost
                   :key="index"
-                  :image="{src: (person as any).meta.src, width: 418, height: 418, format: 'webp', aspectRatio: '16/9' }"
                   :to="(person as any).path"
-                  class="text-left ring-0 overflow-visible"
+                  class="text-left ring-0 overflow-visible h-[416px] relative"
               >
-
+                <template #header>
+                  <NuxtImg
+                      :alt="(person as any).meta.imageAlt || (person as any).name"
+                      :aspect-ratio="16/9"
+                      :height="416"
+                      :src="(person as any).meta.src"
+                      :width="416"
+                      class="w-full h-full block m-0 cover bg-center"
+                      format="webp"
+                  />
+                </template>
                 <template #badge>
-                  <NuxtLink :to="(person as any).path">
+                  <NuxtLink :to="(person as any).path" class="p-0">
                     <button
-                        class="w-12 h-12 bg-black/70 hover:bg-black/100 flex justify-center items-center rounded-full absolute right-4 bottom-4 transition-all z-50">
+                        class="w-12 h-12 bg-black/70 hover:bg-black/100 flex justify-center items-center rounded-full absolute sm:-right-6 top-0 sm:top-auto sm:-bottom-5 transition-all z-10">
                       <UIcon class="text-2xl h-9 w-9 text-(--color-jm-primary-brown)" name="i-mdi-plus"/>
                     </button>
                   </NuxtLink>
                 </template>
               </UBlogPost>
-            </div>
-            <div class="mt-6 space-y-4 mb-8">
-              <h5 class="text-lg uppercase h-animation-bigger my-0 mb-4" v-html="(person as any).meta.quote"/>
-              <Paragraph v-if="(person as any).meta.hint != null" class="italic text-sm">{{
-                  (person as any).meta.hint
-                }}
-              </Paragraph>
+
+              <div class="md:absolute">
+                <h5 class="text-lg uppercase h-animation-bigger pt-4" v-html="(person as any).meta.quote"/>
+                <Paragraph v-if="(person as any).meta.hint != null" class="italic text-sm mb-0 pt-2">{{
+                    (person as any).meta.hint
+                  }}
+                </Paragraph>
+              </div>
             </div>
           </div>
         </UBlogPosts>
-
       </div>
       <NuxtImg
           alt="Grey Top"
-          class="absolute pointer-events-none w-full bottom-12"
+          class="absolute left-2/5 bottom-1/6 pointer-events-none scale-200 -translate-x-1/2 h-64 bg-center -z-1"
           src="/images/grey-bottom.svg"
-          style="z-index: -1; height:757px; object-fit: cover; width: 100vw; left: 50%;  transform: translateX(-50%) scaleX(2);"
-          width="100%"
+          style=" background-position: 46.8228% center"
       />
 
     </UContainer>
 
     <UContainer class="max-w-(--container-2xl) relative xl:pt-4 z-10">
       <UButton
+          class="mt-40"
           color="secondary"
           label="Lerne uns kennen"
           outline="true"
@@ -314,10 +321,10 @@ await teamStore.fetchTeam()
           style="z-index: 0; height:517px; object-fit: cover; width: 100vw; left: 50%; transform: translateX(-50%) scaleX(2);"
           width="100%"
       />
-      <UContainer class="max-w-(--container-2xl) relative text-left pt-4">
+      <UContainer class="max-w-(--container-2xl) relative text-left pt-4 z-10">
 
         <h6>Das leisten wir <b class="uppercase">für dich</b></h6>
-        <h2 class="font-[400] uppercase text-3xl">Wir entwickeln und designen <b
+        <h2 class="font-[400] uppercase text-3xl pt-4">Wir entwickeln und designen <b
             class="text-(--color-jm-primary-brown)">digitale
           Premiumlösungen</b> <b>individuell für dein Unternehmen.</b></h2>
       </UContainer>
