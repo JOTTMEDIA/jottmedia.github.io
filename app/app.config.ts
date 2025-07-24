@@ -12,12 +12,13 @@ export default defineAppConfig({
         blogPost: {
             slots: {
                 authors: 'pt-4',
-                body: 'sm:p-3!',
+                body: 'sm:p-3!  lg:p-0! mt:4',
                 description: 'mb-0 text-xs text-pretty jm-contrast-black color-jm-contrast-black',
                 image: 'w-full h-full block m-0 cover bg-center',
-                meta: 'gap-1 px-0',
-                root: 'relative group/blog-post flex flex-col overflow-hidden p-0 test',
+                meta: 'px-0 mb-0',
+                root: 'relative group/blog-post flex flex-col overflow-hidden p-0',
                 title: 'text-xl uppercase font-extrabold leading-6',
+                header: 'h-full block m-0 bg-cover bg-center'
             },
         },
         pageHero: {
