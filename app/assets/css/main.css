@@ -96,6 +96,15 @@
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
     }
+
+    .bg-header-green-top {
+        background-image: url('../images/header-green-top.svg');
+    }
+
+    .bg-header-grey {
+        background-image: url('../images/header-grey.svg');
+    }
+
 }
 
 html {
