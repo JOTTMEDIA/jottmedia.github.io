@@ -4,34 +4,36 @@
       <NuxtImg
           ref="headerBox"
           alt="Header Box"
-          class="absolute bottom-0 left-0 pointer-events-none"
+          class="absolute  bottom-0 left-0 pointer-events-none object-cover z-[2]"
           format="webp"
           height="1100"
           src="/images/header-box.png"
-          style="z-index: 1; object-fit: cover;"
           width="760"
       />
       <NuxtImg
-          ref="headerGrey"
+
           alt="Header Grey"
-          class="absolute pointer-events-none parallax-element top-23"
+          class="absolute pointer-events-none parallax-element object-cover top-23 z-[3]"
           height="770"
           src="/images/header-grey.svg"
-          style="z-index: 2; height: 770px; object-fit: cover;"
-      />
-      <NuxtImg
-          alt="Header Top"
-          class="absolute pointer-events-none parallax-element"
-          src="/images/header-green-top.svg"
-          style="z-index: 3; height:1200px; object-fit: cover;"
-          width="100%"
       />
 
+
       <UPageHero
-          class="py-4 z-10 relative"
+          class="py-4 relative z-10 h-screen"
           orientation="vertical"
       >
+
         <template #top>
+          <div
+              ref="headerGreenTop"
+              class="absolute pointer-events-none w-screen h-[32rem] bottom-16 z-[4] bg-center bg-header-green-top"
+          />
+
+          <div
+              ref="headerGrey"
+              class="absolute pointer-events-none w-screen h-[35rem] bottom-0 z-[2] bg-center bg-header-grey"
+          />
           <NuxtLink
               class="inline-block no-underline border-0"
               to="/"
@@ -45,7 +47,7 @@
           </NuxtLink>
         </template>
         <template #headline>
-          <h5 class="animated-bold text-5xl">
+          <h5 class="animated-bold text-6xl mt-6">
             Machen wir es<br>
             <span class="text-(--color-nuxt-ui-primary-50) uppercase">einfach:</span>
             <b class="uppercase"> digital</b>.
@@ -54,7 +56,7 @@
         <template #body>
           <UButton
               :to="{ path: '/', hash: '#machen' }"
-              class="hover:bg-(--color-jm-primary-brown)/75 hover:text-(--ui-bg) hover:border-(--color-jm-primary-brown)"
+              class="mb-10 mt-4 hover:bg-(--color-jm-primary-brown)/75 hover:text-(--ui-bg) hover:border-(--color-jm-primary-brown)"
               color="secondary"
               label="Einfach machen"
               outline="false"
@@ -64,7 +66,7 @@
         </template>
         <template #footer>
           <div>
-            <h2 class="animated-bold uppercase text-2xl xl:text-3xl mb-0">
+            <h2 class="animated-bold uppercase text-2xl xl:text-3xl mt-8 mb-3">
               Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b>
             </h2>
             <NuxtLink
@@ -72,8 +74,8 @@
                 @click="scrollTo"
             >
               <UIcon
-                  class="text-(--color-jm-secondary-grey) text-[70px]"
-                  name="i-mdi-arrow-down"
+                  class="text-(--color-jm-secondary-grey) text-[60px]"
+                  name="cil:arrow-thick-bottom"
               />
             </NuxtLink>
           </div>
@@ -148,7 +150,7 @@
       <div class="mt-16">
         <NuxtImg
             alt="Grey Top"
-            class="absolute pointer-events-none top-1/12 left-2/5 scale-200 -translate-x-1/2 h-64 bg-center -z-1"
+            class="absolute pointer-events-none top-1/2 left-2/5 scale-200 -translate-x-1/2 h-64 bg-center -z-1"
             src="/images/grey-top.svg"
             style="background-position: 46.8228% center"
             width="100%"
