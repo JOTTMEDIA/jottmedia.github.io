@@ -25,7 +25,7 @@
 
         <h3>Kontakt:</h3>
         <p>
-          Telefon: +49 5722 99790 70<br>
+          Telefon: +49 5722 9184984<br>
           E-Mail: hallo@jott.media
         </p>
 
