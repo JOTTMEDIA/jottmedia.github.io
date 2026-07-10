@@ -1,6 +1,9 @@
 <template>
   <UPage>
-    <UPageBody prose>
+    <UPageBody
+      prose
+      class="text-jm-contrast-black [--tw-prose-body:currentColor] [--tw-prose-headings:currentColor] [--tw-prose-links:currentColor] [--tw-prose-bold:currentColor] [--tw-prose-counters:currentColor] [--tw-prose-bullets:currentColor] [&_h1]:text-jm-contrast-black [&_h2]:text-jm-contrast-black [&_h3]:text-jm-contrast-black [&_h4]:text-jm-contrast-black [&_h5]:text-jm-contrast-black [&_h6]:text-jm-contrast-black [&_p]:text-jm-contrast-black"
+    >
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
           <NuxtLink to="/" class="inline-block no-underline border-0">
@@ -13,8 +16,8 @@
         <h3>Angaben gemäß § 5 TMG:</h3>
         <p>
           JOTT.MEDIA GmbH<br>
-          Bahnhofstraße 33<br>
-          31675 Bückeburg
+          Lindenstraße 12<br>
+          31683 Obernkirchen
         </p>
 
         <h3>Geschäftsführer:</h3>
@@ -25,7 +28,6 @@
 
         <h3>Kontakt:</h3>
         <p>
-          Telefon: +49 5722 9184984<br>
           E-Mail: hallo@jott.media
         </p>
 
@@ -55,8 +57,8 @@
         <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 Medienstaatsvertrag (MStV):</h3>
         <p>
           Jonathan Schneider<br>
-          Bahnhofstraße 33<br>
-          31675 Bückeburg
+          Lindenstraße 12<br>
+          31683 Obernkirchen
         </p>
 
         <h3>Streitschlichtung</h3>

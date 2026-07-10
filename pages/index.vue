@@ -39,7 +39,9 @@
         <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
       </div>
       <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10">
-        <Image alt="Arian und Jan im Termin" src="team.jpg"/>
+        <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm">
+          <Image alt="Wir sind bei der Arbeit" src="5-work.jpg" :cover="true" class="w-full h-full"/>
+        </div>
       </UContainer>
 
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10">
@@ -59,8 +61,8 @@
           – unabdingbar.
         </Paragraph>
         <Center>
-          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Lass uns gemeinsam loslegen</Button>
+          <NuxtLink href="mailto:hallo@jott.media">
+            <Button>Kontakt</Button>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -80,8 +82,8 @@
       </div>
       <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10 z-10">
         <Center>
-          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Lerne uns kennen</Button>
+          <NuxtLink href="mailto:hallo@jott.media">
+            <Button>Kontakt</Button>
           </NuxtLink>
         </Center>
       </UContainer>
@@ -108,48 +110,10 @@
           begeisternde Userfreundlichkeit und <b>bestechende Ästhetik</b> aus. Hand drauf.
         </Paragraph>
         <Center>
-          <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-            <Button>Los geht's</Button>
+          <NuxtLink href="mailto:hallo@jott.media">
+            <Button>Kontakt</Button>
           </NuxtLink>
         </Center>
-      </UContainer>
-
-      <UContainer :ui="{'constrained': 'max-w-5xl'}" class="pt-20">
-        <Center>
-          <Headline class="pb-8 leading-8 lg:leading-5 text-3xl lowercase" type="h2">
-            <b class="text-jm-primary-brown uppercase">Neues</b> aus der
-            <b class="text-jm-primary-brown uppercase"> digitalen Welt </b>
-          </Headline>
-        </Center>
-        <UBlogList>
-          <UBlogPost v-for="(article, index) in articles" :key="index" class="bg-jm-secondary-grey-lighter">
-            <NuxtLink :to="article.path">
-              <Image :alt="article.meta.imageAlt as string | undefined" :parallax="false" :publicSrc="true"
-                     :shine="false"
-                     :src="article.meta.image as string"
-                     class="w-full"/>
-              <section class="px-3 pb-3">
-                <Paragraph class="mt-3 mb-2 text-sm font-light">{{ article.meta.date }} von <b
-                    class="text-jm-primary-green uppercase"> {{ article.meta.author }} </b></Paragraph>
-                <Headline class="font-extrabold text-lg leading-5" type="h5" v-html="article.title"/>
-                <UBadge
-                    v-for="(category, index) in (article.meta.categories as unknown[]).slice(1)"
-                    :key="index"
-                    class="mr-2 py-0.5 text-xs text-jm-secondary-white bg-jm-primary-brown font-extrabold uppercase"
-                    color="white"
-                    size="sm"
-                    variant="solid">{{ category }}
-                </UBadge>
-              </section>
-            </NuxtLink>
-          </UBlogPost>
-        </UBlogList>
-        <Center>
-          <NuxtLink to="blog">
-            <Button class="mt-8">Zum Blog</Button>
-          </NuxtLink>
-        </Center>
-
       </UContainer>
     </UPageBody>
   </UPage>
@@ -160,10 +124,6 @@
 useHead({
   title: 'Dein Büro für Entwicklung und Design – JOTT.MEDIA'
 })
-const {data: articles} = await useAsyncData(() => {
-  return queryCollection('blog').all()
-})
-
 const {data: team} = await useAsyncData(() => {
   return queryCollection('team').all()
 })
@@ -179,28 +139,18 @@ const scrollTo = () => {
 const carouselItems = ref([
   {
     id: '1',
-    src: '1-team-arian-annika.jpg',
-    alt: 'Arian und Annika spielen Klask',
+    src: '2-team-jonathan-jan.jpg',
+    alt: 'Jan und Jonathan im Termin',
   },
   {
     id: '2',
-    src: '2-team-jonathan-jan.jpg',
-    alt: 'Jan und Jonathan sind im Termin',
-  },
-  {
-    id: '3',
     src: '3-iphone-cd.jpg',
     alt: 'Wir erstellen ein Bild von unserem iPhone'
   },
   {
-    id: '4',
+    id: '3',
     src: '4-klask.jpg',
     alt: 'Ein Klask-Match',
-  },
-  {
-    id: '5',
-    src: '5-work.jpg',
-    alt: 'Wir sind bei der Arbeit',
   },
 ])
 </script>

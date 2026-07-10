@@ -26,9 +26,6 @@
                 <li>
                   <NuxtLink @click="open = false" to="/">.Startseite</NuxtLink>
                 </li>
-                <li>
-                  <NuxtLink @click="open = false" to="/blog">.Blog</NuxtLink>
-                </li>
               </ul>
               <div class="text-left sm:text-right mt-8 sm:mt-0">
                   <nuxt-link to="/privacy" @click="open = false" class="block font-extrabold text-sm sm:text-base">
@@ -39,10 +36,8 @@
                   </nuxt-link>
                 <address class="not-italic text-sm  mt-6 sm:mt-16">
                   JOTT.MEDIA GmbH<br>
-                  Bahnhofstraße 33<br>
-                  31675 Bückeburg<br>
-                  <br>
-                  <nuxt-link href="tel:+4957229184984">+49 5722 9184984</nuxt-link>
+                  Lindenstraße 12<br>
+                  31683 Obernkirchen<br>
                   <br>
                   <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link>
                   <br>

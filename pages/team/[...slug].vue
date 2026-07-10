@@ -20,8 +20,8 @@
           <p class="font-light" v-html="person?.description"></p>
           <UContainer class="relative pt-0 z-10">
             <Center>
-              <NuxtLink href="https://calendar.app.google/rBDjAnPNYEQpfMvJ9" target="_blank">
-                <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">Lerne uns kennen</Button>
+              <NuxtLink href="mailto:hallo@jott.media">
+                <Button :class="person?.meta.button" class=" text-xs lg:text-base my-4">Kontakt</Button>
               </NuxtLink>
             </Center>
           </UContainer>

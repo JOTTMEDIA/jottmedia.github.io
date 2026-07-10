@@ -10,10 +10,9 @@
           <div>
             <address class="not-italic">
               JOTT.MEDIA GmbH<br>
-              Bahnhofstraße 33<br>
-              31675 Bückeburg<br>
+              Lindenstraße 12<br>
+              31683 Obernkirchen<br>
               <br>
-              <nuxt-link href="tel:+4957229184984">+49 5722 9184984</nuxt-link><br>
               <nuxt-link href="mailto:hallo@jott.media">hallo@jott.media</nuxt-link>
             </address>
           </div>

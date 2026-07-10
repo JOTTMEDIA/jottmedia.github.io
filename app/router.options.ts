@@ -5,10 +5,6 @@ export default <RouterConfig>{
         if (savedPosition) {
             return savedPosition;
         }
-        if (to.path.startsWith('/blog/')) {
-            return {top: 0};
-        } else if (to.path.startsWith('/blog')) {
-            return {top: 0};
-        }
+        return {top: 0};
     },
 };
