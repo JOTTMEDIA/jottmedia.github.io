@@ -2,10 +2,10 @@
   <div class="relative bg-jm-secondary-grey-lighter mt-40">
     <Background height="127px" src="footer-top.svg" position="top" parallax="to-left" />
 
-    <div class="relative z-10">
+    <div class="z-10 relative">
 
 
-      <UContainer class="relative py-10 z-10" :ui="{'constrained': 'max-w-2xl'}">
+      <UContainer class="z-10 relative py-10" :ui="{'constrained': 'max-w-2xl'}">
         <div class="flex justify-between items-end">
           <div>
             <address class="not-italic">
@@ -26,7 +26,7 @@
       <Background width="400px" height="400px" src="footer-box.png" position="bottomRight" :out="false" />
     </div>
 
-    <div class="bg-jm-primary-green text-sm py-5">
+    <div class="bg-jm-primary-green py-5 text-sm">
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <p>© {{ new Date().getFullYear() }} JOTT.MEDIA – Alle Rechte vorbehalten</p>
       </UContainer>

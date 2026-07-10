@@ -3,9 +3,9 @@
     <UPageBody class="m-0 p-0">
       <div class="relative bg-jm-secondary-grey-lighter">
         <UContainer :ui="{'constrained': 'max-w-3xl'}"
-                    class="relative py-10 flex h-screen flex-col justify-between gap-y-5 z-10">
+                    class="z-10 relative flex flex-col justify-between gap-y-5 py-10 h-screen">
           <Center>
-            <NuxtLink class="inline-block no-underline border-0" to="/">
+            <NuxtLink class="inline-block border-0 no-underline" to="/">
               <Image :parallax="false" :shine="false" alt="JOTT.MEDIA GmbH" class="sm:w-[325px]" src="logo.svg"/>
             </NuxtLink>
           </Center>
@@ -20,7 +20,7 @@
           <Center>
             <Headline type="h3">Dein Büro <span class="lowercase">für</span> <b>Entwicklung und Design.</b></Headline>
             <NuxtLink :to="{ path: '/', hash: '#machen' }" @click="scrollTo">
-              <UIcon class="text-jm-secondary-grey text-[70px]" name="i-mdi-arrow-down"/>
+              <UIcon class="text-[70px] text-jm-secondary-grey" name="i-mdi-arrow-down"/>
             </NuxtLink>
           </Center>
         </UContainer>
@@ -39,7 +39,7 @@
         <Background height="875px" parallax="to-left" position="bottom" src="header-green-bottom.svg"/>
       </div>
       <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10">
-        <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm">
+        <div class="rounded-sm aspect-[16/9] md:aspect-[21/9] overflow-hidden">
           <Image alt="Wir sind bei der Arbeit" src="5-work.jpg" :cover="true" class="w-full h-full"/>
         </div>
       </UContainer>
@@ -68,7 +68,7 @@
       </UContainer>
       <div class="relative">
         <Background :out="false" height="757px" parallax="to-right" position="top" src="grey-top.svg"/>
-        <UContainer :ui="{'constrained': 'max-w-4xl'}" class="relative py-10 md:mb-40 z-10">
+        <UContainer :ui="{'constrained': 'max-w-4xl'}" class="z-10 relative md:mb-40 py-10">
           <ImageFigure
               v-for="person in team"
               :align="person.meta.align as string | undefined"
@@ -80,7 +80,7 @@
         </UContainer>
         <Background :out="false" height="854px" parallax="to-left" position="bottom" src="grey-bottom.svg"/>
       </div>
-      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="relative py-10 z-10">
+      <UContainer :ui="{'constrained': 'max-w-2xl'}" class="z-10 relative py-10">
         <Center>
           <NuxtLink href="mailto:hallo@jott.media">
             <Button>Kontakt</Button>

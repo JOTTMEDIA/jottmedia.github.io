@@ -2,12 +2,12 @@
   <UPage>
     <UPageBody
       prose
-      class="text-jm-contrast-black [--tw-prose-body:currentColor] [--tw-prose-headings:currentColor] [--tw-prose-links:currentColor] [--tw-prose-bold:currentColor] [--tw-prose-counters:currentColor] [--tw-prose-bullets:currentColor] [&_h1]:text-jm-contrast-black [&_h2]:text-jm-contrast-black [&_h3]:text-jm-contrast-black [&_h4]:text-jm-contrast-black [&_h5]:text-jm-contrast-black [&_h6]:text-jm-contrast-black [&_p]:text-jm-contrast-black"
+      class="text-jm-contrast-black [&_h1]:text-jm-contrast-black [&_h2]:text-jm-contrast-black [&_h3]:text-jm-contrast-black [&_h4]:text-jm-contrast-black [&_h5]:text-jm-contrast-black [&_h6]:text-jm-contrast-black [&_p]:text-jm-contrast-black [--tw-prose-body:currentColor] [--tw-prose-headings:currentColor] [--tw-prose-links:currentColor] [--tw-prose-bold:currentColor] [--tw-prose-counters:currentColor] [--tw-prose-bullets:currentColor]"
     >
       <UContainer :ui="{'constrained': 'max-w-2xl'}">
         <Center>
-          <NuxtLink to="/" class="inline-block no-underline border-0">
-            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="w-[325px] mt-2" :shine="false" :parallax="false" />
+          <NuxtLink to="/" class="inline-block border-0 no-underline">
+            <Image src="logo.svg" alt="JOTT.MEDIA GmbH" class="mt-2 w-[325px]" :shine="false" :parallax="false" />
           </NuxtLink>
         </Center>
       </UContainer>
